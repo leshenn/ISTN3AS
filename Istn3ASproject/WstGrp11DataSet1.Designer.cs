@@ -40,7 +40,7 @@ namespace Istn3ASproject {
         
         private StockDataTable tableStock;
         
-        private ItemsToAddDataTable tableItemsToAdd;
+        private ItemsToOrderDataTable tableItemsToOrder;
         
         private global::System.Data.DataRelation relationFK_Order_Customer;
         
@@ -108,8 +108,8 @@ namespace Istn3ASproject {
                 if ((ds.Tables["Stock"] != null)) {
                     base.Tables.Add(new StockDataTable(ds.Tables["Stock"]));
                 }
-                if ((ds.Tables["ItemsToAdd"] != null)) {
-                    base.Tables.Add(new ItemsToAddDataTable(ds.Tables["ItemsToAdd"]));
+                if ((ds.Tables["ItemsToOrder"] != null)) {
+                    base.Tables.Add(new ItemsToOrderDataTable(ds.Tables["ItemsToOrder"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -213,9 +213,9 @@ namespace Istn3ASproject {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ItemsToAddDataTable ItemsToAdd {
+        public ItemsToOrderDataTable ItemsToOrder {
             get {
-                return this.tableItemsToAdd;
+                return this.tableItemsToOrder;
             }
         }
         
@@ -310,8 +310,8 @@ namespace Istn3ASproject {
                 if ((ds.Tables["Stock"] != null)) {
                     base.Tables.Add(new StockDataTable(ds.Tables["Stock"]));
                 }
-                if ((ds.Tables["ItemsToAdd"] != null)) {
-                    base.Tables.Add(new ItemsToAddDataTable(ds.Tables["ItemsToAdd"]));
+                if ((ds.Tables["ItemsToOrder"] != null)) {
+                    base.Tables.Add(new ItemsToOrderDataTable(ds.Tables["ItemsToOrder"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -394,10 +394,10 @@ namespace Istn3ASproject {
                     this.tableStock.InitVars();
                 }
             }
-            this.tableItemsToAdd = ((ItemsToAddDataTable)(base.Tables["ItemsToAdd"]));
+            this.tableItemsToOrder = ((ItemsToOrderDataTable)(base.Tables["ItemsToOrder"]));
             if ((initTable == true)) {
-                if ((this.tableItemsToAdd != null)) {
-                    this.tableItemsToAdd.InitVars();
+                if ((this.tableItemsToOrder != null)) {
+                    this.tableItemsToOrder.InitVars();
                 }
             }
             this.relationFK_Order_Customer = this.Relations["FK_Order_Customer"];
@@ -433,8 +433,8 @@ namespace Istn3ASproject {
             base.Tables.Add(this.tableSupplierOrder);
             this.tableStock = new StockDataTable();
             base.Tables.Add(this.tableStock);
-            this.tableItemsToAdd = new ItemsToAddDataTable();
-            base.Tables.Add(this.tableItemsToAdd);
+            this.tableItemsToOrder = new ItemsToOrderDataTable();
+            base.Tables.Add(this.tableItemsToOrder);
             this.relationFK_Order_Customer = new global::System.Data.DataRelation("FK_Order_Customer", new global::System.Data.DataColumn[] {
                         this.tableCustomer.CustomerIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrder.CustomerIDColumn}, false);
@@ -515,7 +515,7 @@ namespace Istn3ASproject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeItemsToAdd() {
+        private bool ShouldSerializeItemsToOrder() {
             return false;
         }
         
@@ -599,7 +599,7 @@ namespace Istn3ASproject {
         public delegate void StockRowChangeEventHandler(object sender, StockRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void ItemsToAddRowChangeEventHandler(object sender, ItemsToAddRowChangeEvent e);
+        public delegate void ItemsToOrderRowChangeEventHandler(object sender, ItemsToOrderRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2909,8 +2909,8 @@ namespace Istn3ASproject {
                 this.columnSupplierOrderID.AllowDBNull = false;
                 this.columnSupplierOrderID.ReadOnly = true;
                 this.columnSupplierOrderID.Unique = true;
-                this.columnSupplierID.AllowDBNull = false;
                 this.columnTotalCost.AllowDBNull = false;
+                this.columnOrderStatus.MaxLength = 30;
                 this.columnPaymentStatus.MaxLength = 30;
                 this.columnOrderDate.AllowDBNull = false;
             }
@@ -3411,7 +3411,7 @@ namespace Istn3ASproject {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ItemsToAddDataTable : global::System.Data.TypedTableBase<ItemsToAddRow> {
+        public partial class ItemsToOrderDataTable : global::System.Data.TypedTableBase<ItemsToOrderRow> {
             
             private global::System.Data.DataColumn columnStockID;
             
@@ -3429,12 +3429,10 @@ namespace Istn3ASproject {
             
             private global::System.Data.DataColumn columnExpirationTime;
             
-            private global::System.Data.DataColumn columnQuantity;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ItemsToAddDataTable() {
-                this.TableName = "ItemsToAdd";
+            public ItemsToOrderDataTable() {
+                this.TableName = "ItemsToOrder";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3442,7 +3440,7 @@ namespace Istn3ASproject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal ItemsToAddDataTable(global::System.Data.DataTable table) {
+            internal ItemsToOrderDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3459,7 +3457,7 @@ namespace Istn3ASproject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected ItemsToAddDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ItemsToOrderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3530,14 +3528,6 @@ namespace Istn3ASproject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3547,34 +3537,34 @@ namespace Istn3ASproject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ItemsToAddRow this[int index] {
+            public ItemsToOrderRow this[int index] {
                 get {
-                    return ((ItemsToAddRow)(this.Rows[index]));
+                    return ((ItemsToOrderRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ItemsToAddRowChangeEventHandler ItemsToAddRowChanging;
+            public event ItemsToOrderRowChangeEventHandler ItemsToOrderRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ItemsToAddRowChangeEventHandler ItemsToAddRowChanged;
+            public event ItemsToOrderRowChangeEventHandler ItemsToOrderRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ItemsToAddRowChangeEventHandler ItemsToAddRowDeleting;
+            public event ItemsToOrderRowChangeEventHandler ItemsToOrderRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ItemsToAddRowChangeEventHandler ItemsToAddRowDeleted;
+            public event ItemsToOrderRowChangeEventHandler ItemsToOrderRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddItemsToAddRow(ItemsToAddRow row) {
+            public void AddItemsToOrderRow(ItemsToOrderRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ItemsToAddRow AddItemsToAddRow(string Name, string PoductDescription, decimal SellingPrice, decimal BuyingPrice, int StockOnHand, int ReorderLevel, int ExpirationTime, int Quantity) {
-                ItemsToAddRow rowItemsToAddRow = ((ItemsToAddRow)(this.NewRow()));
+            public ItemsToOrderRow AddItemsToOrderRow(string Name, string PoductDescription, decimal SellingPrice, decimal BuyingPrice, int StockOnHand, int ReorderLevel, int ExpirationTime) {
+                ItemsToOrderRow rowItemsToOrderRow = ((ItemsToOrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
@@ -3583,17 +3573,16 @@ namespace Istn3ASproject {
                         BuyingPrice,
                         StockOnHand,
                         ReorderLevel,
-                        ExpirationTime,
-                        Quantity};
-                rowItemsToAddRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowItemsToAddRow);
-                return rowItemsToAddRow;
+                        ExpirationTime};
+                rowItemsToOrderRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowItemsToOrderRow);
+                return rowItemsToOrderRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ItemsToAddDataTable cln = ((ItemsToAddDataTable)(base.Clone()));
+                ItemsToOrderDataTable cln = ((ItemsToOrderDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3601,7 +3590,7 @@ namespace Istn3ASproject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ItemsToAddDataTable();
+                return new ItemsToOrderDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3615,7 +3604,6 @@ namespace Istn3ASproject {
                 this.columnStockOnHand = base.Columns["StockOnHand"];
                 this.columnReorderLevel = base.Columns["ReorderLevel"];
                 this.columnExpirationTime = base.Columns["ExpirationTime"];
-                this.columnQuantity = base.Columns["Quantity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3637,8 +3625,6 @@ namespace Istn3ASproject {
                 base.Columns.Add(this.columnReorderLevel);
                 this.columnExpirationTime = new global::System.Data.DataColumn("ExpirationTime", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpirationTime);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
                 this.columnStockID.AutoIncrement = true;
                 this.columnStockID.AutoIncrementSeed = -1;
                 this.columnStockID.AutoIncrementStep = -1;
@@ -3655,28 +3641,28 @@ namespace Istn3ASproject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ItemsToAddRow NewItemsToAddRow() {
-                return ((ItemsToAddRow)(this.NewRow()));
+            public ItemsToOrderRow NewItemsToOrderRow() {
+                return ((ItemsToOrderRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ItemsToAddRow(builder);
+                return new ItemsToOrderRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ItemsToAddRow);
+                return typeof(ItemsToOrderRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ItemsToAddRowChanged != null)) {
-                    this.ItemsToAddRowChanged(this, new ItemsToAddRowChangeEvent(((ItemsToAddRow)(e.Row)), e.Action));
+                if ((this.ItemsToOrderRowChanged != null)) {
+                    this.ItemsToOrderRowChanged(this, new ItemsToOrderRowChangeEvent(((ItemsToOrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3684,8 +3670,8 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ItemsToAddRowChanging != null)) {
-                    this.ItemsToAddRowChanging(this, new ItemsToAddRowChangeEvent(((ItemsToAddRow)(e.Row)), e.Action));
+                if ((this.ItemsToOrderRowChanging != null)) {
+                    this.ItemsToOrderRowChanging(this, new ItemsToOrderRowChangeEvent(((ItemsToOrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3693,8 +3679,8 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ItemsToAddRowDeleted != null)) {
-                    this.ItemsToAddRowDeleted(this, new ItemsToAddRowChangeEvent(((ItemsToAddRow)(e.Row)), e.Action));
+                if ((this.ItemsToOrderRowDeleted != null)) {
+                    this.ItemsToOrderRowDeleted(this, new ItemsToOrderRowChangeEvent(((ItemsToOrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3702,14 +3688,14 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ItemsToAddRowDeleting != null)) {
-                    this.ItemsToAddRowDeleting(this, new ItemsToAddRowChangeEvent(((ItemsToAddRow)(e.Row)), e.Action));
+                if ((this.ItemsToOrderRowDeleting != null)) {
+                    this.ItemsToOrderRowDeleting(this, new ItemsToOrderRowChangeEvent(((ItemsToOrderRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveItemsToAddRow(ItemsToAddRow row) {
+            public void RemoveItemsToOrderRow(ItemsToOrderRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3736,7 +3722,7 @@ namespace Istn3ASproject {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ItemsToAddDataTable";
+                attribute2.FixedValue = "ItemsToOrderDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4616,7 +4602,12 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int SupplierID {
                 get {
-                    return ((int)(this[this.tableSupplierOrder.SupplierIDColumn]));
+                    try {
+                        return ((int)(this[this.tableSupplierOrder.SupplierIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SupplierID\' in table \'SupplierOrder\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSupplierOrder.SupplierIDColumn] = value;
@@ -4702,6 +4693,18 @@ namespace Istn3ASproject {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_SupplierOrder_Supplier"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSupplierIDNull() {
+                return this.IsNull(this.tableSupplierOrder.SupplierIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSupplierIDNull() {
+                this[this.tableSupplierOrder.SupplierIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4914,25 +4917,25 @@ namespace Istn3ASproject {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ItemsToAddRow : global::System.Data.DataRow {
+        public partial class ItemsToOrderRow : global::System.Data.DataRow {
             
-            private ItemsToAddDataTable tableItemsToAdd;
+            private ItemsToOrderDataTable tableItemsToOrder;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal ItemsToAddRow(global::System.Data.DataRowBuilder rb) : 
+            internal ItemsToOrderRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableItemsToAdd = ((ItemsToAddDataTable)(this.Table));
+                this.tableItemsToOrder = ((ItemsToOrderDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int StockID {
                 get {
-                    return ((int)(this[this.tableItemsToAdd.StockIDColumn]));
+                    return ((int)(this[this.tableItemsToOrder.StockIDColumn]));
                 }
                 set {
-                    this[this.tableItemsToAdd.StockIDColumn] = value;
+                    this[this.tableItemsToOrder.StockIDColumn] = value;
                 }
             }
             
@@ -4940,10 +4943,10 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Name {
                 get {
-                    return ((string)(this[this.tableItemsToAdd.NameColumn]));
+                    return ((string)(this[this.tableItemsToOrder.NameColumn]));
                 }
                 set {
-                    this[this.tableItemsToAdd.NameColumn] = value;
+                    this[this.tableItemsToOrder.NameColumn] = value;
                 }
             }
             
@@ -4951,10 +4954,10 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string PoductDescription {
                 get {
-                    return ((string)(this[this.tableItemsToAdd.PoductDescriptionColumn]));
+                    return ((string)(this[this.tableItemsToOrder.PoductDescriptionColumn]));
                 }
                 set {
-                    this[this.tableItemsToAdd.PoductDescriptionColumn] = value;
+                    this[this.tableItemsToOrder.PoductDescriptionColumn] = value;
                 }
             }
             
@@ -4962,10 +4965,10 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal SellingPrice {
                 get {
-                    return ((decimal)(this[this.tableItemsToAdd.SellingPriceColumn]));
+                    return ((decimal)(this[this.tableItemsToOrder.SellingPriceColumn]));
                 }
                 set {
-                    this[this.tableItemsToAdd.SellingPriceColumn] = value;
+                    this[this.tableItemsToOrder.SellingPriceColumn] = value;
                 }
             }
             
@@ -4973,10 +4976,10 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal BuyingPrice {
                 get {
-                    return ((decimal)(this[this.tableItemsToAdd.BuyingPriceColumn]));
+                    return ((decimal)(this[this.tableItemsToOrder.BuyingPriceColumn]));
                 }
                 set {
-                    this[this.tableItemsToAdd.BuyingPriceColumn] = value;
+                    this[this.tableItemsToOrder.BuyingPriceColumn] = value;
                 }
             }
             
@@ -4984,10 +4987,10 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int StockOnHand {
                 get {
-                    return ((int)(this[this.tableItemsToAdd.StockOnHandColumn]));
+                    return ((int)(this[this.tableItemsToOrder.StockOnHandColumn]));
                 }
                 set {
-                    this[this.tableItemsToAdd.StockOnHandColumn] = value;
+                    this[this.tableItemsToOrder.StockOnHandColumn] = value;
                 }
             }
             
@@ -4996,14 +4999,14 @@ namespace Istn3ASproject {
             public int ReorderLevel {
                 get {
                     try {
-                        return ((int)(this[this.tableItemsToAdd.ReorderLevelColumn]));
+                        return ((int)(this[this.tableItemsToOrder.ReorderLevelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReorderLevel\' in table \'ItemsToAdd\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReorderLevel\' in table \'ItemsToOrder\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableItemsToAdd.ReorderLevelColumn] = value;
+                    this[this.tableItemsToOrder.ReorderLevelColumn] = value;
                 }
             }
             
@@ -5012,67 +5015,39 @@ namespace Istn3ASproject {
             public int ExpirationTime {
                 get {
                     try {
-                        return ((int)(this[this.tableItemsToAdd.ExpirationTimeColumn]));
+                        return ((int)(this[this.tableItemsToOrder.ExpirationTimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExpirationTime\' in table \'ItemsToAdd\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExpirationTime\' in table \'ItemsToOrder\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableItemsToAdd.ExpirationTimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableItemsToAdd.QuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'ItemsToAdd\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableItemsToAdd.QuantityColumn] = value;
+                    this[this.tableItemsToOrder.ExpirationTimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsReorderLevelNull() {
-                return this.IsNull(this.tableItemsToAdd.ReorderLevelColumn);
+                return this.IsNull(this.tableItemsToOrder.ReorderLevelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetReorderLevelNull() {
-                this[this.tableItemsToAdd.ReorderLevelColumn] = global::System.Convert.DBNull;
+                this[this.tableItemsToOrder.ReorderLevelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsExpirationTimeNull() {
-                return this.IsNull(this.tableItemsToAdd.ExpirationTimeColumn);
+                return this.IsNull(this.tableItemsToOrder.ExpirationTimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetExpirationTimeNull() {
-                this[this.tableItemsToAdd.ExpirationTimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsQuantityNull() {
-                return this.IsNull(this.tableItemsToAdd.QuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetQuantityNull() {
-                this[this.tableItemsToAdd.QuantityColumn] = global::System.Convert.DBNull;
+                this[this.tableItemsToOrder.ExpirationTimeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5352,22 +5327,22 @@ namespace Istn3ASproject {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class ItemsToAddRowChangeEvent : global::System.EventArgs {
+        public class ItemsToOrderRowChangeEvent : global::System.EventArgs {
             
-            private ItemsToAddRow eventRow;
+            private ItemsToOrderRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ItemsToAddRowChangeEvent(ItemsToAddRow row, global::System.Data.DataRowAction action) {
+            public ItemsToOrderRowChangeEvent(ItemsToOrderRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ItemsToAddRow Row {
+            public ItemsToOrderRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7757,17 +7732,11 @@ SELECT SupplierID, Name, ContactNo, Email, Address, City, Province, PostalCode F
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT StockID, SupplierOrderID, Quantity, Price FROM dbo.SupplierLineOrder";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT     StockID, SupplierOrderID, Quantity, Price\r\nFROM        SupplierLineOrd" +
-                "er\r\nWHERE     (SupplierOrderID LIKE @ordID)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ordID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierOrderID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7789,32 +7758,6 @@ SELECT SupplierID, Name, ContactNo, Email, Address, City, Province, PostalCode F
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WstGrp11DataSet.SupplierLineOrderDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            WstGrp11DataSet.SupplierLineOrderDataTable dataTable = new WstGrp11DataSet.SupplierLineOrderDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByOrderID(WstGrp11DataSet.SupplierLineOrderDataTable dataTable, int ordID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ordID));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual WstGrp11DataSet.SupplierLineOrderDataTable GetDataBy(int ordID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ordID));
             WstGrp11DataSet.SupplierLineOrderDataTable dataTable = new WstGrp11DataSet.SupplierLineOrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8071,8 +8014,16 @@ SELECT SupplierOrderID, SupplierID, TotalCost, OrderStatus, PaymentStatus, Order
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT     MAX(SupplierOrderID) AS Expr1\r\nFROM        SupplierOrder";
+            this._commandCollection[1].CommandText = "INSERT INTO SupplierOrder\r\n                  (SupplierID, TotalCost, OrderStatus," +
+                " PaymentStatus, OrderDate, ArrivalDate)\r\nVALUES     (@SupplierID,@TotalCost,@Ord" +
+                "erStatus,@PaymentStatus,@OrderDate,@ArrivalDate); \r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderStatus", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "OrderStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentStatus", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArrivalDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ArrivalDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8132,9 +8083,14 @@ SELECT SupplierOrderID, SupplierID, TotalCost, OrderStatus, PaymentStatus, Order
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SupplierOrderID, int Original_SupplierID, decimal Original_TotalCost, string Original_OrderStatus, string Original_PaymentStatus, System.DateTime Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_ArrivalDate) {
+        public virtual int Delete(int Original_SupplierOrderID, global::System.Nullable<int> Original_SupplierID, decimal Original_TotalCost, string Original_OrderStatus, string Original_PaymentStatus, System.DateTime Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_ArrivalDate) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SupplierOrderID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_SupplierID));
+            if ((Original_SupplierID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_SupplierID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_TotalCost));
             if ((Original_OrderStatus == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -8181,8 +8137,13 @@ SELECT SupplierOrderID, SupplierID, TotalCost, OrderStatus, PaymentStatus, Order
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SupplierID));
+        public virtual int Insert(global::System.Nullable<int> SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate) {
+            if ((SupplierID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SupplierID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(TotalCost));
             if ((OrderStatus == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -8223,8 +8184,13 @@ SELECT SupplierOrderID, SupplierID, TotalCost, OrderStatus, PaymentStatus, Order
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate, int Original_SupplierOrderID, int Original_SupplierID, decimal Original_TotalCost, string Original_OrderStatus, string Original_PaymentStatus, System.DateTime Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_ArrivalDate, int SupplierOrderID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SupplierID));
+        public virtual int Update(global::System.Nullable<int> SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate, int Original_SupplierOrderID, global::System.Nullable<int> Original_SupplierID, decimal Original_TotalCost, string Original_OrderStatus, string Original_PaymentStatus, System.DateTime Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_ArrivalDate, int SupplierOrderID) {
+            if ((SupplierID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SupplierID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(TotalCost));
             if ((OrderStatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -8246,7 +8212,12 @@ SELECT SupplierOrderID, SupplierID, TotalCost, OrderStatus, PaymentStatus, Order
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SupplierOrderID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_SupplierID));
+            if ((Original_SupplierID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_SupplierID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_TotalCost));
             if ((Original_OrderStatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
@@ -8294,36 +8265,57 @@ SELECT SupplierOrderID, SupplierID, TotalCost, OrderStatus, PaymentStatus, Order
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate, int Original_SupplierOrderID, int Original_SupplierID, decimal Original_TotalCost, string Original_OrderStatus, string Original_PaymentStatus, System.DateTime Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_ArrivalDate) {
+        public virtual int Update(global::System.Nullable<int> SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate, int Original_SupplierOrderID, global::System.Nullable<int> Original_SupplierID, decimal Original_TotalCost, string Original_OrderStatus, string Original_PaymentStatus, System.DateTime Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_ArrivalDate) {
             return this.Update(SupplierID, TotalCost, OrderStatus, PaymentStatus, OrderDate, ArrivalDate, Original_SupplierOrderID, Original_SupplierID, Original_TotalCost, Original_OrderStatus, Original_PaymentStatus, Original_OrderDate, Original_ArrivalDate, Original_SupplierOrderID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GetLastOrderID() {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertNewOrder(global::System.Nullable<int> SupplierID, decimal TotalCost, string OrderStatus, string PaymentStatus, System.DateTime OrderDate, global::System.Nullable<global::System.DateTime> ArrivalDate) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((SupplierID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(SupplierID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((decimal)(TotalCost));
+            if ((OrderStatus == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(OrderStatus));
+            }
+            if ((PaymentStatus == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(PaymentStatus));
+            }
+            command.Parameters[4].Value = ((System.DateTime)(OrderDate));
+            if ((ArrivalDate.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(ArrivalDate.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            object returnValue;
+            int returnValue;
             try {
-                returnValue = command.ExecuteScalar();
+                returnValue = command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
+            return returnValue;
         }
     }
     
@@ -8518,7 +8510,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand, " +
@@ -8531,13 +8523,6 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                 "+ \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT     StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHa" +
-                "nd, ReorderLevel, ExpirationTime\r\nFROM        Stock\r\nWHERE     (StockID = @stock" +
-                "id)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StockID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8587,7 +8572,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual WstGrp11DataSet.StockDataTable GetDataBy1(string name) {
+        public virtual WstGrp11DataSet.StockDataTable GetDataBy(string name) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -8595,32 +8580,6 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
             }
-            WstGrp11DataSet.StockDataTable dataTable = new WstGrp11DataSet.StockDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByStockID(WstGrp11DataSet.StockDataTable dataTable, int stockid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(stockid));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual WstGrp11DataSet.StockDataTable GetDataBy(int stockid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(stockid));
             WstGrp11DataSet.StockDataTable dataTable = new WstGrp11DataSet.StockDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8871,7 +8830,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ItemsToAddTableAdapter : global::System.ComponentModel.Component {
+    public partial class ItemsToOrderTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -8885,7 +8844,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ItemsToAddTableAdapter() {
+        public ItemsToOrderTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -8982,7 +8941,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ItemsToAdd";
+            tableMapping.DataSetTable = "ItemsToOrder";
             tableMapping.ColumnMappings.Add("StockID", "StockID");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("PoductDescription", "PoductDescription");
@@ -9056,7 +9015,8 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT     Stock.*\r\nFROM        Stock";
+            this._commandCollection[0].CommandText = "SELECT     StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHa" +
+                "nd, ReorderLevel, ExpirationTime\r\nFROM        Stock";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9064,7 +9024,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(WstGrp11DataSet.ItemsToAddDataTable dataTable) {
+        public virtual int Fill(WstGrp11DataSet.ItemsToOrderDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9077,9 +9037,9 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual WstGrp11DataSet.ItemsToAddDataTable GetData() {
+        public virtual WstGrp11DataSet.ItemsToOrderDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            WstGrp11DataSet.ItemsToAddDataTable dataTable = new WstGrp11DataSet.ItemsToAddDataTable();
+            WstGrp11DataSet.ItemsToOrderDataTable dataTable = new WstGrp11DataSet.ItemsToOrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9087,7 +9047,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(WstGrp11DataSet.ItemsToAddDataTable dataTable) {
+        public virtual int Update(WstGrp11DataSet.ItemsToOrderDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -9095,7 +9055,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(WstGrp11DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "ItemsToAdd");
+            return this.Adapter.Update(dataSet, "ItemsToOrder");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9340,7 +9300,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         
         private StockTableAdapter _stockTableAdapter;
         
-        private ItemsToAddTableAdapter _itemsToAddTableAdapter;
+        private ItemsToOrderTableAdapter _itemsToOrderTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -9474,12 +9434,12 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ItemsToAddTableAdapter ItemsToAddTableAdapter {
+        public ItemsToOrderTableAdapter ItemsToOrderTableAdapter {
             get {
-                return this._itemsToAddTableAdapter;
+                return this._itemsToOrderTableAdapter;
             }
             set {
-                this._itemsToAddTableAdapter = value;
+                this._itemsToOrderTableAdapter = value;
             }
         }
         
@@ -9534,9 +9494,9 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                             && (this._stockTableAdapter.Connection != null))) {
                     return this._stockTableAdapter.Connection;
                 }
-                if (((this._itemsToAddTableAdapter != null) 
-                            && (this._itemsToAddTableAdapter.Connection != null))) {
-                    return this._itemsToAddTableAdapter.Connection;
+                if (((this._itemsToOrderTableAdapter != null) 
+                            && (this._itemsToOrderTableAdapter.Connection != null))) {
+                    return this._itemsToOrderTableAdapter.Connection;
                 }
                 return null;
             }
@@ -9575,7 +9535,7 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                 if ((this._stockTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._itemsToAddTableAdapter != null)) {
+                if ((this._itemsToOrderTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -9661,12 +9621,12 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._itemsToAddTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ItemsToAdd.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._itemsToOrderTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ItemsToOrder.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._itemsToAddTableAdapter.Update(updatedRows));
+                    result = (result + this._itemsToOrderTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9744,11 +9704,11 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._itemsToAddTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ItemsToAdd.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._itemsToOrderTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ItemsToOrder.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._itemsToAddTableAdapter.Update(addedRows));
+                    result = (result + this._itemsToOrderTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -9762,11 +9722,11 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(WstGrp11DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._itemsToAddTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ItemsToAdd.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._itemsToOrderTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ItemsToOrder.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._itemsToAddTableAdapter.Update(deletedRows));
+                    result = (result + this._itemsToOrderTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -9913,8 +9873,8 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._itemsToAddTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._itemsToAddTableAdapter.Connection) == false))) {
+            if (((this._itemsToOrderTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._itemsToOrderTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -10022,13 +9982,13 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                         adaptersWithAcceptChangesDuringUpdate.Add(this._stockTableAdapter.Adapter);
                     }
                 }
-                if ((this._itemsToAddTableAdapter != null)) {
-                    revertConnections.Add(this._itemsToAddTableAdapter, this._itemsToAddTableAdapter.Connection);
-                    this._itemsToAddTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._itemsToAddTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._itemsToAddTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._itemsToAddTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._itemsToAddTableAdapter.Adapter);
+                if ((this._itemsToOrderTableAdapter != null)) {
+                    revertConnections.Add(this._itemsToOrderTableAdapter, this._itemsToOrderTableAdapter.Connection);
+                    this._itemsToOrderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._itemsToOrderTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._itemsToOrderTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._itemsToOrderTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._itemsToOrderTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -10121,9 +10081,9 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
                     this._stockTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._stockTableAdapter]));
                     this._stockTableAdapter.Transaction = null;
                 }
-                if ((this._itemsToAddTableAdapter != null)) {
-                    this._itemsToAddTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._itemsToAddTableAdapter]));
-                    this._itemsToAddTableAdapter.Transaction = null;
+                if ((this._itemsToOrderTableAdapter != null)) {
+                    this._itemsToOrderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._itemsToOrderTableAdapter]));
+                    this._itemsToOrderTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
