@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -30,13 +31,13 @@ namespace Istn3ASproject
 
             // TODO: This line of code loads data into the 'wstGrp11DataSet.SupplierOrder' table. You can move, or remove it, as needed.
             this.supplierOrderTableAdapter.Fill(this.wstGrp11DataSet.SupplierOrder);
-            
+
             // TODO: This line of code loads data into the 'wstGrp11DataSet.ItemsToAdd' table. You can move, or remove it, as needed.
             this.itemsToAddTableAdapter.Fill(this.wstGrp11DataSet.ItemsToAdd);
-            
+
             //Clears item to add table
             wstGrp11DataSet.ItemsToAdd.Clear();
-            
+
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
             this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
 
@@ -45,6 +46,10 @@ namespace Istn3ASproject
 
             //set the index of the combo box if the user does not want to change suppliers
             previousSupplierIndex = cbSupplier.SelectedIndex;
+
+            this.dgvOrderTable.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderTable_CellValueChanged);
+
+            //this.dgvOrderTable.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvOrderTable_CurrentCellDirtyStateChanged);
 
         }
 
@@ -265,7 +270,116 @@ namespace Istn3ASproject
 
                 // Reload the SupplierOrder data
                 supplierOrderTableAdapter.Fill(wstGrp11DataSet.SupplierOrder);
+
+                // Clear the total and also the tablw
+                tbTotal.Text = "0";
+                wstGrp11DataSet.ItemsToAdd.Clear();
             }      
+        }
+
+        private bool isUpdatingStock = false;
+        private DateTime lastUpdateTime = DateTime.MinValue;
+        private void dgvOrderTable_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Skip if we're already processing or if it's an invalid cell
+            if (isUpdatingStock || e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            // Only process OrderStatus column
+            if (dgvOrderTable.Columns[e.ColumnIndex].Name == "OrderStatus")
+            {
+                var cell = dgvOrderTable.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                // Get the test in the OrderStatus Cell
+                string newStatus = cell.Value.ToString().Trim().ToUpper();
+
+                // If the text is ARRIVED
+                if (newStatus == "ARRIVED")
+                {   
+                    // Show a message to show that the stock has been updated
+                    MessageBox.Show("The stock on hand has been updated");
+
+                    // Prevent duplicate updates within 2 seconds
+                    if ((DateTime.Now - lastUpdateTime).TotalSeconds < 2)
+                    {
+                        return;
+                    }
+
+                    // Sets a flag to show that the stock is being updated
+                    isUpdatingStock = true;
+                    try
+                    {   
+                        // Gets the supplier id from the selected row
+                        int orderID = Convert.ToInt32(dgvOrderTable.Rows[e.RowIndex].Cells["SupplierOrderID"].Value);
+                        UpdateStockOnHand(orderID);
+
+                        // This is where the time of the update is recorded to prevent duplicate updates
+                        lastUpdateTime = DateTime.Now;
+                    }
+
+                    // If a supplier order id is missing
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error updating stock: " + ex.Message);
+                    }
+
+                    // resets the flag regardless of what happen previously
+                    finally
+                    {
+                        isUpdatingStock = false;
+                    }
+                }
+            }
+        }
+
+
+        private void UpdateStockOnHand(int orderID)
+        {
+            try
+            {
+                // Get all the items first
+                var orderLines = supplierLineOrderTableAdapter.GetDataByOrderID(orderID);
+                
+                // For each item in the table
+                foreach (DataRow row in orderLines.Rows)
+                {
+                    int stockID = Convert.ToInt32(row["StockID"]);                                  // get the stock id
+                    int quantityOrdered = Convert.ToInt32(row["Quantity"]);                         // Get the quantity orders
+                    int currentStock = Convert.ToInt32(stockTableAdapter.GetStockOnHand(stockID));  // Get the current stock ordered
+                    stockTableAdapter.UpdateStockOnHand(currentStock + quantityOrdered, stockID);   // Update the stock
+                }
+
+                // Update the order status in the database
+                supplierOrderTableAdapter.UpdateOrderStatus("ARRIVED", orderID);
+
+                // Refresh the data
+                supplierOrderTableAdapter.Fill(wstGrp11DataSet.SupplierOrder);
+                stockTableAdapter.Fill(wstGrp11DataSet.Stock);
+            }
+
+            // Error handling
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating order status: " + ex.Message);
+            }
+        }
+
+        // this prevents a user from editing a row that is set to arrived
+        private void dgvOrderTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            // Only handle OrderStatus column
+            if (dgvOrderTable.Columns[e.ColumnIndex].Name == "OrderStatus")
+            {
+                // Get current status value
+                string currentStatus = dgvOrderTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                // Cancel editing if status is "ARRIVED"
+                if (currentStatus.ToUpper() == "ARRIVED")
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Cannot modify ARRIVED orders", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }
