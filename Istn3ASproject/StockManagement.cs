@@ -381,5 +381,201 @@ namespace Istn3ASproject
                 }
             }
         }
+
+        //THIS IS TO ADD A NEW ITEM TO THE STOCK TABLE
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool bname = true, bdesc = true, bsell = true, bbuy = true; //for manditory values
+                if (txtBuy.Text == "")
+                {
+                    //set label to red to show maditory value
+                    lblBuy.Text = "*Buying price:";
+                    lblBuy.ForeColor = Color.Red;
+                    bbuy = false;
+                } 
+
+                if (txtSell.Text == "")
+                {
+                    //set label to red to show maditory value
+                    lblSell.Text = "*Selling price:";
+                    lblSell.ForeColor = Color.Red;
+                    bsell = false;
+                }
+
+                if (txtName.Text == "")
+                {
+                    //set label to red to show maditory value
+                    lblName.Text = "*Product Name:";
+                    lblName.ForeColor = Color.Red;
+                    bname = false;
+                }
+
+                if (txtDesc.Text == "")
+                {
+                    //set label to red to show maditory value
+                    lblDesc.Text = "*Product Description:";
+                    lblDesc.ForeColor = Color.Red;
+                    bdesc = false;
+                }
+                
+                if (bname && bdesc && bbuy && bsell) //if all manditory values are entered
+                {
+                    DialogResult result = MessageBox.Show("Do you want to add this item to inventory?", "Confirmation", MessageBoxButtons.YesNoCancel); //confirmation message
+
+                    if (result == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Cancelled");
+                    }
+                    else if ((result == DialogResult.No))
+                    {
+                        MessageBox.Show("Item not added");
+                    }
+                    else //clicked Yes
+                    {
+                        //retrieve values
+                        string name = txtName.Text;
+                        string desc = txtDesc.Text;
+                        Decimal sell = Convert.ToDecimal(txtSell.Text);
+                        Decimal buy = Convert.ToDecimal(txtBuy.Text);
+                        int? reorder, expiration; //set to nullable int's
+
+                        if (txtReorder.Text == "") //because cant convert null to int
+                        {
+                            reorder = null;
+                        }
+                        else
+                        {
+                            reorder = Convert.ToInt32(txtReorder.Text);
+                        }
+
+                        if (txtExpiration.Text == "") //because cant convert null to int
+                        {
+                            expiration = null;
+                        }
+                        else
+                        {
+                            expiration = Convert.ToInt32(txtExpiration.Text);
+                        }
+
+                        stockTableAdapter.InsertStockItem(name, desc, sell, buy, 0, reorder, expiration); //insert query
+                        MessageBox.Show("Item added to inventory", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information); //notify added item
+
+                        //clear all textboxes
+                        txtName.Clear();
+                        txtDesc.Clear();
+                        txtSell.Clear();
+                        txtBuy.Clear();
+                        txtReorder.Clear();
+                        txtExpiration.Clear();
+
+                    }
+                } 
+                else
+                {
+                    MessageBox.Show("Please enter all manditory values", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); //warns to enter all manditory values
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Couldn't add item to inventory", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //error if value cant be added
+            }
+        }
+
+        private void txtSell_TextChanged(object sender, EventArgs e)
+        {
+            //remove red warning text
+            if (txtSell.Text!="")
+            {
+                lblSell.Text = "Selling price:";
+                lblSell.ForeColor = Color.Black;
+            }
+
+            if (txtSell.Text == "")
+            {
+                //to avoid warning message if text removed
+            } 
+            else if (!Decimal.TryParse(txtSell.Text, out _)) //validate type decimal
+            {
+                MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int len = txtSell.Text.Length;
+                txtSell.Text = txtSell.Text.Substring(0, len - 1); //remove last character typed
+                txtSell.SelectionStart = txtSell.Text.Length; //set focus to end of text typed
+            }
+        }
+
+        private void txtBuy_TextChanged(object sender, EventArgs e)
+        {
+            //remove red warning text
+            if (txtBuy.Text!="")
+            {
+                lblBuy.Text = "Buying price:";
+                lblBuy.ForeColor = Color.Black;
+            }
+
+            if (txtBuy.Text == "")
+            {
+                //to avoid warning message if text removed
+            }
+            else if (!Decimal.TryParse(txtBuy.Text, out _)) //validate type decimal
+            {
+                MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int len = txtBuy.Text.Length;
+                txtBuy.Text = txtBuy.Text.Substring(0, len - 1); //remove last character typed
+                txtBuy.SelectionStart = txtBuy.Text.Length; //set focus to end of text typed
+            }
+        }
+
+        private void txtReorder_TextChanged(object sender, EventArgs e)
+        {
+            if (txtReorder.Text == "")
+            {
+                //to avoid warning message if text removed
+            }
+            else if (!Int32.TryParse(txtReorder.Text, out _))
+            {
+                MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int len = txtReorder.Text.Length;
+                txtReorder.Text = txtReorder.Text.Substring(0, len - 1); //remove last character typed
+                txtReorder.SelectionStart = txtReorder.Text.Length; //set focus to end of text typed
+            }
+        }
+
+        private void txtExpiration_TextChanged(object sender, EventArgs e)
+        {
+            if (txtExpiration.Text == "")
+            {
+                //to avoid warning message if text removed
+            }
+            else if (!Int32.TryParse(txtExpiration.Text, out _))
+            {
+                MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int len = txtExpiration.Text.Length;
+                txtExpiration.Text = txtExpiration.Text.Substring(0, len - 1); //remove last character typed
+                txtExpiration.SelectionStart = txtExpiration.Text.Length; //set focus to end of lext typed
+            }
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            //remove red warning text
+            if (txtName.Text!=null)
+            {
+                lblName.Text = "Product Name:";
+                lblName.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtDesc_TextChanged(object sender, EventArgs e)
+        {
+            //remove red warning text
+            if (txtDesc.Text != null)
+            {
+                lblDesc.Text = "Product Description:";
+                lblDesc.ForeColor = Color.Black;
+            }
+        }
     }
 }
