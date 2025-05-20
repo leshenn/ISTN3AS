@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcStockManagement = new System.Windows.Forms.TabControl();
             this.tbpInventoryManagement = new System.Windows.Forms.TabPage();
             this.tbpSupplierOrder = new System.Windows.Forms.TabPage();
@@ -63,6 +68,7 @@
             this.expirationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabOrderDetails = new System.Windows.Forms.TabPage();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -114,11 +120,12 @@
             this.tcStockManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tcStockManagement.Name = "tcStockManagement";
             this.tcStockManagement.SelectedIndex = 0;
-            this.tcStockManagement.Size = new System.Drawing.Size(1025, 524);
+            this.tcStockManagement.Size = new System.Drawing.Size(1032, 538);
             this.tcStockManagement.TabIndex = 0;
             // 
             // tbpInventoryManagement
             // 
+            this.tbpInventoryManagement.BackColor = System.Drawing.Color.White;
             this.tbpInventoryManagement.Location = new System.Drawing.Point(4, 22);
             this.tbpInventoryManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventoryManagement.Name = "tbpInventoryManagement";
@@ -126,10 +133,10 @@
             this.tbpInventoryManagement.Size = new System.Drawing.Size(1017, 498);
             this.tbpInventoryManagement.TabIndex = 0;
             this.tbpInventoryManagement.Text = "Manage Inventory";
-            this.tbpInventoryManagement.UseVisualStyleBackColor = true;
             // 
             // tbpSupplierOrder
             // 
+            this.tbpSupplierOrder.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tbpSupplierOrder.Controls.Add(this.tbTotal);
             this.tbpSupplierOrder.Controls.Add(this.label7);
             this.tbpSupplierOrder.Controls.Add(this.btnRecord);
@@ -146,16 +153,19 @@
             this.tbpSupplierOrder.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSupplierOrder.Name = "tbpSupplierOrder";
             this.tbpSupplierOrder.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpSupplierOrder.Size = new System.Drawing.Size(1017, 498);
+            this.tbpSupplierOrder.Size = new System.Drawing.Size(1024, 512);
             this.tbpSupplierOrder.TabIndex = 1;
             this.tbpSupplierOrder.Text = "Supplier Orders";
-            this.tbpSupplierOrder.UseVisualStyleBackColor = true;
             // 
             // tbTotal
             // 
+            this.tbTotal.BackColor = System.Drawing.Color.LightBlue;
+            this.tbTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTotal.Location = new System.Drawing.Point(747, 365);
             this.tbTotal.Name = "tbTotal";
+            this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(195, 26);
             this.tbTotal.TabIndex = 11;
             this.tbTotal.Text = "0";
@@ -208,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(99, 94);
+            this.label5.Location = new System.Drawing.Point(99, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 6;
@@ -226,8 +236,11 @@
             // 
             // cbSupplier
             // 
-            this.cbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSupplier.BackColor = System.Drawing.Color.LightBlue;
+            this.cbSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSupplier.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbSupplier.FormattingEnabled = true;
             this.cbSupplier.Items.AddRange(new object[] {
             "Deep Blue Fisheries",
@@ -235,18 +248,21 @@
             "Neptune Seafood Co",
             "Aqua Harvest Suppliers",
             "Bay Fish Distributors"});
-            this.cbSupplier.Location = new System.Drawing.Point(172, 21);
+            this.cbSupplier.Location = new System.Drawing.Point(172, 24);
             this.cbSupplier.Name = "cbSupplier";
             this.cbSupplier.Size = new System.Drawing.Size(254, 28);
             this.cbSupplier.TabIndex = 4;
+            this.cbSupplier.Text = "Select";
             this.cbSupplier.SelectedIndexChanged += new System.EventHandler(this.cbSupplier_SelectedIndexChanged);
             // 
             // tbItemSearch
             // 
-            this.tbItemSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbItemSearch.Location = new System.Drawing.Point(596, 23);
+            this.tbItemSearch.BackColor = System.Drawing.Color.LightBlue;
+            this.tbItemSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbItemSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbItemSearch.Location = new System.Drawing.Point(596, 22);
             this.tbItemSearch.Name = "tbItemSearch";
-            this.tbItemSearch.Size = new System.Drawing.Size(374, 26);
+            this.tbItemSearch.Size = new System.Drawing.Size(357, 29);
             this.tbItemSearch.TabIndex = 3;
             this.tbItemSearch.TextChanged += new System.EventHandler(this.tbItemSearch_TextChanged);
             // 
@@ -262,15 +278,18 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dgvItems);
             this.panel2.Location = new System.Drawing.Point(67, 299);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(570, 175);
+            this.panel2.Size = new System.Drawing.Size(578, 185);
             this.panel2.TabIndex = 1;
             // 
             // dgvItems
             // 
             this.dgvItems.AutoGenerateColumns = false;
+            this.dgvItems.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn1,
@@ -279,10 +298,32 @@
             this.buyingPriceDataGridViewTextBoxColumn1,
             this.Quantity});
             this.dgvItems.DataSource = this.itemsToAddBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItems.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItems.EnableHeadersVisualStyles = false;
             this.dgvItems.Location = new System.Drawing.Point(15, 16);
             this.dgvItems.Name = "dgvItems";
+            this.dgvItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItems.Size = new System.Drawing.Size(546, 150);
             this.dgvItems.TabIndex = 0;
+            this.dgvItems.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvItems_CellBeginEdit);
+            this.dgvItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellEndEdit);
+            this.dgvItems.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
+            this.dgvItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvItems_DataError);
             // 
             // stockIDDataGridViewTextBoxColumn1
             // 
@@ -296,18 +337,21 @@
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // poductDescriptionDataGridViewTextBoxColumn1
             // 
             this.poductDescriptionDataGridViewTextBoxColumn1.DataPropertyName = "PoductDescription";
             this.poductDescriptionDataGridViewTextBoxColumn1.HeaderText = "PoductDescription";
             this.poductDescriptionDataGridViewTextBoxColumn1.Name = "poductDescriptionDataGridViewTextBoxColumn1";
+            this.poductDescriptionDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // buyingPriceDataGridViewTextBoxColumn1
             // 
             this.buyingPriceDataGridViewTextBoxColumn1.DataPropertyName = "BuyingPrice";
             this.buyingPriceDataGridViewTextBoxColumn1.HeaderText = "BuyingPrice";
             this.buyingPriceDataGridViewTextBoxColumn1.Name = "buyingPriceDataGridViewTextBoxColumn1";
+            this.buyingPriceDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Quantity
             // 
@@ -327,15 +371,19 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dgvSupplierStock);
-            this.panel1.Location = new System.Drawing.Point(67, 106);
+            this.panel1.Location = new System.Drawing.Point(67, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(903, 172);
+            this.panel1.Size = new System.Drawing.Size(886, 192);
             this.panel1.TabIndex = 0;
             // 
             // dgvSupplierStock
             // 
             this.dgvSupplierStock.AutoGenerateColumns = false;
+            this.dgvSupplierStock.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dgvSupplierStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvSupplierStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvSupplierStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplierStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn,
@@ -347,9 +395,30 @@
             this.reorderLevelDataGridViewTextBoxColumn,
             this.expirationTimeDataGridViewTextBoxColumn});
             this.dgvSupplierStock.DataSource = this.stockBindingSource;
-            this.dgvSupplierStock.Location = new System.Drawing.Point(15, 13);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSupplierStock.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvSupplierStock.EnableHeadersVisualStyles = false;
+            this.dgvSupplierStock.Location = new System.Drawing.Point(15, 22);
             this.dgvSupplierStock.Name = "dgvSupplierStock";
-            this.dgvSupplierStock.Size = new System.Drawing.Size(860, 150);
+            this.dgvSupplierStock.ReadOnly = true;
+            this.dgvSupplierStock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplierStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvSupplierStock.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvSupplierStock.Size = new System.Drawing.Size(850, 150);
             this.dgvSupplierStock.TabIndex = 0;
             this.dgvSupplierStock.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSupplierStock_RowHeaderMouseClick);
             // 
@@ -365,42 +434,49 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // poductDescriptionDataGridViewTextBoxColumn
             // 
             this.poductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "PoductDescription";
             this.poductDescriptionDataGridViewTextBoxColumn.HeaderText = "PoductDescription";
             this.poductDescriptionDataGridViewTextBoxColumn.Name = "poductDescriptionDataGridViewTextBoxColumn";
+            this.poductDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sellingPriceDataGridViewTextBoxColumn
             // 
             this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
             this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "SellingPrice";
             this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
+            this.sellingPriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // buyingPriceDataGridViewTextBoxColumn
             // 
             this.buyingPriceDataGridViewTextBoxColumn.DataPropertyName = "BuyingPrice";
             this.buyingPriceDataGridViewTextBoxColumn.HeaderText = "BuyingPrice";
             this.buyingPriceDataGridViewTextBoxColumn.Name = "buyingPriceDataGridViewTextBoxColumn";
+            this.buyingPriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // stockOnHandDataGridViewTextBoxColumn
             // 
             this.stockOnHandDataGridViewTextBoxColumn.DataPropertyName = "StockOnHand";
             this.stockOnHandDataGridViewTextBoxColumn.HeaderText = "StockOnHand";
             this.stockOnHandDataGridViewTextBoxColumn.Name = "stockOnHandDataGridViewTextBoxColumn";
+            this.stockOnHandDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // reorderLevelDataGridViewTextBoxColumn
             // 
             this.reorderLevelDataGridViewTextBoxColumn.DataPropertyName = "ReorderLevel";
             this.reorderLevelDataGridViewTextBoxColumn.HeaderText = "ReorderLevel";
             this.reorderLevelDataGridViewTextBoxColumn.Name = "reorderLevelDataGridViewTextBoxColumn";
+            this.reorderLevelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // expirationTimeDataGridViewTextBoxColumn
             // 
             this.expirationTimeDataGridViewTextBoxColumn.DataPropertyName = "ExpirationTime";
             this.expirationTimeDataGridViewTextBoxColumn.HeaderText = "ExpirationTime";
             this.expirationTimeDataGridViewTextBoxColumn.Name = "expirationTimeDataGridViewTextBoxColumn";
+            this.expirationTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // stockBindingSource
             // 
@@ -409,16 +485,27 @@
             // 
             // tabOrderDetails
             // 
+            this.tabOrderDetails.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabOrderDetails.Controls.Add(this.btnUpdateStatus);
             this.tabOrderDetails.Controls.Add(this.label4);
             this.tabOrderDetails.Controls.Add(this.label3);
             this.tabOrderDetails.Controls.Add(this.panel4);
             this.tabOrderDetails.Controls.Add(this.panel3);
             this.tabOrderDetails.Location = new System.Drawing.Point(4, 22);
             this.tabOrderDetails.Name = "tabOrderDetails";
-            this.tabOrderDetails.Size = new System.Drawing.Size(1017, 498);
+            this.tabOrderDetails.Size = new System.Drawing.Size(1024, 512);
             this.tabOrderDetails.TabIndex = 2;
             this.tabOrderDetails.Text = "Order Details";
-            this.tabOrderDetails.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateStatus
+            // 
+            this.btnUpdateStatus.Location = new System.Drawing.Point(894, 110);
+            this.btnUpdateStatus.Name = "btnUpdateStatus";
+            this.btnUpdateStatus.Size = new System.Drawing.Size(109, 45);
+            this.btnUpdateStatus.TabIndex = 1;
+            this.btnUpdateStatus.Text = "Update Order Status";
+            this.btnUpdateStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
             // 
             // label4
             // 
@@ -445,7 +532,7 @@
             this.panel4.Controls.Add(this.dgvOrderLines);
             this.panel4.Location = new System.Drawing.Point(65, 269);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(500, 192);
+            this.panel4.Size = new System.Drawing.Size(482, 192);
             this.panel4.TabIndex = 1;
             // 
             // dgvOrderLines
@@ -497,7 +584,7 @@
             this.panel3.Controls.Add(this.dgvOrderTable);
             this.panel3.Location = new System.Drawing.Point(65, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(816, 197);
+            this.panel3.Size = new System.Drawing.Size(823, 197);
             this.panel3.TabIndex = 0;
             // 
             // dgvOrderTable
@@ -517,7 +604,6 @@
             this.dgvOrderTable.Name = "dgvOrderTable";
             this.dgvOrderTable.Size = new System.Drawing.Size(789, 150);
             this.dgvOrderTable.TabIndex = 0;
-            this.dgvOrderTable.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvOrderTable_CellBeginEdit);
             this.dgvOrderTable.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderTable_CellValueChanged);
             this.dgvOrderTable.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrderTable_RowHeaderMouseClick);
             // 
@@ -545,6 +631,7 @@
             this.OrderStatus.DataPropertyName = "OrderStatus";
             this.OrderStatus.HeaderText = "OrderStatus";
             this.OrderStatus.Name = "OrderStatus";
+            this.OrderStatus.ReadOnly = true;
             this.OrderStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // paymentStatusDataGridViewTextBoxColumn
@@ -592,7 +679,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 524);
+            this.ClientSize = new System.Drawing.Size(1032, 538);
             this.Controls.Add(this.tcStockManagement);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmStockManagement";
@@ -663,6 +750,10 @@
         private System.Windows.Forms.Button btnRecord;
         private System.Windows.Forms.TextBox tbTotal;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderIDLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn1;
@@ -675,9 +766,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderIDLine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityLine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnUpdateStatus;
     }
 }

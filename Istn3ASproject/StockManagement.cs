@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Istn3ASproject
 {
-    public partial class frmStockManagement: Form
+    public partial class frmStockManagement : Form
     {
         private int previousSupplierIndex = -1;
         private DataTable currentFilteredStock = null;
@@ -42,14 +42,19 @@ namespace Istn3ASproject
             this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
 
             //prevent showing all stock on load
-            dgvSupplierStock.DataSource = null;
+            //dgvSupplierStock.DataSource = null;
 
             //set the index of the combo box if the user does not want to change suppliers
             previousSupplierIndex = cbSupplier.SelectedIndex;
 
             this.dgvOrderTable.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderTable_CellValueChanged);
 
-            //this.dgvOrderTable.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvOrderTable_CurrentCellDirtyStateChanged);
+            // This hides the empty "new row"
+            dgvItems.AllowUserToAddRows = false; 
+            dgvOrderLines.AllowUserToAddRows = false;
+            dgvOrderTable.AllowUserToAddRows = false;
+            dgvSupplierStock.AllowUserToAddRows = false;
+
 
         }
 
@@ -102,7 +107,7 @@ namespace Istn3ASproject
 
         // This method displays the stock items that were part of the order
         private void dgvOrderTable_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {   
+        {
             // if no row is selected, then stop, this avoids errors
             if (dgvOrderTable.CurrentRow == null) return;
 
@@ -111,13 +116,14 @@ namespace Istn3ASproject
 
             // loads the items for that specific orderID
             supplierLineOrderTableAdapter.FillByOrderID(wstGrp11DataSet.SupplierLineOrder, orderID);
-            
         }
 
 
+        /*
         // Filters the stock items base on the supplier selected in the combo box
+
         private DataTable GetFilteredStock(int selectedIndex)
-        {   
+        {
             // this just associates the supplier with their related stockIDs
             var idPairs = new[]
             {
@@ -141,6 +147,8 @@ namespace Istn3ASproject
             // otherwise it returns a new data table with the filtered rows
             return filtered.CopyToDataTable();
         }
+        */
+
 
         private bool isRevertingSelection = false;
         private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,8 +172,8 @@ namespace Istn3ASproject
                 if (result == DialogResult.Yes)
                 {
                     wstGrp11DataSet.ItemsToAdd.Clear();                             // Empty the cart
-                    currentFilteredStock = GetFilteredStock(selectedIndex);         // Load new suppliers stock
-                    dgvSupplierStock.DataSource = currentFilteredStock;             // show it in the grid
+                    //currentFilteredStock = GetFilteredStock(selectedIndex);         // Load new suppliers stock
+                    //dgvSupplierStock.DataSource = currentFilteredStock;             // show it in the grid
                     previousSupplierIndex = selectedIndex;                          // Update the previous selection
                     tbTotal.Text = "0";                                             // Set the total to 0
                 }
@@ -182,8 +190,8 @@ namespace Istn3ASproject
             // If there are no items in the cart then just update the stock grid to match the newly selected supplier
             else
             {
-                currentFilteredStock = GetFilteredStock(selectedIndex);             // Load new suppliers stock
-                dgvSupplierStock.DataSource = currentFilteredStock;                 // show it in the grid
+                //currentFilteredStock = GetFilteredStock(selectedIndex);             // Load new suppliers stock
+                //dgvSupplierStock.DataSource = currentFilteredStock;                 // show it in the grid
                 previousSupplierIndex = selectedIndex;                              // Update the previous selection
             }
         }
@@ -191,17 +199,19 @@ namespace Istn3ASproject
         private void tbItemSearch_TextChanged(object sender, EventArgs e)
         {
             // If currentFilteredStock(the current list of items from the supplier) is empty or null, it stops running
-            if (currentFilteredStock == null) return;
+            //if (currentFilteredStock == null) return;
 
             // Get the text typed by the user
             string filterText = tbItemSearch.Text;
 
+            stockTableAdapter.FillByName(wstGrp11DataSet.Stock, filterText);
+
             // Create a filtered view of the stock
-            DataView dv = new DataView(currentFilteredStock);
-            dv.RowFilter = "Name LIKE '" + filterText + "%'";
+            //DataView dv = new DataView(currentFilteredStock);
+            //dv.RowFilter = "Name LIKE '" + filterText + "%'";
 
             // Update the data grid to show the filtered results
-            dgvSupplierStock.DataSource = dv;
+            //dgvSupplierStock.DataSource = dv;
         }
 
 
@@ -209,12 +219,13 @@ namespace Istn3ASproject
         private double getTotal()
         {
             double sum = 0;
-
             // Goes through every row(item) in the dataset and adds the value to sum
             foreach (DataRow row in wstGrp11DataSet.ItemsToAdd.Rows)
-            {   
+            {
                 sum += (Convert.ToDouble(row["BuyingPrice"]) * (Convert.ToDouble(row["Quantity"])));
             }
+            
+
 
             return sum;
         }
@@ -230,7 +241,12 @@ namespace Istn3ASproject
 
         // This method runs when the Record button is clicked, and it saves an order to the database
         private void btnRecord_Click(object sender, EventArgs e)
-        {
+        {   
+            if(dgvItems.Rows.Count == 0) 
+            {
+                MessageBox.Show("Please add items to the cart before recording the order");
+                return; 
+            }
             // Show a confirmation dialog
             DialogResult result = MessageBox.Show(
                     "Do you want to record you order?",
@@ -242,7 +258,7 @@ namespace Istn3ASproject
                 // Tries to convert the total amount text into a decimal number
                 decimal total;
                 if (!decimal.TryParse(tbTotal.Text, System.Globalization.NumberStyles.Currency, null, out total))
-                {   
+                {
                     // if it fails then it shows an error
                     MessageBox.Show("Invalid total format.");
                     return;
@@ -274,8 +290,9 @@ namespace Istn3ASproject
                 // Clear the total and also the tablw
                 tbTotal.Text = "0";
                 wstGrp11DataSet.ItemsToAdd.Clear();
-            }      
+            }
         }
+
 
         private bool isUpdatingStock = false;
         private DateTime lastUpdateTime = DateTime.MinValue;
@@ -295,7 +312,7 @@ namespace Istn3ASproject
 
                 // If the text is ARRIVED
                 if (newStatus == "ARRIVED")
-                {   
+                {
                     // Show a message to show that the stock has been updated
                     MessageBox.Show("The stock on hand has been updated");
 
@@ -308,10 +325,45 @@ namespace Istn3ASproject
                     // Sets a flag to show that the stock is being updated
                     isUpdatingStock = true;
                     try
-                    {   
+                    {
                         // Gets the supplier id from the selected row
                         int orderID = Convert.ToInt32(dgvOrderTable.Rows[e.RowIndex].Cells["SupplierOrderID"].Value);
                         UpdateStockOnHand(orderID);
+
+                        // This is where the time of the update is recorded to prevent duplicate updates
+                        lastUpdateTime = DateTime.Now;
+                    }
+
+                    // If a supplier order id is missing
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error updating stock: " + ex.Message);
+                    }
+
+                    // resets the flag regardless of what happen previously
+                    finally
+                    {
+                        isUpdatingStock = false;
+                    }
+                }
+                else if (newStatus == "PENDING") 
+                {
+                    // Show a message to show that the stock has been updated
+                    MessageBox.Show("The stock on hand has been updated");
+
+                    // Prevent duplicate updates within 2 seconds
+                    if ((DateTime.Now - lastUpdateTime).TotalSeconds < 2)
+                    {
+                        return;
+                    }
+
+                    // Sets a flag to show that the stock is being updated
+                    isUpdatingStock = true;
+                    try
+                    {
+                        // Gets the supplier id from the selected row
+                        int orderID = Convert.ToInt32(dgvOrderTable.Rows[e.RowIndex].Cells["SupplierOrderID"].Value);
+                        RevertStockOnHand(orderID);
 
                         // This is where the time of the update is recorded to prevent duplicate updates
                         lastUpdateTime = DateTime.Now;
@@ -339,7 +391,7 @@ namespace Istn3ASproject
             {
                 // Get all the items first
                 var orderLines = supplierLineOrderTableAdapter.GetDataByOrderID(orderID);
-                
+
                 // For each item in the table
                 foreach (DataRow row in orderLines.Rows)
                 {
@@ -364,22 +416,117 @@ namespace Istn3ASproject
             }
         }
 
-        // this prevents a user from editing a row that is set to arrived
-        private void dgvOrderTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        // If the status is accidentally set to arrive, this method takes care of reverting it back to its original value
+        private void RevertStockOnHand(int orderID)
         {
-            // Only handle OrderStatus column
-            if (dgvOrderTable.Columns[e.ColumnIndex].Name == "OrderStatus")
+            try
             {
-                // Get current status value
-                string currentStatus = dgvOrderTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                var orderLines = supplierLineOrderTableAdapter.GetDataByOrderID(orderID);
 
-                // Cancel editing if status is "ARRIVED"
-                if (currentStatus.ToUpper() == "ARRIVED")
+                foreach (DataRow row in orderLines.Rows)
                 {
-                    e.Cancel = true;
-                    MessageBox.Show("Cannot modify ARRIVED orders", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int stockID = Convert.ToInt32(row["StockID"]);
+                    int quantityOrdered = Convert.ToInt32(row["Quantity"]);
+                    int currentStock = Convert.ToInt32(stockTableAdapter.GetStockOnHand(stockID));
+
+                    int newStock = currentStock - quantityOrdered;
+                    if (newStock < 0) newStock = 0; // prevent negative stock
+
+                    stockTableAdapter.UpdateStockOnHand(newStock, stockID);
                 }
+
+                // Update order status
+                supplierOrderTableAdapter.UpdateOrderStatus("PENDING", orderID);
+
+                // Refresh views
+                supplierOrderTableAdapter.Fill(wstGrp11DataSet.SupplierOrder);
+                stockTableAdapter.Fill(wstGrp11DataSet.Stock);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reverting order status: " + ex.Message);
+            }
+        }
+
+
+        private void dgvItems_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            // Skip if not Quantity column or if we're already cancelling
+            if (dgvItems.Columns[e.ColumnIndex].Name != "Quantity" ||
+                dgvItems.Rows[e.RowIndex].IsNewRow ||
+                isCancellingEdit)
+            {
+                return;
+            }
+
+            if (!int.TryParse(e.FormattedValue.ToString(), out int qty) || qty < 1)
+            {
+                // Set flag to indicate we're cancelling
+                isCancellingEdit = true;
+
+                // Cancel the edit
+                e.Cancel = true;
+
+                // Show message
+                MessageBox.Show("Quantity must be a positive whole number");
+
+                // Reset the value
+                dgvItems.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalQuantityValue;
+
+                // Refresh the total
+                tbTotal.Text = getTotal().ToString("C2");
+            }
+        }
+
+
+
+        private object originalQuantityValue;
+        private bool isCancellingEdit = false;
+        private void dgvItems_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvItems.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                // Store original value
+                originalQuantityValue = dgvItems.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                isCancellingEdit = false;
+            }
+        }
+
+        private void dgvItems_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvItems.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                // If we're not cancelling, update the total
+                if (!isCancellingEdit)
+                {
+                    tbTotal.Text = getTotal().ToString("C2");
+                }
+                isCancellingEdit = false;
+            }
+        }
+
+        private void dgvItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            if (dgvItems.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                dgvItems.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalQuantityValue;
+            }
+        }
+
+        private void btnUpdateStatus_Click(object sender, EventArgs e)
+        {
+            String orderStatus = dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value.ToString();
+
+            if(orderStatus == "PENDING")
+            {
+                dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value = "ARRIVED";
+            }
+            else
+            {
+                dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value = "PENDING";
+            }
+            //MessageBox.Show(ordStatus);
         }
     }
 }
