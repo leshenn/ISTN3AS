@@ -77,7 +77,7 @@ namespace Istn3ASproject
             this.btnSearchByNo = new System.Windows.Forms.Button();
             this.gvCustomer = new System.Windows.Forms.DataGridView();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+//            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,7 +156,8 @@ namespace Istn3ASproject
             this.contactNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tpgSuppliers = new System.Windows.Forms.TabPage();
+            this.tbpSuppliers = new System.Windows.Forms.TabPage();
+            this.tbpSuppliers = new System.Windows.Forms.TabPage();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             
             this.gbUpdateSupplier = new System.Windows.Forms.GroupBox();
@@ -216,9 +217,9 @@ namespace Istn3ASproject
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).BeginInit();
             this.tbpStaff.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
-            this.tpgSuppliers.SuspendLayout();
+            this.tbpSuppliers.SuspendLayout();
             this.gbUpdateSupplier.SuspendLayout();
             this.gbAddSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSupplier)).BeginInit();
@@ -240,7 +241,7 @@ namespace Istn3ASproject
             // 
             this.tcUserManagement.Controls.Add(this.tbpCustomers);
             this.tcUserManagement.Controls.Add(this.tbpStaff);
-            this.tcUserManagement.Controls.Add(this.tpgSuppliers);
+            this.tcUserManagement.Controls.Add(this.tbpSuppliers);
             this.tcUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcUserManagement.Location = new System.Drawing.Point(0, 0);
             this.tcUserManagement.Margin = new System.Windows.Forms.Padding(2);
@@ -1154,14 +1155,14 @@ namespace Istn3ASproject
             this.dgvStaffMgt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvStaffMgt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvStaffMgt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaffMgt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            /*this.dgvStaffMgt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.staffIDDataGridViewTextBoxColumn,
             this.userNameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.contactNoDataGridViewTextBoxColumn,
-            this.roleDataGridViewTextBoxColumn});
+            this.roleDataGridViewTextBoxColumn});*/
             this.dgvStaffMgt.DataSource = this.staffBindingSource;
             this.dgvStaffMgt.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dgvStaffMgt.Location = new System.Drawing.Point(22, 60);
@@ -1244,23 +1245,23 @@ namespace Istn3ASproject
             this.staffBindingSource.DataMember = "Staff";
             this.staffBindingSource.DataSource = this.wstGrp11DataSet;
             // 
-            // tpgSuppliers
+            // tbpSuppliers
             // 
-            this.tpgSuppliers.Controls.Add(this.comboBox3);
-            this.tpgSuppliers.Controls.Add(this.label34);
-            this.tpgSuppliers.Controls.Add(this.gbUpdateSupplier);
-            this.tpgSuppliers.Controls.Add(this.gbAddSupplier);
-            this.tpgSuppliers.Controls.Add(this.button1);
-            this.tpgSuppliers.Controls.Add(this.gvSupplier);
-            this.tpgSuppliers.Controls.Add(lblSupplierSearch);
-            this.tpgSuppliers.Controls.Add(this.btnSearchSupplier);
-            this.tpgSuppliers.Controls.Add(this.txtSearch);
-            this.tpgSuppliers.Location = new System.Drawing.Point(4, 25);
-            this.tpgSuppliers.Name = "tpgSuppliers";
-            this.tpgSuppliers.Size = new System.Drawing.Size(1574, 824);
-            this.tpgSuppliers.TabIndex = 2;
-            this.tpgSuppliers.Text = "Suppliers";
-            this.tpgSuppliers.UseVisualStyleBackColor = true;
+            this.tbpSuppliers.Controls.Add(this.comboBox3);
+            
+            this.tbpSuppliers.Controls.Add(this.gbUpdateSupplier);
+            this.tbpSuppliers.Controls.Add(this.gbAddSupplier);
+            this.tbpSuppliers.Controls.Add(this.button1);
+            this.tbpSuppliers.Controls.Add(this.gvSupplier);
+            this.tbpSuppliers.Controls.Add(lblSupplierSearch);
+            this.tbpSuppliers.Controls.Add(this.btnSearchSupplier);
+            this.tbpSuppliers.Controls.Add(this.txtSearch);
+            this.tbpSuppliers.Location = new System.Drawing.Point(4, 25);
+            this.tbpSuppliers.Name = "tbpSuppliers";
+            this.tbpSuppliers.Size = new System.Drawing.Size(1574, 824);
+            this.tbpSuppliers.TabIndex = 2;
+            this.tbpSuppliers.Text = "Suppliers";
+            this.tbpSuppliers.UseVisualStyleBackColor = true;
             // 
             // comboBox3
             // 
@@ -1949,8 +1950,8 @@ namespace Istn3ASproject
             this.tbpStaff.ResumeLayout(false);
          
            
-            this.tpgSuppliers.ResumeLayout(false);
-            this.tpgSuppliers.PerformLayout();
+            //this.tbpSuppliers.ResumeLayout(false);
+           // this.tbpSuppliers.PerformLayout();
             this.gbUpdateSupplier.ResumeLayout(false);
             this.gbUpdateSupplier.PerformLayout();
             this.gbAddSupplier.ResumeLayout(false);
@@ -1978,9 +1979,9 @@ namespace Istn3ASproject
         private System.Windows.Forms.BindingSource customerBindingSource;
         private WstGrp11DataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
+       // private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+       // private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+       // private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
@@ -2038,7 +2039,7 @@ namespace Istn3ASproject
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+     //   private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView gvSupplier;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private WstGrp11DataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;

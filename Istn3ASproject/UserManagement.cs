@@ -100,7 +100,7 @@ namespace Istn3ASproject
 
             
 
-        }
+        
 
        
 
@@ -346,6 +346,7 @@ namespace Istn3ASproject
             {
                 txtLastNameStaff.ForeColor = Color.Black;
             }
+        }
 
               
 
