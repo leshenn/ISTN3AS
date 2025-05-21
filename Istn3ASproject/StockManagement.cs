@@ -26,6 +26,10 @@ namespace Istn3ASproject
 
         private void frmStockManagement_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp11DataSet.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.wstGrp11DataSet.Supplier);
+            // TODO: This line of code loads data into the 'wstGrp11DataSet.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.wstGrp11DataSet.Supplier);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.SupplierLineOrder' table. You can move, or remove it, as needed.
             //this.supplierLineOrderTableAdapter.Fill(this.wstGrp11DataSet.SupplierLineOrder);
 
@@ -518,7 +522,7 @@ namespace Istn3ASproject
         {
             String orderStatus = dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value.ToString();
 
-            if(orderStatus == "PENDING")
+            if (orderStatus == "PENDING")
             {
                 dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value = "ARRIVED";
             }
@@ -527,6 +531,11 @@ namespace Istn3ASproject
                 dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value = "PENDING";
             }
             //MessageBox.Show(ordStatus);
+        }
+
+        private void addItemsToCombobox()
+        {
+
         }
 
         //THIS IS TO ADD A NEW ITEM TO THE STOCK TABLE
@@ -554,16 +563,16 @@ namespace Istn3ASproject
                 if (txtName.Text == "")
                 {
                     //set label to red to show maditory value
-                    lblName.Text = "*Product Name:";
-                    lblName.ForeColor = Color.Red;
+                    lblProductName.Text = "*Product Name:";
+                    lblProductName.ForeColor = Color.Red;
                     bname = false;
                 }
 
                 if (txtDesc.Text == "")
                 {
                     //set label to red to show maditory value
-                    lblDesc.Text = "*Product Description:";
-                    lblDesc.ForeColor = Color.Red;
+                    lblProductDesc.Text = "*Product Description:";
+                    lblProductDesc.ForeColor = Color.Red;
                     bdesc = false;
                 }
                 
@@ -710,8 +719,8 @@ namespace Istn3ASproject
             //remove red warning text
             if (txtName.Text!=null)
             {
-                lblName.Text = "Product Name:";
-                lblName.ForeColor = Color.Black;
+                lblProductName.Text = "Product Name:";
+                lblProductName.ForeColor = Color.Black;
             }
         }
 
@@ -720,8 +729,8 @@ namespace Istn3ASproject
             //remove red warning text
             if (txtDesc.Text != null)
             {
-                lblDesc.Text = "Product Description:";
-                lblDesc.ForeColor = Color.Black;
+                lblProductDesc.Text = "Product Description:";
+                lblProductDesc.ForeColor = Color.Black;
             }
         }
     }
