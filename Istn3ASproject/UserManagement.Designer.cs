@@ -32,43 +32,42 @@
             this.tcUserManagement = new System.Windows.Forms.TabControl();
             this.tbpCustomers = new System.Windows.Forms.TabPage();
             this.tbpStaff = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnArchiveStaff = new System.Windows.Forms.Button();
+            this.lblStaffMgtHeading = new System.Windows.Forms.Label();
+            this.txtSearchStaffByName = new System.Windows.Forms.TextBox();
+            this.lblSearchStaff = new System.Windows.Forms.Label();
+            this.lblFilterRole = new System.Windows.Forms.Label();
+            this.cmbFilterByRole = new System.Windows.Forms.ComboBox();
+            this.gbxUpdateStaff = new System.Windows.Forms.GroupBox();
+            this.lblSelectAstaffMemeber = new System.Windows.Forms.Label();
             this.cmbStaffRoleUpdate = new System.Windows.Forms.ComboBox();
             this.txtContactUpdate = new System.Windows.Forms.MaskedTextBox();
             this.btnUpdateStaff = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblUpdateStaffRole = new System.Windows.Forms.Label();
+            this.lblUpdateStaffContactNo = new System.Windows.Forms.Label();
+            this.lblUpdateStaffLastName = new System.Windows.Forms.Label();
             this.txtLastNameUpdate = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblUpdateStaffFirstName = new System.Windows.Forms.Label();
             this.txtNameUpdate = new System.Windows.Forms.TextBox();
             this.txtPasswordUpdate = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblUpdateStaffpassword = new System.Windows.Forms.Label();
             this.txtUsernameUpdate = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblUpdateStaffUusername = new System.Windows.Forms.Label();
+            this.gbxAddNewStaff = new System.Windows.Forms.GroupBox();
             this.cmbStaffRole = new System.Windows.Forms.ComboBox();
             this.txtContactStaff = new System.Windows.Forms.MaskedTextBox();
             this.btnAddStaffMember = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblRoleFilterAddNewStaff = new System.Windows.Forms.Label();
+            this.lblContactNoStaff = new System.Windows.Forms.Label();
+            this.lblLastNameStaff = new System.Windows.Forms.Label();
             this.txtLastNameStaff = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblFirstNameStaff = new System.Windows.Forms.Label();
             this.txtFirstNameStaff = new System.Windows.Forms.TextBox();
             this.txtPasswordStaff = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.txtUsernameStaff = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsernameStaff = new System.Windows.Forms.Label();
             this.dgvStaffMgt = new System.Windows.Forms.DataGridView();
-            this.tbpSuppliers = new System.Windows.Forms.TabPage();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cmbFilterByRole = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtSearchStaffByName = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnArchiveStaff = new System.Windows.Forms.Button();
             this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,12 +77,13 @@
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
+            this.tbpSuppliers = new System.Windows.Forms.TabPage();
             this.staffTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StaffTableAdapter();
             this.staffBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tcUserManagement.SuspendLayout();
             this.tbpStaff.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbxUpdateStaff.SuspendLayout();
+            this.gbxAddNewStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffMgt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).BeginInit();
@@ -117,13 +117,13 @@
             // tbpStaff
             // 
             this.tbpStaff.Controls.Add(this.btnArchiveStaff);
-            this.tbpStaff.Controls.Add(this.label16);
+            this.tbpStaff.Controls.Add(this.lblStaffMgtHeading);
             this.tbpStaff.Controls.Add(this.txtSearchStaffByName);
-            this.tbpStaff.Controls.Add(this.label15);
-            this.tbpStaff.Controls.Add(this.label14);
+            this.tbpStaff.Controls.Add(this.lblSearchStaff);
+            this.tbpStaff.Controls.Add(this.lblFilterRole);
             this.tbpStaff.Controls.Add(this.cmbFilterByRole);
-            this.tbpStaff.Controls.Add(this.groupBox2);
-            this.tbpStaff.Controls.Add(this.groupBox1);
+            this.tbpStaff.Controls.Add(this.gbxUpdateStaff);
+            this.tbpStaff.Controls.Add(this.gbxAddNewStaff);
             this.tbpStaff.Controls.Add(this.dgvStaffMgt);
             this.tbpStaff.Location = new System.Drawing.Point(4, 22);
             this.tbpStaff.Margin = new System.Windows.Forms.Padding(2);
@@ -134,29 +134,102 @@
             this.tbpStaff.Text = "Staff";
             this.tbpStaff.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // btnArchiveStaff
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.cmbStaffRoleUpdate);
-            this.groupBox2.Controls.Add(this.txtContactUpdate);
-            this.groupBox2.Controls.Add(this.btnUpdateStaff);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtLastNameUpdate);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtNameUpdate);
-            this.groupBox2.Controls.Add(this.txtPasswordUpdate);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtUsernameUpdate);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(22, 376);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(732, 131);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Update Staff Member";
+            this.btnArchiveStaff.BackColor = System.Drawing.Color.Cyan;
+            this.btnArchiveStaff.ForeColor = System.Drawing.Color.Black;
+            this.btnArchiveStaff.Location = new System.Drawing.Point(634, 187);
+            this.btnArchiveStaff.Name = "btnArchiveStaff";
+            this.btnArchiveStaff.Size = new System.Drawing.Size(119, 23);
+            this.btnArchiveStaff.TabIndex = 21;
+            this.btnArchiveStaff.Text = "Archive Staff Member";
+            this.btnArchiveStaff.UseVisualStyleBackColor = false;
+            this.btnArchiveStaff.Click += new System.EventHandler(this.btnArchiveStaff_Click);
+            // 
+            // lblStaffMgtHeading
+            // 
+            this.lblStaffMgtHeading.AutoSize = true;
+            this.lblStaffMgtHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffMgtHeading.Location = new System.Drawing.Point(22, 28);
+            this.lblStaffMgtHeading.Name = "lblStaffMgtHeading";
+            this.lblStaffMgtHeading.Size = new System.Drawing.Size(110, 13);
+            this.lblStaffMgtHeading.TabIndex = 20;
+            this.lblStaffMgtHeading.Text = "Staff Management";
+            // 
+            // txtSearchStaffByName
+            // 
+            this.txtSearchStaffByName.Location = new System.Drawing.Point(633, 154);
+            this.txtSearchStaffByName.Name = "txtSearchStaffByName";
+            this.txtSearchStaffByName.Size = new System.Drawing.Size(121, 20);
+            this.txtSearchStaffByName.TabIndex = 19;
+            this.txtSearchStaffByName.TextChanged += new System.EventHandler(this.txtSearchStaffByName_TextChanged);
+            // 
+            // lblSearchStaff
+            // 
+            this.lblSearchStaff.AutoSize = true;
+            this.lblSearchStaff.Location = new System.Drawing.Point(632, 131);
+            this.lblSearchStaff.Name = "lblSearchStaff";
+            this.lblSearchStaff.Size = new System.Drawing.Size(115, 13);
+            this.lblSearchStaff.TabIndex = 18;
+            this.lblSearchStaff.Text = "Search Staff By Name:";
+            // 
+            // lblFilterRole
+            // 
+            this.lblFilterRole.AutoSize = true;
+            this.lblFilterRole.Location = new System.Drawing.Point(635, 65);
+            this.lblFilterRole.Name = "lblFilterRole";
+            this.lblFilterRole.Size = new System.Drawing.Size(69, 13);
+            this.lblFilterRole.TabIndex = 17;
+            this.lblFilterRole.Text = "Filter By Role";
+            // 
+            // cmbFilterByRole
+            // 
+            this.cmbFilterByRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbFilterByRole.FormattingEnabled = true;
+            this.cmbFilterByRole.Items.AddRange(new object[] {
+            "Owner",
+            "Manager",
+            "Cashier",
+            "Terminated"});
+            this.cmbFilterByRole.Location = new System.Drawing.Point(633, 82);
+            this.cmbFilterByRole.Name = "cmbFilterByRole";
+            this.cmbFilterByRole.Size = new System.Drawing.Size(121, 21);
+            this.cmbFilterByRole.TabIndex = 16;
+            this.cmbFilterByRole.Text = "Select Staff Role -->";
+            this.cmbFilterByRole.SelectedIndexChanged += new System.EventHandler(this.cmbFilterByRole_SelectedIndexChanged);
+            // 
+            // gbxUpdateStaff
+            // 
+            this.gbxUpdateStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gbxUpdateStaff.Controls.Add(this.lblSelectAstaffMemeber);
+            this.gbxUpdateStaff.Controls.Add(this.cmbStaffRoleUpdate);
+            this.gbxUpdateStaff.Controls.Add(this.txtContactUpdate);
+            this.gbxUpdateStaff.Controls.Add(this.btnUpdateStaff);
+            this.gbxUpdateStaff.Controls.Add(this.lblUpdateStaffRole);
+            this.gbxUpdateStaff.Controls.Add(this.lblUpdateStaffContactNo);
+            this.gbxUpdateStaff.Controls.Add(this.lblUpdateStaffLastName);
+            this.gbxUpdateStaff.Controls.Add(this.txtLastNameUpdate);
+            this.gbxUpdateStaff.Controls.Add(this.lblUpdateStaffFirstName);
+            this.gbxUpdateStaff.Controls.Add(this.txtNameUpdate);
+            this.gbxUpdateStaff.Controls.Add(this.txtPasswordUpdate);
+            this.gbxUpdateStaff.Controls.Add(this.lblUpdateStaffpassword);
+            this.gbxUpdateStaff.Controls.Add(this.txtUsernameUpdate);
+            this.gbxUpdateStaff.Controls.Add(this.lblUpdateStaffUusername);
+            this.gbxUpdateStaff.Location = new System.Drawing.Point(22, 376);
+            this.gbxUpdateStaff.Name = "gbxUpdateStaff";
+            this.gbxUpdateStaff.Size = new System.Drawing.Size(732, 131);
+            this.gbxUpdateStaff.TabIndex = 15;
+            this.gbxUpdateStaff.TabStop = false;
+            this.gbxUpdateStaff.Text = "Update Staff Member";
+            // 
+            // lblSelectAstaffMemeber
+            // 
+            this.lblSelectAstaffMemeber.AutoSize = true;
+            this.lblSelectAstaffMemeber.Location = new System.Drawing.Point(322, 104);
+            this.lblSelectAstaffMemeber.Name = "lblSelectAstaffMemeber";
+            this.lblSelectAstaffMemeber.Size = new System.Drawing.Size(173, 13);
+            this.lblSelectAstaffMemeber.TabIndex = 15;
+            this.lblSelectAstaffMemeber.Text = "**Select A staff Member To Update";
             // 
             // cmbStaffRoleUpdate
             // 
@@ -189,32 +262,32 @@
             this.btnUpdateStaff.UseVisualStyleBackColor = false;
             this.btnUpdateStaff.Click += new System.EventHandler(this.btnUpdateStaff_Click);
             // 
-            // label7
+            // lblUpdateStaffRole
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 89);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Role:";
+            this.lblUpdateStaffRole.AutoSize = true;
+            this.lblUpdateStaffRole.Location = new System.Drawing.Point(9, 89);
+            this.lblUpdateStaffRole.Name = "lblUpdateStaffRole";
+            this.lblUpdateStaffRole.Size = new System.Drawing.Size(32, 13);
+            this.lblUpdateStaffRole.TabIndex = 11;
+            this.lblUpdateStaffRole.Text = "Role:";
             // 
-            // label8
+            // lblUpdateStaffContactNo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(606, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Contact No. :";
+            this.lblUpdateStaffContactNo.AutoSize = true;
+            this.lblUpdateStaffContactNo.Location = new System.Drawing.Point(606, 24);
+            this.lblUpdateStaffContactNo.Name = "lblUpdateStaffContactNo";
+            this.lblUpdateStaffContactNo.Size = new System.Drawing.Size(70, 13);
+            this.lblUpdateStaffContactNo.TabIndex = 9;
+            this.lblUpdateStaffContactNo.Text = "Contact No. :";
             // 
-            // label9
+            // lblUpdateStaffLastName
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(460, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Last Name:";
+            this.lblUpdateStaffLastName.AutoSize = true;
+            this.lblUpdateStaffLastName.Location = new System.Drawing.Point(460, 24);
+            this.lblUpdateStaffLastName.Name = "lblUpdateStaffLastName";
+            this.lblUpdateStaffLastName.Size = new System.Drawing.Size(61, 13);
+            this.lblUpdateStaffLastName.TabIndex = 7;
+            this.lblUpdateStaffLastName.Text = "Last Name:";
             // 
             // txtLastNameUpdate
             // 
@@ -224,14 +297,14 @@
             this.txtLastNameUpdate.TabIndex = 6;
             this.txtLastNameUpdate.TextChanged += new System.EventHandler(this.txtLastNameUpdate_TextChanged);
             // 
-            // label10
+            // lblUpdateStaffFirstName
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(326, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "First Name:";
+            this.lblUpdateStaffFirstName.AutoSize = true;
+            this.lblUpdateStaffFirstName.Location = new System.Drawing.Point(326, 24);
+            this.lblUpdateStaffFirstName.Name = "lblUpdateStaffFirstName";
+            this.lblUpdateStaffFirstName.Size = new System.Drawing.Size(60, 13);
+            this.lblUpdateStaffFirstName.TabIndex = 5;
+            this.lblUpdateStaffFirstName.Text = "First Name:";
             // 
             // txtNameUpdate
             // 
@@ -249,14 +322,14 @@
             this.txtPasswordUpdate.TabIndex = 3;
             this.txtPasswordUpdate.TextChanged += new System.EventHandler(this.txtPasswordUpdate_TextChanged);
             // 
-            // label11
+            // lblUpdateStaffpassword
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(169, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Password:";
+            this.lblUpdateStaffpassword.AutoSize = true;
+            this.lblUpdateStaffpassword.Location = new System.Drawing.Point(169, 24);
+            this.lblUpdateStaffpassword.Name = "lblUpdateStaffpassword";
+            this.lblUpdateStaffpassword.Size = new System.Drawing.Size(56, 13);
+            this.lblUpdateStaffpassword.TabIndex = 2;
+            this.lblUpdateStaffpassword.Text = "Password:";
             // 
             // txtUsernameUpdate
             // 
@@ -267,37 +340,37 @@
             this.txtUsernameUpdate.TabIndex = 1;
             this.txtUsernameUpdate.TextChanged += new System.EventHandler(this.txtUsernameUpdate_TextChanged);
             // 
-            // label12
+            // lblUpdateStaffUusername
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 24);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Username:";
+            this.lblUpdateStaffUusername.AutoSize = true;
+            this.lblUpdateStaffUusername.Location = new System.Drawing.Point(7, 24);
+            this.lblUpdateStaffUusername.Name = "lblUpdateStaffUusername";
+            this.lblUpdateStaffUusername.Size = new System.Drawing.Size(58, 13);
+            this.lblUpdateStaffUusername.TabIndex = 0;
+            this.lblUpdateStaffUusername.Text = "Username:";
             // 
-            // groupBox1
+            // gbxAddNewStaff
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.cmbStaffRole);
-            this.groupBox1.Controls.Add(this.txtContactStaff);
-            this.groupBox1.Controls.Add(this.btnAddStaffMember);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtLastNameStaff);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtFirstNameStaff);
-            this.groupBox1.Controls.Add(this.txtPasswordStaff);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtUsernameStaff);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 233);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(732, 131);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add New Staff Member";
+            this.gbxAddNewStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gbxAddNewStaff.Controls.Add(this.cmbStaffRole);
+            this.gbxAddNewStaff.Controls.Add(this.txtContactStaff);
+            this.gbxAddNewStaff.Controls.Add(this.btnAddStaffMember);
+            this.gbxAddNewStaff.Controls.Add(this.lblRoleFilterAddNewStaff);
+            this.gbxAddNewStaff.Controls.Add(this.lblContactNoStaff);
+            this.gbxAddNewStaff.Controls.Add(this.lblLastNameStaff);
+            this.gbxAddNewStaff.Controls.Add(this.txtLastNameStaff);
+            this.gbxAddNewStaff.Controls.Add(this.lblFirstNameStaff);
+            this.gbxAddNewStaff.Controls.Add(this.txtFirstNameStaff);
+            this.gbxAddNewStaff.Controls.Add(this.txtPasswordStaff);
+            this.gbxAddNewStaff.Controls.Add(this.lblPassword);
+            this.gbxAddNewStaff.Controls.Add(this.txtUsernameStaff);
+            this.gbxAddNewStaff.Controls.Add(this.lblUsernameStaff);
+            this.gbxAddNewStaff.Location = new System.Drawing.Point(22, 233);
+            this.gbxAddNewStaff.Name = "gbxAddNewStaff";
+            this.gbxAddNewStaff.Size = new System.Drawing.Size(732, 131);
+            this.gbxAddNewStaff.TabIndex = 1;
+            this.gbxAddNewStaff.TabStop = false;
+            this.gbxAddNewStaff.Text = "Add New Staff Member";
             // 
             // cmbStaffRole
             // 
@@ -331,32 +404,32 @@
             this.btnAddStaffMember.UseVisualStyleBackColor = false;
             this.btnAddStaffMember.Click += new System.EventHandler(this.btnAddStaffMember_Click);
             // 
-            // label6
+            // lblRoleFilterAddNewStaff
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 89);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Role:";
+            this.lblRoleFilterAddNewStaff.AutoSize = true;
+            this.lblRoleFilterAddNewStaff.Location = new System.Drawing.Point(9, 89);
+            this.lblRoleFilterAddNewStaff.Name = "lblRoleFilterAddNewStaff";
+            this.lblRoleFilterAddNewStaff.Size = new System.Drawing.Size(32, 13);
+            this.lblRoleFilterAddNewStaff.TabIndex = 11;
+            this.lblRoleFilterAddNewStaff.Text = "Role:";
             // 
-            // label5
+            // lblContactNoStaff
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(606, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Contact No. :";
+            this.lblContactNoStaff.AutoSize = true;
+            this.lblContactNoStaff.Location = new System.Drawing.Point(606, 24);
+            this.lblContactNoStaff.Name = "lblContactNoStaff";
+            this.lblContactNoStaff.Size = new System.Drawing.Size(70, 13);
+            this.lblContactNoStaff.TabIndex = 9;
+            this.lblContactNoStaff.Text = "Contact No. :";
             // 
-            // label4
+            // lblLastNameStaff
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(460, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Last Name:";
+            this.lblLastNameStaff.AutoSize = true;
+            this.lblLastNameStaff.Location = new System.Drawing.Point(460, 24);
+            this.lblLastNameStaff.Name = "lblLastNameStaff";
+            this.lblLastNameStaff.Size = new System.Drawing.Size(61, 13);
+            this.lblLastNameStaff.TabIndex = 7;
+            this.lblLastNameStaff.Text = "Last Name:";
             // 
             // txtLastNameStaff
             // 
@@ -366,14 +439,14 @@
             this.txtLastNameStaff.TabIndex = 6;
             this.txtLastNameStaff.TextChanged += new System.EventHandler(this.txtLastNameStaff_TextChanged);
             // 
-            // label3
+            // lblFirstNameStaff
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(326, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "First Name:";
+            this.lblFirstNameStaff.AutoSize = true;
+            this.lblFirstNameStaff.Location = new System.Drawing.Point(326, 24);
+            this.lblFirstNameStaff.Name = "lblFirstNameStaff";
+            this.lblFirstNameStaff.Size = new System.Drawing.Size(60, 13);
+            this.lblFirstNameStaff.TabIndex = 5;
+            this.lblFirstNameStaff.Text = "First Name:";
             // 
             // txtFirstNameStaff
             // 
@@ -391,14 +464,14 @@
             this.txtPasswordStaff.TabIndex = 3;
             this.txtPasswordStaff.TextChanged += new System.EventHandler(this.txtPasswordStaff_TextChanged);
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(169, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password:";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(169, 24);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 2;
+            this.lblPassword.Text = "Password:";
             // 
             // txtUsernameStaff
             // 
@@ -408,14 +481,14 @@
             this.txtUsernameStaff.TabIndex = 1;
             this.txtUsernameStaff.TextChanged += new System.EventHandler(this.txtUsernameStaff_TextChanged);
             // 
-            // label1
+            // lblUsernameStaff
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username:";
+            this.lblUsernameStaff.AutoSize = true;
+            this.lblUsernameStaff.Location = new System.Drawing.Point(7, 24);
+            this.lblUsernameStaff.Name = "lblUsernameStaff";
+            this.lblUsernameStaff.Size = new System.Drawing.Size(58, 13);
+            this.lblUsernameStaff.TabIndex = 0;
+            this.lblUsernameStaff.Text = "Username:";
             // 
             // dgvStaffMgt
             // 
@@ -438,89 +511,6 @@
             this.dgvStaffMgt.Size = new System.Drawing.Size(593, 150);
             this.dgvStaffMgt.TabIndex = 0;
             this.dgvStaffMgt.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStaffMgt_CellMouseClick);
-            // 
-            // tbpSuppliers
-            // 
-            this.tbpSuppliers.Location = new System.Drawing.Point(4, 22);
-            this.tbpSuppliers.Margin = new System.Windows.Forms.Padding(2);
-            this.tbpSuppliers.Name = "tbpSuppliers";
-            this.tbpSuppliers.Size = new System.Drawing.Size(789, 515);
-            this.tbpSuppliers.TabIndex = 2;
-            this.tbpSuppliers.Text = "Suppliers";
-            this.tbpSuppliers.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(322, 104);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "**Select A staff Member To Update";
-            // 
-            // cmbFilterByRole
-            // 
-            this.cmbFilterByRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbFilterByRole.FormattingEnabled = true;
-            this.cmbFilterByRole.Items.AddRange(new object[] {
-            "Owner",
-            "Manager",
-            "Cashier",
-            "Terminated"});
-            this.cmbFilterByRole.Location = new System.Drawing.Point(633, 82);
-            this.cmbFilterByRole.Name = "cmbFilterByRole";
-            this.cmbFilterByRole.Size = new System.Drawing.Size(121, 21);
-            this.cmbFilterByRole.TabIndex = 16;
-            this.cmbFilterByRole.Text = "Select Staff Role -->";
-            this.cmbFilterByRole.SelectedIndexChanged += new System.EventHandler(this.cmbFilterByRole_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(635, 65);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Filter By Role";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(632, 131);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(115, 13);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Search Staff By Name:";
-            // 
-            // txtSearchStaffByName
-            // 
-            this.txtSearchStaffByName.Location = new System.Drawing.Point(633, 154);
-            this.txtSearchStaffByName.Name = "txtSearchStaffByName";
-            this.txtSearchStaffByName.Size = new System.Drawing.Size(121, 20);
-            this.txtSearchStaffByName.TabIndex = 19;
-            this.txtSearchStaffByName.TextChanged += new System.EventHandler(this.txtSearchStaffByName_TextChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(22, 28);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 13);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Staff Management";
-            // 
-            // btnArchiveStaff
-            // 
-            this.btnArchiveStaff.BackColor = System.Drawing.Color.Cyan;
-            this.btnArchiveStaff.ForeColor = System.Drawing.Color.Black;
-            this.btnArchiveStaff.Location = new System.Drawing.Point(634, 187);
-            this.btnArchiveStaff.Name = "btnArchiveStaff";
-            this.btnArchiveStaff.Size = new System.Drawing.Size(119, 23);
-            this.btnArchiveStaff.TabIndex = 21;
-            this.btnArchiveStaff.Text = "Archive Staff Member";
-            this.btnArchiveStaff.UseVisualStyleBackColor = false;
-            this.btnArchiveStaff.Click += new System.EventHandler(this.btnArchiveStaff_Click);
             // 
             // staffIDDataGridViewTextBoxColumn
             // 
@@ -582,6 +572,16 @@
             this.wstGrp11DataSet.DataSetName = "WstGrp11DataSet";
             this.wstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // tbpSuppliers
+            // 
+            this.tbpSuppliers.Location = new System.Drawing.Point(4, 22);
+            this.tbpSuppliers.Margin = new System.Windows.Forms.Padding(2);
+            this.tbpSuppliers.Name = "tbpSuppliers";
+            this.tbpSuppliers.Size = new System.Drawing.Size(789, 515);
+            this.tbpSuppliers.TabIndex = 2;
+            this.tbpSuppliers.Text = "Suppliers";
+            this.tbpSuppliers.UseVisualStyleBackColor = true;
+            // 
             // staffTableAdapter
             // 
             this.staffTableAdapter.ClearBeforeFill = true;
@@ -604,10 +604,10 @@
             this.tcUserManagement.ResumeLayout(false);
             this.tbpStaff.ResumeLayout(false);
             this.tbpStaff.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxUpdateStaff.ResumeLayout(false);
+            this.gbxUpdateStaff.PerformLayout();
+            this.gbxAddNewStaff.ResumeLayout(false);
+            this.gbxAddNewStaff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffMgt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).EndInit();
@@ -633,41 +633,41 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gbxAddNewStaff;
+        private System.Windows.Forms.Label lblUsernameStaff;
         private System.Windows.Forms.TextBox txtUsernameStaff;
         private System.Windows.Forms.TextBox txtFirstNameStaff;
         private System.Windows.Forms.TextBox txtPasswordStaff;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnAddStaffMember;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblRoleFilterAddNewStaff;
+        private System.Windows.Forms.Label lblContactNoStaff;
+        private System.Windows.Forms.Label lblLastNameStaff;
         private System.Windows.Forms.TextBox txtLastNameStaff;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFirstNameStaff;
         private System.Windows.Forms.MaskedTextBox txtContactStaff;
         private System.Windows.Forms.ComboBox cmbStaffRole;
         private System.Windows.Forms.BindingSource staffBindingSource1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbxUpdateStaff;
         private System.Windows.Forms.ComboBox cmbStaffRoleUpdate;
         private System.Windows.Forms.MaskedTextBox txtContactUpdate;
         private System.Windows.Forms.Button btnUpdateStaff;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblUpdateStaffRole;
+        private System.Windows.Forms.Label lblUpdateStaffContactNo;
+        private System.Windows.Forms.Label lblUpdateStaffLastName;
         private System.Windows.Forms.TextBox txtLastNameUpdate;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblUpdateStaffFirstName;
         private System.Windows.Forms.TextBox txtNameUpdate;
         private System.Windows.Forms.TextBox txtPasswordUpdate;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblUpdateStaffpassword;
         private System.Windows.Forms.TextBox txtUsernameUpdate;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblUpdateStaffUusername;
+        private System.Windows.Forms.Label lblFilterRole;
         private System.Windows.Forms.ComboBox cmbFilterByRole;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblSelectAstaffMemeber;
         private System.Windows.Forms.TextBox txtSearchStaffByName;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblSearchStaff;
+        private System.Windows.Forms.Label lblStaffMgtHeading;
         private System.Windows.Forms.Button btnArchiveStaff;
     }
 }
