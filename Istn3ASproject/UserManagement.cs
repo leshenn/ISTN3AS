@@ -437,6 +437,7 @@ namespace Istn3ASproject
 
         private void btnUpdateSupplier_Click(object sender, EventArgs e)
         {
+            mtEditSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             supplierTableAdapter.UpdateSupplierDetails(txtEditSname.Text, mtEditSupplierContact.Text, txtEditSemail.Text, txtEditSaddress.Text, txtEditScity.Text, cbEditSprovince.Text, txtEditScode.Text, Convert.ToInt32(gvSupplier.CurrentRow.Cells[0].Value.ToString()));
             supplierTableAdapter.Fill(this.wstGrp11DataSet.Supplier);
             txtEditSname.Clear();
@@ -516,6 +517,11 @@ namespace Istn3ASproject
             }
 
 
+
+        }
+
+        private void gbUpdateSupplier_Enter(object sender, EventArgs e)
+        {
 
         }
     }
