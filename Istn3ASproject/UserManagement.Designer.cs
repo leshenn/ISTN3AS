@@ -37,7 +37,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.gbUpdateCustomer = new System.Windows.Forms.GroupBox();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
-            this.mtUcnum = new System.Windows.Forms.MaskedTextBox();
+            this.mtUpdateCustContact = new System.Windows.Forms.MaskedTextBox();
             this.lblEditCusPostal = new System.Windows.Forms.Label();
             this.txtUaddress = new System.Windows.Forms.TextBox();
             this.lblEditCusCity = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.txtUlname = new System.Windows.Forms.TextBox();
             this.lblEditCusAddress = new System.Windows.Forms.Label();
             this.gbAddCustomer = new System.Windows.Forms.GroupBox();
-            this.mtCNo = new System.Windows.Forms.MaskedTextBox();
+            this.mtCustomerNo = new System.Windows.Forms.MaskedTextBox();
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.lblCustomerPostal = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -100,7 +100,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.gbUpdateSupplier = new System.Windows.Forms.GroupBox();
-            this.mtEditcnum = new System.Windows.Forms.MaskedTextBox();
+            this.mtEditSupplierContact = new System.Windows.Forms.MaskedTextBox();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
             this.lblSupplierEditPostal = new System.Windows.Forms.Label();
             this.txtEditSaddress = new System.Windows.Forms.TextBox();
@@ -116,7 +116,7 @@
             this.txtEditSname = new System.Windows.Forms.TextBox();
             this.lblSupplierEditAddress = new System.Windows.Forms.Label();
             this.gbAddSupplier = new System.Windows.Forms.GroupBox();
-            this.mtScnum = new System.Windows.Forms.MaskedTextBox();
+            this.mtSupplierContact = new System.Windows.Forms.MaskedTextBox();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.lblSupplierPostal = new System.Windows.Forms.Label();
             this.txtSaddress = new System.Windows.Forms.TextBox();
@@ -242,7 +242,7 @@
             // 
             this.gbUpdateCustomer.BackColor = System.Drawing.Color.Azure;
             this.gbUpdateCustomer.Controls.Add(this.btnUpdateCustomer);
-            this.gbUpdateCustomer.Controls.Add(this.mtUcnum);
+            this.gbUpdateCustomer.Controls.Add(this.mtUpdateCustContact);
             this.gbUpdateCustomer.Controls.Add(this.lblEditCusPostal);
             this.gbUpdateCustomer.Controls.Add(this.txtUaddress);
             this.gbUpdateCustomer.Controls.Add(this.lblEditCusCity);
@@ -264,7 +264,7 @@
             this.gbUpdateCustomer.Size = new System.Drawing.Size(1312, 218);
             this.gbUpdateCustomer.TabIndex = 35;
             this.gbUpdateCustomer.TabStop = false;
-            this.gbUpdateCustomer.Text = "Update Customer Details";
+            this.gbUpdateCustomer.Text = "Update Customer Details *(Please Select a Customer First)";
             // 
             // btnUpdateCustomer
             // 
@@ -281,19 +281,19 @@
             this.btnUpdateCustomer.MouseLeave += new System.EventHandler(this.btnUpdateCustomer_MouseLeave);
             this.btnUpdateCustomer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUpdateCustomer_MouseMove);
             // 
-            // mtUcnum
+            // mtUpdateCustContact
             // 
-            this.mtUcnum.Location = new System.Drawing.Point(473, 63);
-            this.mtUcnum.Mask = "(999) 000-0000";
-            this.mtUcnum.Name = "mtUcnum";
-            this.mtUcnum.Size = new System.Drawing.Size(149, 25);
-            this.mtUcnum.TabIndex = 49;
+            this.mtUpdateCustContact.Location = new System.Drawing.Point(474, 86);
+            this.mtUpdateCustContact.Mask = "(999) 000-0000";
+            this.mtUpdateCustContact.Name = "mtUpdateCustContact";
+            this.mtUpdateCustContact.Size = new System.Drawing.Size(149, 25);
+            this.mtUpdateCustContact.TabIndex = 49;
             // 
             // lblEditCusPostal
             // 
             this.lblEditCusPostal.AutoSize = true;
             this.lblEditCusPostal.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusPostal.Location = new System.Drawing.Point(478, 127);
+            this.lblEditCusPostal.Location = new System.Drawing.Point(479, 150);
             this.lblEditCusPostal.Name = "lblEditCusPostal";
             this.lblEditCusPostal.Size = new System.Drawing.Size(95, 17);
             this.lblEditCusPostal.TabIndex = 37;
@@ -302,7 +302,7 @@
             // txtUaddress
             // 
             this.txtUaddress.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUaddress.Location = new System.Drawing.Point(830, 63);
+            this.txtUaddress.Location = new System.Drawing.Point(831, 86);
             this.txtUaddress.Name = "txtUaddress";
             this.txtUaddress.Size = new System.Drawing.Size(132, 25);
             this.txtUaddress.TabIndex = 43;
@@ -311,7 +311,7 @@
             // 
             this.lblEditCusCity.AutoSize = true;
             this.lblEditCusCity.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusCity.Location = new System.Drawing.Point(26, 127);
+            this.lblEditCusCity.Location = new System.Drawing.Point(27, 150);
             this.lblEditCusCity.Name = "lblEditCusCity";
             this.lblEditCusCity.Size = new System.Drawing.Size(37, 17);
             this.lblEditCusCity.TabIndex = 46;
@@ -321,7 +321,7 @@
             // 
             this.lblEditCusProvince.AutoSize = true;
             this.lblEditCusProvince.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusProvince.Location = new System.Drawing.Point(252, 127);
+            this.lblEditCusProvince.Location = new System.Drawing.Point(253, 150);
             this.lblEditCusProvince.Name = "lblEditCusProvince";
             this.lblEditCusProvince.Size = new System.Drawing.Size(72, 17);
             this.lblEditCusProvince.TabIndex = 48;
@@ -330,7 +330,7 @@
             // txtUcode
             // 
             this.txtUcode.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUcode.Location = new System.Drawing.Point(482, 158);
+            this.txtUcode.Location = new System.Drawing.Point(483, 181);
             this.txtUcode.Name = "txtUcode";
             this.txtUcode.Size = new System.Drawing.Size(100, 25);
             this.txtUcode.TabIndex = 45;
@@ -338,7 +338,7 @@
             // txtUfname
             // 
             this.txtUfname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUfname.Location = new System.Drawing.Point(29, 63);
+            this.txtUfname.Location = new System.Drawing.Point(30, 86);
             this.txtUfname.Name = "txtUfname";
             this.txtUfname.Size = new System.Drawing.Size(174, 25);
             this.txtUfname.TabIndex = 34;
@@ -346,7 +346,7 @@
             // txtUcity
             // 
             this.txtUcity.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUcity.Location = new System.Drawing.Point(21, 158);
+            this.txtUcity.Location = new System.Drawing.Point(22, 181);
             this.txtUcity.Name = "txtUcity";
             this.txtUcity.Size = new System.Drawing.Size(165, 25);
             this.txtUcity.TabIndex = 44;
@@ -354,7 +354,7 @@
             // txtUemail
             // 
             this.txtUemail.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUemail.Location = new System.Drawing.Point(650, 63);
+            this.txtUemail.Location = new System.Drawing.Point(651, 86);
             this.txtUemail.Name = "txtUemail";
             this.txtUemail.Size = new System.Drawing.Size(163, 25);
             this.txtUemail.TabIndex = 42;
@@ -373,7 +373,7 @@
             "North West",
             "Northern Cape",
             "Western Cape"});
-            this.cbUprovince.Location = new System.Drawing.Point(256, 159);
+            this.cbUprovince.Location = new System.Drawing.Point(257, 182);
             this.cbUprovince.Name = "cbUprovince";
             this.cbUprovince.Size = new System.Drawing.Size(174, 25);
             this.cbUprovince.TabIndex = 47;
@@ -382,7 +382,7 @@
             // 
             this.lblEditCusEmail.AutoSize = true;
             this.lblEditCusEmail.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusEmail.Location = new System.Drawing.Point(662, 27);
+            this.lblEditCusEmail.Location = new System.Drawing.Point(663, 50);
             this.lblEditCusEmail.Name = "lblEditCusEmail";
             this.lblEditCusEmail.Size = new System.Drawing.Size(47, 17);
             this.lblEditCusEmail.TabIndex = 40;
@@ -392,7 +392,7 @@
             // 
             this.lblEditCusFname.AutoSize = true;
             this.lblEditCusFname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusFname.Location = new System.Drawing.Point(26, 36);
+            this.lblEditCusFname.Location = new System.Drawing.Point(27, 59);
             this.lblEditCusFname.Name = "lblEditCusFname";
             this.lblEditCusFname.Size = new System.Drawing.Size(86, 17);
             this.lblEditCusFname.TabIndex = 36;
@@ -402,7 +402,7 @@
             // 
             this.lblEditCusLname.AutoSize = true;
             this.lblEditCusLname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusLname.Location = new System.Drawing.Point(252, 27);
+            this.lblEditCusLname.Location = new System.Drawing.Point(253, 50);
             this.lblEditCusLname.Name = "lblEditCusLname";
             this.lblEditCusLname.Size = new System.Drawing.Size(83, 17);
             this.lblEditCusLname.TabIndex = 38;
@@ -412,7 +412,7 @@
             // 
             this.lblEditCusNumber.AutoSize = true;
             this.lblEditCusNumber.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusNumber.Location = new System.Drawing.Point(478, 27);
+            this.lblEditCusNumber.Location = new System.Drawing.Point(479, 50);
             this.lblEditCusNumber.Name = "lblEditCusNumber";
             this.lblEditCusNumber.Size = new System.Drawing.Size(125, 17);
             this.lblEditCusNumber.TabIndex = 39;
@@ -421,7 +421,7 @@
             // txtUlname
             // 
             this.txtUlname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUlname.Location = new System.Drawing.Point(256, 63);
+            this.txtUlname.Location = new System.Drawing.Point(257, 86);
             this.txtUlname.Name = "txtUlname";
             this.txtUlname.Size = new System.Drawing.Size(174, 25);
             this.txtUlname.TabIndex = 35;
@@ -430,7 +430,7 @@
             // 
             this.lblEditCusAddress.AutoSize = true;
             this.lblEditCusAddress.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusAddress.Location = new System.Drawing.Point(856, 27);
+            this.lblEditCusAddress.Location = new System.Drawing.Point(857, 50);
             this.lblEditCusAddress.Name = "lblEditCusAddress";
             this.lblEditCusAddress.Size = new System.Drawing.Size(65, 17);
             this.lblEditCusAddress.TabIndex = 41;
@@ -439,7 +439,7 @@
             // gbAddCustomer
             // 
             this.gbAddCustomer.BackColor = System.Drawing.Color.MintCream;
-            this.gbAddCustomer.Controls.Add(this.mtCNo);
+            this.gbAddCustomer.Controls.Add(this.mtCustomerNo);
             this.gbAddCustomer.Controls.Add(this.btnNewCustomer);
             this.gbAddCustomer.Controls.Add(this.lblCustomerPostal);
             this.gbAddCustomer.Controls.Add(this.txtAddress);
@@ -464,14 +464,14 @@
             this.gbAddCustomer.TabStop = false;
             this.gbAddCustomer.Text = "Add New Customer";
             // 
-            // mtCNo
+            // mtCustomerNo
             // 
-            this.mtCNo.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtCNo.Location = new System.Drawing.Point(531, 71);
-            this.mtCNo.Mask = "(999) 000-0000";
-            this.mtCNo.Name = "mtCNo";
-            this.mtCNo.Size = new System.Drawing.Size(149, 25);
-            this.mtCNo.TabIndex = 33;
+            this.mtCustomerNo.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtCustomerNo.Location = new System.Drawing.Point(531, 71);
+            this.mtCustomerNo.Mask = "(999) 000-0000";
+            this.mtCustomerNo.Name = "mtCustomerNo";
+            this.mtCustomerNo.Size = new System.Drawing.Size(149, 25);
+            this.mtCustomerNo.TabIndex = 33;
             // 
             // btnNewCustomer
             // 
@@ -485,6 +485,7 @@
             this.btnNewCustomer.TabIndex = 18;
             this.btnNewCustomer.Text = "Add New Customer";
             this.btnNewCustomer.UseVisualStyleBackColor = false;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click_1);
             this.btnNewCustomer.MouseLeave += new System.EventHandler(this.btnNewCustomer_MouseLeave);
             this.btnNewCustomer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNewCustomer_MouseMove);
             // 
@@ -913,7 +914,7 @@
             // gbUpdateSupplier
             // 
             this.gbUpdateSupplier.BackColor = System.Drawing.Color.MintCream;
-            this.gbUpdateSupplier.Controls.Add(this.mtEditcnum);
+            this.gbUpdateSupplier.Controls.Add(this.mtEditSupplierContact);
             this.gbUpdateSupplier.Controls.Add(this.btnUpdateSupplier);
             this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditPostal);
             this.gbUpdateSupplier.Controls.Add(this.txtEditSaddress);
@@ -936,14 +937,14 @@
             this.gbUpdateSupplier.TabStop = false;
             this.gbUpdateSupplier.Text = "Update Supplier Details";
             // 
-            // mtEditcnum
+            // mtEditSupplierContact
             // 
-            this.mtEditcnum.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtEditcnum.Location = new System.Drawing.Point(252, 71);
-            this.mtEditcnum.Mask = "(999) 000-0000";
-            this.mtEditcnum.Name = "mtEditcnum";
-            this.mtEditcnum.Size = new System.Drawing.Size(149, 25);
-            this.mtEditcnum.TabIndex = 33;
+            this.mtEditSupplierContact.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtEditSupplierContact.Location = new System.Drawing.Point(252, 71);
+            this.mtEditSupplierContact.Mask = "(999) 000-0000";
+            this.mtEditSupplierContact.Name = "mtEditSupplierContact";
+            this.mtEditSupplierContact.Size = new System.Drawing.Size(149, 25);
+            this.mtEditSupplierContact.TabIndex = 33;
             // 
             // btnUpdateSupplier
             // 
@@ -1091,7 +1092,7 @@
             // gbAddSupplier
             // 
             this.gbAddSupplier.BackColor = System.Drawing.Color.MintCream;
-            this.gbAddSupplier.Controls.Add(this.mtScnum);
+            this.gbAddSupplier.Controls.Add(this.mtSupplierContact);
             this.gbAddSupplier.Controls.Add(this.btnAddSupplier);
             this.gbAddSupplier.Controls.Add(this.lblSupplierPostal);
             this.gbAddSupplier.Controls.Add(this.txtSaddress);
@@ -1114,14 +1115,14 @@
             this.gbAddSupplier.TabStop = false;
             this.gbAddSupplier.Text = "Add New Supplier";
             // 
-            // mtScnum
+            // mtSupplierContact
             // 
-            this.mtScnum.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtScnum.Location = new System.Drawing.Point(252, 71);
-            this.mtScnum.Mask = "(999) 000-0000";
-            this.mtScnum.Name = "mtScnum";
-            this.mtScnum.Size = new System.Drawing.Size(149, 25);
-            this.mtScnum.TabIndex = 33;
+            this.mtSupplierContact.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtSupplierContact.Location = new System.Drawing.Point(252, 71);
+            this.mtSupplierContact.Mask = "(999) 000-0000";
+            this.mtSupplierContact.Name = "mtSupplierContact";
+            this.mtSupplierContact.Size = new System.Drawing.Size(149, 25);
+            this.mtSupplierContact.TabIndex = 33;
             // 
             // btnAddSupplier
             // 
@@ -1498,7 +1499,7 @@
         private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.Label lblCustomerAddress;
         private System.Windows.Forms.MaskedTextBox mtSearchNo;
-        private System.Windows.Forms.MaskedTextBox mtCNo;
+        private System.Windows.Forms.MaskedTextBox mtCustomerNo;
         private System.Windows.Forms.GroupBox gbAddCustomer;
         private System.Windows.Forms.GroupBox gbUpdateCustomer;
         private System.Windows.Forms.Label lblEditCusPostal;
@@ -1516,7 +1517,7 @@
         private System.Windows.Forms.Label lblEditCusNumber;
         private System.Windows.Forms.TextBox txtUlname;
         private System.Windows.Forms.Label lblEditCusAddress;
-        private System.Windows.Forms.MaskedTextBox mtUcnum;
+        private System.Windows.Forms.MaskedTextBox mtUpdateCustContact;
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearchSupplier;
@@ -1524,7 +1525,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gbAddSupplier;
-        private System.Windows.Forms.MaskedTextBox mtScnum;
+        private System.Windows.Forms.MaskedTextBox mtSupplierContact;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.Label lblSupplierPostal;
         private System.Windows.Forms.TextBox txtSaddress;
@@ -1540,7 +1541,7 @@
         private System.Windows.Forms.TextBox txtSname;
         private System.Windows.Forms.Label lblSupplierAddress;
         private System.Windows.Forms.GroupBox gbUpdateSupplier;
-        private System.Windows.Forms.MaskedTextBox mtEditcnum;
+        private System.Windows.Forms.MaskedTextBox mtEditSupplierContact;
         private System.Windows.Forms.Button btnUpdateSupplier;
         private System.Windows.Forms.Label lblSupplierEditPostal;
         private System.Windows.Forms.TextBox txtEditSaddress;
