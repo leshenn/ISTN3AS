@@ -588,22 +588,6 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DistinctCitiesTableAdapter" GeneratorDataComponentClassName="DistinctCitiesTableAdapter" Name="DistinctCities" UserDataComponentName="DistinctCitiesTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="WstGrp11ConnectionString (Settings)" DbObjectName="WstGrp11.dbo.DistinctCities" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT City FROM dbo.DistinctCities</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="City" DataSetColumn="City" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -877,19 +861,6 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DistinctCities" msprop:Generator_RowEvHandlerName="DistinctCitiesRowChangeEventHandler" msprop:Generator_RowDeletedName="DistinctCitiesRowDeleted" msprop:Generator_RowDeletingName="DistinctCitiesRowDeleting" msprop:Generator_RowEvArgName="DistinctCitiesRowChangeEvent" msprop:Generator_TablePropName="DistinctCities" msprop:Generator_RowChangedName="DistinctCitiesRowChanged" msprop:Generator_UserTableName="DistinctCities" msprop:Generator_RowChangingName="DistinctCitiesRowChanging" msprop:Generator_RowClassName="DistinctCitiesRow" msprop:Generator_TableClassName="DistinctCitiesDataTable" msprop:Generator_TableVarName="tableDistinctCities">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_UserColumnName="City" msprop:Generator_ColumnVarNameInTable="columnCity" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -919,13 +890,13 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Order_Customer" msdata:parent="Customer" msdata:child="Order" msdata:parentkey="CustomerID" msdata:childkey="CustomerID" msprop:Generator_UserParentTable="Customer" msprop:Generator_UserChildTable="Order" msprop:Generator_RelationVarName="relationFK_Order_Customer" msprop:Generator_ChildPropName="GetOrderRows" msprop:Generator_ParentPropName="CustomerRow" msprop:Generator_UserRelationName="FK_Order_Customer" />
-      <msdata:Relationship name="FK_Order_Staff" msdata:parent="Staff" msdata:child="Order" msdata:parentkey="StaffID" msdata:childkey="StaffID" msprop:Generator_UserParentTable="Staff" msprop:Generator_UserChildTable="Order" msprop:Generator_RelationVarName="relationFK_Order_Staff" msprop:Generator_ChildPropName="GetOrderRows" msprop:Generator_UserRelationName="FK_Order_Staff" msprop:Generator_ParentPropName="StaffRow" />
-      <msdata:Relationship name="FK_OrderLine_Order" msdata:parent="Order" msdata:child="OrderLine" msdata:parentkey="OrderID" msdata:childkey="OrderID" msprop:Generator_UserParentTable="Order" msprop:Generator_UserChildTable="OrderLine" msprop:Generator_RelationVarName="relationFK_OrderLine_Order" msprop:Generator_ChildPropName="GetOrderLineRows" msprop:Generator_ParentPropName="OrderRow" msprop:Generator_UserRelationName="FK_OrderLine_Order" />
-      <msdata:Relationship name="FK_SupplierLineOrder_SupplierOrder" msdata:parent="SupplierOrder" msdata:child="SupplierLineOrder" msdata:parentkey="SupplierOrderID" msdata:childkey="SupplierOrderID" msprop:Generator_UserParentTable="SupplierOrder" msprop:Generator_UserChildTable="SupplierLineOrder" msprop:Generator_RelationVarName="relationFK_SupplierLineOrder_SupplierOrder" msprop:Generator_ChildPropName="GetSupplierLineOrderRows" msprop:Generator_UserRelationName="FK_SupplierLineOrder_SupplierOrder" msprop:Generator_ParentPropName="SupplierOrderRow" />
-      <msdata:Relationship name="FK_SupplierOrder_Supplier" msdata:parent="Supplier" msdata:child="SupplierOrder" msdata:parentkey="SupplierID" msdata:childkey="SupplierID" msprop:Generator_UserParentTable="Supplier" msprop:Generator_UserChildTable="SupplierOrder" msprop:Generator_RelationVarName="relationFK_SupplierOrder_Supplier" msprop:Generator_ChildPropName="GetSupplierOrderRows" msprop:Generator_ParentPropName="SupplierRow" msprop:Generator_UserRelationName="FK_SupplierOrder_Supplier" />
-      <msdata:Relationship name="FK_OrderLine_Stock" msdata:parent="Stock" msdata:child="OrderLine" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="Stock" msprop:Generator_UserChildTable="OrderLine" msprop:Generator_RelationVarName="relationFK_OrderLine_Stock" msprop:Generator_ChildPropName="GetOrderLineRows" msprop:Generator_ParentPropName="StockRow" msprop:Generator_UserRelationName="FK_OrderLine_Stock" />
-      <msdata:Relationship name="FK_SupplierLineOrder_Stock" msdata:parent="Stock" msdata:child="SupplierLineOrder" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="Stock" msprop:Generator_UserChildTable="SupplierLineOrder" msprop:Generator_RelationVarName="relationFK_SupplierLineOrder_Stock" msprop:Generator_ChildPropName="GetSupplierLineOrderRows" msprop:Generator_ParentPropName="StockRow" msprop:Generator_UserRelationName="FK_SupplierLineOrder_Stock" />
+      <msdata:Relationship name="FK_Order_Customer" msdata:parent="Customer" msdata:child="Order" msdata:parentkey="CustomerID" msdata:childkey="CustomerID" msprop:Generator_UserParentTable="Customer" msprop:Generator_UserChildTable="Order" msprop:Generator_RelationVarName="relationFK_Order_Customer" msprop:Generator_ChildPropName="GetOrderRows" msprop:Generator_UserRelationName="FK_Order_Customer" msprop:Generator_ParentPropName="CustomerRow" />
+      <msdata:Relationship name="FK_Order_Staff" msdata:parent="Staff" msdata:child="Order" msdata:parentkey="StaffID" msdata:childkey="StaffID" msprop:Generator_UserParentTable="Staff" msprop:Generator_UserChildTable="Order" msprop:Generator_RelationVarName="relationFK_Order_Staff" msprop:Generator_ChildPropName="GetOrderRows" msprop:Generator_ParentPropName="StaffRow" msprop:Generator_UserRelationName="FK_Order_Staff" />
+      <msdata:Relationship name="FK_OrderLine_Order" msdata:parent="Order" msdata:child="OrderLine" msdata:parentkey="OrderID" msdata:childkey="OrderID" msprop:Generator_UserParentTable="Order" msprop:Generator_UserChildTable="OrderLine" msprop:Generator_RelationVarName="relationFK_OrderLine_Order" msprop:Generator_ChildPropName="GetOrderLineRows" msprop:Generator_UserRelationName="FK_OrderLine_Order" msprop:Generator_ParentPropName="OrderRow" />
+      <msdata:Relationship name="FK_SupplierLineOrder_SupplierOrder" msdata:parent="SupplierOrder" msdata:child="SupplierLineOrder" msdata:parentkey="SupplierOrderID" msdata:childkey="SupplierOrderID" msprop:Generator_UserParentTable="SupplierOrder" msprop:Generator_UserChildTable="SupplierLineOrder" msprop:Generator_RelationVarName="relationFK_SupplierLineOrder_SupplierOrder" msprop:Generator_ChildPropName="GetSupplierLineOrderRows" msprop:Generator_ParentPropName="SupplierOrderRow" msprop:Generator_UserRelationName="FK_SupplierLineOrder_SupplierOrder" />
+      <msdata:Relationship name="FK_SupplierOrder_Supplier" msdata:parent="Supplier" msdata:child="SupplierOrder" msdata:parentkey="SupplierID" msdata:childkey="SupplierID" msprop:Generator_UserParentTable="Supplier" msprop:Generator_UserChildTable="SupplierOrder" msprop:Generator_RelationVarName="relationFK_SupplierOrder_Supplier" msprop:Generator_ChildPropName="GetSupplierOrderRows" msprop:Generator_UserRelationName="FK_SupplierOrder_Supplier" msprop:Generator_ParentPropName="SupplierRow" />
+      <msdata:Relationship name="FK_OrderLine_Stock" msdata:parent="Stock" msdata:child="OrderLine" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="Stock" msprop:Generator_UserChildTable="OrderLine" msprop:Generator_RelationVarName="relationFK_OrderLine_Stock" msprop:Generator_ChildPropName="GetOrderLineRows" msprop:Generator_UserRelationName="FK_OrderLine_Stock" msprop:Generator_ParentPropName="StockRow" />
+      <msdata:Relationship name="FK_SupplierLineOrder_Stock" msdata:parent="Stock" msdata:child="SupplierLineOrder" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="Stock" msprop:Generator_UserChildTable="SupplierLineOrder" msprop:Generator_RelationVarName="relationFK_SupplierLineOrder_Stock" msprop:Generator_ChildPropName="GetSupplierLineOrderRows" msprop:Generator_UserRelationName="FK_SupplierLineOrder_Stock" msprop:Generator_ParentPropName="StockRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

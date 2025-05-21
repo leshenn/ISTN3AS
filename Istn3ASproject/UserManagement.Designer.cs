@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label lblSearch;
+            System.Windows.Forms.Label lblSupplierSearch;
             this.tcUserManagement = new System.Windows.Forms.TabControl();
             this.tbpCustomers = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCustomerRestore = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbUpdateCustomer = new System.Windows.Forms.GroupBox();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.mtUcnum = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEditCusPostal = new System.Windows.Forms.Label();
             this.txtUaddress = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEditCusCity = new System.Windows.Forms.Label();
+            this.lblEditCusProvince = new System.Windows.Forms.Label();
             this.txtUcode = new System.Windows.Forms.TextBox();
             this.txtUfname = new System.Windows.Forms.TextBox();
             this.txtUcity = new System.Windows.Forms.TextBox();
             this.txtUemail = new System.Windows.Forms.TextBox();
             this.cbUprovince = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblEditCusEmail = new System.Windows.Forms.Label();
+            this.lblEditCusFname = new System.Windows.Forms.Label();
+            this.lblEditCusLname = new System.Windows.Forms.Label();
+            this.lblEditCusNumber = new System.Windows.Forms.Label();
             this.txtUlname = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEditCusAddress = new System.Windows.Forms.Label();
+            this.gbAddCustomer = new System.Windows.Forms.GroupBox();
             this.mtCNo = new System.Windows.Forms.MaskedTextBox();
             this.btnNewCustomer = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCustomerPostal = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblCustomerCity = new System.Windows.Forms.Label();
+            this.lblCustomerProvince = new System.Windows.Forms.Label();
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cbProvince = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblCustomerEmail = new System.Windows.Forms.Label();
+            this.lblCusFname1 = new System.Windows.Forms.Label();
+            this.lblCusLname = new System.Windows.Forms.Label();
+            this.lblCusNum = new System.Windows.Forms.Label();
             this.txtLName = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblCustomerAddress = new System.Windows.Forms.Label();
             this.mtSearchNo = new System.Windows.Forms.MaskedTextBox();
             this.btnSearchByNo = new System.Windows.Forms.Button();
             this.gvCustomer = new System.Windows.Forms.DataGridView();
@@ -85,7 +85,7 @@
             this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblSearchByPhoneNumber = new System.Windows.Forms.Label();
             this.tbpStaff = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,40 +98,39 @@
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpgSuppliers = new System.Windows.Forms.TabPage();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.distinctCitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label34 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbUpdateSupplier = new System.Windows.Forms.GroupBox();
             this.mtEditcnum = new System.Windows.Forms.MaskedTextBox();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblSupplierEditPostal = new System.Windows.Forms.Label();
             this.txtEditSaddress = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblSupplierEditCity = new System.Windows.Forms.Label();
+            this.lblSupplierEditProvince = new System.Windows.Forms.Label();
             this.txtEditScode = new System.Windows.Forms.TextBox();
             this.txtEditScity = new System.Windows.Forms.TextBox();
             this.txtEditSemail = new System.Windows.Forms.TextBox();
             this.cbEditSprovince = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblSupplierEditEmail = new System.Windows.Forms.Label();
+            this.lblSupplierEditName = new System.Windows.Forms.Label();
+            this.lblSupplierEditNum = new System.Windows.Forms.Label();
             this.txtEditSname = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblSupplierEditAddress = new System.Windows.Forms.Label();
+            this.gbAddSupplier = new System.Windows.Forms.GroupBox();
             this.mtScnum = new System.Windows.Forms.MaskedTextBox();
             this.btnAddSupplier = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblSupplierPostal = new System.Windows.Forms.Label();
             this.txtSaddress = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblSupplierCity = new System.Windows.Forms.Label();
+            this.lblSupplierProvince = new System.Windows.Forms.Label();
             this.txtScode = new System.Windows.Forms.TextBox();
             this.txtScity = new System.Windows.Forms.TextBox();
             this.txtSemail = new System.Windows.Forms.TextBox();
             this.cbSprovince = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblSupplierEmail = new System.Windows.Forms.Label();
+            this.lblSupplierFname = new System.Windows.Forms.Label();
+            this.lblSupplierNum = new System.Windows.Forms.Label();
             this.txtSname = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblSupplierAddress = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.gvSupplier = new System.Windows.Forms.DataGridView();
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -148,12 +147,11 @@
             this.customerTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.staffTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StaffTableAdapter();
             this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
-            this.distinctCitiesTableAdapter1 = new Istn3ASproject.WstGrp11DataSetTableAdapters.DistinctCitiesTableAdapter();
-            lblSearch = new System.Windows.Forms.Label();
+            lblSupplierSearch = new System.Windows.Forms.Label();
             this.tcUserManagement.SuspendLayout();
             this.tbpCustomers.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbUpdateCustomer.SuspendLayout();
+            this.gbAddCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).BeginInit();
@@ -161,22 +159,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.tpgSuppliers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.distinctCitiesBindingSource)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbUpdateSupplier.SuspendLayout();
+            this.gbAddSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblSearch
+            // lblSupplierSearch
             // 
-            lblSearch.AutoSize = true;
-            lblSearch.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblSearch.Location = new System.Drawing.Point(1072, 44);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new System.Drawing.Size(166, 17);
-            lblSearch.TabIndex = 1;
-            lblSearch.Text = "Enter Supplier\'s Name";
+            lblSupplierSearch.AutoSize = true;
+            lblSupplierSearch.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblSupplierSearch.Location = new System.Drawing.Point(1072, 44);
+            lblSupplierSearch.Name = "lblSupplierSearch";
+            lblSupplierSearch.Size = new System.Drawing.Size(166, 17);
+            lblSupplierSearch.TabIndex = 1;
+            lblSupplierSearch.Text = "Enter Supplier\'s Name";
             // 
             // tcUserManagement
             // 
@@ -193,15 +190,15 @@
             // tbpCustomers
             // 
             this.tbpCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbpCustomers.Controls.Add(this.button2);
+            this.tbpCustomers.Controls.Add(this.btnCustomerRestore);
             this.tbpCustomers.Controls.Add(this.comboBox1);
             this.tbpCustomers.Controls.Add(this.label18);
-            this.tbpCustomers.Controls.Add(this.groupBox2);
-            this.tbpCustomers.Controls.Add(this.groupBox1);
+            this.tbpCustomers.Controls.Add(this.gbUpdateCustomer);
+            this.tbpCustomers.Controls.Add(this.gbAddCustomer);
             this.tbpCustomers.Controls.Add(this.mtSearchNo);
             this.tbpCustomers.Controls.Add(this.btnSearchByNo);
             this.tbpCustomers.Controls.Add(this.gvCustomer);
-            this.tbpCustomers.Controls.Add(this.label9);
+            this.tbpCustomers.Controls.Add(this.lblSearchByPhoneNumber);
             this.tbpCustomers.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbpCustomers.Location = new System.Drawing.Point(4, 25);
             this.tbpCustomers.Name = "tbpCustomers";
@@ -209,19 +206,19 @@
             this.tbpCustomers.Size = new System.Drawing.Size(1574, 824);
             this.tbpCustomers.TabIndex = 0;
             this.tbpCustomers.Text = "Customers";
-            this.tbpCustomers.Click += new System.EventHandler(this.tbpCustomers_Click);
             // 
-            // button2
+            // btnCustomerRestore
             // 
-            this.button2.BackColor = System.Drawing.Color.Azure;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1087, 293);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 40);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Restore";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCustomerRestore.BackColor = System.Drawing.Color.Azure;
+            this.btnCustomerRestore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCustomerRestore.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerRestore.Location = new System.Drawing.Point(1087, 293);
+            this.btnCustomerRestore.Name = "btnCustomerRestore";
+            this.btnCustomerRestore.Size = new System.Drawing.Size(101, 40);
+            this.btnCustomerRestore.TabIndex = 38;
+            this.btnCustomerRestore.Text = "Restore";
+            this.btnCustomerRestore.UseVisualStyleBackColor = false;
+            this.btnCustomerRestore.Click += new System.EventHandler(this.btnCustomerRestore_Click);
             // 
             // comboBox1
             // 
@@ -241,33 +238,33 @@
             this.label18.TabIndex = 36;
             this.label18.Text = "Filter by City: ";
             // 
-            // groupBox2
+            // gbUpdateCustomer
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Azure;
-            this.groupBox2.Controls.Add(this.btnUpdateCustomer);
-            this.groupBox2.Controls.Add(this.mtUcnum);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtUaddress);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtUcode);
-            this.groupBox2.Controls.Add(this.txtUfname);
-            this.groupBox2.Controls.Add(this.txtUcity);
-            this.groupBox2.Controls.Add(this.txtUemail);
-            this.groupBox2.Controls.Add(this.cbUprovince);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtUlname);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 598);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1312, 218);
-            this.groupBox2.TabIndex = 35;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Update Customer Details";
+            this.gbUpdateCustomer.BackColor = System.Drawing.Color.Azure;
+            this.gbUpdateCustomer.Controls.Add(this.btnUpdateCustomer);
+            this.gbUpdateCustomer.Controls.Add(this.mtUcnum);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusPostal);
+            this.gbUpdateCustomer.Controls.Add(this.txtUaddress);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusCity);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusProvince);
+            this.gbUpdateCustomer.Controls.Add(this.txtUcode);
+            this.gbUpdateCustomer.Controls.Add(this.txtUfname);
+            this.gbUpdateCustomer.Controls.Add(this.txtUcity);
+            this.gbUpdateCustomer.Controls.Add(this.txtUemail);
+            this.gbUpdateCustomer.Controls.Add(this.cbUprovince);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusEmail);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusFname);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusLname);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusNumber);
+            this.gbUpdateCustomer.Controls.Add(this.txtUlname);
+            this.gbUpdateCustomer.Controls.Add(this.lblEditCusAddress);
+            this.gbUpdateCustomer.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUpdateCustomer.Location = new System.Drawing.Point(19, 598);
+            this.gbUpdateCustomer.Name = "gbUpdateCustomer";
+            this.gbUpdateCustomer.Size = new System.Drawing.Size(1312, 218);
+            this.gbUpdateCustomer.TabIndex = 35;
+            this.gbUpdateCustomer.TabStop = false;
+            this.gbUpdateCustomer.Text = "Update Customer Details";
             // 
             // btnUpdateCustomer
             // 
@@ -292,15 +289,15 @@
             this.mtUcnum.Size = new System.Drawing.Size(149, 25);
             this.mtUcnum.TabIndex = 49;
             // 
-            // label1
+            // lblEditCusPostal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(478, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Postal Code";
+            this.lblEditCusPostal.AutoSize = true;
+            this.lblEditCusPostal.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusPostal.Location = new System.Drawing.Point(478, 127);
+            this.lblEditCusPostal.Name = "lblEditCusPostal";
+            this.lblEditCusPostal.Size = new System.Drawing.Size(95, 17);
+            this.lblEditCusPostal.TabIndex = 37;
+            this.lblEditCusPostal.Text = "Postal Code";
             // 
             // txtUaddress
             // 
@@ -310,25 +307,25 @@
             this.txtUaddress.Size = new System.Drawing.Size(132, 25);
             this.txtUaddress.TabIndex = 43;
             // 
-            // label2
+            // lblEditCusCity
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "City";
+            this.lblEditCusCity.AutoSize = true;
+            this.lblEditCusCity.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusCity.Location = new System.Drawing.Point(26, 127);
+            this.lblEditCusCity.Name = "lblEditCusCity";
+            this.lblEditCusCity.Size = new System.Drawing.Size(37, 17);
+            this.lblEditCusCity.TabIndex = 46;
+            this.lblEditCusCity.Text = "City";
             // 
-            // label3
+            // lblEditCusProvince
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(252, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Province";
+            this.lblEditCusProvince.AutoSize = true;
+            this.lblEditCusProvince.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusProvince.Location = new System.Drawing.Point(252, 127);
+            this.lblEditCusProvince.Name = "lblEditCusProvince";
+            this.lblEditCusProvince.Size = new System.Drawing.Size(72, 17);
+            this.lblEditCusProvince.TabIndex = 48;
+            this.lblEditCusProvince.Text = "Province";
             // 
             // txtUcode
             // 
@@ -381,45 +378,45 @@
             this.cbUprovince.Size = new System.Drawing.Size(174, 25);
             this.cbUprovince.TabIndex = 47;
             // 
-            // label4
+            // lblEditCusEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(692, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Email";
+            this.lblEditCusEmail.AutoSize = true;
+            this.lblEditCusEmail.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusEmail.Location = new System.Drawing.Point(662, 27);
+            this.lblEditCusEmail.Name = "lblEditCusEmail";
+            this.lblEditCusEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblEditCusEmail.TabIndex = 40;
+            this.lblEditCusEmail.Text = "Email";
             // 
-            // label5
+            // lblEditCusFname
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 17);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "First Name";
+            this.lblEditCusFname.AutoSize = true;
+            this.lblEditCusFname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusFname.Location = new System.Drawing.Point(26, 36);
+            this.lblEditCusFname.Name = "lblEditCusFname";
+            this.lblEditCusFname.Size = new System.Drawing.Size(86, 17);
+            this.lblEditCusFname.TabIndex = 36;
+            this.lblEditCusFname.Text = "First Name";
             // 
-            // label6
+            // lblEditCusLname
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(252, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 17);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Last Name";
+            this.lblEditCusLname.AutoSize = true;
+            this.lblEditCusLname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusLname.Location = new System.Drawing.Point(252, 27);
+            this.lblEditCusLname.Name = "lblEditCusLname";
+            this.lblEditCusLname.Size = new System.Drawing.Size(83, 17);
+            this.lblEditCusLname.TabIndex = 38;
+            this.lblEditCusLname.Text = "Last Name";
             // 
-            // label7
+            // lblEditCusNumber
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(478, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 17);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Contact Number";
+            this.lblEditCusNumber.AutoSize = true;
+            this.lblEditCusNumber.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusNumber.Location = new System.Drawing.Point(478, 27);
+            this.lblEditCusNumber.Name = "lblEditCusNumber";
+            this.lblEditCusNumber.Size = new System.Drawing.Size(125, 17);
+            this.lblEditCusNumber.TabIndex = 39;
+            this.lblEditCusNumber.Text = "Contact Number";
             // 
             // txtUlname
             // 
@@ -429,43 +426,43 @@
             this.txtUlname.Size = new System.Drawing.Size(174, 25);
             this.txtUlname.TabIndex = 35;
             // 
-            // label8
+            // lblEditCusAddress
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(856, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 17);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Address";
+            this.lblEditCusAddress.AutoSize = true;
+            this.lblEditCusAddress.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCusAddress.Location = new System.Drawing.Point(856, 27);
+            this.lblEditCusAddress.Name = "lblEditCusAddress";
+            this.lblEditCusAddress.Size = new System.Drawing.Size(65, 17);
+            this.lblEditCusAddress.TabIndex = 41;
+            this.lblEditCusAddress.Text = "Address";
             // 
-            // groupBox1
+            // gbAddCustomer
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.MintCream;
-            this.groupBox1.Controls.Add(this.mtCNo);
-            this.groupBox1.Controls.Add(this.btnNewCustomer);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtPostalCode);
-            this.groupBox1.Controls.Add(this.txtFName);
-            this.groupBox1.Controls.Add(this.txtCity);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.cbProvince);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtLName);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 354);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1320, 226);
-            this.groupBox1.TabIndex = 34;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add New Customer";
+            this.gbAddCustomer.BackColor = System.Drawing.Color.MintCream;
+            this.gbAddCustomer.Controls.Add(this.mtCNo);
+            this.gbAddCustomer.Controls.Add(this.btnNewCustomer);
+            this.gbAddCustomer.Controls.Add(this.lblCustomerPostal);
+            this.gbAddCustomer.Controls.Add(this.txtAddress);
+            this.gbAddCustomer.Controls.Add(this.lblCustomerCity);
+            this.gbAddCustomer.Controls.Add(this.lblCustomerProvince);
+            this.gbAddCustomer.Controls.Add(this.txtPostalCode);
+            this.gbAddCustomer.Controls.Add(this.txtFName);
+            this.gbAddCustomer.Controls.Add(this.txtCity);
+            this.gbAddCustomer.Controls.Add(this.txtEmail);
+            this.gbAddCustomer.Controls.Add(this.cbProvince);
+            this.gbAddCustomer.Controls.Add(this.lblCustomerEmail);
+            this.gbAddCustomer.Controls.Add(this.lblCusFname1);
+            this.gbAddCustomer.Controls.Add(this.lblCusLname);
+            this.gbAddCustomer.Controls.Add(this.lblCusNum);
+            this.gbAddCustomer.Controls.Add(this.txtLName);
+            this.gbAddCustomer.Controls.Add(this.lblCustomerAddress);
+            this.gbAddCustomer.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAddCustomer.Location = new System.Drawing.Point(20, 354);
+            this.gbAddCustomer.Name = "gbAddCustomer";
+            this.gbAddCustomer.Size = new System.Drawing.Size(1320, 226);
+            this.gbAddCustomer.TabIndex = 34;
+            this.gbAddCustomer.TabStop = false;
+            this.gbAddCustomer.Text = "Add New Customer";
             // 
             // mtCNo
             // 
@@ -488,19 +485,18 @@
             this.btnNewCustomer.TabIndex = 18;
             this.btnNewCustomer.Text = "Add New Customer";
             this.btnNewCustomer.UseVisualStyleBackColor = false;
-            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click_1);
             this.btnNewCustomer.MouseLeave += new System.EventHandler(this.btnNewCustomer_MouseLeave);
             this.btnNewCustomer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNewCustomer_MouseMove);
             // 
-            // label10
+            // lblCustomerPostal
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(527, 135);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 17);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Postal Code";
+            this.lblCustomerPostal.AutoSize = true;
+            this.lblCustomerPostal.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerPostal.Location = new System.Drawing.Point(527, 135);
+            this.lblCustomerPostal.Name = "lblCustomerPostal";
+            this.lblCustomerPostal.Size = new System.Drawing.Size(95, 17);
+            this.lblCustomerPostal.TabIndex = 19;
+            this.lblCustomerPostal.Text = "Postal Code";
             // 
             // txtAddress
             // 
@@ -510,25 +506,25 @@
             this.txtAddress.Size = new System.Drawing.Size(174, 25);
             this.txtAddress.TabIndex = 26;
             // 
-            // label12
+            // lblCustomerCity
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(75, 135);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 17);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "City";
+            this.lblCustomerCity.AutoSize = true;
+            this.lblCustomerCity.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerCity.Location = new System.Drawing.Point(75, 135);
+            this.lblCustomerCity.Name = "lblCustomerCity";
+            this.lblCustomerCity.Size = new System.Drawing.Size(37, 17);
+            this.lblCustomerCity.TabIndex = 29;
+            this.lblCustomerCity.Text = "City";
             // 
-            // label11
+            // lblCustomerProvince
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(301, 135);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Province";
+            this.lblCustomerProvince.AutoSize = true;
+            this.lblCustomerProvince.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerProvince.Location = new System.Drawing.Point(301, 135);
+            this.lblCustomerProvince.Name = "lblCustomerProvince";
+            this.lblCustomerProvince.Size = new System.Drawing.Size(72, 17);
+            this.lblCustomerProvince.TabIndex = 31;
+            this.lblCustomerProvince.Text = "Province";
             // 
             // txtPostalCode
             // 
@@ -581,45 +577,45 @@
             this.cbProvince.Size = new System.Drawing.Size(174, 25);
             this.cbProvince.TabIndex = 30;
             // 
-            // label14
+            // lblCustomerEmail
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(696, 44);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 17);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Email";
+            this.lblCustomerEmail.AutoSize = true;
+            this.lblCustomerEmail.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerEmail.Location = new System.Drawing.Point(696, 44);
+            this.lblCustomerEmail.Name = "lblCustomerEmail";
+            this.lblCustomerEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblCustomerEmail.TabIndex = 22;
+            this.lblCustomerEmail.Text = "Email";
             // 
-            // label17
+            // lblCusFname1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(75, 44);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(98, 17);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "* First Name";
+            this.lblCusFname1.AutoSize = true;
+            this.lblCusFname1.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusFname1.Location = new System.Drawing.Point(75, 44);
+            this.lblCusFname1.Name = "lblCusFname1";
+            this.lblCusFname1.Size = new System.Drawing.Size(98, 17);
+            this.lblCusFname1.TabIndex = 17;
+            this.lblCusFname1.Text = "* First Name";
             // 
-            // label16
+            // lblCusLname
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(301, 44);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 17);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "* Last Name";
+            this.lblCusLname.AutoSize = true;
+            this.lblCusLname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusLname.Location = new System.Drawing.Point(301, 44);
+            this.lblCusLname.Name = "lblCusLname";
+            this.lblCusLname.Size = new System.Drawing.Size(95, 17);
+            this.lblCusLname.TabIndex = 20;
+            this.lblCusLname.Text = "* Last Name";
             // 
-            // label15
+            // lblCusNum
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(527, 44);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(137, 17);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "* Contact Number";
+            this.lblCusNum.AutoSize = true;
+            this.lblCusNum.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusNum.Location = new System.Drawing.Point(527, 44);
+            this.lblCusNum.Name = "lblCusNum";
+            this.lblCusNum.Size = new System.Drawing.Size(137, 17);
+            this.lblCusNum.TabIndex = 21;
+            this.lblCusNum.Text = "* Contact Number";
             // 
             // txtLName
             // 
@@ -629,15 +625,15 @@
             this.txtLName.Size = new System.Drawing.Size(174, 25);
             this.txtLName.TabIndex = 16;
             // 
-            // label13
+            // lblCustomerAddress
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(876, 44);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 17);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Address";
+            this.lblCustomerAddress.AutoSize = true;
+            this.lblCustomerAddress.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerAddress.Location = new System.Drawing.Point(876, 44);
+            this.lblCustomerAddress.Name = "lblCustomerAddress";
+            this.lblCustomerAddress.Size = new System.Drawing.Size(65, 17);
+            this.lblCustomerAddress.TabIndex = 23;
+            this.lblCustomerAddress.Text = "Address";
             // 
             // mtSearchNo
             // 
@@ -774,16 +770,16 @@
             this.wstGrp11DataSet.DataSetName = "WstGrp11DataSet";
             this.wstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label9
+            // lblSearchByPhoneNumber
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1100, 41);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 17);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Search by Phone Number :";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblSearchByPhoneNumber.AutoSize = true;
+            this.lblSearchByPhoneNumber.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchByPhoneNumber.Location = new System.Drawing.Point(1100, 41);
+            this.lblSearchByPhoneNumber.Name = "lblSearchByPhoneNumber";
+            this.lblSearchByPhoneNumber.Size = new System.Drawing.Size(201, 17);
+            this.lblSearchByPhoneNumber.TabIndex = 4;
+            this.lblSearchByPhoneNumber.Text = "Search by Phone Number :";
+            this.lblSearchByPhoneNumber.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tbpStaff
             // 
@@ -882,11 +878,11 @@
             // 
             this.tpgSuppliers.Controls.Add(this.comboBox3);
             this.tpgSuppliers.Controls.Add(this.label34);
-            this.tpgSuppliers.Controls.Add(this.groupBox4);
-            this.tpgSuppliers.Controls.Add(this.groupBox3);
+            this.tpgSuppliers.Controls.Add(this.gbUpdateSupplier);
+            this.tpgSuppliers.Controls.Add(this.gbAddSupplier);
             this.tpgSuppliers.Controls.Add(this.button1);
             this.tpgSuppliers.Controls.Add(this.gvSupplier);
-            this.tpgSuppliers.Controls.Add(lblSearch);
+            this.tpgSuppliers.Controls.Add(lblSupplierSearch);
             this.tpgSuppliers.Controls.Add(this.btnSearchSupplier);
             this.tpgSuppliers.Controls.Add(this.txtSearch);
             this.tpgSuppliers.Location = new System.Drawing.Point(4, 25);
@@ -898,17 +894,11 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.distinctCitiesBindingSource;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(1075, 215);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 24);
             this.comboBox3.TabIndex = 39;
-            // 
-            // distinctCitiesBindingSource
-            // 
-            this.distinctCitiesBindingSource.DataMember = "DistinctCities";
-            this.distinctCitiesBindingSource.DataSource = this.wstGrp11DataSet;
             // 
             // label34
             // 
@@ -920,31 +910,31 @@
             this.label34.TabIndex = 38;
             this.label34.Text = "Filter by City: ";
             // 
-            // groupBox4
+            // gbUpdateSupplier
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.MintCream;
-            this.groupBox4.Controls.Add(this.mtEditcnum);
-            this.groupBox4.Controls.Add(this.btnUpdateSupplier);
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.txtEditSaddress);
-            this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.txtEditScode);
-            this.groupBox4.Controls.Add(this.txtEditScity);
-            this.groupBox4.Controls.Add(this.txtEditSemail);
-            this.groupBox4.Controls.Add(this.cbEditSprovince);
-            this.groupBox4.Controls.Add(this.label29);
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Controls.Add(this.txtEditSname);
-            this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(17, 570);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1320, 226);
-            this.groupBox4.TabIndex = 36;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Update Supplier Details";
+            this.gbUpdateSupplier.BackColor = System.Drawing.Color.MintCream;
+            this.gbUpdateSupplier.Controls.Add(this.mtEditcnum);
+            this.gbUpdateSupplier.Controls.Add(this.btnUpdateSupplier);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditPostal);
+            this.gbUpdateSupplier.Controls.Add(this.txtEditSaddress);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditCity);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditProvince);
+            this.gbUpdateSupplier.Controls.Add(this.txtEditScode);
+            this.gbUpdateSupplier.Controls.Add(this.txtEditScity);
+            this.gbUpdateSupplier.Controls.Add(this.txtEditSemail);
+            this.gbUpdateSupplier.Controls.Add(this.cbEditSprovince);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditEmail);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditName);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditNum);
+            this.gbUpdateSupplier.Controls.Add(this.txtEditSname);
+            this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditAddress);
+            this.gbUpdateSupplier.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUpdateSupplier.Location = new System.Drawing.Point(17, 570);
+            this.gbUpdateSupplier.Name = "gbUpdateSupplier";
+            this.gbUpdateSupplier.Size = new System.Drawing.Size(1320, 226);
+            this.gbUpdateSupplier.TabIndex = 36;
+            this.gbUpdateSupplier.TabStop = false;
+            this.gbUpdateSupplier.Text = "Update Supplier Details";
             // 
             // mtEditcnum
             // 
@@ -969,15 +959,15 @@
             this.btnUpdateSupplier.UseVisualStyleBackColor = false;
             this.btnUpdateSupplier.Click += new System.EventHandler(this.btnUpdateSupplier_Click);
             // 
-            // label23
+            // lblSupplierEditPostal
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(249, 122);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 17);
-            this.label23.TabIndex = 19;
-            this.label23.Text = "Postal Code";
+            this.lblSupplierEditPostal.AutoSize = true;
+            this.lblSupplierEditPostal.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditPostal.Location = new System.Drawing.Point(249, 122);
+            this.lblSupplierEditPostal.Name = "lblSupplierEditPostal";
+            this.lblSupplierEditPostal.Size = new System.Drawing.Size(95, 17);
+            this.lblSupplierEditPostal.TabIndex = 19;
+            this.lblSupplierEditPostal.Text = "Postal Code";
             // 
             // txtEditSaddress
             // 
@@ -987,25 +977,25 @@
             this.txtEditSaddress.Size = new System.Drawing.Size(174, 25);
             this.txtEditSaddress.TabIndex = 26;
             // 
-            // label27
+            // lblSupplierEditCity
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(864, 44);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(37, 17);
-            this.label27.TabIndex = 29;
-            this.label27.Text = "City";
+            this.lblSupplierEditCity.AutoSize = true;
+            this.lblSupplierEditCity.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditCity.Location = new System.Drawing.Point(864, 44);
+            this.lblSupplierEditCity.Name = "lblSupplierEditCity";
+            this.lblSupplierEditCity.Size = new System.Drawing.Size(37, 17);
+            this.lblSupplierEditCity.TabIndex = 29;
+            this.lblSupplierEditCity.Text = "City";
             // 
-            // label28
+            // lblSupplierEditProvince
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(75, 122);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 17);
-            this.label28.TabIndex = 31;
-            this.label28.Text = "Province";
+            this.lblSupplierEditProvince.AutoSize = true;
+            this.lblSupplierEditProvince.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditProvince.Location = new System.Drawing.Point(75, 122);
+            this.lblSupplierEditProvince.Name = "lblSupplierEditProvince";
+            this.lblSupplierEditProvince.Size = new System.Drawing.Size(72, 17);
+            this.lblSupplierEditProvince.TabIndex = 31;
+            this.lblSupplierEditProvince.Text = "Province";
             // 
             // txtEditScode
             // 
@@ -1050,35 +1040,35 @@
             this.cbEditSprovince.Size = new System.Drawing.Size(174, 25);
             this.cbEditSprovince.TabIndex = 30;
             // 
-            // label29
+            // lblSupplierEditEmail
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(453, 44);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(47, 17);
-            this.label29.TabIndex = 22;
-            this.label29.Text = "Email";
+            this.lblSupplierEditEmail.AutoSize = true;
+            this.lblSupplierEditEmail.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditEmail.Location = new System.Drawing.Point(453, 44);
+            this.lblSupplierEditEmail.Name = "lblSupplierEditEmail";
+            this.lblSupplierEditEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblSupplierEditEmail.TabIndex = 22;
+            this.lblSupplierEditEmail.Text = "Email";
             // 
-            // label30
+            // lblSupplierEditName
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(54, 44);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(55, 17);
-            this.label30.TabIndex = 20;
-            this.label30.Text = " Name";
+            this.lblSupplierEditName.AutoSize = true;
+            this.lblSupplierEditName.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditName.Location = new System.Drawing.Point(54, 44);
+            this.lblSupplierEditName.Name = "lblSupplierEditName";
+            this.lblSupplierEditName.Size = new System.Drawing.Size(55, 17);
+            this.lblSupplierEditName.TabIndex = 20;
+            this.lblSupplierEditName.Text = " Name";
             // 
-            // label31
+            // lblSupplierEditNum
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(249, 44);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(137, 17);
-            this.label31.TabIndex = 21;
-            this.label31.Text = "* Contact Number";
+            this.lblSupplierEditNum.AutoSize = true;
+            this.lblSupplierEditNum.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditNum.Location = new System.Drawing.Point(249, 44);
+            this.lblSupplierEditNum.Name = "lblSupplierEditNum";
+            this.lblSupplierEditNum.Size = new System.Drawing.Size(137, 17);
+            this.lblSupplierEditNum.TabIndex = 21;
+            this.lblSupplierEditNum.Text = "* Contact Number";
             // 
             // txtEditSname
             // 
@@ -1088,41 +1078,41 @@
             this.txtEditSname.Size = new System.Drawing.Size(174, 25);
             this.txtEditSname.TabIndex = 16;
             // 
-            // label32
+            // lblSupplierEditAddress
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(638, 44);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(65, 17);
-            this.label32.TabIndex = 23;
-            this.label32.Text = "Address";
+            this.lblSupplierEditAddress.AutoSize = true;
+            this.lblSupplierEditAddress.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEditAddress.Location = new System.Drawing.Point(638, 44);
+            this.lblSupplierEditAddress.Name = "lblSupplierEditAddress";
+            this.lblSupplierEditAddress.Size = new System.Drawing.Size(65, 17);
+            this.lblSupplierEditAddress.TabIndex = 23;
+            this.lblSupplierEditAddress.Text = "Address";
             // 
-            // groupBox3
+            // gbAddSupplier
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.MintCream;
-            this.groupBox3.Controls.Add(this.mtScnum);
-            this.groupBox3.Controls.Add(this.btnAddSupplier);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.txtSaddress);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.txtScode);
-            this.groupBox3.Controls.Add(this.txtScity);
-            this.groupBox3.Controls.Add(this.txtSemail);
-            this.groupBox3.Controls.Add(this.cbSprovince);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.txtSname);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(17, 326);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1320, 226);
-            this.groupBox3.TabIndex = 35;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Add New Supplier";
+            this.gbAddSupplier.BackColor = System.Drawing.Color.MintCream;
+            this.gbAddSupplier.Controls.Add(this.mtScnum);
+            this.gbAddSupplier.Controls.Add(this.btnAddSupplier);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierPostal);
+            this.gbAddSupplier.Controls.Add(this.txtSaddress);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierCity);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierProvince);
+            this.gbAddSupplier.Controls.Add(this.txtScode);
+            this.gbAddSupplier.Controls.Add(this.txtScity);
+            this.gbAddSupplier.Controls.Add(this.txtSemail);
+            this.gbAddSupplier.Controls.Add(this.cbSprovince);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierEmail);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierFname);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierNum);
+            this.gbAddSupplier.Controls.Add(this.txtSname);
+            this.gbAddSupplier.Controls.Add(this.lblSupplierAddress);
+            this.gbAddSupplier.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAddSupplier.Location = new System.Drawing.Point(17, 326);
+            this.gbAddSupplier.Name = "gbAddSupplier";
+            this.gbAddSupplier.Size = new System.Drawing.Size(1320, 226);
+            this.gbAddSupplier.TabIndex = 35;
+            this.gbAddSupplier.TabStop = false;
+            this.gbAddSupplier.Text = "Add New Supplier";
             // 
             // mtScnum
             // 
@@ -1147,15 +1137,15 @@
             this.btnAddSupplier.UseVisualStyleBackColor = false;
             this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
-            // label19
+            // lblSupplierPostal
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(249, 122);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 17);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Postal Code";
+            this.lblSupplierPostal.AutoSize = true;
+            this.lblSupplierPostal.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierPostal.Location = new System.Drawing.Point(249, 122);
+            this.lblSupplierPostal.Name = "lblSupplierPostal";
+            this.lblSupplierPostal.Size = new System.Drawing.Size(95, 17);
+            this.lblSupplierPostal.TabIndex = 19;
+            this.lblSupplierPostal.Text = "Postal Code";
             // 
             // txtSaddress
             // 
@@ -1165,25 +1155,25 @@
             this.txtSaddress.Size = new System.Drawing.Size(174, 25);
             this.txtSaddress.TabIndex = 26;
             // 
-            // label20
+            // lblSupplierCity
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(864, 44);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 17);
-            this.label20.TabIndex = 29;
-            this.label20.Text = "City";
+            this.lblSupplierCity.AutoSize = true;
+            this.lblSupplierCity.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierCity.Location = new System.Drawing.Point(864, 44);
+            this.lblSupplierCity.Name = "lblSupplierCity";
+            this.lblSupplierCity.Size = new System.Drawing.Size(37, 17);
+            this.lblSupplierCity.TabIndex = 29;
+            this.lblSupplierCity.Text = "City";
             // 
-            // label21
+            // lblSupplierProvince
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(75, 122);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 17);
-            this.label21.TabIndex = 31;
-            this.label21.Text = "Province";
+            this.lblSupplierProvince.AutoSize = true;
+            this.lblSupplierProvince.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierProvince.Location = new System.Drawing.Point(75, 122);
+            this.lblSupplierProvince.Name = "lblSupplierProvince";
+            this.lblSupplierProvince.Size = new System.Drawing.Size(72, 17);
+            this.lblSupplierProvince.TabIndex = 31;
+            this.lblSupplierProvince.Text = "Province";
             // 
             // txtScode
             // 
@@ -1228,35 +1218,35 @@
             this.cbSprovince.Size = new System.Drawing.Size(174, 25);
             this.cbSprovince.TabIndex = 30;
             // 
-            // label22
+            // lblSupplierEmail
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(453, 44);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(47, 17);
-            this.label22.TabIndex = 22;
-            this.label22.Text = "Email";
+            this.lblSupplierEmail.AutoSize = true;
+            this.lblSupplierEmail.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierEmail.Location = new System.Drawing.Point(453, 44);
+            this.lblSupplierEmail.Name = "lblSupplierEmail";
+            this.lblSupplierEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblSupplierEmail.TabIndex = 22;
+            this.lblSupplierEmail.Text = "Email";
             // 
-            // label24
+            // lblSupplierFname
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(54, 44);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 17);
-            this.label24.TabIndex = 20;
-            this.label24.Text = " Name";
+            this.lblSupplierFname.AutoSize = true;
+            this.lblSupplierFname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierFname.Location = new System.Drawing.Point(54, 44);
+            this.lblSupplierFname.Name = "lblSupplierFname";
+            this.lblSupplierFname.Size = new System.Drawing.Size(55, 17);
+            this.lblSupplierFname.TabIndex = 20;
+            this.lblSupplierFname.Text = " Name";
             // 
-            // label25
+            // lblSupplierNum
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(249, 44);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(137, 17);
-            this.label25.TabIndex = 21;
-            this.label25.Text = "* Contact Number";
+            this.lblSupplierNum.AutoSize = true;
+            this.lblSupplierNum.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierNum.Location = new System.Drawing.Point(249, 44);
+            this.lblSupplierNum.Name = "lblSupplierNum";
+            this.lblSupplierNum.Size = new System.Drawing.Size(137, 17);
+            this.lblSupplierNum.TabIndex = 21;
+            this.lblSupplierNum.Text = "* Contact Number";
             // 
             // txtSname
             // 
@@ -1266,15 +1256,15 @@
             this.txtSname.Size = new System.Drawing.Size(174, 25);
             this.txtSname.TabIndex = 16;
             // 
-            // label26
+            // lblSupplierAddress
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(638, 44);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(65, 17);
-            this.label26.TabIndex = 23;
-            this.label26.Text = "Address";
+            this.lblSupplierAddress.AutoSize = true;
+            this.lblSupplierAddress.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplierAddress.Location = new System.Drawing.Point(638, 44);
+            this.lblSupplierAddress.Name = "lblSupplierAddress";
+            this.lblSupplierAddress.Size = new System.Drawing.Size(65, 17);
+            this.lblSupplierAddress.TabIndex = 23;
+            this.lblSupplierAddress.Text = "Address";
             // 
             // button1
             // 
@@ -1415,10 +1405,6 @@
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
             // 
-            // distinctCitiesTableAdapter1
-            // 
-            this.distinctCitiesTableAdapter1.ClearBeforeFill = true;
-            // 
             // frmUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1431,10 +1417,10 @@
             this.tcUserManagement.ResumeLayout(false);
             this.tbpCustomers.ResumeLayout(false);
             this.tbpCustomers.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbUpdateCustomer.ResumeLayout(false);
+            this.gbUpdateCustomer.PerformLayout();
+            this.gbAddCustomer.ResumeLayout(false);
+            this.gbAddCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).EndInit();
@@ -1443,11 +1429,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.tpgSuppliers.ResumeLayout(false);
             this.tpgSuppliers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.distinctCitiesBindingSource)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbUpdateSupplier.ResumeLayout(false);
+            this.gbUpdateSupplier.PerformLayout();
+            this.gbAddSupplier.ResumeLayout(false);
+            this.gbAddSupplier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSupplier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1494,86 +1479,84 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn provinceDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn postalCodeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblSearchByPhoneNumber;
         private System.Windows.Forms.Button btnSearchByNo;
         private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCustomerPostal;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCustomerCity;
+        private System.Windows.Forms.Label lblCustomerProvince;
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.ComboBox cbProvince;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblCustomerEmail;
+        private System.Windows.Forms.Label lblCusFname1;
+        private System.Windows.Forms.Label lblCusLname;
+        private System.Windows.Forms.Label lblCusNum;
         private System.Windows.Forms.TextBox txtLName;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCustomerAddress;
         private System.Windows.Forms.MaskedTextBox mtSearchNo;
         private System.Windows.Forms.MaskedTextBox mtCNo;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gbAddCustomer;
+        private System.Windows.Forms.GroupBox gbUpdateCustomer;
+        private System.Windows.Forms.Label lblEditCusPostal;
         private System.Windows.Forms.TextBox txtUaddress;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEditCusCity;
+        private System.Windows.Forms.Label lblEditCusProvince;
         private System.Windows.Forms.TextBox txtUcode;
         private System.Windows.Forms.TextBox txtUfname;
         private System.Windows.Forms.TextBox txtUcity;
         private System.Windows.Forms.TextBox txtUemail;
         private System.Windows.Forms.ComboBox cbUprovince;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblEditCusEmail;
+        private System.Windows.Forms.Label lblEditCusFname;
+        private System.Windows.Forms.Label lblEditCusLname;
+        private System.Windows.Forms.Label lblEditCusNumber;
         private System.Windows.Forms.TextBox txtUlname;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblEditCusAddress;
         private System.Windows.Forms.MaskedTextBox mtUcnum;
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearchSupplier;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label18;
-        private WstGrp11DataSetTableAdapters.DistinctCitiesTableAdapter distinctCitiesTableAdapter1;
-        private System.Windows.Forms.BindingSource distinctCitiesBindingSource;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbAddSupplier;
         private System.Windows.Forms.MaskedTextBox mtScnum;
         private System.Windows.Forms.Button btnAddSupplier;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblSupplierPostal;
         private System.Windows.Forms.TextBox txtSaddress;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblSupplierCity;
+        private System.Windows.Forms.Label lblSupplierProvince;
         private System.Windows.Forms.TextBox txtScode;
         private System.Windows.Forms.TextBox txtScity;
         private System.Windows.Forms.TextBox txtSemail;
         private System.Windows.Forms.ComboBox cbSprovince;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblSupplierEmail;
+        private System.Windows.Forms.Label lblSupplierFname;
+        private System.Windows.Forms.Label lblSupplierNum;
         private System.Windows.Forms.TextBox txtSname;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblSupplierAddress;
+        private System.Windows.Forms.GroupBox gbUpdateSupplier;
         private System.Windows.Forms.MaskedTextBox mtEditcnum;
         private System.Windows.Forms.Button btnUpdateSupplier;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblSupplierEditPostal;
         private System.Windows.Forms.TextBox txtEditSaddress;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblSupplierEditCity;
+        private System.Windows.Forms.Label lblSupplierEditProvince;
         private System.Windows.Forms.TextBox txtEditScode;
         private System.Windows.Forms.TextBox txtEditScity;
         private System.Windows.Forms.TextBox txtEditSemail;
         private System.Windows.Forms.ComboBox cbEditSprovince;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblSupplierEditEmail;
+        private System.Windows.Forms.Label lblSupplierEditName;
+        private System.Windows.Forms.Label lblSupplierEditNum;
         private System.Windows.Forms.TextBox txtEditSname;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblSupplierEditAddress;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCustomerRestore;
     }
 }

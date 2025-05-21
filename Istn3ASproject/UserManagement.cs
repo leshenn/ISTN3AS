@@ -29,15 +29,8 @@ namespace Istn3ASproject
 
         }
 
-        private void btnNewCustomer_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
 
-        private void tbpCustomers_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSearchByNo_Click(object sender, EventArgs e)
 
@@ -46,7 +39,7 @@ namespace Istn3ASproject
             customerTableAdapter.FillByContactNumber(this.wstGrp11DataSet.Customer, mtSearchNo.Text);
         }
 
-        private void btnNewCustomer_Click_1(object sender, EventArgs e)
+        private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to add this Customer?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
@@ -111,6 +104,7 @@ namespace Istn3ASproject
 
             if (result == DialogResult.Yes)
             {
+                mtUcnum.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 customerTableAdapter.UpdateCustomerDetails(txtUfname.Text, txtUlname.Text, mtUcnum.Text, txtUemail.Text, txtUaddress.Text, txtUcity.Text, cbUprovince.Text, txtUcode.Text, Convert.ToInt32(gvCustomer.CurrentRow.Cells[0].Value.ToString()));
                 customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
                 txtUfname.Clear();
@@ -202,6 +196,9 @@ namespace Istn3ASproject
 
         }
 
-        
+        private void btnCustomerRestore_Click(object sender, EventArgs e)
+        {
+            customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
+        }
     }
 }
