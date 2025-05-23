@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.tcPOS = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
-            this.wstGrp11DS = new Istn3ASproject.WstGrp11DataSet();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.btnProcessOrder = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RahilDS = new Istn3ASproject.WstGrp11DataSet();
             this.lblSearchItem = new System.Windows.Forms.Label();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
@@ -62,9 +62,9 @@
             this.OrderLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RahilDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
@@ -99,11 +99,6 @@
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             this.tbpSales.UseVisualStyleBackColor = true;
-            // 
-            // wstGrp11DS
-            // 
-            this.wstGrp11DS.DataSetName = "WstGrp11DataSet";
-            this.wstGrp11DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbPaymentMethod
             // 
@@ -215,7 +210,12 @@
             // salesInvoiceBindingSource
             // 
             this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
-            this.salesInvoiceBindingSource.DataSource = this.wstGrp11DS;
+            this.salesInvoiceBindingSource.DataSource = this.RahilDS;
+            // 
+            // RahilDS
+            // 
+            this.RahilDS.DataSetName = "RahilDS";
+            this.RahilDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblSearchItem
             // 
@@ -297,7 +297,7 @@
             // stockBindingSource
             // 
             this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.wstGrp11DS;
+            this.stockBindingSource.DataSource = this.RahilDS;
             // 
             // tbpRefund
             // 
@@ -324,7 +324,7 @@
             // orderBindingSource
             // 
             this.orderBindingSource.DataMember = "Order";
-            this.orderBindingSource.DataSource = this.wstGrp11DS;
+            this.orderBindingSource.DataSource = this.RahilDS;
             // 
             // taOrderLine
             // 
@@ -333,7 +333,7 @@
             // OrderLineBindingSource
             // 
             this.OrderLineBindingSource.DataMember = "OrderLine";
-            this.OrderLineBindingSource.DataSource = this.wstGrp11DS;
+            this.OrderLineBindingSource.DataSource = this.RahilDS;
             // 
             // frmPOS
             // 
@@ -347,9 +347,9 @@
             this.tcPOS.ResumeLayout(false);
             this.tbpSales.ResumeLayout(false);
             this.tbpSales.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RahilDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
@@ -364,7 +364,7 @@
         private System.Windows.Forms.TabPage tbpSales;
         private System.Windows.Forms.TabPage tbpRefund;
         private System.Windows.Forms.DataGridView dgvStock;
-        private WstGrp11DataSet wstGrp11DS;
+        private WstGrp11DataSet RahilDS;
         private System.Windows.Forms.BindingSource stockBindingSource;
         private WstGrp11DataSetTableAdapters.StockTableAdapter taStock;
         private System.Windows.Forms.TextBox txtSearchProduct;

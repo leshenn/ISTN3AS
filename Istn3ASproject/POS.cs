@@ -22,19 +22,19 @@ namespace Istn3ASproject
         private void frmPOS_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'wstGrp11DS.Order' table. You can move, or remove it, as needed.
-            this.taOrder.Fill(this.wstGrp11DS.Order);
+            this.taOrder.Fill(this.RahilDS.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Order' table. You can move, or remove it, as needed.
-            this.taOrder.Fill(this.wstGrp11DS.Order);
+            this.taOrder.Fill(this.RahilDS.Order);
             // TODO: This line of code loads data into the 'wstGrp11DS.Customer' table. You can move, or remove it, as needed.
             //this.taCustomer.Fill(this.wstGrp11DS.Customer);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
-            this.taStock.Fill(this.wstGrp11DS.Stock);
+            this.taStock.Fill(this.RahilDS.Stock);
 
         }
 
         private void txtSearchProduct_TextChanged(object sender, EventArgs e)
         {
-            taStock.FillByName(wstGrp11DS.Stock, txtSearchProduct.Text);
+            taStock.FillByName(RahilDS.Stock, txtSearchProduct.Text);
         }
 
         private void dgvStock_DoubleClick(object sender, EventArgs e)
@@ -42,14 +42,14 @@ namespace Istn3ASproject
             try
             {
                 DataRow dr;
-                dr = wstGrp11DS.SalesInvoice.NewRow();
+                dr = RahilDS.SalesInvoice.NewRow();
 
                 for (int i =0; i < 5; i++)
                 {
                     dr[i] = dgvStock.CurrentRow.Cells[i].Value;
                 }
 
-                wstGrp11DS.SalesInvoice.Rows.Add(dr);
+                RahilDS.SalesInvoice.Rows.Add(dr);
                 dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 2].Cells[5].Value = 0;
             }catch (Exception ec)
             {
@@ -125,14 +125,14 @@ namespace Istn3ASproject
                 if (result == DialogResult.OK)
                 {
                     ProcessOrder(CustomerID,StaffID,PaymentMethod,TransactionType,Today,CurrentTime,Total);
-                    wstGrp11DS.SalesInvoice.Clear();
+                    RahilDS.SalesInvoice.Clear();
                     txtSearchProduct.Clear();
                     cmbPaymentMethod.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("Order has been cancelled");
-                    wstGrp11DS.SalesInvoice.Clear();
+                    RahilDS.SalesInvoice.Clear();
                     txtSearchProduct.Clear();
                     cmbPaymentMethod.Text = "";
 
