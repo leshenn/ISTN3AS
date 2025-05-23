@@ -31,51 +31,41 @@
             this.components = new System.ComponentModel.Container();
             this.tcPOS = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.grpbAddCustomer = new System.Windows.Forms.GroupBox();
+            this.wstGrp11DS = new Istn3ASproject.WstGrp11DataSet();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.btnProcessOrder = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalCaption = new System.Windows.Forms.Label();
             this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblSearchItem = new System.Windows.Forms.Label();
-            this.txtSearchProduct = new System.Windows.Forms.TextBox();
-            this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.tbpRefund = new System.Windows.Forms.TabPage();
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wstGrp11DS = new Istn3ASproject.WstGrp11DataSet();
             this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblSearchItem = new System.Windows.Forms.Label();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockOnHandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbpRefund = new System.Windows.Forms.TabPage();
             this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.taSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
-            this.taCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.taOrder = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taOrderLine = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderLineTableAdapter();
             this.OrderLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).BeginInit();
@@ -94,8 +84,6 @@
             // 
             // tbpSales
             // 
-            this.tbpSales.Controls.Add(this.dataGridView1);
-            this.tbpSales.Controls.Add(this.grpbAddCustomer);
             this.tbpSales.Controls.Add(this.cmbPaymentMethod);
             this.tbpSales.Controls.Add(this.btnProcessOrder);
             this.tbpSales.Controls.Add(this.lblTotal);
@@ -112,31 +100,10 @@
             this.tbpSales.Text = "Sales";
             this.tbpSales.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // wstGrp11DS
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.customerIDDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.contactNoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.customerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 712);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 150);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // grpbAddCustomer
-            // 
-            this.grpbAddCustomer.Location = new System.Drawing.Point(1245, 124);
-            this.grpbAddCustomer.Name = "grpbAddCustomer";
-            this.grpbAddCustomer.Size = new System.Drawing.Size(495, 363);
-            this.grpbAddCustomer.TabIndex = 8;
-            this.grpbAddCustomer.TabStop = false;
-            this.grpbAddCustomer.Text = "ADD CUSTOMER";
+            this.wstGrp11DS.DataSetName = "WstGrp11DataSet";
+            this.wstGrp11DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbPaymentMethod
             // 
@@ -197,102 +164,6 @@
             this.dgvSalesInvoice.TabIndex = 3;
             this.dgvSalesInvoice.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellEndEdit);
             // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
-            // 
-            // lblSearchItem
-            // 
-            this.lblSearchItem.AutoSize = true;
-            this.lblSearchItem.Location = new System.Drawing.Point(27, 95);
-            this.lblSearchItem.Name = "lblSearchItem";
-            this.lblSearchItem.Size = new System.Drawing.Size(102, 16);
-            this.lblSearchItem.TabIndex = 2;
-            this.lblSearchItem.Text = "Search for item :";
-            // 
-            // txtSearchProduct
-            // 
-            this.txtSearchProduct.Location = new System.Drawing.Point(135, 95);
-            this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(519, 22);
-            this.txtSearchProduct.TabIndex = 1;
-            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
-            // 
-            // dgvStock
-            // 
-            this.dgvStock.AutoGenerateColumns = false;
-            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stockIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.poductDescriptionDataGridViewTextBoxColumn,
-            this.sellingPriceDataGridViewTextBoxColumn,
-            this.stockOnHandDataGridViewTextBoxColumn});
-            this.dgvStock.DataSource = this.stockBindingSource;
-            this.dgvStock.Location = new System.Drawing.Point(30, 142);
-            this.dgvStock.Name = "dgvStock";
-            this.dgvStock.RowHeadersWidth = 51;
-            this.dgvStock.RowTemplate.Height = 24;
-            this.dgvStock.Size = new System.Drawing.Size(979, 150);
-            this.dgvStock.TabIndex = 0;
-            this.dgvStock.DoubleClick += new System.EventHandler(this.dgvStock_DoubleClick);
-            // 
-            // tbpRefund
-            // 
-            this.tbpRefund.Location = new System.Drawing.Point(4, 25);
-            this.tbpRefund.Name = "tbpRefund";
-            this.tbpRefund.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpRefund.Size = new System.Drawing.Size(1803, 894);
-            this.tbpRefund.TabIndex = 1;
-            this.tbpRefund.Text = "Refund";
-            this.tbpRefund.UseVisualStyleBackColor = true;
-            // 
-            // customerIDDataGridViewTextBoxColumn
-            // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
-            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contactNoDataGridViewTextBoxColumn
-            // 
-            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.wstGrp11DS;
-            // 
-            // wstGrp11DS
-            // 
-            this.wstGrp11DS.DataSetName = "WstGrp11DataSet";
-            this.wstGrp11DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // stockIDDataGridViewTextBoxColumn1
             // 
             this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
@@ -334,10 +205,53 @@
             this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
             this.stockOnHandDataGridViewTextBoxColumn1.Width = 125;
             // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 125;
+            // 
             // salesInvoiceBindingSource
             // 
             this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
             this.salesInvoiceBindingSource.DataSource = this.wstGrp11DS;
+            // 
+            // lblSearchItem
+            // 
+            this.lblSearchItem.AutoSize = true;
+            this.lblSearchItem.Location = new System.Drawing.Point(27, 95);
+            this.lblSearchItem.Name = "lblSearchItem";
+            this.lblSearchItem.Size = new System.Drawing.Size(102, 16);
+            this.lblSearchItem.TabIndex = 2;
+            this.lblSearchItem.Text = "Search for item :";
+            // 
+            // txtSearchProduct
+            // 
+            this.txtSearchProduct.Location = new System.Drawing.Point(135, 95);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(519, 22);
+            this.txtSearchProduct.TabIndex = 1;
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.AutoGenerateColumns = false;
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stockIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.poductDescriptionDataGridViewTextBoxColumn,
+            this.sellingPriceDataGridViewTextBoxColumn,
+            this.stockOnHandDataGridViewTextBoxColumn});
+            this.dgvStock.DataSource = this.stockBindingSource;
+            this.dgvStock.Location = new System.Drawing.Point(30, 142);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.RowHeadersWidth = 51;
+            this.dgvStock.RowTemplate.Height = 24;
+            this.dgvStock.Size = new System.Drawing.Size(979, 150);
+            this.dgvStock.TabIndex = 0;
+            this.dgvStock.DoubleClick += new System.EventHandler(this.dgvStock_DoubleClick);
             // 
             // stockIDDataGridViewTextBoxColumn
             // 
@@ -385,6 +299,16 @@
             this.stockBindingSource.DataMember = "Stock";
             this.stockBindingSource.DataSource = this.wstGrp11DS;
             // 
+            // tbpRefund
+            // 
+            this.tbpRefund.Location = new System.Drawing.Point(4, 25);
+            this.tbpRefund.Name = "tbpRefund";
+            this.tbpRefund.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpRefund.Size = new System.Drawing.Size(1803, 894);
+            this.tbpRefund.TabIndex = 1;
+            this.tbpRefund.Text = "Refund";
+            this.tbpRefund.UseVisualStyleBackColor = true;
+            // 
             // taStock
             // 
             this.taStock.ClearBeforeFill = true;
@@ -392,10 +316,6 @@
             // taSalesInvoice
             // 
             this.taSalesInvoice.ClearBeforeFill = true;
-            // 
-            // taCustomer
-            // 
-            this.taCustomer.ClearBeforeFill = true;
             // 
             // taOrder
             // 
@@ -427,12 +347,10 @@
             this.tcPOS.ResumeLayout(false);
             this.tbpSales.ResumeLayout(false);
             this.tbpSales.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).EndInit();
@@ -469,14 +387,6 @@
         private System.Windows.Forms.Label lblTotalCaption;
         private System.Windows.Forms.Button btnProcessOrder;
         private System.Windows.Forms.ComboBox cmbPaymentMethod;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox grpbAddCustomer;
-        private System.Windows.Forms.BindingSource customerBindingSource;
-        private WstGrp11DataSetTableAdapters.CustomerTableAdapter taCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
         private WstGrp11DataSetTableAdapters.OrderTableAdapter taOrder;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private WstGrp11DataSetTableAdapters.OrderLineTableAdapter taOrderLine;

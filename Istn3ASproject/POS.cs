@@ -215,9 +215,9 @@ namespace Istn3ASproject
         {
             try
             {
-                int OrderID = taOrder.InsertNewSalesOrder(CustomerID, StaffID, MethodOfPayment, TransactionType, Today, CurrentTime, Total);
+                int OrderID = Convert.ToInt32(taOrder.InsertNewSalesOrder(CustomerID, StaffID, MethodOfPayment, TransactionType, Today, CurrentTime, Total));
                 ProcessOrderLine(OrderID);
-                MessageBox.Show("Order has been processed");
+                MessageBox.Show("Order has been processed OrderId :" + OrderID);
             }
             catch (Exception ex)
             {
