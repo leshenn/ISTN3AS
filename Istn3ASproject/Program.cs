@@ -16,7 +16,7 @@ namespace Istn3ASproject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmStockManagement());
+            Application.Run(new frmPOS());
 
         }
     }

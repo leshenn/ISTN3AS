@@ -32,10 +32,6 @@
             this.tcPOS = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.tbpRefund = new System.Windows.Forms.TabPage();
-            this.wstGrp11DS = new Istn3ASproject.WstGrp11DataSet();
-            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +40,15 @@
             this.stockOnHandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reorderLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expirationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wstGrp11DS = new Istn3ASproject.WstGrp11DataSet();
+            this.tbpRefund = new System.Windows.Forms.TabPage();
+            this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPOS
@@ -57,18 +57,20 @@
             this.tcPOS.Controls.Add(this.tbpRefund);
             this.tcPOS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPOS.Location = new System.Drawing.Point(0, 0);
+            this.tcPOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcPOS.Name = "tcPOS";
             this.tcPOS.SelectedIndex = 0;
-            this.tcPOS.Size = new System.Drawing.Size(800, 450);
+            this.tcPOS.Size = new System.Drawing.Size(1361, 559);
             this.tcPOS.TabIndex = 0;
             // 
             // tbpSales
             // 
             this.tbpSales.Controls.Add(this.dgvStock);
-            this.tbpSales.Location = new System.Drawing.Point(4, 25);
+            this.tbpSales.Location = new System.Drawing.Point(4, 22);
+            this.tbpSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpSales.Name = "tbpSales";
-            this.tbpSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSales.Size = new System.Drawing.Size(792, 421);
+            this.tbpSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Size = new System.Drawing.Size(1353, 533);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             this.tbpSales.UseVisualStyleBackColor = true;
@@ -87,36 +89,13 @@
             this.reorderLevelDataGridViewTextBoxColumn,
             this.expirationTimeDataGridViewTextBoxColumn});
             this.dgvStock.DataSource = this.stockBindingSource;
-            this.dgvStock.Location = new System.Drawing.Point(-97, 157);
+            this.dgvStock.Location = new System.Drawing.Point(92, 78);
+            this.dgvStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersWidth = 51;
             this.dgvStock.RowTemplate.Height = 24;
-            this.dgvStock.Size = new System.Drawing.Size(1310, 150);
+            this.dgvStock.Size = new System.Drawing.Size(1062, 122);
             this.dgvStock.TabIndex = 0;
-            // 
-            // tbpRefund
-            // 
-            this.tbpRefund.Location = new System.Drawing.Point(4, 25);
-            this.tbpRefund.Name = "tbpRefund";
-            this.tbpRefund.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpRefund.Size = new System.Drawing.Size(792, 421);
-            this.tbpRefund.TabIndex = 1;
-            this.tbpRefund.Text = "Refund";
-            this.tbpRefund.UseVisualStyleBackColor = true;
-            // 
-            // wstGrp11DS
-            // 
-            this.wstGrp11DS.DataSetName = "WstGrp11DataSet";
-            this.wstGrp11DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockBindingSource
-            // 
-            this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.wstGrp11DS;
-            // 
-            // taStock
-            // 
-            this.taStock.ClearBeforeFill = true;
             // 
             // stockIDDataGridViewTextBoxColumn
             // 
@@ -183,20 +162,46 @@
             this.expirationTimeDataGridViewTextBoxColumn.Name = "expirationTimeDataGridViewTextBoxColumn";
             this.expirationTimeDataGridViewTextBoxColumn.Width = 125;
             // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "Stock";
+            this.stockBindingSource.DataSource = this.wstGrp11DS;
+            // 
+            // wstGrp11DS
+            // 
+            this.wstGrp11DS.DataSetName = "WstGrp11DataSet";
+            this.wstGrp11DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbpRefund
+            // 
+            this.tbpRefund.Location = new System.Drawing.Point(4, 22);
+            this.tbpRefund.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpRefund.Name = "tbpRefund";
+            this.tbpRefund.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpRefund.Size = new System.Drawing.Size(1353, 533);
+            this.tbpRefund.TabIndex = 1;
+            this.tbpRefund.Text = "Refund";
+            this.tbpRefund.UseVisualStyleBackColor = true;
+            // 
+            // taStock
+            // 
+            this.taStock.ClearBeforeFill = true;
+            // 
             // frmPOS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1361, 559);
             this.Controls.Add(this.tcPOS);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPOS";
             this.Text = "POS";
             this.Load += new System.EventHandler(this.frmPOS_Load);
             this.tcPOS.ResumeLayout(false);
             this.tbpSales.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DS)).EndInit();
             this.ResumeLayout(false);
 
         }
