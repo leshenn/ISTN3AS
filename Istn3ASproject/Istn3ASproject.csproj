@@ -79,10 +79,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WstGrp11DataSet.Designer.cs">
+    <Compile Include="RahilDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WstGrp11DataSet.xsd</DependentUpon>
+      <DependentUpon>RahilDS.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>
@@ -117,16 +117,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WstGrp11DataSet.xsc">
-      <DependentUpon>WstGrp11DataSet.xsd</DependentUpon>
+    <None Include="RahilDS.xsc">
+      <DependentUpon>RahilDS.xsd</DependentUpon>
     </None>
-    <None Include="WstGrp11DataSet.xsd">
+    <None Include="RahilDS.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WstGrp11DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>RahilDS.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="WstGrp11DataSet.xss">
-      <DependentUpon>WstGrp11DataSet.xsd</DependentUpon>
+    <None Include="RahilDS.xss">
+      <DependentUpon>RahilDS.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
