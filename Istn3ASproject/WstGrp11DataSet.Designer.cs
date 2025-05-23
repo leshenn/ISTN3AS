@@ -6181,6 +6181,62 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         public virtual int Update(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType, System.DateTime Date, System.TimeSpan Time, decimal TotalCost, int Original_OrderID, int Original_CustomerID, int Original_StaffID, string Original_MethodOfPayment, string Original_TransactionType, System.DateTime Original_Date, System.TimeSpan Original_Time, decimal Original_TotalCost) {
             return this.Update(CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Time, TotalCost, Original_OrderID, Original_CustomerID, Original_StaffID, Original_MethodOfPayment, Original_TransactionType, Original_Date, Original_Time, Original_TotalCost, Original_OrderID);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual object InsertNewSalesOrder(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType, string Date, string Time, decimal TotalCost) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(CustomerID));
+            command.Parameters[1].Value = ((int)(StaffID));
+            if ((MethodOfPayment == null)) {
+                throw new global::System.ArgumentNullException("MethodOfPayment");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(MethodOfPayment));
+            }
+            if ((TransactionType == null)) {
+                throw new global::System.ArgumentNullException("TransactionType");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(TransactionType));
+            }
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Date));
+            }
+            if ((Time == null)) {
+                throw new global::System.ArgumentNullException("Time");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Time));
+            }
+            command.Parameters[6].Value = ((decimal)(TotalCost));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
     }
     
     /// <summary>
