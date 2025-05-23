@@ -533,10 +533,6 @@ namespace Istn3ASproject
             //MessageBox.Show(ordStatus);
         }
 
-        private void addItemsToCombobox()
-        {
-
-        }
 
         //THIS IS TO ADD A NEW ITEM TO THE STOCK TABLE
         private void btnAddItem_Click(object sender, EventArgs e)
