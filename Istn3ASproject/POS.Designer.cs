@@ -55,7 +55,7 @@
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbpRefund = new System.Windows.Forms.TabPage();
             this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
-            this.taSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
+           // this.taSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.taOrder = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taOrderLine = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderLineTableAdapter();
@@ -315,7 +315,7 @@
             // 
             // taSalesInvoice
             // 
-            this.taSalesInvoice.ClearBeforeFill = true;
+            //this.taSalesInvoice.ClearBeforeFill = true;
             // 
             // taOrder
             // 
@@ -376,7 +376,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvSalesInvoice;
         private System.Windows.Forms.BindingSource salesInvoiceBindingSource;
-        private WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter taSalesInvoice;
+       // private WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter taSalesInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn1;

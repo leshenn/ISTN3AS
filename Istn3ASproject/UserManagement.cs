@@ -232,13 +232,13 @@ namespace Istn3ASproject
 
             if (updateIsValid && dialoganswerUpdate==DialogResult.Yes )
             {
-                staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text, txtPasswordUpdate.Text, txtNameUpdate.Text,
+               /* staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text, txtPasswordUpdate.Text, txtNameUpdate.Text,
                 txtLastNameUpdate.Text, txtContactUpdate.Text, cmbStaffRoleUpdate.Text, 
                 Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value),
                 Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[4].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[5].Value),
                 Convert.ToString(dgvStaffMgt.CurrentRow.Cells[6].Value), Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value));
                 staffTableAdapter.Fill(wstGrp11DataSet.Staff);
-                SystemSounds.Exclamation.Play();
+                SystemSounds.Exclamation.Play();*/
                 MessageBox.Show("Staff Member Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -261,11 +261,11 @@ namespace Istn3ASproject
 
             if (ArchiveResult == DialogResult.Yes)
             {
-                staffTableAdapter.ArchiveStaffMember("Terminated", Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value),
+               /* staffTableAdapter.ArchiveStaffMember("Terminated", Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value),
                     Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[4].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[5].Value),
                     Convert.ToString(dgvStaffMgt.CurrentRow.Cells[6].Value), Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value));
-                staffTableAdapter.Fill(wstGrp11DataSet.Staff);
-                MessageBox.Show("Archive Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                staffTableAdapter.Fill(wstGrp11DataSet.Staff);*/
+                MessageBox.Show("Archive not Successful please check code", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

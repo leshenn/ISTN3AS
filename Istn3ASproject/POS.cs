@@ -39,7 +39,7 @@ namespace Istn3ASproject
 
         private void dgvStock_DoubleClick(object sender, EventArgs e)
         {
-            try
+           /* try
             {
                 DataRow dr;
                 dr = RahilDS.SalesInvoice.NewRow();
@@ -54,7 +54,7 @@ namespace Istn3ASproject
             }catch (Exception ec)
             {
                 MessageBox.Show("Error" + ec.Message);       
-            }
+            }*/
             
 
         }
@@ -102,7 +102,7 @@ namespace Istn3ASproject
 
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
-            int CustomerID = 1;
+          /*  int CustomerID = 1;
             int StaffID = 1;
             string TransactionType = "sale";
             string Today = DateTime.Today.ToString("yyyy-MM-dd");
@@ -137,7 +137,7 @@ namespace Istn3ASproject
                     cmbPaymentMethod.Text = "";
 
                 }
-            }
+            }*/
 
         }
 
@@ -213,7 +213,7 @@ namespace Istn3ASproject
 
         private void ProcessOrder(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType,string Today, string CurrentTime, Decimal Total)
         {
-            try
+          /*  try
             {
                 int OrderID = Convert.ToInt32(taOrder.InsertNewSalesOrder(CustomerID, StaffID, MethodOfPayment, TransactionType, Today, CurrentTime, Total));
                 ProcessOrderLine(OrderID);
@@ -222,12 +222,12 @@ namespace Istn3ASproject
             catch (Exception ex)
             {
                 MessageBox.Show("Error processing order" + ex.Message);
-            }
+            }*/
         }
 
         private void ProcessOrderLine(int OrderID)
         {
-            try
+           /* try
             {
                 for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
                 {
@@ -250,18 +250,18 @@ namespace Istn3ASproject
             catch (Exception ex)
             {
                 MessageBox.Show("Error processing order " + ex.Message);
-            }
+            }*/
         }
 
         private void updateStock(int StockID, int AfterSaleStock)
         {
-            try
+          /*  try
             {
                 taStock.UpdateStockAfterSale(AfterSaleStock, StockID);
             }catch (Exception ex)
             {
                 MessageBox.Show("Error updating stock" + ex.Message);
-            }
+            }*/
         }
     }
 }
