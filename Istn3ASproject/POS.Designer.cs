@@ -36,14 +36,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalCaption = new System.Windows.Forms.Label();
             this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
-            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poductDescriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RahilDS = new Istn3ASproject.WstGrp11DataSet();
+            this.WstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
             this.lblSearchItem = new System.Windows.Forms.Label();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
@@ -55,16 +49,22 @@
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbpRefund = new System.Windows.Forms.TabPage();
             this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
-           // this.taSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.taOrder = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taOrderLine = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderLineTableAdapter();
             this.OrderLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TaSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
+            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PoductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RahilDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
@@ -146,7 +146,7 @@
             this.dgvSalesInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1,
-            this.poductDescriptionDataGridViewTextBoxColumn1,
+            this.PoductDescription,
             this.sellingPriceDataGridViewTextBoxColumn1,
             this.stockOnHandDataGridViewTextBoxColumn1,
             this.Quantity});
@@ -159,63 +159,15 @@
             this.dgvSalesInvoice.TabIndex = 3;
             this.dgvSalesInvoice.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellEndEdit);
             // 
-            // stockIDDataGridViewTextBoxColumn1
-            // 
-            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
-            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "StockID";
-            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
-            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.stockIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // poductDescriptionDataGridViewTextBoxColumn1
-            // 
-            this.poductDescriptionDataGridViewTextBoxColumn1.DataPropertyName = "PoductDescription";
-            this.poductDescriptionDataGridViewTextBoxColumn1.HeaderText = "PoductDescription";
-            this.poductDescriptionDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.poductDescriptionDataGridViewTextBoxColumn1.Name = "poductDescriptionDataGridViewTextBoxColumn1";
-            this.poductDescriptionDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // sellingPriceDataGridViewTextBoxColumn1
-            // 
-            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
-            this.sellingPriceDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // stockOnHandDataGridViewTextBoxColumn1
-            // 
-            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
-            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "StockOnHand";
-            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
-            this.stockOnHandDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
-            // 
             // salesInvoiceBindingSource
             // 
             this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
-            this.salesInvoiceBindingSource.DataSource = this.RahilDS;
+            this.salesInvoiceBindingSource.DataSource = this.WstGrp11DataSet;
             // 
-            // RahilDS
+            // WstGrp11DataSet
             // 
-            this.RahilDS.DataSetName = "RahilDS";
-            this.RahilDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.WstGrp11DataSet.DataSetName = "WstGrp11DataSet";
+            this.WstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblSearchItem
             // 
@@ -297,7 +249,7 @@
             // stockBindingSource
             // 
             this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.RahilDS;
+            this.stockBindingSource.DataSource = this.WstGrp11DataSet;
             // 
             // tbpRefund
             // 
@@ -313,10 +265,6 @@
             // 
             this.taStock.ClearBeforeFill = true;
             // 
-            // taSalesInvoice
-            // 
-            //this.taSalesInvoice.ClearBeforeFill = true;
-            // 
             // taOrder
             // 
             this.taOrder.ClearBeforeFill = true;
@@ -324,7 +272,7 @@
             // orderBindingSource
             // 
             this.orderBindingSource.DataMember = "Order";
-            this.orderBindingSource.DataSource = this.RahilDS;
+            this.orderBindingSource.DataSource = this.WstGrp11DataSet;
             // 
             // taOrderLine
             // 
@@ -333,7 +281,59 @@
             // OrderLineBindingSource
             // 
             this.OrderLineBindingSource.DataMember = "OrderLine";
-            this.OrderLineBindingSource.DataSource = this.RahilDS;
+            this.OrderLineBindingSource.DataSource = this.WstGrp11DataSet;
+            // 
+            // TaSalesInvoice
+            // 
+            this.TaSalesInvoice.ClearBeforeFill = true;
+            // 
+            // stockIDDataGridViewTextBoxColumn1
+            // 
+            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
+            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "StockID";
+            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
+            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // PoductDescription
+            // 
+            this.PoductDescription.DataPropertyName = "PoductDescription";
+            this.PoductDescription.HeaderText = "PoductDescription";
+            this.PoductDescription.MinimumWidth = 6;
+            this.PoductDescription.Name = "PoductDescription";
+            this.PoductDescription.Width = 125;
+            // 
+            // sellingPriceDataGridViewTextBoxColumn1
+            // 
+            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
+            this.sellingPriceDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // stockOnHandDataGridViewTextBoxColumn1
+            // 
+            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
+            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "StockOnHand";
+            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
+            this.stockOnHandDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 125;
             // 
             // frmPOS
             // 
@@ -349,7 +349,7 @@
             this.tbpSales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RahilDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
@@ -364,25 +364,14 @@
         private System.Windows.Forms.TabPage tbpSales;
         private System.Windows.Forms.TabPage tbpRefund;
         private System.Windows.Forms.DataGridView dgvStock;
-        private WstGrp11DataSet RahilDS;
+        private WstGrp11DataSet WstGrp11DataSet;
         private System.Windows.Forms.BindingSource stockBindingSource;
         private WstGrp11DataSetTableAdapters.StockTableAdapter taStock;
         private System.Windows.Forms.TextBox txtSearchProduct;
         private System.Windows.Forms.Label lblSearchItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvSalesInvoice;
         private System.Windows.Forms.BindingSource salesInvoiceBindingSource;
-       // private WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter taSalesInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalCaption;
         private System.Windows.Forms.Button btnProcessOrder;
@@ -391,5 +380,17 @@
         private System.Windows.Forms.BindingSource orderBindingSource;
         private WstGrp11DataSetTableAdapters.OrderLineTableAdapter taOrderLine;
         private System.Windows.Forms.BindingSource OrderLineBindingSource;
+        private WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter TaSalesInvoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PoductDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }

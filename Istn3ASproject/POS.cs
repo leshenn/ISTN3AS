@@ -22,39 +22,37 @@ namespace Istn3ASproject
         private void frmPOS_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'wstGrp11DS.Order' table. You can move, or remove it, as needed.
-            this.taOrder.Fill(this.RahilDS.Order);
+            this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Order' table. You can move, or remove it, as needed.
-            this.taOrder.Fill(this.RahilDS.Order);
-            // TODO: This line of code loads data into the 'wstGrp11DS.Customer' table. You can move, or remove it, as needed.
-            //this.taCustomer.Fill(this.wstGrp11DS.Customer);
+            this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
-            this.taStock.Fill(this.RahilDS.Stock);
+            this.taStock.Fill(this.WstGrp11DataSet.Stock);
 
         }
 
         private void txtSearchProduct_TextChanged(object sender, EventArgs e)
         {
-            taStock.FillByName(RahilDS.Stock, txtSearchProduct.Text);
+            taStock.FillByName(WstGrp11DataSet.Stock, txtSearchProduct.Text);
         }
 
         private void dgvStock_DoubleClick(object sender, EventArgs e)
         {
-           /* try
+            try
             {
                 DataRow dr;
-                dr = RahilDS.SalesInvoice.NewRow();
+                dr = WstGrp11DataSet.SalesInvoice.NewRow();
 
                 for (int i =0; i < 5; i++)
                 {
                     dr[i] = dgvStock.CurrentRow.Cells[i].Value;
                 }
 
-                RahilDS.SalesInvoice.Rows.Add(dr);
+                WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
                 dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 2].Cells[5].Value = 0;
             }catch (Exception ec)
             {
                 MessageBox.Show("Error" + ec.Message);       
-            }*/
+            }
             
 
         }
@@ -102,7 +100,7 @@ namespace Istn3ASproject
 
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
-          /*  int CustomerID = 1;
+            int CustomerID = 1;
             int StaffID = 1;
             string TransactionType = "sale";
             string Today = DateTime.Today.ToString("yyyy-MM-dd");
@@ -125,19 +123,20 @@ namespace Istn3ASproject
                 if (result == DialogResult.OK)
                 {
                     ProcessOrder(CustomerID,StaffID,PaymentMethod,TransactionType,Today,CurrentTime,Total);
-                    RahilDS.SalesInvoice.Clear();
+                    WstGrp11DataSet.SalesInvoice.Clear();
                     txtSearchProduct.Clear();
                     cmbPaymentMethod.Text = "";
+                    taStock.Fill(WstGrp11DataSet.Stock);
                 }
                 else
                 {
                     MessageBox.Show("Order has been cancelled");
-                    RahilDS.SalesInvoice.Clear();
+                    WstGrp11DataSet.SalesInvoice.Clear();
                     txtSearchProduct.Clear();
                     cmbPaymentMethod.Text = "";
 
                 }
-            }*/
+            }
 
         }
 
@@ -213,7 +212,7 @@ namespace Istn3ASproject
 
         private void ProcessOrder(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType,string Today, string CurrentTime, Decimal Total)
         {
-          /*  try
+            try
             {
                 int OrderID = Convert.ToInt32(taOrder.InsertNewSalesOrder(CustomerID, StaffID, MethodOfPayment, TransactionType, Today, CurrentTime, Total));
                 ProcessOrderLine(OrderID);
@@ -222,12 +221,12 @@ namespace Istn3ASproject
             catch (Exception ex)
             {
                 MessageBox.Show("Error processing order" + ex.Message);
-            }*/
+            }
         }
 
         private void ProcessOrderLine(int OrderID)
         {
-           /* try
+            try
             {
                 for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
                 {
@@ -250,18 +249,18 @@ namespace Istn3ASproject
             catch (Exception ex)
             {
                 MessageBox.Show("Error processing order " + ex.Message);
-            }*/
+            }
         }
 
         private void updateStock(int StockID, int AfterSaleStock)
         {
-          /*  try
+            try
             {
                 taStock.UpdateStockAfterSale(AfterSaleStock, StockID);
             }catch (Exception ex)
             {
                 MessageBox.Show("Error updating stock" + ex.Message);
-            }*/
+            }
         }
     }
 }
