@@ -73,16 +73,7 @@ namespace Istn3ASproject
             this.mtSearchNo = new System.Windows.Forms.MaskedTextBox();
             this.btnSearchByNo = new System.Windows.Forms.Button();
             this.gvCustomer = new System.Windows.Forms.DataGridView();
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provinceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
             this.lblSearchByPhoneNumber = new System.Windows.Forms.Label();
             this.tbpStaff = new System.Windows.Forms.TabPage();
@@ -122,14 +113,6 @@ namespace Istn3ASproject
             this.txtUsernameStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStaffMgt = new System.Windows.Forms.DataGridView();
-            this.staffIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbpSuppliers = new System.Windows.Forms.TabPage();
             this.gbUpdateSupplier = new System.Windows.Forms.GroupBox();
             this.mtEditSupplierContact = new System.Windows.Forms.MaskedTextBox();
@@ -165,6 +148,33 @@ namespace Istn3ASproject
             this.lblSupplierAddress = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.gvSupplier = new System.Windows.Forms.DataGridView();
+            this.btnSearchSupplier = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provinceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.staffIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,36 +184,26 @@ namespace Istn3ASproject
             this.provinceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postalCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSearchSupplier = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.staffBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.staffTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StaffTableAdapter();
-            this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
             lblSupplierSearch = new System.Windows.Forms.Label();
             this.tcUserManagement.SuspendLayout();
             this.tbpCustomers.SuspendLayout();
             this.gbUpdateCustomer.SuspendLayout();
             this.gbAddCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).BeginInit();
             this.tbpStaff.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffMgt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.tbpSuppliers.SuspendLayout();
             this.gbUpdateSupplier.SuspendLayout();
             this.gbAddSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -225,7 +225,7 @@ namespace Istn3ASproject
             this.tcUserManagement.Controls.Add(this.tbpSuppliers);
             this.tcUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcUserManagement.Location = new System.Drawing.Point(0, 0);
-            this.tcUserManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcUserManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tcUserManagement.Name = "tcUserManagement";
             this.tcUserManagement.SelectedIndex = 0;
             this.tcUserManagement.Size = new System.Drawing.Size(1263, 700);
@@ -244,9 +244,9 @@ namespace Istn3ASproject
             this.tbpCustomers.Controls.Add(this.lblSearchByPhoneNumber);
             this.tbpCustomers.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbpCustomers.Location = new System.Drawing.Point(4, 22);
-            this.tbpCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.tbpCustomers.Name = "tbpCustomers";
-            this.tbpCustomers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpCustomers.Padding = new System.Windows.Forms.Padding(3);
             this.tbpCustomers.Size = new System.Drawing.Size(1255, 674);
             this.tbpCustomers.TabIndex = 0;
             this.tbpCustomers.Text = "Customers";
@@ -724,47 +724,6 @@ namespace Istn3ASproject
             this.gvCustomer.TabIndex = 0;
             this.gvCustomer.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvCustomer_RowHeaderMouseClick);
             // 
-            // customerIDDataGridViewTextBoxColumn
-            // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
-            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // contactNoDataGridViewTextBoxColumn
-            // 
-            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Address
             // 
             this.Address.DataPropertyName = "Address";
@@ -772,35 +731,6 @@ namespace Istn3ASproject
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.Width = 125;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // provinceDataGridViewTextBoxColumn
-            // 
-            this.provinceDataGridViewTextBoxColumn.DataPropertyName = "Province";
-            this.provinceDataGridViewTextBoxColumn.HeaderText = "Province";
-            this.provinceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.provinceDataGridViewTextBoxColumn.Name = "provinceDataGridViewTextBoxColumn";
-            this.provinceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // postalCodeDataGridViewTextBoxColumn
-            // 
-            this.postalCodeDataGridViewTextBoxColumn.DataPropertyName = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn.HeaderText = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.postalCodeDataGridViewTextBoxColumn.Name = "postalCodeDataGridViewTextBoxColumn";
-            this.postalCodeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.wstGrp11DataSet;
             // 
             // wstGrp11DataSet
             // 
@@ -830,9 +760,9 @@ namespace Istn3ASproject
             this.tbpStaff.Controls.Add(this.groupBox1);
             this.tbpStaff.Controls.Add(this.dgvStaffMgt);
             this.tbpStaff.Location = new System.Drawing.Point(4, 22);
-            this.tbpStaff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpStaff.Margin = new System.Windows.Forms.Padding(2);
             this.tbpStaff.Name = "tbpStaff";
-            this.tbpStaff.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpStaff.Padding = new System.Windows.Forms.Padding(2);
             this.tbpStaff.Size = new System.Drawing.Size(1255, 674);
             this.tbpStaff.TabIndex = 1;
             this.tbpStaff.Text = "Staff";
@@ -1217,68 +1147,6 @@ namespace Istn3ASproject
             this.dgvStaffMgt.TabIndex = 0;
             this.dgvStaffMgt.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStaffMgt_CellMouseClick);
             // 
-            // staffIDDataGridViewTextBoxColumn1
-            // 
-            this.staffIDDataGridViewTextBoxColumn1.DataPropertyName = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn1.HeaderText = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.staffIDDataGridViewTextBoxColumn1.Name = "staffIDDataGridViewTextBoxColumn1";
-            this.staffIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.staffIDDataGridViewTextBoxColumn1.Width = 65;
-            // 
-            // userNameDataGridViewTextBoxColumn1
-            // 
-            this.userNameDataGridViewTextBoxColumn1.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn1.HeaderText = "UserName";
-            this.userNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.userNameDataGridViewTextBoxColumn1.Name = "userNameDataGridViewTextBoxColumn1";
-            this.userNameDataGridViewTextBoxColumn1.Width = 82;
-            // 
-            // passwordDataGridViewTextBoxColumn1
-            // 
-            this.passwordDataGridViewTextBoxColumn1.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn1.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn1.Name = "passwordDataGridViewTextBoxColumn1";
-            this.passwordDataGridViewTextBoxColumn1.Width = 78;
-            // 
-            // firstNameDataGridViewTextBoxColumn2
-            // 
-            this.firstNameDataGridViewTextBoxColumn2.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn2.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn2.Name = "firstNameDataGridViewTextBoxColumn2";
-            this.firstNameDataGridViewTextBoxColumn2.Width = 79;
-            // 
-            // lastNameDataGridViewTextBoxColumn2
-            // 
-            this.lastNameDataGridViewTextBoxColumn2.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn2.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn2.Name = "lastNameDataGridViewTextBoxColumn2";
-            this.lastNameDataGridViewTextBoxColumn2.Width = 80;
-            // 
-            // contactNoDataGridViewTextBoxColumn3
-            // 
-            this.contactNoDataGridViewTextBoxColumn3.DataPropertyName = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn3.HeaderText = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.contactNoDataGridViewTextBoxColumn3.Name = "contactNoDataGridViewTextBoxColumn3";
-            this.contactNoDataGridViewTextBoxColumn3.Width = 83;
-            // 
-            // roleDataGridViewTextBoxColumn1
-            // 
-            this.roleDataGridViewTextBoxColumn1.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn1.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.roleDataGridViewTextBoxColumn1.Name = "roleDataGridViewTextBoxColumn1";
-            this.roleDataGridViewTextBoxColumn1.Width = 54;
-            // 
-            // staffBindingSource
-            // 
-            this.staffBindingSource.DataMember = "Staff";
-            this.staffBindingSource.DataSource = this.wstGrp11DataSet;
-            // 
             // tbpSuppliers
             // 
             this.tbpSuppliers.Controls.Add(this.gbUpdateSupplier);
@@ -1289,7 +1157,7 @@ namespace Istn3ASproject
             this.tbpSuppliers.Controls.Add(this.btnSearchSupplier);
             this.tbpSuppliers.Controls.Add(this.txtSearch);
             this.tbpSuppliers.Location = new System.Drawing.Point(4, 22);
-            this.tbpSuppliers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSuppliers.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSuppliers.Name = "tbpSuppliers";
             this.tbpSuppliers.Size = new System.Drawing.Size(1255, 674);
             this.tbpSuppliers.TabIndex = 2;
@@ -1689,6 +1557,221 @@ namespace Istn3ASproject
             this.gvSupplier.TabIndex = 0;
             this.gvSupplier.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvSupplier_RowHeaderMouseClick);
             // 
+            // btnSearchSupplier
+            // 
+            this.btnSearchSupplier.BackColor = System.Drawing.Color.Azure;
+            this.btnSearchSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchSupplier.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchSupplier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSearchSupplier.Location = new System.Drawing.Point(823, 104);
+            this.btnSearchSupplier.Name = "btnSearchSupplier";
+            this.btnSearchSupplier.Size = new System.Drawing.Size(82, 29);
+            this.btnSearchSupplier.TabIndex = 3;
+            this.btnSearchSupplier.Text = "Search";
+            this.btnSearchSupplier.UseVisualStyleBackColor = false;
+            this.btnSearchSupplier.Click += new System.EventHandler(this.btnSearchSupplier_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(819, 58);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(113, 20);
+            this.txtSearch.TabIndex = 2;
+            // 
+            // staffIDDataGridViewTextBoxColumn
+            // 
+            this.staffIDDataGridViewTextBoxColumn.DataPropertyName = "StaffID";
+            this.staffIDDataGridViewTextBoxColumn.HeaderText = "StaffID";
+            this.staffIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.staffIDDataGridViewTextBoxColumn.Name = "staffIDDataGridViewTextBoxColumn";
+            this.staffIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.staffIDDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.userNameDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // firstNameDataGridViewTextBoxColumn1
+            // 
+            this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn1.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+            this.firstNameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // lastNameDataGridViewTextBoxColumn1
+            // 
+            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+            this.lastNameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // contactNoDataGridViewTextBoxColumn1
+            // 
+            this.contactNoDataGridViewTextBoxColumn1.DataPropertyName = "ContactNo";
+            this.contactNoDataGridViewTextBoxColumn1.HeaderText = "ContactNo";
+            this.contactNoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.contactNoDataGridViewTextBoxColumn1.Name = "contactNoDataGridViewTextBoxColumn1";
+            this.contactNoDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // supplierTableAdapter
+            // 
+            this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // contactNoDataGridViewTextBoxColumn
+            // 
+            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "ContactNo";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "ContactNo";
+            this.contactNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
+            this.contactNoDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // provinceDataGridViewTextBoxColumn
+            // 
+            this.provinceDataGridViewTextBoxColumn.DataPropertyName = "Province";
+            this.provinceDataGridViewTextBoxColumn.HeaderText = "Province";
+            this.provinceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.provinceDataGridViewTextBoxColumn.Name = "provinceDataGridViewTextBoxColumn";
+            this.provinceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // postalCodeDataGridViewTextBoxColumn
+            // 
+            this.postalCodeDataGridViewTextBoxColumn.DataPropertyName = "PostalCode";
+            this.postalCodeDataGridViewTextBoxColumn.HeaderText = "PostalCode";
+            this.postalCodeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.postalCodeDataGridViewTextBoxColumn.Name = "postalCodeDataGridViewTextBoxColumn";
+            this.postalCodeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.wstGrp11DataSet;
+            // 
+            // staffIDDataGridViewTextBoxColumn1
+            // 
+            this.staffIDDataGridViewTextBoxColumn1.DataPropertyName = "StaffID";
+            this.staffIDDataGridViewTextBoxColumn1.HeaderText = "StaffID";
+            this.staffIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.staffIDDataGridViewTextBoxColumn1.Name = "staffIDDataGridViewTextBoxColumn1";
+            this.staffIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.staffIDDataGridViewTextBoxColumn1.Width = 65;
+            // 
+            // userNameDataGridViewTextBoxColumn1
+            // 
+            this.userNameDataGridViewTextBoxColumn1.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn1.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.userNameDataGridViewTextBoxColumn1.Name = "userNameDataGridViewTextBoxColumn1";
+            this.userNameDataGridViewTextBoxColumn1.Width = 82;
+            // 
+            // passwordDataGridViewTextBoxColumn1
+            // 
+            this.passwordDataGridViewTextBoxColumn1.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn1.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn1.Name = "passwordDataGridViewTextBoxColumn1";
+            this.passwordDataGridViewTextBoxColumn1.Width = 78;
+            // 
+            // firstNameDataGridViewTextBoxColumn2
+            // 
+            this.firstNameDataGridViewTextBoxColumn2.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn2.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn2.Name = "firstNameDataGridViewTextBoxColumn2";
+            this.firstNameDataGridViewTextBoxColumn2.Width = 79;
+            // 
+            // lastNameDataGridViewTextBoxColumn2
+            // 
+            this.lastNameDataGridViewTextBoxColumn2.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn2.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn2.Name = "lastNameDataGridViewTextBoxColumn2";
+            this.lastNameDataGridViewTextBoxColumn2.Width = 80;
+            // 
+            // contactNoDataGridViewTextBoxColumn3
+            // 
+            this.contactNoDataGridViewTextBoxColumn3.DataPropertyName = "ContactNo";
+            this.contactNoDataGridViewTextBoxColumn3.HeaderText = "ContactNo";
+            this.contactNoDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.contactNoDataGridViewTextBoxColumn3.Name = "contactNoDataGridViewTextBoxColumn3";
+            this.contactNoDataGridViewTextBoxColumn3.Width = 83;
+            // 
+            // roleDataGridViewTextBoxColumn1
+            // 
+            this.roleDataGridViewTextBoxColumn1.DataPropertyName = "Role";
+            this.roleDataGridViewTextBoxColumn1.HeaderText = "Role";
+            this.roleDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.roleDataGridViewTextBoxColumn1.Name = "roleDataGridViewTextBoxColumn1";
+            this.roleDataGridViewTextBoxColumn1.Width = 54;
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "Staff";
+            this.staffBindingSource.DataSource = this.wstGrp11DataSet;
+            // 
             // supplierIDDataGridViewTextBoxColumn
             // 
             this.supplierIDDataGridViewTextBoxColumn.DataPropertyName = "SupplierID";
@@ -1759,89 +1842,10 @@ namespace Istn3ASproject
             this.supplierBindingSource.DataMember = "Supplier";
             this.supplierBindingSource.DataSource = this.wstGrp11DataSet;
             // 
-            // btnSearchSupplier
-            // 
-            this.btnSearchSupplier.BackColor = System.Drawing.Color.Azure;
-            this.btnSearchSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearchSupplier.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchSupplier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSearchSupplier.Location = new System.Drawing.Point(823, 104);
-            this.btnSearchSupplier.Name = "btnSearchSupplier";
-            this.btnSearchSupplier.Size = new System.Drawing.Size(82, 29);
-            this.btnSearchSupplier.TabIndex = 3;
-            this.btnSearchSupplier.Text = "Search";
-            this.btnSearchSupplier.UseVisualStyleBackColor = false;
-            this.btnSearchSupplier.Click += new System.EventHandler(this.btnSearchSupplier_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(819, 58);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(113, 20);
-            this.txtSearch.TabIndex = 2;
-            // 
             // staffBindingSource1
             // 
             this.staffBindingSource1.DataMember = "Staff";
             this.staffBindingSource1.DataSource = this.wstGrp11DataSet;
-            // 
-            // staffIDDataGridViewTextBoxColumn
-            // 
-            this.staffIDDataGridViewTextBoxColumn.DataPropertyName = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn.HeaderText = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.staffIDDataGridViewTextBoxColumn.Name = "staffIDDataGridViewTextBoxColumn";
-            this.staffIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.staffIDDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-            this.userNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            this.userNameDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // firstNameDataGridViewTextBoxColumn1
-            // 
-            this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn1.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
-            this.firstNameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn1
-            // 
-            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
-            this.lastNameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // contactNoDataGridViewTextBoxColumn1
-            // 
-            this.contactNoDataGridViewTextBoxColumn1.DataPropertyName = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn1.HeaderText = "ContactNo";
-            this.contactNoDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.contactNoDataGridViewTextBoxColumn1.Name = "contactNoDataGridViewTextBoxColumn1";
-            this.contactNoDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // roleDataGridViewTextBoxColumn
-            // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
-            this.roleDataGridViewTextBoxColumn.Width = 54;
             // 
             // customerTableAdapter
             // 
@@ -1851,10 +1855,6 @@ namespace Istn3ASproject
             // 
             this.staffTableAdapter.ClearBeforeFill = true;
             // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
             // frmUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1862,7 +1862,7 @@ namespace Istn3ASproject
             this.ClientSize = new System.Drawing.Size(1263, 700);
             this.Controls.Add(this.tcUserManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUserManagement";
             this.Text = "User Management";
             this.Load += new System.EventHandler(this.frmUserManagement_Load);
@@ -1874,7 +1874,6 @@ namespace Istn3ASproject
             this.gbAddCustomer.ResumeLayout(false);
             this.gbAddCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).EndInit();
             this.tbpStaff.ResumeLayout(false);
             this.tbpStaff.PerformLayout();
@@ -1883,7 +1882,6 @@ namespace Istn3ASproject
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffMgt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.tbpSuppliers.ResumeLayout(false);
             this.tbpSuppliers.PerformLayout();
             this.gbUpdateSupplier.ResumeLayout(false);
@@ -1891,6 +1889,8 @@ namespace Istn3ASproject
             this.gbAddSupplier.ResumeLayout(false);
             this.gbAddSupplier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSupplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).EndInit();
             this.ResumeLayout(false);
