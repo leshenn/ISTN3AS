@@ -110,7 +110,7 @@
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 61);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1457, 818);
+            this.panMain.Size = new System.Drawing.Size(1457, 603);
             this.panMain.TabIndex = 1;
             // 
             // lblWelcome
@@ -119,7 +119,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Nirmala UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblWelcome.Location = new System.Drawing.Point(470, 294);
+            this.lblWelcome.Location = new System.Drawing.Point(470, 186);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(522, 128);
             this.lblWelcome.TabIndex = 0;
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 879);
+            this.ClientSize = new System.Drawing.Size(1457, 664);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panHead);
             this.IsMdiContainer = true;
