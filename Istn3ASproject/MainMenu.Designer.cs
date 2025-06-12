@@ -35,16 +35,18 @@
             this.btnUserMangement = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panMain = new System.Windows.Forms.Panel();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.panHead.SuspendLayout();
+            this.panMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHead
             // 
-            this.panHead.Controls.Add(this.label1);
-            this.panHead.Controls.Add(this.btnReports);
-            this.panHead.Controls.Add(this.btnStockManagement);
-            this.panHead.Controls.Add(this.btnUserMangement);
             this.panHead.Controls.Add(this.btnPOS);
+            this.panHead.Controls.Add(this.btnUserMangement);
+            this.panHead.Controls.Add(this.btnStockManagement);
+            this.panHead.Controls.Add(this.btnReports);
+            this.panHead.Controls.Add(this.label1);
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
             this.panHead.Name = "panHead";
@@ -103,23 +105,41 @@
             // 
             // panMain
             // 
+            this.panMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panMain.Controls.Add(this.lblWelcome);
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 61);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1457, 758);
+            this.panMain.Size = new System.Drawing.Size(1457, 785);
             this.panMain.TabIndex = 1;
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Nirmala UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblWelcome.Location = new System.Drawing.Point(470, 277);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(522, 128);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "WELCOME";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 819);
+            this.ClientSize = new System.Drawing.Size(1457, 846);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panHead);
+            this.IsMdiContainer = true;
             this.Name = "MainMenu";
             this.Text = "Form1";
             this.panHead.ResumeLayout(false);
             this.panHead.PerformLayout();
+            this.panMain.ResumeLayout(false);
+            this.panMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -133,5 +153,6 @@
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panMain;
+        private System.Windows.Forms.Label lblWelcome;
     }
 }

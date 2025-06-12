@@ -729,5 +729,6 @@ namespace Istn3ASproject
                 lblProductDesc.ForeColor = Color.Black;
             }
         }
+
     }
 }
