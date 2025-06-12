@@ -42,46 +42,52 @@
             this.tcReports.Controls.Add(this.tbpFinancial);
             this.tcReports.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcReports.Location = new System.Drawing.Point(0, 0);
+            this.tcReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcReports.Name = "tcReports";
             this.tcReports.SelectedIndex = 0;
-            this.tcReports.Size = new System.Drawing.Size(800, 450);
+            this.tcReports.Size = new System.Drawing.Size(600, 366);
             this.tcReports.TabIndex = 0;
             // 
             // tbpSales
             // 
-            this.tbpSales.Location = new System.Drawing.Point(4, 25);
+            this.tbpSales.Location = new System.Drawing.Point(4, 22);
+            this.tbpSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpSales.Name = "tbpSales";
-            this.tbpSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSales.Size = new System.Drawing.Size(792, 421);
+            this.tbpSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Size = new System.Drawing.Size(592, 340);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             this.tbpSales.UseVisualStyleBackColor = true;
             // 
             // tbpInventory
             // 
-            this.tbpInventory.Location = new System.Drawing.Point(4, 25);
+            this.tbpInventory.Location = new System.Drawing.Point(4, 22);
+            this.tbpInventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpInventory.Name = "tbpInventory";
-            this.tbpInventory.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpInventory.Size = new System.Drawing.Size(792, 421);
+            this.tbpInventory.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInventory.Size = new System.Drawing.Size(592, 340);
             this.tbpInventory.TabIndex = 1;
             this.tbpInventory.Text = "Inventory";
             this.tbpInventory.UseVisualStyleBackColor = true;
             // 
             // tbpFinancial
             // 
-            this.tbpFinancial.Location = new System.Drawing.Point(4, 25);
+            this.tbpFinancial.Location = new System.Drawing.Point(4, 22);
+            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpFinancial.Name = "tbpFinancial";
-            this.tbpFinancial.Size = new System.Drawing.Size(792, 421);
+            this.tbpFinancial.Size = new System.Drawing.Size(592, 340);
             this.tbpFinancial.TabIndex = 2;
             this.tbpFinancial.Text = "Financial";
             this.tbpFinancial.UseVisualStyleBackColor = true;
             // 
             // frmReports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tcReports);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmReports";
             this.Text = "Reports";
             this.tcReports.ResumeLayout(false);
