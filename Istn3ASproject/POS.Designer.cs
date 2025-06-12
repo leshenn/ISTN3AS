@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcPOS = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -104,10 +107,10 @@
             this.tcPOS.Controls.Add(this.tbpRefund);
             this.tcPOS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPOS.Location = new System.Drawing.Point(0, 0);
-            this.tcPOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcPOS.Margin = new System.Windows.Forms.Padding(2);
             this.tcPOS.Name = "tcPOS";
             this.tcPOS.SelectedIndex = 0;
-            this.tcPOS.Size = new System.Drawing.Size(1443, 750);
+            this.tcPOS.Size = new System.Drawing.Size(1528, 779);
             this.tcPOS.TabIndex = 0;
             // 
             // tbpSales
@@ -122,31 +125,32 @@
             this.tbpSales.Controls.Add(this.lblSearchItem);
             this.tbpSales.Controls.Add(this.txtSearchProduct);
             this.tbpSales.Location = new System.Drawing.Point(4, 22);
-            this.tbpSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSales.Name = "tbpSales";
-            this.tbpSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbpSales.Size = new System.Drawing.Size(1435, 724);
+            this.tbpSales.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpSales.Size = new System.Drawing.Size(1520, 753);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(795, 54);
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(785, 41);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 20);
+            this.label3.Size = new System.Drawing.Size(341, 25);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Search for Customer PhoneNo:";
+            this.label3.Text = "Search for Customer Phone Number:";
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.textBox1.Location = new System.Drawing.Point(1048, 57);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(1130, 41);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(390, 20);
+            this.textBox1.Size = new System.Drawing.Size(291, 33);
             this.textBox1.TabIndex = 12;
             // 
             // panel1
@@ -161,7 +165,7 @@
             this.panel1.Controls.Add(this.lblTotalCaption);
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Location = new System.Drawing.Point(1076, 466);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 184);
             this.panel1.TabIndex = 10;
@@ -194,7 +198,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(203, 48);
             this.panel2.TabIndex = 11;
@@ -219,7 +223,7 @@
             "Cash",
             "Card"});
             this.cmbPaymentMethod.Location = new System.Drawing.Point(10, 137);
-            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.Size = new System.Drawing.Size(92, 28);
             this.cmbPaymentMethod.TabIndex = 7;
@@ -229,7 +233,7 @@
             this.btnProcessOrder.BackColor = System.Drawing.Color.LightGreen;
             this.btnProcessOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcessOrder.Location = new System.Drawing.Point(114, 120);
-            this.btnProcessOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProcessOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcessOrder.Name = "btnProcessOrder";
             this.btnProcessOrder.Size = new System.Drawing.Size(91, 59);
             this.btnProcessOrder.TabIndex = 6;
@@ -261,20 +265,21 @@
             // 
             // grpBCustomers
             // 
-            this.grpBCustomers.BackColor = System.Drawing.Color.LightBlue;
+            this.grpBCustomers.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grpBCustomers.Controls.Add(this.dgvCustomer);
             this.grpBCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBCustomers.Location = new System.Drawing.Point(796, 95);
-            this.grpBCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBCustomers.Location = new System.Drawing.Point(787, 86);
+            this.grpBCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.grpBCustomers.Name = "grpBCustomers";
-            this.grpBCustomers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpBCustomers.Size = new System.Drawing.Size(634, 271);
+            this.grpBCustomers.Padding = new System.Windows.Forms.Padding(2);
+            this.grpBCustomers.Size = new System.Drawing.Size(717, 292);
             this.grpBCustomers.TabIndex = 10;
             this.grpBCustomers.TabStop = false;
             this.grpBCustomers.Text = "Customers";
             // 
             // dgvCustomer
             // 
+            this.dgvCustomer.AllowUserToAddRows = false;
             this.dgvCustomer.AutoGenerateColumns = false;
             this.dgvCustomer.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -285,13 +290,12 @@
             this.contactNoDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
             this.dgvCustomer.DataSource = this.customerBindingSource;
-            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomer.Location = new System.Drawing.Point(2, 21);
-            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCustomer.Location = new System.Drawing.Point(20, 23);
+            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.RowHeadersWidth = 51;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(630, 248);
+            this.dgvCustomer.Size = new System.Drawing.Size(678, 248);
             this.dgvCustomer.TabIndex = 0;
             this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellDoubleClick);
@@ -354,20 +358,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.dgvSalesInvoice);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(25, 425);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(878, 286);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(924, 304);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice";
             // 
             // dgvSalesInvoice
             // 
+            this.dgvSalesInvoice.AllowUserToAddRows = false;
             this.dgvSalesInvoice.AutoGenerateColumns = false;
             this.dgvSalesInvoice.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvSalesInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -379,9 +384,8 @@
             this.stockOnHandDataGridViewTextBoxColumn1,
             this.Quantity});
             this.dgvSalesInvoice.DataSource = this.salesInvoiceBindingSource;
-            this.dgvSalesInvoice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSalesInvoice.Location = new System.Drawing.Point(2, 21);
-            this.dgvSalesInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSalesInvoice.Location = new System.Drawing.Point(27, 23);
+            this.dgvSalesInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSalesInvoice.Name = "dgvSalesInvoice";
             this.dgvSalesInvoice.RowHeadersWidth = 51;
             this.dgvSalesInvoice.RowTemplate.Height = 24;
@@ -444,22 +448,32 @@
             // 
             // grpbStock
             // 
-            this.grpbStock.BackColor = System.Drawing.Color.LightBlue;
+            this.grpbStock.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.grpbStock.Controls.Add(this.dgvStock);
             this.grpbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbStock.Location = new System.Drawing.Point(22, 95);
-            this.grpbStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbStock.Location = new System.Drawing.Point(13, 86);
+            this.grpbStock.Margin = new System.Windows.Forms.Padding(2);
             this.grpbStock.Name = "grpbStock";
-            this.grpbStock.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpbStock.Size = new System.Drawing.Size(718, 271);
+            this.grpbStock.Padding = new System.Windows.Forms.Padding(2);
+            this.grpbStock.Size = new System.Drawing.Size(751, 292);
             this.grpbStock.TabIndex = 8;
             this.grpbStock.TabStop = false;
             this.grpbStock.Text = "Stock";
             // 
             // dgvStock
             // 
+            this.dgvStock.AllowUserToAddRows = false;
             this.dgvStock.AutoGenerateColumns = false;
             this.dgvStock.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn,
@@ -468,11 +482,26 @@
             this.sellingPriceDataGridViewTextBoxColumn,
             this.stockOnHandDataGridViewTextBoxColumn});
             this.dgvStock.DataSource = this.stockBindingSource;
-            this.dgvStock.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStock.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStock.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvStock.Location = new System.Drawing.Point(2, 21);
-            this.dgvStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvStock.Location = new System.Drawing.Point(19, 23);
+            this.dgvStock.Margin = new System.Windows.Forms.Padding(2);
             this.dgvStock.Name = "dgvStock";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStock.RowHeadersWidth = 51;
             this.dgvStock.RowTemplate.Height = 24;
             this.dgvStock.Size = new System.Drawing.Size(714, 248);
@@ -528,30 +557,31 @@
             // lblSearchItem
             // 
             this.lblSearchItem.AutoSize = true;
-            this.lblSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchItem.Location = new System.Drawing.Point(21, 53);
+            this.lblSearchItem.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchItem.Location = new System.Drawing.Point(12, 44);
             this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
-            this.lblSearchItem.Size = new System.Drawing.Size(142, 20);
+            this.lblSearchItem.Size = new System.Drawing.Size(157, 25);
             this.lblSearchItem.TabIndex = 2;
             this.lblSearchItem.Text = "Search for item :";
             // 
             // txtSearchProduct
             // 
             this.txtSearchProduct.BackColor = System.Drawing.Color.LightBlue;
-            this.txtSearchProduct.Location = new System.Drawing.Point(162, 56);
-            this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchProduct.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProduct.Location = new System.Drawing.Point(173, 38);
+            this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(390, 20);
+            this.txtSearchProduct.Size = new System.Drawing.Size(390, 33);
             this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // tbpRefund
             // 
             this.tbpRefund.Location = new System.Drawing.Point(4, 22);
-            this.tbpRefund.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpRefund.Margin = new System.Windows.Forms.Padding(2);
             this.tbpRefund.Name = "tbpRefund";
-            this.tbpRefund.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpRefund.Padding = new System.Windows.Forms.Padding(2);
             this.tbpRefund.Size = new System.Drawing.Size(1435, 724);
             this.tbpRefund.TabIndex = 1;
             this.tbpRefund.Text = "Refund";
@@ -591,10 +621,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 750);
+            this.ClientSize = new System.Drawing.Size(1528, 779);
             this.Controls.Add(this.tcPOS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPOS";
             this.Text = "POS";
             this.Load += new System.EventHandler(this.frmPOS_Load);

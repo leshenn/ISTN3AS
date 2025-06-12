@@ -33,7 +33,6 @@ namespace Istn3ASproject
             this.tcUserManagement = new System.Windows.Forms.TabControl();
             this.tbpCustomers = new System.Windows.Forms.TabPage();
             this.btnCustomerRestore = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbUpdateCustomer = new System.Windows.Forms.GroupBox();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.mtUpdateCustContact = new System.Windows.Forms.MaskedTextBox();
@@ -212,7 +211,7 @@ namespace Istn3ASproject
             // 
             lblSupplierSearch.AutoSize = true;
             lblSupplierSearch.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblSupplierSearch.Location = new System.Drawing.Point(820, 25);
+            lblSupplierSearch.Location = new System.Drawing.Point(1074, 43);
             lblSupplierSearch.Name = "lblSupplierSearch";
             lblSupplierSearch.Size = new System.Drawing.Size(124, 14);
             lblSupplierSearch.TabIndex = 1;
@@ -225,17 +224,16 @@ namespace Istn3ASproject
             this.tcUserManagement.Controls.Add(this.tbpSuppliers);
             this.tcUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcUserManagement.Location = new System.Drawing.Point(0, 0);
-            this.tcUserManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcUserManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tcUserManagement.Name = "tcUserManagement";
             this.tcUserManagement.SelectedIndex = 0;
-            this.tcUserManagement.Size = new System.Drawing.Size(1263, 700);
+            this.tcUserManagement.Size = new System.Drawing.Size(1481, 827);
             this.tcUserManagement.TabIndex = 0;
             // 
             // tbpCustomers
             // 
             this.tbpCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbpCustomers.Controls.Add(this.btnCustomerRestore);
-            this.tbpCustomers.Controls.Add(this.comboBox1);
             this.tbpCustomers.Controls.Add(this.gbUpdateCustomer);
             this.tbpCustomers.Controls.Add(this.gbAddCustomer);
             this.tbpCustomers.Controls.Add(this.mtSearchNo);
@@ -244,10 +242,10 @@ namespace Istn3ASproject
             this.tbpCustomers.Controls.Add(this.lblSearchByPhoneNumber);
             this.tbpCustomers.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbpCustomers.Location = new System.Drawing.Point(4, 22);
-            this.tbpCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.tbpCustomers.Name = "tbpCustomers";
-            this.tbpCustomers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tbpCustomers.Size = new System.Drawing.Size(1255, 674);
+            this.tbpCustomers.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpCustomers.Size = new System.Drawing.Size(1473, 801);
             this.tbpCustomers.TabIndex = 0;
             this.tbpCustomers.Text = "Customers";
             // 
@@ -256,22 +254,13 @@ namespace Istn3ASproject
             this.btnCustomerRestore.BackColor = System.Drawing.Color.Azure;
             this.btnCustomerRestore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomerRestore.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerRestore.Location = new System.Drawing.Point(812, 213);
+            this.btnCustomerRestore.Location = new System.Drawing.Point(1018, 296);
             this.btnCustomerRestore.Name = "btnCustomerRestore";
             this.btnCustomerRestore.Size = new System.Drawing.Size(82, 26);
             this.btnCustomerRestore.TabIndex = 38;
             this.btnCustomerRestore.Text = "Restore";
             this.btnCustomerRestore.UseVisualStyleBackColor = false;
             this.btnCustomerRestore.Click += new System.EventHandler(this.btnCustomerRestore_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "City";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1347, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 37;
             // 
             // gbUpdateCustomer
             // 
@@ -294,9 +283,9 @@ namespace Istn3ASproject
             this.gbUpdateCustomer.Controls.Add(this.txtUlname);
             this.gbUpdateCustomer.Controls.Add(this.lblEditCusAddress);
             this.gbUpdateCustomer.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbUpdateCustomer.Location = new System.Drawing.Point(0, 432);
+            this.gbUpdateCustomer.Location = new System.Drawing.Point(203, 525);
             this.gbUpdateCustomer.Name = "gbUpdateCustomer";
-            this.gbUpdateCustomer.Size = new System.Drawing.Size(1028, 215);
+            this.gbUpdateCustomer.Size = new System.Drawing.Size(1021, 215);
             this.gbUpdateCustomer.TabIndex = 35;
             this.gbUpdateCustomer.TabStop = false;
             this.gbUpdateCustomer.Text = "Update Customer Details *(Please Select a Customer First)";
@@ -306,7 +295,7 @@ namespace Istn3ASproject
             this.btnUpdateCustomer.BackColor = System.Drawing.Color.Azure;
             this.btnUpdateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdateCustomer.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(642, 141);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(642, 146);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(163, 28);
             this.btnUpdateCustomer.TabIndex = 50;
@@ -329,7 +318,7 @@ namespace Istn3ASproject
             // 
             this.lblEditCusPostal.AutoSize = true;
             this.lblEditCusPostal.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusPostal.Location = new System.Drawing.Point(484, 119);
+            this.lblEditCusPostal.Location = new System.Drawing.Point(470, 119);
             this.lblEditCusPostal.Name = "lblEditCusPostal";
             this.lblEditCusPostal.Size = new System.Drawing.Size(71, 14);
             this.lblEditCusPostal.TabIndex = 37;
@@ -340,14 +329,14 @@ namespace Istn3ASproject
             this.txtUaddress.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUaddress.Location = new System.Drawing.Point(822, 77);
             this.txtUaddress.Name = "txtUaddress";
-            this.txtUaddress.Size = new System.Drawing.Size(132, 20);
+            this.txtUaddress.Size = new System.Drawing.Size(184, 20);
             this.txtUaddress.TabIndex = 43;
             // 
             // lblEditCusCity
             // 
             this.lblEditCusCity.AutoSize = true;
             this.lblEditCusCity.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusCity.Location = new System.Drawing.Point(32, 119);
+            this.lblEditCusCity.Location = new System.Drawing.Point(19, 119);
             this.lblEditCusCity.Name = "lblEditCusCity";
             this.lblEditCusCity.Size = new System.Drawing.Size(29, 14);
             this.lblEditCusCity.TabIndex = 46;
@@ -357,7 +346,7 @@ namespace Istn3ASproject
             // 
             this.lblEditCusProvince.AutoSize = true;
             this.lblEditCusProvince.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusProvince.Location = new System.Drawing.Point(258, 119);
+            this.lblEditCusProvince.Location = new System.Drawing.Point(245, 119);
             this.lblEditCusProvince.Name = "lblEditCusProvince";
             this.lblEditCusProvince.Size = new System.Drawing.Size(55, 14);
             this.lblEditCusProvince.TabIndex = 48;
@@ -366,9 +355,9 @@ namespace Istn3ASproject
             // txtUcode
             // 
             this.txtUcode.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUcode.Location = new System.Drawing.Point(488, 150);
+            this.txtUcode.Location = new System.Drawing.Point(465, 150);
             this.txtUcode.Name = "txtUcode";
-            this.txtUcode.Size = new System.Drawing.Size(100, 20);
+            this.txtUcode.Size = new System.Drawing.Size(149, 20);
             this.txtUcode.TabIndex = 45;
             // 
             // txtUfname
@@ -376,15 +365,15 @@ namespace Istn3ASproject
             this.txtUfname.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUfname.Location = new System.Drawing.Point(21, 77);
             this.txtUfname.Name = "txtUfname";
-            this.txtUfname.Size = new System.Drawing.Size(174, 20);
+            this.txtUfname.Size = new System.Drawing.Size(175, 20);
             this.txtUfname.TabIndex = 34;
             // 
             // txtUcity
             // 
             this.txtUcity.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUcity.Location = new System.Drawing.Point(27, 150);
+            this.txtUcity.Location = new System.Drawing.Point(22, 150);
             this.txtUcity.Name = "txtUcity";
-            this.txtUcity.Size = new System.Drawing.Size(165, 20);
+            this.txtUcity.Size = new System.Drawing.Size(174, 20);
             this.txtUcity.TabIndex = 44;
             // 
             // txtUemail
@@ -409,7 +398,7 @@ namespace Istn3ASproject
             "North West",
             "Northern Cape",
             "Western Cape"});
-            this.cbUprovince.Location = new System.Drawing.Point(262, 150);
+            this.cbUprovince.Location = new System.Drawing.Point(248, 150);
             this.cbUprovince.Name = "cbUprovince";
             this.cbUprovince.Size = new System.Drawing.Size(174, 22);
             this.cbUprovince.TabIndex = 47;
@@ -418,7 +407,7 @@ namespace Istn3ASproject
             // 
             this.lblEditCusEmail.AutoSize = true;
             this.lblEditCusEmail.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusEmail.Location = new System.Drawing.Point(654, 41);
+            this.lblEditCusEmail.Location = new System.Drawing.Point(639, 41);
             this.lblEditCusEmail.Name = "lblEditCusEmail";
             this.lblEditCusEmail.Size = new System.Drawing.Size(34, 14);
             this.lblEditCusEmail.TabIndex = 40;
@@ -448,7 +437,7 @@ namespace Istn3ASproject
             // 
             this.lblEditCusNumber.AutoSize = true;
             this.lblEditCusNumber.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusNumber.Location = new System.Drawing.Point(470, 41);
+            this.lblEditCusNumber.Location = new System.Drawing.Point(462, 41);
             this.lblEditCusNumber.Name = "lblEditCusNumber";
             this.lblEditCusNumber.Size = new System.Drawing.Size(95, 14);
             this.lblEditCusNumber.TabIndex = 39;
@@ -466,7 +455,7 @@ namespace Istn3ASproject
             // 
             this.lblEditCusAddress.AutoSize = true;
             this.lblEditCusAddress.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditCusAddress.Location = new System.Drawing.Point(848, 41);
+            this.lblEditCusAddress.Location = new System.Drawing.Point(819, 41);
             this.lblEditCusAddress.Name = "lblEditCusAddress";
             this.lblEditCusAddress.Size = new System.Drawing.Size(51, 14);
             this.lblEditCusAddress.TabIndex = 41;
@@ -493,7 +482,7 @@ namespace Istn3ASproject
             this.gbAddCustomer.Controls.Add(this.txtLName);
             this.gbAddCustomer.Controls.Add(this.lblCustomerAddress);
             this.gbAddCustomer.Font = new System.Drawing.Font("Lucida Fax", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAddCustomer.Location = new System.Drawing.Point(7, 258);
+            this.gbAddCustomer.Location = new System.Drawing.Point(203, 351);
             this.gbAddCustomer.Name = "gbAddCustomer";
             this.gbAddCustomer.Size = new System.Drawing.Size(1022, 167);
             this.gbAddCustomer.TabIndex = 34;
@@ -529,7 +518,7 @@ namespace Istn3ASproject
             // 
             this.lblCustomerPostal.AutoSize = true;
             this.lblCustomerPostal.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerPostal.Location = new System.Drawing.Point(480, 99);
+            this.lblCustomerPostal.Location = new System.Drawing.Point(481, 99);
             this.lblCustomerPostal.Name = "lblCustomerPostal";
             this.lblCustomerPostal.Size = new System.Drawing.Size(71, 14);
             this.lblCustomerPostal.TabIndex = 19;
@@ -568,13 +557,13 @@ namespace Istn3ASproject
             this.txtPostalCode.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPostalCode.Location = new System.Drawing.Point(484, 130);
             this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostalCode.Size = new System.Drawing.Size(149, 20);
             this.txtPostalCode.TabIndex = 28;
             // 
             // txtFName
             // 
             this.txtFName.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFName.Location = new System.Drawing.Point(14, 62);
+            this.txtFName.Location = new System.Drawing.Point(22, 62);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(174, 20);
             this.txtFName.TabIndex = 15;
@@ -584,7 +573,7 @@ namespace Istn3ASproject
             this.txtCity.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(22, 130);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(165, 20);
+            this.txtCity.Size = new System.Drawing.Size(174, 20);
             this.txtCity.TabIndex = 27;
             // 
             // txtEmail
@@ -675,7 +664,7 @@ namespace Istn3ASproject
             // mtSearchNo
             // 
             this.mtSearchNo.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtSearchNo.Location = new System.Drawing.Point(821, 72);
+            this.mtSearchNo.Location = new System.Drawing.Point(1017, 165);
             this.mtSearchNo.Mask = "(999) 000-0000";
             this.mtSearchNo.Name = "mtSearchNo";
             this.mtSearchNo.Size = new System.Drawing.Size(140, 20);
@@ -688,7 +677,7 @@ namespace Istn3ASproject
             this.btnSearchByNo.FlatAppearance.BorderSize = 0;
             this.btnSearchByNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchByNo.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchByNo.Location = new System.Drawing.Point(821, 103);
+            this.btnSearchByNo.Location = new System.Drawing.Point(1017, 196);
             this.btnSearchByNo.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearchByNo.Name = "btnSearchByNo";
             this.btnSearchByNo.Size = new System.Drawing.Size(86, 25);
@@ -716,7 +705,7 @@ namespace Istn3ASproject
             this.postalCodeDataGridViewTextBoxColumn});
             this.gvCustomer.DataSource = this.customerBindingSource;
             this.gvCustomer.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gvCustomer.Location = new System.Drawing.Point(7, 31);
+            this.gvCustomer.Location = new System.Drawing.Point(203, 124);
             this.gvCustomer.Name = "gvCustomer";
             this.gvCustomer.RowHeadersWidth = 51;
             this.gvCustomer.RowTemplate.Height = 24;
@@ -811,7 +800,7 @@ namespace Istn3ASproject
             // 
             this.lblSearchByPhoneNumber.AutoSize = true;
             this.lblSearchByPhoneNumber.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchByPhoneNumber.Location = new System.Drawing.Point(819, 47);
+            this.lblSearchByPhoneNumber.Location = new System.Drawing.Point(200, 49);
             this.lblSearchByPhoneNumber.Name = "lblSearchByPhoneNumber";
             this.lblSearchByPhoneNumber.Size = new System.Drawing.Size(150, 14);
             this.lblSearchByPhoneNumber.TabIndex = 4;
@@ -830,10 +819,10 @@ namespace Istn3ASproject
             this.tbpStaff.Controls.Add(this.groupBox1);
             this.tbpStaff.Controls.Add(this.dgvStaffMgt);
             this.tbpStaff.Location = new System.Drawing.Point(4, 22);
-            this.tbpStaff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpStaff.Margin = new System.Windows.Forms.Padding(2);
             this.tbpStaff.Name = "tbpStaff";
-            this.tbpStaff.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbpStaff.Size = new System.Drawing.Size(1255, 674);
+            this.tbpStaff.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpStaff.Size = new System.Drawing.Size(1473, 674);
             this.tbpStaff.TabIndex = 1;
             this.tbpStaff.Text = "Staff";
             this.tbpStaff.UseVisualStyleBackColor = true;
@@ -842,7 +831,7 @@ namespace Istn3ASproject
             // 
             this.btnArchiveStaff.BackColor = System.Drawing.Color.Cyan;
             this.btnArchiveStaff.ForeColor = System.Drawing.Color.Black;
-            this.btnArchiveStaff.Location = new System.Drawing.Point(634, 187);
+            this.btnArchiveStaff.Location = new System.Drawing.Point(940, 213);
             this.btnArchiveStaff.Name = "btnArchiveStaff";
             this.btnArchiveStaff.Size = new System.Drawing.Size(119, 23);
             this.btnArchiveStaff.TabIndex = 21;
@@ -854,7 +843,7 @@ namespace Istn3ASproject
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(22, 28);
+            this.label16.Location = new System.Drawing.Point(328, 54);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(110, 13);
             this.label16.TabIndex = 20;
@@ -862,7 +851,7 @@ namespace Istn3ASproject
             // 
             // txtSearchStaffByName
             // 
-            this.txtSearchStaffByName.Location = new System.Drawing.Point(633, 154);
+            this.txtSearchStaffByName.Location = new System.Drawing.Point(939, 180);
             this.txtSearchStaffByName.Name = "txtSearchStaffByName";
             this.txtSearchStaffByName.Size = new System.Drawing.Size(121, 20);
             this.txtSearchStaffByName.TabIndex = 19;
@@ -871,7 +860,7 @@ namespace Istn3ASproject
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(632, 131);
+            this.label15.Location = new System.Drawing.Point(938, 157);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(115, 13);
             this.label15.TabIndex = 18;
@@ -880,7 +869,7 @@ namespace Istn3ASproject
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(635, 65);
+            this.label14.Location = new System.Drawing.Point(941, 91);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(69, 13);
             this.label14.TabIndex = 17;
@@ -895,7 +884,7 @@ namespace Istn3ASproject
             "Manager",
             "Cashier",
             "Terminated"});
-            this.cmbFilterByRole.Location = new System.Drawing.Point(633, 82);
+            this.cmbFilterByRole.Location = new System.Drawing.Point(939, 108);
             this.cmbFilterByRole.Name = "cmbFilterByRole";
             this.cmbFilterByRole.Size = new System.Drawing.Size(121, 21);
             this.cmbFilterByRole.TabIndex = 16;
@@ -919,7 +908,7 @@ namespace Istn3ASproject
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtUsernameUpdate);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(22, 376);
+            this.groupBox2.Location = new System.Drawing.Point(328, 402);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(732, 131);
             this.groupBox2.TabIndex = 15;
@@ -1069,7 +1058,7 @@ namespace Istn3ASproject
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtUsernameStaff);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 233);
+            this.groupBox1.Location = new System.Drawing.Point(328, 259);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(732, 131);
             this.groupBox1.TabIndex = 1;
@@ -1210,7 +1199,7 @@ namespace Istn3ASproject
             this.roleDataGridViewTextBoxColumn1});
             this.dgvStaffMgt.DataSource = this.staffBindingSource;
             this.dgvStaffMgt.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dgvStaffMgt.Location = new System.Drawing.Point(22, 60);
+            this.dgvStaffMgt.Location = new System.Drawing.Point(328, 86);
             this.dgvStaffMgt.Name = "dgvStaffMgt";
             this.dgvStaffMgt.RowHeadersWidth = 51;
             this.dgvStaffMgt.Size = new System.Drawing.Size(593, 150);
@@ -1289,9 +1278,9 @@ namespace Istn3ASproject
             this.tbpSuppliers.Controls.Add(this.btnSearchSupplier);
             this.tbpSuppliers.Controls.Add(this.txtSearch);
             this.tbpSuppliers.Location = new System.Drawing.Point(4, 22);
-            this.tbpSuppliers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSuppliers.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSuppliers.Name = "tbpSuppliers";
-            this.tbpSuppliers.Size = new System.Drawing.Size(1255, 674);
+            this.tbpSuppliers.Size = new System.Drawing.Size(1473, 674);
             this.tbpSuppliers.TabIndex = 2;
             this.tbpSuppliers.Text = "Suppliers";
             this.tbpSuppliers.UseVisualStyleBackColor = true;
@@ -1315,7 +1304,7 @@ namespace Istn3ASproject
             this.gbUpdateSupplier.Controls.Add(this.txtEditSname);
             this.gbUpdateSupplier.Controls.Add(this.lblSupplierEditAddress);
             this.gbUpdateSupplier.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbUpdateSupplier.Location = new System.Drawing.Point(8, 411);
+            this.gbUpdateSupplier.Location = new System.Drawing.Point(262, 429);
             this.gbUpdateSupplier.Name = "gbUpdateSupplier";
             this.gbUpdateSupplier.Size = new System.Drawing.Size(1000, 193);
             this.gbUpdateSupplier.TabIndex = 36;
@@ -1338,7 +1327,7 @@ namespace Istn3ASproject
             this.btnUpdateSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdateSupplier.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSupplier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUpdateSupplier.Location = new System.Drawing.Point(394, 146);
+            this.btnUpdateSupplier.Location = new System.Drawing.Point(416, 144);
             this.btnUpdateSupplier.Name = "btnUpdateSupplier";
             this.btnUpdateSupplier.Size = new System.Drawing.Size(149, 34);
             this.btnUpdateSupplier.TabIndex = 18;
@@ -1350,7 +1339,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierEditPostal.AutoSize = true;
             this.lblSupplierEditPostal.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierEditPostal.Location = new System.Drawing.Point(249, 122);
+            this.lblSupplierEditPostal.Location = new System.Drawing.Point(228, 122);
             this.lblSupplierEditPostal.Name = "lblSupplierEditPostal";
             this.lblSupplierEditPostal.Size = new System.Drawing.Size(71, 14);
             this.lblSupplierEditPostal.TabIndex = 19;
@@ -1368,7 +1357,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierEditCity.AutoSize = true;
             this.lblSupplierEditCity.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierEditCity.Location = new System.Drawing.Point(842, 44);
+            this.lblSupplierEditCity.Location = new System.Drawing.Point(818, 44);
             this.lblSupplierEditCity.Name = "lblSupplierEditCity";
             this.lblSupplierEditCity.Size = new System.Drawing.Size(29, 14);
             this.lblSupplierEditCity.TabIndex = 29;
@@ -1378,7 +1367,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierEditProvince.AutoSize = true;
             this.lblSupplierEditProvince.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierEditProvince.Location = new System.Drawing.Point(75, 122);
+            this.lblSupplierEditProvince.Location = new System.Drawing.Point(6, 122);
             this.lblSupplierEditProvince.Name = "lblSupplierEditProvince";
             this.lblSupplierEditProvince.Size = new System.Drawing.Size(55, 14);
             this.lblSupplierEditProvince.TabIndex = 31;
@@ -1387,9 +1376,9 @@ namespace Istn3ASproject
             // txtEditScode
             // 
             this.txtEditScode.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditScode.Location = new System.Drawing.Point(252, 156);
+            this.txtEditScode.Location = new System.Drawing.Point(231, 156);
             this.txtEditScode.Name = "txtEditScode";
-            this.txtEditScode.Size = new System.Drawing.Size(100, 20);
+            this.txtEditScode.Size = new System.Drawing.Size(148, 20);
             this.txtEditScode.TabIndex = 28;
             // 
             // txtEditScity
@@ -1422,7 +1411,7 @@ namespace Istn3ASproject
             "North West",
             "Northern Cape",
             "Western Cape"});
-            this.cbEditSprovince.Location = new System.Drawing.Point(28, 156);
+            this.cbEditSprovince.Location = new System.Drawing.Point(7, 156);
             this.cbEditSprovince.Name = "cbEditSprovince";
             this.cbEditSprovince.Size = new System.Drawing.Size(174, 22);
             this.cbEditSprovince.TabIndex = 30;
@@ -1431,7 +1420,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierEditEmail.AutoSize = true;
             this.lblSupplierEditEmail.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierEditEmail.Location = new System.Drawing.Point(431, 44);
+            this.lblSupplierEditEmail.Location = new System.Drawing.Point(413, 44);
             this.lblSupplierEditEmail.Name = "lblSupplierEditEmail";
             this.lblSupplierEditEmail.Size = new System.Drawing.Size(34, 14);
             this.lblSupplierEditEmail.TabIndex = 22;
@@ -1441,7 +1430,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierEditName.AutoSize = true;
             this.lblSupplierEditName.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierEditName.Location = new System.Drawing.Point(32, 44);
+            this.lblSupplierEditName.Location = new System.Drawing.Point(6, 44);
             this.lblSupplierEditName.Name = "lblSupplierEditName";
             this.lblSupplierEditName.Size = new System.Drawing.Size(40, 14);
             this.lblSupplierEditName.TabIndex = 20;
@@ -1469,7 +1458,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierEditAddress.AutoSize = true;
             this.lblSupplierEditAddress.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierEditAddress.Location = new System.Drawing.Point(616, 44);
+            this.lblSupplierEditAddress.Location = new System.Drawing.Point(607, 44);
             this.lblSupplierEditAddress.Name = "lblSupplierEditAddress";
             this.lblSupplierEditAddress.Size = new System.Drawing.Size(51, 14);
             this.lblSupplierEditAddress.TabIndex = 23;
@@ -1494,9 +1483,9 @@ namespace Istn3ASproject
             this.gbAddSupplier.Controls.Add(this.txtSname);
             this.gbAddSupplier.Controls.Add(this.lblSupplierAddress);
             this.gbAddSupplier.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAddSupplier.Location = new System.Drawing.Point(17, 212);
+            this.gbAddSupplier.Location = new System.Drawing.Point(262, 230);
             this.gbAddSupplier.Name = "gbAddSupplier";
-            this.gbAddSupplier.Size = new System.Drawing.Size(991, 174);
+            this.gbAddSupplier.Size = new System.Drawing.Size(1000, 174);
             this.gbAddSupplier.TabIndex = 35;
             this.gbAddSupplier.TabStop = false;
             this.gbAddSupplier.Text = "Add New Supplier";
@@ -1516,7 +1505,7 @@ namespace Istn3ASproject
             this.btnAddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddSupplier.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSupplier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddSupplier.Location = new System.Drawing.Point(408, 119);
+            this.btnAddSupplier.Location = new System.Drawing.Point(416, 120);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(126, 36);
             this.btnAddSupplier.TabIndex = 18;
@@ -1556,7 +1545,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierProvince.AutoSize = true;
             this.lblSupplierProvince.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierProvince.Location = new System.Drawing.Point(54, 102);
+            this.lblSupplierProvince.Location = new System.Drawing.Point(6, 102);
             this.lblSupplierProvince.Name = "lblSupplierProvince";
             this.lblSupplierProvince.Size = new System.Drawing.Size(55, 14);
             this.lblSupplierProvince.TabIndex = 31;
@@ -1567,7 +1556,7 @@ namespace Istn3ASproject
             this.txtScode.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScode.Location = new System.Drawing.Point(231, 136);
             this.txtScode.Name = "txtScode";
-            this.txtScode.Size = new System.Drawing.Size(111, 20);
+            this.txtScode.Size = new System.Drawing.Size(148, 20);
             this.txtScode.TabIndex = 28;
             // 
             // txtScity
@@ -1619,7 +1608,7 @@ namespace Istn3ASproject
             // 
             this.lblSupplierFname.AutoSize = true;
             this.lblSupplierFname.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierFname.Location = new System.Drawing.Point(32, 38);
+            this.lblSupplierFname.Location = new System.Drawing.Point(6, 38);
             this.lblSupplierFname.Name = "lblSupplierFname";
             this.lblSupplierFname.Size = new System.Drawing.Size(40, 14);
             this.lblSupplierFname.TabIndex = 20;
@@ -1658,9 +1647,9 @@ namespace Istn3ASproject
             this.button1.BackColor = System.Drawing.Color.Azure;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(822, 154);
+            this.button1.Location = new System.Drawing.Point(1076, 172);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 25);
+            this.button1.Size = new System.Drawing.Size(186, 25);
             this.button1.TabIndex = 4;
             this.button1.Text = "Restore";
             this.button1.UseVisualStyleBackColor = false;
@@ -1681,7 +1670,7 @@ namespace Istn3ASproject
             this.provinceDataGridViewTextBoxColumn1,
             this.postalCodeDataGridViewTextBoxColumn1});
             this.gvSupplier.DataSource = this.supplierBindingSource;
-            this.gvSupplier.Location = new System.Drawing.Point(8, 17);
+            this.gvSupplier.Location = new System.Drawing.Point(262, 35);
             this.gvSupplier.Name = "gvSupplier";
             this.gvSupplier.RowHeadersWidth = 51;
             this.gvSupplier.RowTemplate.Height = 24;
@@ -1765,9 +1754,9 @@ namespace Istn3ASproject
             this.btnSearchSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchSupplier.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchSupplier.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSearchSupplier.Location = new System.Drawing.Point(823, 104);
+            this.btnSearchSupplier.Location = new System.Drawing.Point(1077, 122);
             this.btnSearchSupplier.Name = "btnSearchSupplier";
-            this.btnSearchSupplier.Size = new System.Drawing.Size(82, 29);
+            this.btnSearchSupplier.Size = new System.Drawing.Size(185, 29);
             this.btnSearchSupplier.TabIndex = 3;
             this.btnSearchSupplier.Text = "Search";
             this.btnSearchSupplier.UseVisualStyleBackColor = false;
@@ -1776,9 +1765,9 @@ namespace Istn3ASproject
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(819, 58);
+            this.txtSearch.Location = new System.Drawing.Point(1073, 76);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(113, 20);
+            this.txtSearch.Size = new System.Drawing.Size(189, 20);
             this.txtSearch.TabIndex = 2;
             // 
             // staffBindingSource1
@@ -1859,10 +1848,10 @@ namespace Istn3ASproject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1263, 700);
+            this.ClientSize = new System.Drawing.Size(1481, 827);
             this.Controls.Add(this.tcUserManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUserManagement";
             this.Text = "User Management";
             this.Load += new System.EventHandler(this.frmUserManagement_Load);
@@ -2026,7 +2015,6 @@ namespace Istn3ASproject
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearchSupplier;
-        private System.Windows.Forms.ComboBox comboBox1;
        
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox gbAddSupplier;
