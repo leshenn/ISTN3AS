@@ -21,6 +21,8 @@ namespace Istn3ASproject
 
         private void frmPOS_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'WstGrp11DataSet.Customer' table. You can move, or remove it, as needed.
+            this.TaCustomer.Fill(this.WstGrp11DataSet.Customer);
             // TODO: This line of code loads data into the 'wstGrp11DS.Order' table. You can move, or remove it, as needed.
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Order' table. You can move, or remove it, as needed.
@@ -48,7 +50,8 @@ namespace Istn3ASproject
                 }
 
                 WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
-                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 2].Cells[5].Value = 0;
+                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 2].Cells[5].Value = 1;
+                CalcTotal();
             }catch (Exception ec)
             {
                 MessageBox.Show("Error" + ec.Message);       
@@ -59,15 +62,20 @@ namespace Istn3ASproject
 
         private void dgvSalesInvoice_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            decimal Total= 0;
+            CalcTotal();
+        }
+
+        private void CalcTotal()
+        {
+            decimal Total = 0;
             int quantity = 0;
             decimal price = 0;
 
             //loops through table to calculate total
             for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
             {
-                price = Convert.ToDecimal(dgvSalesInvoice.Rows[i].Cells[3].Value);                         
-                quantity = HandleQuantityInput(dgvSalesInvoice.Rows[i].Cells[5].Value.ToString(),i);
+                price = Convert.ToDecimal(dgvSalesInvoice.Rows[i].Cells[3].Value);
+                quantity = HandleQuantityInput(dgvSalesInvoice.Rows[i].Cells[5].Value.ToString(), i);
 
                 Total += price * quantity;
             }
@@ -83,18 +91,19 @@ namespace Istn3ASproject
             if (!isNumber)
             {
                 MessageBox.Show("Quantity cannot be letters or symbols","Invalid character", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dgvSalesInvoice.Rows[i].Cells[5].Value = 0;
-                return 0;
+                dgvSalesInvoice.Rows[i].Cells[5].Value = 1;
+                return 1;
             }
 
             // checks is quantiy is in a valid range
-            if (quantity<0 || quantity > Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[4].Value)) 
+            if (quantity<=0 || quantity > Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[4].Value)) 
             {
                 MessageBox.Show("Quantity amount has to be greater than 0 and at most equal to stock on hand", "Invalid quantity range", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dgvSalesInvoice.Rows[i].Cells[5].Value = 0;
-                return 0;
+                dgvSalesInvoice.Rows[i].Cells[5].Value = 1;
+                return 1;
             }
 
+            
             return quantity;
         }
 
@@ -261,6 +270,16 @@ namespace Istn3ASproject
             {
                 MessageBox.Show("Error updating stock" + ex.Message);
             }
+        }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void dgvCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }
