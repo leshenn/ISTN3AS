@@ -131,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1062, 72);
+            this.label3.Location = new System.Drawing.Point(1060, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(313, 25);
             this.label3.TabIndex = 13;
@@ -140,7 +140,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.textBox1.Location = new System.Drawing.Point(1418, 76);
+            this.textBox1.Location = new System.Drawing.Point(1397, 70);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(519, 22);
             this.textBox1.TabIndex = 12;
@@ -253,7 +253,7 @@
             this.grpBCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBCustomers.Location = new System.Drawing.Point(1062, 117);
             this.grpBCustomers.Name = "grpBCustomers";
-            this.grpBCustomers.Size = new System.Drawing.Size(846, 327);
+            this.grpBCustomers.Size = new System.Drawing.Size(846, 333);
             this.grpBCustomers.TabIndex = 10;
             this.grpBCustomers.TabStop = false;
             this.grpBCustomers.Text = "Customers";
@@ -275,7 +275,7 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.RowHeadersWidth = 51;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(840, 298);
+            this.dgvCustomer.Size = new System.Drawing.Size(840, 304);
             this.dgvCustomer.TabIndex = 0;
             this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellDoubleClick);
