@@ -33,11 +33,11 @@
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.btnProcessOrder = new System.Windows.Forms.Button();
             this.lblTotalCaption = new System.Windows.Forms.Label();
@@ -81,8 +81,8 @@
             this.TaCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.grpBCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -104,9 +104,10 @@
             this.tcPOS.Controls.Add(this.tbpRefund);
             this.tcPOS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPOS.Location = new System.Drawing.Point(0, 0);
+            this.tcPOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcPOS.Name = "tcPOS";
             this.tcPOS.SelectedIndex = 0;
-            this.tcPOS.Size = new System.Drawing.Size(1924, 923);
+            this.tcPOS.Size = new System.Drawing.Size(1443, 750);
             this.tcPOS.TabIndex = 0;
             // 
             // tbpSales
@@ -120,10 +121,11 @@
             this.tbpSales.Controls.Add(this.grpbStock);
             this.tbpSales.Controls.Add(this.lblSearchItem);
             this.tbpSales.Controls.Add(this.txtSearchProduct);
-            this.tbpSales.Location = new System.Drawing.Point(4, 25);
+            this.tbpSales.Location = new System.Drawing.Point(4, 22);
+            this.tbpSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpSales.Name = "tbpSales";
-            this.tbpSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSales.Size = new System.Drawing.Size(1916, 894);
+            this.tbpSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Size = new System.Drawing.Size(1435, 724);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             // 
@@ -131,39 +133,21 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1060, 66);
+            this.label3.Location = new System.Drawing.Point(795, 54);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 25);
+            this.label3.Size = new System.Drawing.Size(258, 20);
             this.label3.TabIndex = 13;
             this.label3.Text = "Search for Customer PhoneNo:";
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.textBox1.Location = new System.Drawing.Point(1397, 70);
+            this.textBox1.Location = new System.Drawing.Point(1048, 57);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(519, 22);
+            this.textBox1.Size = new System.Drawing.Size(390, 20);
             this.textBox1.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightBlue;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 58);
-            this.panel2.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 36);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Order Details:";
             // 
             // panel1
             // 
@@ -176,18 +160,20 @@
             this.panel1.Controls.Add(this.btnProcessOrder);
             this.panel1.Controls.Add(this.lblTotalCaption);
             this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Location = new System.Drawing.Point(1434, 574);
+            this.panel1.Location = new System.Drawing.Point(1076, 466);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 226);
+            this.panel1.Size = new System.Drawing.Size(209, 184);
             this.panel1.TabIndex = 10;
             // 
             // lblCustomerID
             // 
             this.lblCustomerID.AutoSize = true;
             this.lblCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerID.Location = new System.Drawing.Point(162, 74);
+            this.lblCustomerID.Location = new System.Drawing.Point(122, 60);
+            this.lblCustomerID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(49, 25);
+            this.lblCustomerID.Size = new System.Drawing.Size(38, 20);
             this.lblCustomerID.TabIndex = 10;
             this.lblCustomerID.Text = "N/A";
             // 
@@ -195,11 +181,34 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 74);
+            this.label2.Location = new System.Drawing.Point(17, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 25);
+            this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "CustomerID:";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(203, 48);
+            this.panel2.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 29);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Order Details:";
             // 
             // cmbPaymentMethod
             // 
@@ -209,18 +218,20 @@
             this.cmbPaymentMethod.Items.AddRange(new object[] {
             "Cash",
             "Card"});
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(14, 169);
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(10, 137);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(121, 33);
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(92, 28);
             this.cmbPaymentMethod.TabIndex = 7;
             // 
             // btnProcessOrder
             // 
             this.btnProcessOrder.BackColor = System.Drawing.Color.LightGreen;
             this.btnProcessOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessOrder.Location = new System.Drawing.Point(152, 148);
+            this.btnProcessOrder.Location = new System.Drawing.Point(114, 120);
+            this.btnProcessOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProcessOrder.Name = "btnProcessOrder";
-            this.btnProcessOrder.Size = new System.Drawing.Size(121, 73);
+            this.btnProcessOrder.Size = new System.Drawing.Size(91, 59);
             this.btnProcessOrder.TabIndex = 6;
             this.btnProcessOrder.Text = "Process Order";
             this.btnProcessOrder.UseVisualStyleBackColor = false;
@@ -230,9 +241,10 @@
             // 
             this.lblTotalCaption.AutoSize = true;
             this.lblTotalCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCaption.Location = new System.Drawing.Point(27, 113);
+            this.lblTotalCaption.Location = new System.Drawing.Point(20, 92);
+            this.lblTotalCaption.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalCaption.Name = "lblTotalCaption";
-            this.lblTotalCaption.Size = new System.Drawing.Size(97, 25);
+            this.lblTotalCaption.Size = new System.Drawing.Size(74, 20);
             this.lblTotalCaption.TabIndex = 4;
             this.lblTotalCaption.Text = "TOTAL :";
             // 
@@ -240,9 +252,10 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(162, 113);
+            this.lblTotal.Location = new System.Drawing.Point(122, 92);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(24, 25);
+            this.lblTotal.Size = new System.Drawing.Size(19, 20);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "0";
             // 
@@ -251,9 +264,11 @@
             this.grpBCustomers.BackColor = System.Drawing.Color.LightBlue;
             this.grpBCustomers.Controls.Add(this.dgvCustomer);
             this.grpBCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBCustomers.Location = new System.Drawing.Point(1062, 117);
+            this.grpBCustomers.Location = new System.Drawing.Point(796, 95);
+            this.grpBCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpBCustomers.Name = "grpBCustomers";
-            this.grpBCustomers.Size = new System.Drawing.Size(846, 333);
+            this.grpBCustomers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBCustomers.Size = new System.Drawing.Size(634, 271);
             this.grpBCustomers.TabIndex = 10;
             this.grpBCustomers.TabStop = false;
             this.grpBCustomers.Text = "Customers";
@@ -271,11 +286,12 @@
             this.emailDataGridViewTextBoxColumn});
             this.dgvCustomer.DataSource = this.customerBindingSource;
             this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomer.Location = new System.Drawing.Point(3, 26);
+            this.dgvCustomer.Location = new System.Drawing.Point(2, 21);
+            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.RowHeadersWidth = 51;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(840, 304);
+            this.dgvCustomer.Size = new System.Drawing.Size(630, 248);
             this.dgvCustomer.TabIndex = 0;
             this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellDoubleClick);
@@ -341,9 +357,11 @@
             this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
             this.groupBox1.Controls.Add(this.dgvSalesInvoice);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(33, 523);
+            this.groupBox1.Location = new System.Drawing.Point(25, 425);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1170, 352);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(878, 286);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice";
@@ -362,11 +380,12 @@
             this.Quantity});
             this.dgvSalesInvoice.DataSource = this.salesInvoiceBindingSource;
             this.dgvSalesInvoice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSalesInvoice.Location = new System.Drawing.Point(3, 26);
+            this.dgvSalesInvoice.Location = new System.Drawing.Point(2, 21);
+            this.dgvSalesInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvSalesInvoice.Name = "dgvSalesInvoice";
             this.dgvSalesInvoice.RowHeadersWidth = 51;
             this.dgvSalesInvoice.RowTemplate.Height = 24;
-            this.dgvSalesInvoice.Size = new System.Drawing.Size(1164, 323);
+            this.dgvSalesInvoice.Size = new System.Drawing.Size(874, 263);
             this.dgvSalesInvoice.TabIndex = 3;
             this.dgvSalesInvoice.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellEndEdit);
             // 
@@ -428,9 +447,11 @@
             this.grpbStock.BackColor = System.Drawing.Color.LightBlue;
             this.grpbStock.Controls.Add(this.dgvStock);
             this.grpbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbStock.Location = new System.Drawing.Point(30, 117);
+            this.grpbStock.Location = new System.Drawing.Point(22, 95);
+            this.grpbStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpbStock.Name = "grpbStock";
-            this.grpbStock.Size = new System.Drawing.Size(957, 333);
+            this.grpbStock.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbStock.Size = new System.Drawing.Size(718, 271);
             this.grpbStock.TabIndex = 8;
             this.grpbStock.TabStop = false;
             this.grpbStock.Text = "Stock";
@@ -449,11 +470,12 @@
             this.dgvStock.DataSource = this.stockBindingSource;
             this.dgvStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStock.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvStock.Location = new System.Drawing.Point(3, 26);
+            this.dgvStock.Location = new System.Drawing.Point(2, 21);
+            this.dgvStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.RowHeadersWidth = 51;
             this.dgvStock.RowTemplate.Height = 24;
-            this.dgvStock.Size = new System.Drawing.Size(951, 304);
+            this.dgvStock.Size = new System.Drawing.Size(714, 248);
             this.dgvStock.TabIndex = 0;
             this.dgvStock.DoubleClick += new System.EventHandler(this.dgvStock_DoubleClick);
             // 
@@ -507,27 +529,30 @@
             // 
             this.lblSearchItem.AutoSize = true;
             this.lblSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchItem.Location = new System.Drawing.Point(28, 65);
+            this.lblSearchItem.Location = new System.Drawing.Point(21, 53);
+            this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
-            this.lblSearchItem.Size = new System.Drawing.Size(171, 25);
+            this.lblSearchItem.Size = new System.Drawing.Size(142, 20);
             this.lblSearchItem.TabIndex = 2;
             this.lblSearchItem.Text = "Search for item :";
             // 
             // txtSearchProduct
             // 
             this.txtSearchProduct.BackColor = System.Drawing.Color.LightBlue;
-            this.txtSearchProduct.Location = new System.Drawing.Point(216, 69);
+            this.txtSearchProduct.Location = new System.Drawing.Point(162, 56);
+            this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(519, 22);
+            this.txtSearchProduct.Size = new System.Drawing.Size(390, 20);
             this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // tbpRefund
             // 
-            this.tbpRefund.Location = new System.Drawing.Point(4, 25);
+            this.tbpRefund.Location = new System.Drawing.Point(4, 22);
+            this.tbpRefund.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpRefund.Name = "tbpRefund";
-            this.tbpRefund.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpRefund.Size = new System.Drawing.Size(1916, 894);
+            this.tbpRefund.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpRefund.Size = new System.Drawing.Size(1435, 724);
             this.tbpRefund.TabIndex = 1;
             this.tbpRefund.Text = "Refund";
             this.tbpRefund.UseVisualStyleBackColor = true;
@@ -564,20 +589,22 @@
             // 
             // frmPOS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 923);
+            this.ClientSize = new System.Drawing.Size(1443, 750);
             this.Controls.Add(this.tcPOS);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPOS";
             this.Text = "POS";
             this.Load += new System.EventHandler(this.frmPOS_Load);
             this.tcPOS.ResumeLayout(false);
             this.tbpSales.ResumeLayout(false);
             this.tbpSales.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.grpBCustomers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
