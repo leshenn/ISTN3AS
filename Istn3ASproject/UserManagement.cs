@@ -218,7 +218,7 @@ namespace Istn3ASproject
                 try
                 {
                     mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                    customerTableAdapter.UpdateCustomerDetails(txtUfname.Text, txtUlname.Text, mtUpdateCustContact.Text, txtUemail.Text, txtUaddress.Text, txtUcity.Text, cbUprovince.Text, txtUcode.Text, Convert.ToInt32(gvCustomer.CurrentRow.Cells[0].Value.ToString()));
+                    customerTableAdapter.UpdateCustomerDetails(txtUfname.Text, txtUlname.Text, mtUpdateCustContact.Text, txtUemail.Text,  txtUcity.Text, cbUprovince.Text, txtUcode.Text, txtUaddress.Text, Convert.ToInt32(gvCustomer.CurrentRow.Cells[0].Value.ToString()));
                     customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
                     txtUfname.Clear();
                     txtUlname.Clear();
