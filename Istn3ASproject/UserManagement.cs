@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
@@ -20,6 +21,17 @@ namespace Istn3ASproject
         public frmUserManagement()
         {
             InitializeComponent();
+        }
+        
+
+        private Action<Form> navigate;
+        private frmPOS posForm;
+
+        public frmUserManagement(Action<Form> navigateTo, frmPOS posFormRef)
+        {
+            InitializeComponent();
+            navigate = navigateTo;
+            posForm = posFormRef;
         }
 
         private void frmUserManagement_Load(object sender, EventArgs e)
@@ -575,12 +587,14 @@ namespace Istn3ASproject
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            frmPOS frmPOS = new frmPOS();
             
-       
-            
+            posForm.UpdateLabel(gvCustomer.CurrentRow.Cells[1].Value.ToString(), gvCustomer.CurrentRow.Cells[2].Value.ToString(), gvCustomer.CurrentRow.Cells[0].Value.ToString());
+            navigate(posForm);
+
         }
     }
 }

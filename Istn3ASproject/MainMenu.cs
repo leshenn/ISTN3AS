@@ -18,6 +18,7 @@ namespace Istn3ASproject
         {
             InitializeComponent();
         }
+        private frmPOS posForm = new frmPOS();
 
         public void loadForm(Form formToLoad)
         {
@@ -62,12 +63,13 @@ namespace Istn3ASproject
 
         private void btnUserMangement_Click(object sender, EventArgs e)
         {
-            loadForm(new frmUserManagement());
+            loadForm(new frmUserManagement(loadForm, posForm));
         }
+        
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
-            loadForm(new frmPOS());
+            loadForm(posForm);
         }
     }
 }

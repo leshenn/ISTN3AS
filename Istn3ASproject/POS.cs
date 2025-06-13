@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic; 
+using Microsoft.VisualBasic;
 
 namespace Istn3ASproject
 {
-    public partial class frmPOS: Form
+    public partial class frmPOS : Form
     {
         public frmPOS()
         {
@@ -22,7 +22,7 @@ namespace Istn3ASproject
         private void frmPOS_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'WstGrp11DataSet.Customer' table. You can move, or remove it, as needed.
-           // this.TaCustomer.Fill(this.WstGrp11DataSet.Customer);
+            // this.TaCustomer.Fill(this.WstGrp11DataSet.Customer);
             // TODO: This line of code loads data into the 'wstGrp11DS.Order' table. You can move, or remove it, as needed.
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Order' table. You can move, or remove it, as needed.
@@ -44,7 +44,7 @@ namespace Istn3ASproject
                 DataRow dr;
                 dr = WstGrp11DataSet.SalesInvoice.NewRow();
 
-                for (int i =0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     dr[i] = dgvStock.CurrentRow.Cells[i].Value;
                 }
@@ -52,11 +52,12 @@ namespace Istn3ASproject
                 WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
                 dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 2].Cells[5].Value = 1;
                 CalcTotal();
-            }catch (Exception ec)
-            {
-                MessageBox.Show("Error" + ec.Message);       
             }
-            
+            catch (Exception ec)
+            {
+                MessageBox.Show("Error" + ec.Message);
+            }
+
 
         }
 
@@ -90,20 +91,20 @@ namespace Istn3ASproject
             // Checks if quantity is a number
             if (!isNumber)
             {
-                MessageBox.Show("Quantity cannot be letters or symbols","Invalid character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Quantity cannot be letters or symbols", "Invalid character", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgvSalesInvoice.Rows[i].Cells[5].Value = 1;
                 return 1;
             }
 
             // checks is quantiy is in a valid range
-            if (quantity<=0 || quantity > Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[4].Value)) 
+            if (quantity <= 0 || quantity > Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[4].Value))
             {
                 MessageBox.Show("Quantity amount has to be greater than 0 and at most equal to stock on hand", "Invalid quantity range", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgvSalesInvoice.Rows[i].Cells[5].Value = 1;
                 return 1;
             }
 
-            
+
             return quantity;
         }
 
@@ -120,18 +121,18 @@ namespace Istn3ASproject
             if (ReadyToProcess())
             {
                 //LETS USER CONFIRM IF ORDER IS CORRECT
-               DialogResult result= MessageBox.Show("CustomerID :" + CustomerID.ToString() +"\n"+
-                                "StaffID :" + StaffID.ToString() + "\n" +
-                                "Method of Payment :" + PaymentMethod + "\n" +
-                                "Transaction Type :" + TransactionType + "\n" +
-                                "Date :" + Today + "\n" +
-                                "Time :" + CurrentTime + "\n" +
-                                "Total :" + Total.ToString() + "\n" +listItems() ,
-                                "OrderDetails",MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("CustomerID :" + CustomerID.ToString() + "\n" +
+                                 "StaffID :" + StaffID.ToString() + "\n" +
+                                 "Method of Payment :" + PaymentMethod + "\n" +
+                                 "Transaction Type :" + TransactionType + "\n" +
+                                 "Date :" + Today + "\n" +
+                                 "Time :" + CurrentTime + "\n" +
+                                 "Total :" + Total.ToString() + "\n" + listItems(),
+                                 "OrderDetails", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (result == DialogResult.OK)
                 {
-                    ProcessOrder(CustomerID,StaffID,PaymentMethod,TransactionType,Today,CurrentTime,Total);
+                    ProcessOrder(CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total);
                     WstGrp11DataSet.SalesInvoice.Clear();
                     txtSearchProduct.Clear();
                     cmbPaymentMethod.Text = "";
@@ -162,7 +163,9 @@ namespace Istn3ASproject
             {
                 ReadyToProcess = false;
                 MessageBox.Show("Please choose a payment method", "Missing payment method", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else{
+            }
+            else
+            {
                 if (cmbPaymentMethod.Text == "Cash")
                 {
                     bool ChangeValid = false;
@@ -197,12 +200,12 @@ namespace Istn3ASproject
                     MessageBox.Show("Change amount :" + dChangeToGive.ToString());
                 }
             }
-         return ReadyToProcess;
+            return ReadyToProcess;
         }
 
         private string listItems()
         {
-            string listOfItems ="";
+            string listOfItems = "";
 
             for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
             {
@@ -214,12 +217,12 @@ namespace Istn3ASproject
                 decimal SubTotal = price * quantity;
 
                 //ADD TO STRING OF ITEMS
-                listOfItems += StockID+" "+name + "\t" + SubTotal.ToString("C2") + "\n";
+                listOfItems += StockID + " " + name + "\t" + SubTotal.ToString("C2") + "\n";
             }
             return listOfItems;
         }
 
-        private void ProcessOrder(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType,string Today, string CurrentTime, Decimal Total)
+        private void ProcessOrder(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType, string Today, string CurrentTime, Decimal Total)
         {
             try
             {
@@ -249,7 +252,7 @@ namespace Istn3ASproject
 
                     //insert in ORDERLINE TABLE
                     taOrderLine.InsertNewOrdelineItem(OrderID, StockID, quantity, SubTotal);
-                    updateStock(StockID,AfterSaleStock);
+                    updateStock(StockID, AfterSaleStock);
                 }
 
                 MessageBox.Show("Orderline items added");
@@ -266,20 +269,28 @@ namespace Istn3ASproject
             try
             {
                 taStock.UpdateStockAfterSale(AfterSaleStock, StockID);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error updating stock" + ex.Message);
             }
         }
 
-       /* private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
-        }
+        /* private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+         {
+             lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
+         }
 
-        private void dgvCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+         private void dgvCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+         {
+             lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
+         }*/
+
+        public void UpdateLabel(string name,string lastName,string ID)
         {
-            lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
-        }*/
+            lblCustomerName.Text = name;
+            lblCustomerLN.Text = lastName;
+            lblCustID.Text = ID;
+        }
     }
 }
