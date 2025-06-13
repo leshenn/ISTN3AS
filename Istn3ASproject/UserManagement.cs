@@ -9,11 +9,13 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
     public partial class frmUserManagement: Form
     {
+        int orginalStaffID;
         public frmUserManagement()
         {
             InitializeComponent();
@@ -36,22 +38,18 @@ namespace Istn3ASproject
         private Boolean validateFields(string Username,string Password,string FirstName,string LastName
             ,string ContactNo,string Role)
         {
-            bool isAllLetters_Name = FirstName.All(char.IsLetter);
-            bool isAllLetters_LastName = LastName.All(char.IsLetter);
-            bool passwordLength = Password.Length > 5;
-            bool UsernameLength = Username.Length > 5;
-            bool RoleNotEmpty = Role.Length > 0;
-            bool ContactOk = ContactNo.Length == 10;
+            bool isAllLetters_Name = !string.IsNullOrWhiteSpace(FirstName);
+            bool isAllLetters_LastName = !string.IsNullOrWhiteSpace(LastName);
+            bool passwordLength = !string.IsNullOrWhiteSpace(Password) && Password.Length >= 6;
+            bool UsernameLength = !string.IsNullOrWhiteSpace(Username) &&
+                          Username.Length >= 6 &&
+                          !Username.Contains(" ");
 
-            if (isAllLetters_LastName && isAllLetters_LastName && passwordLength && UsernameLength && RoleNotEmpty && ContactOk)
-            {
-                return true;    
-            }
-            else
-            {
-                return false;
-            }
+            bool RoleNotEmpty = !string.IsNullOrWhiteSpace(Role);
+            bool ContactOk = !string.IsNullOrWhiteSpace(ContactNo) &&
+                           ContactNo.Length == 10; 
 
+            return isAllLetters_LastName && isAllLetters_Name && passwordLength && UsernameLength && RoleNotEmpty && ContactOk;
 
         }
 
@@ -190,6 +188,7 @@ namespace Istn3ASproject
 
         private void dgvStaffMgt_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            orginalStaffID = Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value);
             txtUsernameUpdate.Text = Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value);
             txtPasswordUpdate.Text = Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value);
             txtNameUpdate.Text = Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value);
@@ -230,17 +229,14 @@ namespace Istn3ASproject
             DialogResult dialoganswerUpdate = MessageBox.Show("Are you sure you want to Update staff member: " + txtNameUpdate.Text + " " + txtLastNameUpdate.Text + " ?"
                 , "Confirmation", MessageBoxButtons.YesNo);
 
-            if (updateIsValid && dialoganswerUpdate==DialogResult.Yes )
+            if (updateIsValid && dialoganswerUpdate == DialogResult.Yes)
             {
-               /* staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text, txtPasswordUpdate.Text, txtNameUpdate.Text,
-                txtLastNameUpdate.Text, txtContactUpdate.Text, cmbStaffRoleUpdate.Text, 
-                Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value),
-                Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[4].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[5].Value),
-                Convert.ToString(dgvStaffMgt.CurrentRow.Cells[6].Value), Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value));
-                staffTableAdapter.Fill(wstGrp11DataSet.Staff);
-                SystemSounds.Exclamation.Play();*/
+                staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
+                    txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.Text,orginalStaffID);
                 MessageBox.Show("Staff Member Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else { MessageBox.Show("Staff Member NOT Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
         }
 
         private void cmbFilterByRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -304,11 +300,11 @@ namespace Istn3ASproject
         {
             if (txtNameUpdate.Text.All(char.IsLetter))
             {
-                txtNameUpdate.ForeColor = Color.Red;
+                txtNameUpdate.ForeColor = Color.Black;
             }
             else
             {
-                txtNameUpdate.ForeColor = Color.Black;
+                txtNameUpdate.ForeColor = Color.Red;
             }
         }
 
@@ -316,11 +312,11 @@ namespace Istn3ASproject
         {
             if (txtLastNameUpdate.Text.All(char.IsLetter))
             {
-                txtLastNameUpdate.ForeColor = Color.Red;
+                txtLastNameUpdate.ForeColor = Color.Black;
             }
             else
             {
-                txtLastNameUpdate.ForeColor = Color.Black;
+                txtLastNameUpdate.ForeColor = Color.Red;
             }
         }
 
@@ -328,11 +324,11 @@ namespace Istn3ASproject
         {
             if (txtFirstNameStaff.Text.All(char.IsLetter))
             {
-                txtFirstNameStaff.ForeColor = Color.Red;
+                txtFirstNameStaff.ForeColor = Color.Black;
             }
             else
             {
-                txtFirstNameStaff.ForeColor = Color.Black;
+                txtFirstNameStaff.ForeColor = Color.Red;
             }
         }
 
