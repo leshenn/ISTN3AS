@@ -524,5 +524,13 @@ namespace Istn3ASproject
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmPOS frmPOS = new frmPOS();
+            
+       
+            
+        }
     }
 }
