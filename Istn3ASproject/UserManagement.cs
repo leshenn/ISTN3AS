@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Media;
@@ -10,12 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
-    public partial class frmUserManagement: Form
+    public partial class frmUserManagement : Form
     {
         int orginalStaffID;
         public frmUserManagement()
