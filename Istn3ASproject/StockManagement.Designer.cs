@@ -46,7 +46,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcStockManagement = new System.Windows.Forms.TabControl();
             this.tbpInventoryManagement = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpUpdateItemDetails = new System.Windows.Forms.GroupBox();
             this.btnUpdateItemDetails = new System.Windows.Forms.Button();
             this.txtProdBPriceUpdate = new System.Windows.Forms.TextBox();
             this.txtProdExpirUpdate = new System.Windows.Forms.TextBox();
@@ -72,7 +72,7 @@
             this.stockBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.StockUpdateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpAddNewItem = new System.Windows.Forms.GroupBox();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtExpiration = new System.Windows.Forms.TextBox();
@@ -145,12 +145,12 @@
             this.supplierOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
             this.tcStockManagement.SuspendLayout();
             this.tbpInventoryManagement.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpUpdateItemDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpdateStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockUpdateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grpAddNewItem.SuspendLayout();
             this.tbpSupplierOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.panSupplierCartItems.SuspendLayout();
@@ -184,9 +184,9 @@
             // tbpInventoryManagement
             // 
             this.tbpInventoryManagement.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpInventoryManagement.Controls.Add(this.groupBox2);
+            this.tbpInventoryManagement.Controls.Add(this.grpUpdateItemDetails);
             this.tbpInventoryManagement.Controls.Add(this.dgvUpdateStock);
-            this.tbpInventoryManagement.Controls.Add(this.groupBox1);
+            this.tbpInventoryManagement.Controls.Add(this.grpAddNewItem);
             this.tbpInventoryManagement.Location = new System.Drawing.Point(4, 22);
             this.tbpInventoryManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventoryManagement.Name = "tbpInventoryManagement";
@@ -195,28 +195,28 @@
             this.tbpInventoryManagement.TabIndex = 0;
             this.tbpInventoryManagement.Text = "Manage Inventory";
             // 
-            // groupBox2
+            // grpUpdateItemDetails
             // 
-            this.groupBox2.Controls.Add(this.btnUpdateItemDetails);
-            this.groupBox2.Controls.Add(this.txtProdBPriceUpdate);
-            this.groupBox2.Controls.Add(this.txtProdExpirUpdate);
-            this.groupBox2.Controls.Add(this.txtProdSPriceUpdate);
-            this.groupBox2.Controls.Add(this.txtProdDescUpdate);
-            this.groupBox2.Controls.Add(this.txtProdReorderUpdate);
-            this.groupBox2.Controls.Add(this.txtProdNameUpdate);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(275, 432);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(797, 150);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Edit Stock Details";
+            this.grpUpdateItemDetails.Controls.Add(this.btnUpdateItemDetails);
+            this.grpUpdateItemDetails.Controls.Add(this.txtProdBPriceUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.txtProdExpirUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.txtProdSPriceUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.txtProdDescUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.txtProdReorderUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.txtProdNameUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.label8);
+            this.grpUpdateItemDetails.Controls.Add(this.label7);
+            this.grpUpdateItemDetails.Controls.Add(this.label6);
+            this.grpUpdateItemDetails.Controls.Add(this.label5);
+            this.grpUpdateItemDetails.Controls.Add(this.label2);
+            this.grpUpdateItemDetails.Controls.Add(this.label1);
+            this.grpUpdateItemDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpUpdateItemDetails.Location = new System.Drawing.Point(275, 432);
+            this.grpUpdateItemDetails.Name = "grpUpdateItemDetails";
+            this.grpUpdateItemDetails.Size = new System.Drawing.Size(797, 150);
+            this.grpUpdateItemDetails.TabIndex = 3;
+            this.grpUpdateItemDetails.TabStop = false;
+            this.grpUpdateItemDetails.Text = "Edit Stock Details";
             // 
             // btnUpdateItemDetails
             // 
@@ -437,28 +437,28 @@
             this.wstGrp11DataSet.DataSetName = "WstGrp11DataSet";
             this.wstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // groupBox1
+            // grpAddNewItem
             // 
-            this.groupBox1.Controls.Add(this.btnAddItem);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.txtExpiration);
-            this.groupBox1.Controls.Add(this.lblProductName);
-            this.groupBox1.Controls.Add(this.txtReorder);
-            this.groupBox1.Controls.Add(this.lblProductDesc);
-            this.groupBox1.Controls.Add(this.txtBuy);
-            this.groupBox1.Controls.Add(this.txtDesc);
-            this.groupBox1.Controls.Add(this.txtSell);
-            this.groupBox1.Controls.Add(this.lblSell);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.lblBuy);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(275, 266);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(797, 146);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add New Inventory Item";
+            this.grpAddNewItem.Controls.Add(this.btnAddItem);
+            this.grpAddNewItem.Controls.Add(this.txtName);
+            this.grpAddNewItem.Controls.Add(this.txtExpiration);
+            this.grpAddNewItem.Controls.Add(this.lblProductName);
+            this.grpAddNewItem.Controls.Add(this.txtReorder);
+            this.grpAddNewItem.Controls.Add(this.lblProductDesc);
+            this.grpAddNewItem.Controls.Add(this.txtBuy);
+            this.grpAddNewItem.Controls.Add(this.txtDesc);
+            this.grpAddNewItem.Controls.Add(this.txtSell);
+            this.grpAddNewItem.Controls.Add(this.lblSell);
+            this.grpAddNewItem.Controls.Add(this.label10);
+            this.grpAddNewItem.Controls.Add(this.lblBuy);
+            this.grpAddNewItem.Controls.Add(this.label9);
+            this.grpAddNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAddNewItem.Location = new System.Drawing.Point(275, 266);
+            this.grpAddNewItem.Name = "grpAddNewItem";
+            this.grpAddNewItem.Size = new System.Drawing.Size(797, 146);
+            this.grpAddNewItem.TabIndex = 1;
+            this.grpAddNewItem.TabStop = false;
+            this.grpAddNewItem.Text = "Add New Inventory Item";
             // 
             // btnAddItem
             // 
@@ -1274,14 +1274,14 @@
             this.Load += new System.EventHandler(this.frmStockManagement_Load);
             this.tcStockManagement.ResumeLayout(false);
             this.tbpInventoryManagement.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpUpdateItemDetails.ResumeLayout(false);
+            this.grpUpdateItemDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpdateStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StockUpdateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpAddNewItem.ResumeLayout(false);
+            this.grpAddNewItem.PerformLayout();
             this.tbpSupplierOrder.ResumeLayout(false);
             this.tbpSupplierOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
@@ -1362,7 +1362,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUpdateStatus;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpAddNewItem;
         private System.Windows.Forms.DataGridView dgvUpdateStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierIDDataGridViewTextBoxColumn;
@@ -1382,7 +1382,7 @@
         private WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter supplierOrderTableAdapter;
         private System.Windows.Forms.BindingSource StockUpdateBindingSource;
         private System.Windows.Forms.BindingSource stockBindingSource1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpUpdateItemDetails;
         private System.Windows.Forms.Button btnUpdateItemDetails;
         private System.Windows.Forms.TextBox txtProdBPriceUpdate;
         private System.Windows.Forms.TextBox txtProdExpirUpdate;
