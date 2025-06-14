@@ -54,12 +54,12 @@
             this.txtProdDescUpdate = new System.Windows.Forms.TextBox();
             this.txtProdReorderUpdate = new System.Windows.Forms.TextBox();
             this.txtProdNameUpdate = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblExpirUpdate = new System.Windows.Forms.Label();
+            this.lblReorderUpdate = new System.Windows.Forms.Label();
+            this.lblBPriceUpdate = new System.Windows.Forms.Label();
+            this.lblSPriceUpdate = new System.Windows.Forms.Label();
+            this.lblDescUpdate = new System.Windows.Forms.Label();
+            this.lblNameUpdate = new System.Windows.Forms.Label();
             this.dgvUpdateStock = new System.Windows.Forms.DataGridView();
             this.stockIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,9 +83,9 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.txtSell = new System.Windows.Forms.TextBox();
             this.lblSell = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblExpirAdd = new System.Windows.Forms.Label();
             this.lblBuy = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblReorderAdd = new System.Windows.Forms.Label();
             this.tbpSupplierOrder = new System.Windows.Forms.TabPage();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.lblTotalItemsCost = new System.Windows.Forms.Label();
@@ -204,12 +204,12 @@
             this.grpUpdateItemDetails.Controls.Add(this.txtProdDescUpdate);
             this.grpUpdateItemDetails.Controls.Add(this.txtProdReorderUpdate);
             this.grpUpdateItemDetails.Controls.Add(this.txtProdNameUpdate);
-            this.grpUpdateItemDetails.Controls.Add(this.label8);
-            this.grpUpdateItemDetails.Controls.Add(this.label7);
-            this.grpUpdateItemDetails.Controls.Add(this.label6);
-            this.grpUpdateItemDetails.Controls.Add(this.label5);
-            this.grpUpdateItemDetails.Controls.Add(this.label2);
-            this.grpUpdateItemDetails.Controls.Add(this.label1);
+            this.grpUpdateItemDetails.Controls.Add(this.lblExpirUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.lblReorderUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.lblBPriceUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.lblSPriceUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.lblDescUpdate);
+            this.grpUpdateItemDetails.Controls.Add(this.lblNameUpdate);
             this.grpUpdateItemDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUpdateItemDetails.Location = new System.Drawing.Point(275, 432);
             this.grpUpdateItemDetails.Name = "grpUpdateItemDetails";
@@ -284,65 +284,65 @@
             this.txtProdNameUpdate.Size = new System.Drawing.Size(139, 20);
             this.txtProdNameUpdate.TabIndex = 6;
             // 
-            // label8
+            // lblExpirUpdate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(215, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Expiration Time (Days):";
+            this.lblExpirUpdate.AutoSize = true;
+            this.lblExpirUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpirUpdate.Location = new System.Drawing.Point(215, 88);
+            this.lblExpirUpdate.Name = "lblExpirUpdate";
+            this.lblExpirUpdate.Size = new System.Drawing.Size(115, 13);
+            this.lblExpirUpdate.TabIndex = 5;
+            this.lblExpirUpdate.Text = "Expiration Time (Days):";
             // 
-            // label7
+            // lblReorderUpdate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 88);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Reorder Level:";
+            this.lblReorderUpdate.AutoSize = true;
+            this.lblReorderUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReorderUpdate.Location = new System.Drawing.Point(28, 88);
+            this.lblReorderUpdate.Name = "lblReorderUpdate";
+            this.lblReorderUpdate.Size = new System.Drawing.Size(77, 13);
+            this.lblReorderUpdate.TabIndex = 4;
+            this.lblReorderUpdate.Text = "Reorder Level:";
             // 
-            // label6
+            // lblBPriceUpdate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(627, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Buying Price:";
+            this.lblBPriceUpdate.AutoSize = true;
+            this.lblBPriceUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBPriceUpdate.Location = new System.Drawing.Point(627, 32);
+            this.lblBPriceUpdate.Name = "lblBPriceUpdate";
+            this.lblBPriceUpdate.Size = new System.Drawing.Size(69, 13);
+            this.lblBPriceUpdate.TabIndex = 3;
+            this.lblBPriceUpdate.Text = "Buying Price:";
             // 
-            // label5
+            // lblSPriceUpdate
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(430, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Selling Price:";
+            this.lblSPriceUpdate.AutoSize = true;
+            this.lblSPriceUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPriceUpdate.Location = new System.Drawing.Point(430, 31);
+            this.lblSPriceUpdate.Name = "lblSPriceUpdate";
+            this.lblSPriceUpdate.Size = new System.Drawing.Size(68, 13);
+            this.lblSPriceUpdate.TabIndex = 2;
+            this.lblSPriceUpdate.Text = "Selling Price:";
             // 
-            // label2
+            // lblDescUpdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Product Description:";
+            this.lblDescUpdate.AutoSize = true;
+            this.lblDescUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescUpdate.Location = new System.Drawing.Point(215, 32);
+            this.lblDescUpdate.Name = "lblDescUpdate";
+            this.lblDescUpdate.Size = new System.Drawing.Size(103, 13);
+            this.lblDescUpdate.TabIndex = 1;
+            this.lblDescUpdate.Text = "Product Description:";
             // 
-            // label1
+            // lblNameUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Product Name:";
+            this.lblNameUpdate.AutoSize = true;
+            this.lblNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUpdate.Location = new System.Drawing.Point(28, 32);
+            this.lblNameUpdate.Name = "lblNameUpdate";
+            this.lblNameUpdate.Size = new System.Drawing.Size(78, 13);
+            this.lblNameUpdate.TabIndex = 0;
+            this.lblNameUpdate.Text = "Product Name:";
             // 
             // dgvUpdateStock
             // 
@@ -449,9 +449,9 @@
             this.grpAddNewItem.Controls.Add(this.txtDesc);
             this.grpAddNewItem.Controls.Add(this.txtSell);
             this.grpAddNewItem.Controls.Add(this.lblSell);
-            this.grpAddNewItem.Controls.Add(this.label10);
+            this.grpAddNewItem.Controls.Add(this.lblExpirAdd);
             this.grpAddNewItem.Controls.Add(this.lblBuy);
-            this.grpAddNewItem.Controls.Add(this.label9);
+            this.grpAddNewItem.Controls.Add(this.lblReorderAdd);
             this.grpAddNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAddNewItem.Location = new System.Drawing.Point(275, 266);
             this.grpAddNewItem.Name = "grpAddNewItem";
@@ -556,15 +556,15 @@
             this.lblSell.TabIndex = 2;
             this.lblSell.Text = "Selling Price:";
             // 
-            // label10
+            // lblExpirAdd
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(212, 92);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Expiration Time (Days):";
+            this.lblExpirAdd.AutoSize = true;
+            this.lblExpirAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpirAdd.Location = new System.Drawing.Point(212, 92);
+            this.lblExpirAdd.Name = "lblExpirAdd";
+            this.lblExpirAdd.Size = new System.Drawing.Size(115, 13);
+            this.lblExpirAdd.TabIndex = 5;
+            this.lblExpirAdd.Text = "Expiration Time (Days):";
             // 
             // lblBuy
             // 
@@ -576,15 +576,15 @@
             this.lblBuy.TabIndex = 3;
             this.lblBuy.Text = "Buying Price:";
             // 
-            // label9
+            // lblReorderAdd
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 92);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Reorder Level:";
+            this.lblReorderAdd.AutoSize = true;
+            this.lblReorderAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReorderAdd.Location = new System.Drawing.Point(25, 92);
+            this.lblReorderAdd.Name = "lblReorderAdd";
+            this.lblReorderAdd.Size = new System.Drawing.Size(77, 13);
+            this.lblReorderAdd.TabIndex = 4;
+            this.lblReorderAdd.Text = "Reorder Level:";
             // 
             // tbpSupplierOrder
             // 
@@ -1359,8 +1359,8 @@
         private System.Windows.Forms.TextBox txtSell;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblExpirAdd;
+        private System.Windows.Forms.Label lblReorderAdd;
         private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.GroupBox grpAddNewItem;
         private System.Windows.Forms.DataGridView dgvUpdateStock;
@@ -1390,12 +1390,12 @@
         private System.Windows.Forms.TextBox txtProdDescUpdate;
         private System.Windows.Forms.TextBox txtProdReorderUpdate;
         private System.Windows.Forms.TextBox txtProdNameUpdate;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblExpirUpdate;
+        private System.Windows.Forms.Label lblReorderUpdate;
+        private System.Windows.Forms.Label lblBPriceUpdate;
+        private System.Windows.Forms.Label lblSPriceUpdate;
+        private System.Windows.Forms.Label lblDescUpdate;
+        private System.Windows.Forms.Label lblNameUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn2;
