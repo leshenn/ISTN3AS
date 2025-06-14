@@ -36,12 +36,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panMain = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblUserRole = new System.Windows.Forms.Label();
+            this.lblU = new System.Windows.Forms.Label();
+            this.lblR = new System.Windows.Forms.Label();
             this.panHead.SuspendLayout();
             this.panMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHead
             // 
+            this.panHead.Controls.Add(this.lblR);
+            this.panHead.Controls.Add(this.lblU);
+            this.panHead.Controls.Add(this.lblUserRole);
+            this.panHead.Controls.Add(this.lblUser);
             this.panHead.Controls.Add(this.btnPOS);
             this.panHead.Controls.Add(this.btnUserMangement);
             this.panHead.Controls.Add(this.btnStockManagement);
@@ -121,10 +129,46 @@
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblWelcome.Location = new System.Drawing.Point(427, 186);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(523, 128);
+            this.lblWelcome.Size = new System.Drawing.Size(522, 128);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(269, 30);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 13);
+            this.lblUser.TabIndex = 5;
+            // 
+            // lblUserRole
+            // 
+            this.lblUserRole.AutoSize = true;
+            this.lblUserRole.Location = new System.Drawing.Point(575, 30);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(0, 13);
+            this.lblUserRole.TabIndex = 6;
+            // 
+            // lblU
+            // 
+            this.lblU.AutoSize = true;
+            this.lblU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblU.Location = new System.Drawing.Point(276, 30);
+            this.lblU.Name = "lblU";
+            this.lblU.Size = new System.Drawing.Size(35, 13);
+            this.lblU.TabIndex = 7;
+            this.lblU.Text = "label2";
+            // 
+            // lblR
+            // 
+            this.lblR.AutoSize = true;
+            this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblR.Location = new System.Drawing.Point(534, 30);
+            this.lblR.Name = "lblR";
+            this.lblR.Size = new System.Drawing.Size(35, 13);
+            this.lblR.TabIndex = 8;
+            this.lblR.Text = "label3";
             // 
             // MainMenu
             // 
@@ -137,6 +181,7 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.panHead.ResumeLayout(false);
             this.panHead.PerformLayout();
             this.panMain.ResumeLayout(false);
@@ -146,8 +191,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panHead;
         private System.Windows.Forms.Button btnPOS;
         private System.Windows.Forms.Button btnUserMangement;
         private System.Windows.Forms.Button btnStockManagement;
@@ -155,5 +198,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panMain;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblUserRole;
+        private System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.Panel panHead;
+        public System.Windows.Forms.Label lblU;
+        public System.Windows.Forms.Label lblR;
     }
 }
