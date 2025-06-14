@@ -22,7 +22,7 @@ namespace Istn3ASproject
         private void frmPOS_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'WstGrp11DataSet.Customer' table. You can move, or remove it, as needed.
-            this.TaCustomer.Fill(this.WstGrp11DataSet.Customer);
+           // this.TaCustomer.Fill(this.WstGrp11DataSet.Customer);
             // TODO: This line of code loads data into the 'wstGrp11DS.Order' table. You can move, or remove it, as needed.
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Order' table. You can move, or remove it, as needed.
@@ -272,7 +272,7 @@ namespace Istn3ASproject
             }
         }
 
-        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /* private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
         }
@@ -280,6 +280,6 @@ namespace Istn3ASproject
         private void dgvCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
-        }
+        }*/
     }
 }

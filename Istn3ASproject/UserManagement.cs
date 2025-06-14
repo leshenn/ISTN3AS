@@ -8,12 +8,15 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
     public partial class frmUserManagement: Form
     {
+        int orginalStaffID;
         public frmUserManagement()
         {
             InitializeComponent();
@@ -36,24 +39,65 @@ namespace Istn3ASproject
         private Boolean validateFields(string Username,string Password,string FirstName,string LastName
             ,string ContactNo,string Role)
         {
-            bool isAllLetters_Name = FirstName.All(char.IsLetter);
-            bool isAllLetters_LastName = LastName.All(char.IsLetter);
-            bool passwordLength = Password.Length > 5;
-            bool UsernameLength = Username.Length > 5;
-            bool RoleNotEmpty = Role.Length > 0;
-            bool ContactOk = ContactNo.Length == 10;
+            // Initialize all validation flags
+            bool isValid = true;
 
-            if (isAllLetters_LastName && isAllLetters_LastName && passwordLength && UsernameLength && RoleNotEmpty && ContactOk)
+            // Validate First Name (letters and spaces only)
+            bool isFirstNameValid = !string.IsNullOrWhiteSpace(FirstName) &&
+                                  FirstName.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+            if (!isFirstNameValid)
             {
-                return true;    
-            }
-            else
-            {
-                return false;
+                MessageBox.Show("First name can only contain letters and spaces", "Validation Error");
+                isValid = false;
             }
 
+            // Validate Last Name (letters and spaces only)
+            bool isLastNameValid = !string.IsNullOrWhiteSpace(LastName) &&
+                                 LastName.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+            if (!isLastNameValid)
+            {
+                MessageBox.Show("Last name can only contain letters and spaces", "Validation Error");
+                isValid = false;
+            }
 
+            // Validate Password (minimum 6 characters)
+            bool isPasswordValid = !string.IsNullOrWhiteSpace(Password) && Password.Length >= 6;
+            if (!isPasswordValid)
+            {
+                MessageBox.Show("Password must be at least 6 characters long", "Validation Error");
+                isValid = false;
+            }
+
+            // Validate Username
+            bool isUsernameValid = !string.IsNullOrWhiteSpace(Username) &&
+                                 Username.Length >= 6 &&
+                                 !Username.Contains(" ");
+            if (!isUsernameValid)
+            {
+                MessageBox.Show("Username must be at least 6 characters with no spaces", "Validation Error");
+                isValid = false;
+            }
+
+            // Validate Role (not empty)
+            bool isRoleValid = !string.IsNullOrWhiteSpace(Role);
+            if (!isRoleValid)
+            {
+                MessageBox.Show("Please select a role", "Validation Error");
+                isValid = false;
+            }
+
+            // Validate Contact Number
+            string cleanContactNo = new string(ContactNo.Where(char.IsDigit).ToArray());
+            // (098) 8908765 --> 0988908765
+            if (cleanContactNo.Length != 10)
+            {
+                MessageBox.Show("Phone number must contain exactly 10 digits", "Validation Error");
+                isValid = false;
+            }
+
+            return isValid;
         }
+        
 
         private void btnAddStaffMember_Click(object sender, EventArgs e)
         {
@@ -62,13 +106,20 @@ namespace Istn3ASproject
             bool Validate = validateFields(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
                 txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
 
-            if (dialoganswer == DialogResult.Yes && Validate) 
+            bool bFlag = true; // goes to false if notSelected=true
+            bool notSelected = cmbStaffRole.SelectedIndex == -1;
+            if (notSelected) {
+                bFlag = false;
+                MessageBox.Show("You have not selected a Staff Role");
+            }
+
+            if (dialoganswer == DialogResult.Yes && Validate && bFlag) 
             {
                 try
                 {
                     staffTableAdapter.AddNewStaffMember(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
                 txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
-                    staffTableAdapter.Fill(wstGrp11DataSet.Staff);
+                 
                     SystemSounds.Beep.Play();
                     MessageBox.Show("Staff Member Added Successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUsernameStaff.Clear();
@@ -77,6 +128,7 @@ namespace Istn3ASproject
                     txtFirstNameStaff.Clear();
                     txtContactStaff.Clear();
                     cmbStaffRole.SelectedIndex = -1;
+                    staffTableAdapter.Fill(wstGrp11DataSet.Staff);
                 }
                 catch (Exception)
                 {
@@ -190,6 +242,7 @@ namespace Istn3ASproject
 
         private void dgvStaffMgt_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            orginalStaffID = Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value);
             txtUsernameUpdate.Text = Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value);
             txtPasswordUpdate.Text = Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value);
             txtNameUpdate.Text = Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value);
@@ -226,21 +279,18 @@ namespace Istn3ASproject
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
             bool updateIsValid = validateFields(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
-                txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.Text);
+                txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.SelectedItem.ToString());
             DialogResult dialoganswerUpdate = MessageBox.Show("Are you sure you want to Update staff member: " + txtNameUpdate.Text + " " + txtLastNameUpdate.Text + " ?"
                 , "Confirmation", MessageBoxButtons.YesNo);
 
-            if (updateIsValid && dialoganswerUpdate==DialogResult.Yes )
+            if (updateIsValid == true && dialoganswerUpdate == DialogResult.Yes)
             {
-               /* staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text, txtPasswordUpdate.Text, txtNameUpdate.Text,
-                txtLastNameUpdate.Text, txtContactUpdate.Text, cmbStaffRoleUpdate.Text, 
-                Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value),
-                Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[4].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[5].Value),
-                Convert.ToString(dgvStaffMgt.CurrentRow.Cells[6].Value), Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value));
-                staffTableAdapter.Fill(wstGrp11DataSet.Staff);
-                SystemSounds.Exclamation.Play();*/
+                staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
+                    txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.Text,orginalStaffID);
                 MessageBox.Show("Staff Member Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else { MessageBox.Show("Staff Member NOT Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
         }
 
         private void cmbFilterByRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -304,11 +354,11 @@ namespace Istn3ASproject
         {
             if (txtNameUpdate.Text.All(char.IsLetter))
             {
-                txtNameUpdate.ForeColor = Color.Red;
+                txtNameUpdate.ForeColor = Color.Black;
             }
             else
             {
-                txtNameUpdate.ForeColor = Color.Black;
+                txtNameUpdate.ForeColor = Color.Red;
             }
         }
 
@@ -316,11 +366,11 @@ namespace Istn3ASproject
         {
             if (txtLastNameUpdate.Text.All(char.IsLetter))
             {
-                txtLastNameUpdate.ForeColor = Color.Red;
+                txtLastNameUpdate.ForeColor = Color.Black;
             }
             else
             {
-                txtLastNameUpdate.ForeColor = Color.Black;
+                txtLastNameUpdate.ForeColor = Color.Red;
             }
         }
 
@@ -328,11 +378,11 @@ namespace Istn3ASproject
         {
             if (txtFirstNameStaff.Text.All(char.IsLetter))
             {
-                txtFirstNameStaff.ForeColor = Color.Red;
+                txtFirstNameStaff.ForeColor = Color.Black;
             }
             else
             {
-                txtFirstNameStaff.ForeColor = Color.Black;
+                txtFirstNameStaff.ForeColor = Color.Red;
             }
         }
 
@@ -340,11 +390,11 @@ namespace Istn3ASproject
         {
             if (txtLastNameStaff.Text.All(char.IsLetter))
             {
-                txtLastNameStaff.ForeColor = Color.Red;
+                txtLastNameStaff.ForeColor = Color.Black;
             }
             else
             {
-                txtLastNameStaff.ForeColor = Color.Black;
+                txtLastNameStaff.ForeColor = Color.Red;
             }
         }
 
@@ -523,6 +573,15 @@ namespace Istn3ASproject
         private void gbUpdateSupplier_Enter(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmPOS frmPOS = new frmPOS();
+            
+       
+            
         }
 
     }

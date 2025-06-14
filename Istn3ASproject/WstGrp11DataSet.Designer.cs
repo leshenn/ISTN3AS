@@ -7721,9 +7721,9 @@ SELECT StaffID, UserName, Password, FirstName, LastName, ContactNo, Role FROM St
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@role", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE [dbo].[Staff] SET [UserName] = @UserName, [Password] = @Password, [FirstNa" +
-                "me] = @FirstName, [LastName] = @LastName, [ContactNo] = @ContactNo, [Role] = @Ro" +
-                "le WHERE ([StaffID] = @Original_StaffID) ";
+            this._commandCollection[4].CommandText = "UPDATE       Staff\r\nSET                UserName = @UserName, Password = @Password" +
+                ", FirstName = @FirstName, LastName = @LastName, ContactNo = @ContactNo, Role = @" +
+                "Role\r\nWHERE        (StaffID = @Original_StaffID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

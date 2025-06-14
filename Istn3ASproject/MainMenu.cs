@@ -12,6 +12,8 @@ namespace Istn3ASproject
 {
     public partial class MainMenu : Form
     {
+        
+
         public MainMenu()
         {
             InitializeComponent();
@@ -19,6 +21,14 @@ namespace Istn3ASproject
 
         public void loadForm(Form formToLoad)
         {
+            // Hide welcome label safely
+            if (lblWelcome != null)
+            {
+                lblWelcome.Visible = false;
+                lblWelcome.SendToBack();
+            }
+                
+
             // Check if a form is already loaded
             if (this.panMain.Controls.Count > 0)
             {
