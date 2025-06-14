@@ -9919,8 +9919,8 @@ SELECT StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand,
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT     StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHa" +
-                "nd, ReorderLevel, ExpirationTime\r\nFROM        Stock\r\nWHERE     (Name LIKE @name " +
-                "+ \'%\')";
+                "nd, ReorderLevel, ExpirationTime\r\nFROM        Stock\r\nWHERE     (Name LIKE \'%\' + " +
+                "@name + \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
