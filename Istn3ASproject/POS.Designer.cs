@@ -37,29 +37,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcPOS = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
-            this.lblCustomerLN = new System.Windows.Forms.Label();
-            this.lblCustomerName = new System.Windows.Forms.Label();
-            this.lblCustID = new System.Windows.Forms.Label();
-            this.lblforCustid = new System.Windows.Forms.Label();
-            this.lblforCustomerLastame = new System.Windows.Forms.Label();
-            this.lblforCustomerName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblCustomerID = new System.Windows.Forms.Label();
+            this.lblCustomerLN = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblforCustomerLastame = new System.Windows.Forms.Label();
+            this.lblforCustid = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblforCustomerName = new System.Windows.Forms.Label();
+            this.lblCustID = new System.Windows.Forms.Label();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.btnProcessOrder = new System.Windows.Forms.Button();
             this.lblTotalCaption = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
-            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PoductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.WstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
             this.grpbStock = new System.Windows.Forms.GroupBox();
@@ -82,6 +75,16 @@
             this.OrderLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TaSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.TaCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
+            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PoductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -97,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPOS
@@ -116,12 +120,6 @@
             // 
             this.tbpSales.AutoScroll = true;
             this.tbpSales.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpSales.Controls.Add(this.lblCustomerLN);
-            this.tbpSales.Controls.Add(this.lblCustomerName);
-            this.tbpSales.Controls.Add(this.lblCustID);
-            this.tbpSales.Controls.Add(this.lblforCustid);
-            this.tbpSales.Controls.Add(this.lblforCustomerLastame);
-            this.tbpSales.Controls.Add(this.lblforCustomerName);
             this.tbpSales.Controls.Add(this.panel1);
             this.tbpSales.Controls.Add(this.groupBox1);
             this.tbpSales.Controls.Add(this.grpbStock);
@@ -135,117 +133,112 @@
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.lblCustomerLN);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblforCustomerLastame);
+            this.panel1.Controls.Add(this.lblforCustid);
+            this.panel1.Controls.Add(this.lblCustomerName);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lblforCustomerName);
+            this.panel1.Controls.Add(this.lblCustID);
+            this.panel1.Controls.Add(this.cmbPaymentMethod);
+            this.panel1.Controls.Add(this.btnProcessOrder);
+            this.panel1.Controls.Add(this.lblTotalCaption);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Location = new System.Drawing.Point(1131, 37);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(711, 425);
+            this.panel1.TabIndex = 10;
+            // 
             // lblCustomerLN
             // 
             this.lblCustomerLN.AutoSize = true;
-            this.lblCustomerLN.Location = new System.Drawing.Point(514, 26);
+            this.lblCustomerLN.Location = new System.Drawing.Point(381, 156);
             this.lblCustomerLN.Name = "lblCustomerLN";
-            this.lblCustomerLN.Size = new System.Drawing.Size(89, 23);
+            this.lblCustomerLN.Size = new System.Drawing.Size(43, 23);
             this.lblCustomerLN.TabIndex = 16;
-            this.lblCustomerLN.Text = "Krishnada";
+            this.lblCustomerLN.Text = "N/A";
             // 
-            // lblCustomerName
+            // label2
             // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Location = new System.Drawing.Point(332, 26);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(47, 23);
-            this.lblCustomerName.TabIndex = 15;
-            this.lblCustomerName.Text = "Niha";
-            // 
-            // lblCustID
-            // 
-            this.lblCustID.AutoSize = true;
-            this.lblCustID.Location = new System.Drawing.Point(144, 26);
-            this.lblCustID.Name = "lblCustID";
-            this.lblCustID.Size = new System.Drawing.Size(20, 23);
-            this.lblCustID.TabIndex = 14;
-            this.lblCustID.Text = "2";
-            // 
-            // lblforCustid
-            // 
-            this.lblforCustid.AutoSize = true;
-            this.lblforCustid.Location = new System.Drawing.Point(18, 26);
-            this.lblforCustid.Name = "lblforCustid";
-            this.lblforCustid.Size = new System.Drawing.Size(120, 23);
-            this.lblforCustid.TabIndex = 13;
-            this.lblforCustid.Text = "Customer ID: ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 300);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(238, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Choose method of payment:";
             // 
             // lblforCustomerLastame
             // 
             this.lblforCustomerLastame.AutoSize = true;
-            this.lblforCustomerLastame.Location = new System.Drawing.Point(394, 26);
+            this.lblforCustomerLastame.Location = new System.Drawing.Point(184, 156);
             this.lblforCustomerLastame.Name = "lblforCustomerLastame";
             this.lblforCustomerLastame.Size = new System.Drawing.Size(104, 23);
             this.lblforCustomerLastame.TabIndex = 12;
             this.lblforCustomerLastame.Text = " Last Name:";
             // 
-            // lblforCustomerName
+            // lblforCustid
             // 
-            this.lblforCustomerName.AutoSize = true;
-            this.lblforCustomerName.Location = new System.Drawing.Point(182, 26);
-            this.lblforCustomerName.Name = "lblforCustomerName";
-            this.lblforCustomerName.Size = new System.Drawing.Size(144, 23);
-            this.lblforCustomerName.TabIndex = 11;
-            this.lblforCustomerName.Text = "Customer Name:";
+            this.lblforCustid.AutoSize = true;
+            this.lblforCustid.Location = new System.Drawing.Point(184, 69);
+            this.lblforCustid.Name = "lblforCustid";
+            this.lblforCustid.Size = new System.Drawing.Size(120, 23);
+            this.lblforCustid.TabIndex = 13;
+            this.lblforCustid.Text = "Customer ID: ";
             // 
-            // panel1
+            // lblCustomerName
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblCustomerID);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.cmbPaymentMethod);
-            this.panel1.Controls.Add(this.btnProcessOrder);
-            this.panel1.Controls.Add(this.lblTotalCaption);
-            this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Location = new System.Drawing.Point(1303, 548);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 291);
-            this.panel1.TabIndex = 10;
-            // 
-            // lblCustomerID
-            // 
-            this.lblCustomerID.AutoSize = true;
-            this.lblCustomerID.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerID.Location = new System.Drawing.Point(184, 113);
-            this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(51, 28);
-            this.lblCustomerID.TabIndex = 10;
-            this.lblCustomerID.Text = "N/A";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 113);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 28);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "CustomerID:";
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Location = new System.Drawing.Point(381, 115);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(43, 23);
+            this.lblCustomerName.TabIndex = 15;
+            this.lblCustomerName.Text = "N/A";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(88, 16);
+            this.panel2.Location = new System.Drawing.Point(3, 196);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(282, 59);
+            this.panel2.Size = new System.Drawing.Size(703, 59);
             this.panel2.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(201, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 41);
+            this.label1.Size = new System.Drawing.Size(283, 54);
             this.label1.TabIndex = 8;
             this.label1.Text = "Order Details:";
+            // 
+            // lblforCustomerName
+            // 
+            this.lblforCustomerName.AutoSize = true;
+            this.lblforCustomerName.Location = new System.Drawing.Point(184, 115);
+            this.lblforCustomerName.Name = "lblforCustomerName";
+            this.lblforCustomerName.Size = new System.Drawing.Size(144, 23);
+            this.lblforCustomerName.TabIndex = 11;
+            this.lblforCustomerName.Text = "Customer Name:";
+            // 
+            // lblCustID
+            // 
+            this.lblCustID.AutoSize = true;
+            this.lblCustID.Location = new System.Drawing.Point(381, 69);
+            this.lblCustID.Name = "lblCustID";
+            this.lblCustID.Size = new System.Drawing.Size(43, 23);
+            this.lblCustID.TabIndex = 14;
+            this.lblCustID.Text = "N/A";
             // 
             // cmbPaymentMethod
             // 
@@ -255,7 +248,7 @@
             this.cmbPaymentMethod.Items.AddRange(new object[] {
             "Cash",
             "Card"});
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(31, 202);
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(57, 346);
             this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.Size = new System.Drawing.Size(173, 44);
@@ -265,7 +258,7 @@
             // 
             this.btnProcessOrder.BackColor = System.Drawing.Color.LightGreen;
             this.btnProcessOrder.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessOrder.Location = new System.Drawing.Point(273, 191);
+            this.btnProcessOrder.Location = new System.Drawing.Point(385, 333);
             this.btnProcessOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProcessOrder.Name = "btnProcessOrder";
             this.btnProcessOrder.Size = new System.Drawing.Size(185, 73);
@@ -277,20 +270,20 @@
             // lblTotalCaption
             // 
             this.lblTotalCaption.AutoSize = true;
-            this.lblTotalCaption.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCaption.Location = new System.Drawing.Point(25, 146);
+            this.lblTotalCaption.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCaption.Location = new System.Drawing.Point(376, 274);
             this.lblTotalCaption.Name = "lblTotalCaption";
-            this.lblTotalCaption.Size = new System.Drawing.Size(82, 28);
+            this.lblTotalCaption.Size = new System.Drawing.Size(162, 54);
             this.lblTotalCaption.TabIndex = 4;
             this.lblTotalCaption.Text = "TOTAL :";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(119, 146);
+            this.lblTotal.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(544, 274);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(24, 28);
+            this.lblTotal.Size = new System.Drawing.Size(46, 54);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "0";
             // 
@@ -303,7 +296,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1044, 374);
+            this.groupBox1.Size = new System.Drawing.Size(1890, 341);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice";
@@ -329,7 +322,9 @@
             this.PoductDescription,
             this.sellingPriceDataGridViewTextBoxColumn1,
             this.stockOnHandDataGridViewTextBoxColumn1,
-            this.Quantity});
+            this.Quantity,
+            this.SubTotal,
+            this.Delete});
             this.dgvSalesInvoice.DataSource = this.salesInvoiceBindingSource;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -346,57 +341,10 @@
             this.dgvSalesInvoice.Name = "dgvSalesInvoice";
             this.dgvSalesInvoice.RowHeadersWidth = 51;
             this.dgvSalesInvoice.RowTemplate.Height = 24;
-            this.dgvSalesInvoice.Size = new System.Drawing.Size(953, 324);
+            this.dgvSalesInvoice.Size = new System.Drawing.Size(1835, 308);
             this.dgvSalesInvoice.TabIndex = 3;
+            this.dgvSalesInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellContentClick);
             this.dgvSalesInvoice.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellEndEdit);
-            // 
-            // stockIDDataGridViewTextBoxColumn1
-            // 
-            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
-            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
-            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.stockIDDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.Width = 135;
-            // 
-            // PoductDescription
-            // 
-            this.PoductDescription.DataPropertyName = "PoductDescription";
-            this.PoductDescription.HeaderText = "Description";
-            this.PoductDescription.MinimumWidth = 6;
-            this.PoductDescription.Name = "PoductDescription";
-            this.PoductDescription.Width = 190;
-            // 
-            // sellingPriceDataGridViewTextBoxColumn1
-            // 
-            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "Price";
-            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
-            this.sellingPriceDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // stockOnHandDataGridViewTextBoxColumn1
-            // 
-            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
-            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "Stock";
-            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
-            this.stockOnHandDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 90;
             // 
             // salesInvoiceBindingSource
             // 
@@ -592,6 +540,96 @@
             // 
             this.TaCustomer.ClearBeforeFill = true;
             // 
+            // stockIDDataGridViewTextBoxColumn1
+            // 
+            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
+            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
+            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockIDDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn1.Width = 135;
+            // 
+            // PoductDescription
+            // 
+            this.PoductDescription.DataPropertyName = "PoductDescription";
+            this.PoductDescription.HeaderText = "Description";
+            this.PoductDescription.MinimumWidth = 6;
+            this.PoductDescription.Name = "PoductDescription";
+            this.PoductDescription.ReadOnly = true;
+            this.PoductDescription.Width = 190;
+            // 
+            // sellingPriceDataGridViewTextBoxColumn1
+            // 
+            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
+            this.sellingPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sellingPriceDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // stockOnHandDataGridViewTextBoxColumn1
+            // 
+            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
+            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "Stock";
+            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
+            this.stockOnHandDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockOnHandDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 90;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.Width = 125;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "StockID";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "DELETE";
+            this.Delete.ToolTipText = "Removes current row";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 125;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(703, 63);
+            this.panel3.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(161, -1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(357, 54);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Customer Details:";
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -621,6 +659,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -656,24 +696,27 @@
         private System.Windows.Forms.BindingSource customerBindingSource;
         private WstGrp11DataSetTableAdapters.CustomerTableAdapter TaCustomer;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblCustomerID;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PoductDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Label lblforCustid;
         private System.Windows.Forms.Label lblforCustomerLastame;
         private System.Windows.Forms.Label lblforCustomerName;
         private System.Windows.Forms.Label lblCustomerLN;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblCustID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PoductDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
     }
 }

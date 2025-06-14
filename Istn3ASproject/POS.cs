@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.Windows.Forms;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
@@ -18,6 +21,21 @@ namespace Istn3ASproject
         {
             InitializeComponent();
         }
+
+        //move to user management form
+        private Action<Form> navigate;
+        private frmUserManagement userManagement;
+
+        public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
+        {
+            InitializeComponent();
+
+            // Initialize references inside the constructor
+            navigate = navigateTo;
+            userManagement = userRef;
+        }
+
+
 
         private void frmPOS_Load(object sender, EventArgs e)
         {
@@ -29,6 +47,7 @@ namespace Istn3ASproject
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
             this.taStock.Fill(this.WstGrp11DataSet.Stock);
+
 
         }
 
@@ -50,7 +69,12 @@ namespace Istn3ASproject
                 }
 
                 WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
-                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 2].Cells[5].Value = 1;
+
+                //set quantity to 1
+                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count-1].Cells[5].Value = 1;
+
+
+
                 CalcTotal();
             }
             catch (Exception ec)
@@ -73,11 +97,12 @@ namespace Istn3ASproject
             decimal price = 0;
 
             //loops through table to calculate total
-            for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvSalesInvoice.Rows.Count ; i++)
             {
                 price = Convert.ToDecimal(dgvSalesInvoice.Rows[i].Cells[3].Value);
                 quantity = HandleQuantityInput(dgvSalesInvoice.Rows[i].Cells[5].Value.ToString(), i);
 
+                dgvSalesInvoice.Rows[i].Cells[6].Value = price * quantity;
                 Total += price * quantity;
             }
             lblTotal.Text = Total.ToString();
@@ -110,16 +135,18 @@ namespace Istn3ASproject
 
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
-            int CustomerID = 1;
-            int StaffID = 1;
-            string TransactionType = "sale";
-            string Today = DateTime.Today.ToString("yyyy-MM-dd");
-            string CurrentTime = DateTime.Now.ToString("HH:mm:ss");
-            Decimal Total = Convert.ToDecimal(lblTotal.Text);
-            string PaymentMethod = cmbPaymentMethod.Text;
+
 
             if (ReadyToProcess())
             {
+                int CustomerID = Convert.ToInt32(lblCustID.Text);
+                int StaffID = 1;
+                string TransactionType = "sale";
+                string Today = DateTime.Today.ToString("yyyy-MM-dd");
+                string CurrentTime = DateTime.Now.ToString("HH:mm:ss");
+                Decimal Total = Convert.ToDecimal(lblTotal.Text);
+                string PaymentMethod = cmbPaymentMethod.Text;
+
                 //LETS USER CONFIRM IF ORDER IS CORRECT
                 DialogResult result = MessageBox.Show("CustomerID :" + CustomerID.ToString() + "\n" +
                                  "StaffID :" + StaffID.ToString() + "\n" +
@@ -133,36 +160,50 @@ namespace Istn3ASproject
                 if (result == DialogResult.OK)
                 {
                     ProcessOrder(CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total);
-                    WstGrp11DataSet.SalesInvoice.Clear();
-                    txtSearchProduct.Clear();
-                    cmbPaymentMethod.Text = "";
-                    taStock.Fill(WstGrp11DataSet.Stock);
+                    resetInterface();
                 }
                 else
                 {
                     MessageBox.Show("Order has been cancelled");
-                    WstGrp11DataSet.SalesInvoice.Clear();
-                    txtSearchProduct.Clear();
-                    cmbPaymentMethod.Text = "";
-
+                    resetInterface();
                 }
             }
 
+        }
+
+        public void resetInterface()
+        {
+            WstGrp11DataSet.SalesInvoice.Clear();
+            txtSearchProduct.Clear();
+            cmbPaymentMethod.Text = "";
+            taStock.Fill(WstGrp11DataSet.Stock);
+            lblTotal.Text = "R0.00";
+            lblCustID.Text = "N/A";
+            lblCustomerLN.Text = "N/A";
+            lblCustomerName.Text = "N/A";
         }
 
         //ERROR CHECKS ALL FIELDS OF INFORMATION
         private bool ReadyToProcess()
         {
             bool ReadyToProcess = true;
-            if (lblTotal.Text == "0")
+            if (lblCustID.Text == "N/A")
+            {
+                ReadyToProcess = false;
+                MessageBox.Show("Please select a customer for the order", "No customer selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (lblTotal.Text == "R0.00")
             {
                 ReadyToProcess = false;
                 MessageBox.Show("Please select items for the order", "No items selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else if (cmbPaymentMethod.Text != "Cash" && cmbPaymentMethod.Text != "Card")
             {
                 ReadyToProcess = false;
                 MessageBox.Show("Please choose a payment method", "Missing payment method", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
             {
@@ -207,7 +248,7 @@ namespace Istn3ASproject
         {
             string listOfItems = "";
 
-            for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvSalesInvoice.Rows.Count ; i++)
             {
                 //GET ITEM INFORMATION
                 string StockID = dgvSalesInvoice.Rows[i].Cells[0].Value.ToString();
@@ -217,7 +258,7 @@ namespace Istn3ASproject
                 decimal SubTotal = price * quantity;
 
                 //ADD TO STRING OF ITEMS
-                listOfItems += StockID + " " + name + "\t" + SubTotal.ToString("C2") + "\n";
+                listOfItems +=" " + name + "\t" + SubTotal.ToString("C2") + "\n";
             }
             return listOfItems;
         }
@@ -240,7 +281,7 @@ namespace Istn3ASproject
         {
             try
             {
-                for (int i = 0; i < dgvSalesInvoice.Rows.Count - 1; i++)
+                for (int i = 0; i < dgvSalesInvoice.Rows.Count; i++)
                 {
                     //GET ITEM INFORMATION
                     int StockID = Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[0].Value.ToString());
@@ -292,5 +333,19 @@ namespace Istn3ASproject
             lblCustomerLN.Text = lastName;
             lblCustID.Text = ID;
         }
+
+        private void dgvSalesInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSalesInvoice.Rows.Count>0)
+            {
+                if (e.ColumnIndex == 7)
+                {
+                    dgvSalesInvoice.Rows.RemoveAt(e.RowIndex);
+                    CalcTotal();
+                }
+            }
+        }
+
+
     }
 }
