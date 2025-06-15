@@ -198,6 +198,9 @@ namespace Istn3ASproject
             this.customerTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.staffTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StaffTableAdapter();
             this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
+            this.btnHelpCustomerTab = new System.Windows.Forms.Button();
+            this.btnHelpStaffTab = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             lblSupplierSearch = new System.Windows.Forms.Label();
             this.tcUserManagement.SuspendLayout();
             this.tbpCustomers.SuspendLayout();
@@ -253,6 +256,7 @@ namespace Istn3ASproject
             this.tbpCustomers.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tbpCustomers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tbpCustomers.Controls.Add(this.btnNewOrder);
+            this.tbpCustomers.Controls.Add(this.btnHelpCustomerTab);
             this.tbpCustomers.Controls.Add(this.gbCustomer);
             this.tbpCustomers.Controls.Add(this.btnCustomerRestore);
             this.tbpCustomers.Controls.Add(this.gbUpdateCustomer);
@@ -944,6 +948,7 @@ namespace Istn3ASproject
             // 
             this.tbpStaff.AutoScroll = true;
             this.tbpStaff.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpStaff.Controls.Add(this.btnHelpStaffTab);
             this.tbpStaff.Controls.Add(this.gbStaff);
             this.tbpStaff.Controls.Add(this.btnArchiveStaff);
             this.tbpStaff.Controls.Add(this.txtSearchStaffByName);
@@ -1487,6 +1492,7 @@ namespace Istn3ASproject
             // 
             this.tbpSuppliers.AutoScroll = true;
             this.tbpSuppliers.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpSuppliers.Controls.Add(this.button2);
             this.tbpSuppliers.Controls.Add(this.groupBox3);
             this.tbpSuppliers.Controls.Add(this.gbUpdateSupplier);
             this.tbpSuppliers.Controls.Add(this.gbAddSupplier);
@@ -2154,6 +2160,45 @@ namespace Istn3ASproject
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
             // 
+            // btnHelpCustomerTab
+            // 
+            this.btnHelpCustomerTab.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHelpCustomerTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelpCustomerTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelpCustomerTab.Location = new System.Drawing.Point(1203, 34);
+            this.btnHelpCustomerTab.Name = "btnHelpCustomerTab";
+            this.btnHelpCustomerTab.Size = new System.Drawing.Size(119, 33);
+            this.btnHelpCustomerTab.TabIndex = 40;
+            this.btnHelpCustomerTab.Text = "Help ";
+            this.btnHelpCustomerTab.UseVisualStyleBackColor = false;
+            this.btnHelpCustomerTab.Click += new System.EventHandler(this.btnHelpCustomerTab_Click);
+            // 
+            // btnHelpStaffTab
+            // 
+            this.btnHelpStaffTab.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHelpStaffTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelpStaffTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelpStaffTab.Location = new System.Drawing.Point(1210, 46);
+            this.btnHelpStaffTab.Name = "btnHelpStaffTab";
+            this.btnHelpStaffTab.Size = new System.Drawing.Size(119, 33);
+            this.btnHelpStaffTab.TabIndex = 41;
+            this.btnHelpStaffTab.Text = "Help ";
+            this.btnHelpStaffTab.UseVisualStyleBackColor = false;
+            this.btnHelpStaffTab.Click += new System.EventHandler(this.btnHelpStaffTab_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1184, 37);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 33);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "Help ";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // frmUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2200,12 +2245,6 @@ namespace Istn3ASproject
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tcUserManagement;
-        private System.Windows.Forms.TabPage tbpCustomers;
-        private System.Windows.Forms.TabPage tbpStaff;
-
-        private System.Windows.Forms.TabPage tbpSuppliers;
         private System.Windows.Forms.DataGridView dgvStaffMgt;
         private WstGrp11DataSet wstGrp11DataSet;
 
@@ -2370,5 +2409,12 @@ namespace Istn3ASproject
         private System.Windows.Forms.GroupBox gbStaff;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnNewOrder;
+        private System.Windows.Forms.Button btnHelpCustomerTab;
+        private System.Windows.Forms.Button btnHelpStaffTab;
+        public System.Windows.Forms.TabControl tcUserManagement;
+        public System.Windows.Forms.TabPage tbpStaff;
+        public System.Windows.Forms.TabPage tbpCustomers;
+        public System.Windows.Forms.TabPage tbpSuppliers;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -12,11 +12,43 @@ namespace Istn3ASproject
 {
     public partial class MainMenu : Form
     {
-        
+        public string ROLE;
 
-        public MainMenu()
+        public MainMenu(string firstName, string lastName, string role)
         {
             InitializeComponent();
+
+            lblU.Text = $"User Logged in: {firstName} {lastName}";
+            lblR.Text = $"Role: {role}";
+            ROLE = role ;
+            ConfigureAccess(role);
+        }
+
+        private void ConfigureAccess(string role)
+        {
+            //  role-based  access
+            // Reset all buttons first
+            btnPOS.Enabled = false;
+            btnStockManagement.Enabled = false;
+            btnUserMangement.Enabled = false;
+            btnReports.Enabled = false;
+
+            // Set access based on role
+            switch (role.ToLower())
+            {
+                case "owner":
+                case "manager":
+                    btnPOS.Enabled = true;
+                    btnStockManagement.Enabled = true;
+                    btnUserMangement.Enabled = true;
+                    btnReports.Enabled = true;
+                    break;
+
+                case "cashier":
+                    btnPOS.Enabled = true;
+                    btnUserMangement.Enabled = true; // But will limit access in the actual form
+                    break;
+            }
         }
         private frmPOS posForm = new frmPOS();
 
@@ -70,6 +102,12 @@ namespace Istn3ASproject
         private void btnPOS_Click(object sender, EventArgs e)
         {
             loadForm(posForm);
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            frmLogin loginform = new frmLogin();
+        
         }
     }
 }

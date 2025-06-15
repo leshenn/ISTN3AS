@@ -17,10 +17,14 @@ namespace Istn3ASproject
 {
     public partial class frmUserManagement: Form
     {
+        private readonly string _userRole;
         int orginalStaffID;
-        public frmUserManagement()
+        public frmUserManagement(string userRole)
         {
+
             InitializeComponent();
+            _userRole = userRole;
+            ConfigureAccess();
         }
         
 
@@ -33,6 +37,31 @@ namespace Istn3ASproject
             navigate = navigateTo;
             posForm = posFormRef;
         }
+
+        private void ConfigureAccess()
+        {
+            // Disable all tabs first
+            tbpStaff.Enabled = false;
+            tbpCustomers.Enabled = false;
+            tbpSuppliers.Enabled = false;
+
+            // Enable based on role
+            switch (_userRole.ToLower())
+            {
+                case "owner":
+                case "manager":
+                    tbpStaff.Enabled = true;
+                    tbpCustomers.Enabled = true;
+                    tbpSuppliers.Enabled = true;
+                    break;
+
+                case "cashier":
+                    tbpCustomers.Enabled = true; // Only customers tab
+                    break;
+            }
+        }
+
+
 
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
@@ -587,13 +616,128 @@ namespace Istn3ASproject
 
         }
 
-        
 
         private void btnNewOrder_Click(object sender, EventArgs e)
+
         {
             
             posForm.UpdateLabel(gvCustomer.CurrentRow.Cells[1].Value.ToString(), gvCustomer.CurrentRow.Cells[2].Value.ToString(), gvCustomer.CurrentRow.Cells[0].Value.ToString());
             navigate(posForm);
+
+        }
+
+        private void btnHelpCustomerTab_Click(object sender, EventArgs e)
+        {
+            string helpMessage = @"CUSTOMER TAB GUIDE
+==============================================================================
+
+1. SEARCH FOR CUSTOMER:
+   - Enter cellphone number in the search textbox
+   - Click the 'Search' button to find the customer
+
+2. ADD NEW CUSTOMER:
+   - Required Fields:
+     * Name/Lastname: Letters only (no numbers)
+     * Cellphone: 10 digits (e.g., (098) 789-7654)
+     * Valid email (e.g., david@gmail.com)
+     * City and Postal Code: Cannot be empty
+     * Province: Must select an option (not default)
+   - Click 'Add New Customer' when complete
+
+3. UPDATE CUSTOMER:
+   - First select a customer from the grid
+   - Customer details will auto-populate in fields
+   - Follow the same data rules as adding new
+   - Click 'Update Customer Details' to save
+   - System will display errors if update fails";
+
+
+
+            MessageBox.Show(helpMessage, "Customer Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+
+        }
+
+        private void btnHelpStaffTab_Click(object sender, EventArgs e)
+        {
+            string helpMessage = @"STAFF TAB GUIDE
+==============================================================================
+
+1. SEARCH FOR STAFF:
+   - All Matching Results will be displayed automatically.
+   - eg. Enter 'Da' --> all staff starting with 'Da' will be displayed.
+
+2. ADD NEW STAFF:
+   - Required Fields:
+     * Name/Lastname: Letters only (no numbers)
+     * Cellphone: 10 digits (e.g., (098) 789-7654)
+     * Username of 6 or more characters. (digits, letters and special characters allowed)
+     * Staff Role:  Must select an option (not default)
+     * Password: Must be 6 characters or more.
+
+TIPS :
+   - The test will turn RED (while you are typing) if information is not following the above rules.
+   - Click 'Add New Staff Member' when complete
+
+3. UPDATE CUSTOMER:
+   - First select a customer from the grid
+   - Customer details will auto-populate in fields
+   - Follow the same data rules as adding new staff
+   - Click 'Update Customer Details' to save
+   - System will display errors if update fails
+
+TIPS:
+   - If Update Fails because of not following input rules,
+     use the system feedback to correct the input, and try again.
+
+4. ARCHIVE STAFF MEMBER:
+   - Select Staff Member First
+   - Then Click 'Archive Staff Memeber'
+   - This will change the role to TERMINATED
+   - This means staff is no longer employed here
+
+5. FILTER BY ROLE:
+   - You can display certain staff according to role
+   - Select an option 
+";
+
+
+
+        MessageBox.Show(helpMessage, "Staff Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string helpMessage = @"CUSTOMER TAB GUIDE
+==============================================================================
+
+1. SEARCH FOR SUPPLIER:
+   - Enter cellphone number in the search textbox
+   - Click the 'Search' button to find the supplier
+
+2. ADD NEW CUSTOMER:
+   - Required Fields:
+     * Name: Letters only (no numbers)
+     * Cellphone: 10 digits (e.g., (098) 789-7654)
+     * Valid email (e.g., david@gmail.com)
+     * City and Postal Code: Cannot be empty
+     * Province: Must select an option (not default)
+   - Click 'Add New Supplier' when complete
+
+3. UPDATE SUPPLIER:
+   - First select a supplier from the grid
+   - Supplier details will auto-populate in fields
+   - Follow the same data rules as adding new
+   - Click 'Update Supplier Details' to save
+   - System will display errors if update fails";
+
+
+
+            MessageBox.Show(helpMessage, "Supplier Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
         }
     }

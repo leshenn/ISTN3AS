@@ -730,5 +730,176 @@ namespace Istn3ASproject
             }
         }
 
+        private void dgvUpdateStock_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtProdNameUpdate.Text = dgvUpdateStock.CurrentRow.Cells[1].Value.ToString();
+            txtProdDescUpdate.Text = dgvUpdateStock.CurrentRow.Cells[2].Value.ToString();
+            txtProdSPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[3].Value.ToString();
+            txtProdBPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[4].Value.ToString();
+            txtProdReorderUpdate.Text = dgvUpdateStock.CurrentRow.Cells[6].Value.ToString();
+            txtProdExpirUpdate.Text = dgvUpdateStock.CurrentRow.Cells[7].Value.ToString(); ;
+        }
+
+        private bool validateUpdateValues(string name, string desc, string sprice, string bprice, string reorder, string expir)
+        {
+            bool isLettersName = false;
+            bool isLettersDesc = false;
+            bool isFloatS = false;
+            bool isFloatB = false;
+            bool isIntReorder = false;
+            bool isIntExpir = false;
+
+            if (name is string)
+            {
+                isLettersName = true;
+            }
+            if (desc is string)
+            {
+                isLettersDesc = true;
+            }
+            if (sprice is float)
+            {
+                isFloatS = true;
+            }
+            if (bprice is float)
+            {
+                isFloatB = true;
+            }
+            if (reorder is int)
+            {
+                isIntReorder = true;
+            }
+            if (expir is int)
+            {
+                isIntExpir = true;
+            }
+
+            return isLettersName && isLettersDesc && isFloatS && isFloatB && isIntReorder && isIntExpir;
+        }
+
+        private void btnUpdateItemDetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool selected = true;
+                if (txtProdNameUpdate.Text=="" ||
+                    txtProdDescUpdate.Text=="" ||
+                    txtProdSPriceUpdate.Text=="" ||
+                    txtProdBPriceUpdate.Text=="" ||
+                    txtProdReorderUpdate.Text=="" ||
+                    txtProdExpirUpdate.Text=="")
+                {
+                    selected = false;
+                    MessageBox.Show("Please select a record before updating", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                if (selected)
+                {
+                    DialogResult result = MessageBox.Show("Do you want to update item: " + txtProdNameUpdate.Text + ", " + txtProdDescUpdate.Text, "Confirmation", MessageBoxButtons.YesNoCancel);
+
+                    if (result==DialogResult.Yes)
+                    {
+                        string name = txtProdNameUpdate.Text;
+                        string desc = txtProdDescUpdate.Text;
+                        string sprice = txtProdSPriceUpdate.Text;
+                        string bprice = txtProdBPriceUpdate.Text;
+                        string reorder = txtProdReorderUpdate.Text;
+                        string expir = txtProdExpirUpdate.Text;
+                        decimal sPrice, bPrice;
+                        int Reorder, Expir;
+                        bool bsprice = false, bbprice = false, breorder = false, bexpir = false;
+                        string warning = "Please enter a:\n";
+
+                        if (!decimal.TryParse(sprice, out sPrice))
+                        {
+                            //MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtProdSPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[3].Value.ToString();
+                        }
+                        else
+                        {
+                            bsprice = true;
+                        }
+
+                        if (!decimal.TryParse(bprice, out bPrice))
+                        {
+                            //MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtProdBPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[4].Value.ToString();
+                        }
+                        else
+                        {
+                            bbprice = true;
+                        }
+
+                        if (!int.TryParse(reorder, out Reorder))
+                        {
+                            //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtProdReorderUpdate.Text = dgvUpdateStock.CurrentRow.Cells[6].Value.ToString();
+                        }
+                        else
+                        {
+                            breorder = true;
+                        }
+
+                        if (!int.TryParse(expir, out Expir))
+                        {
+                            //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtProdExpirUpdate.Text = dgvUpdateStock.CurrentRow.Cells[7].Value.ToString();
+                        }
+                        else
+                        {
+                            bexpir = true;
+                        }
+
+                        if (!bsprice)
+                        {
+                            warning += "Monetary value for Selling price\n";
+                        }
+                        if (!bbprice)
+                        {
+                            warning += "Monetary value for Buying price\n";
+                        }
+                        if (!breorder)
+                        {
+                            warning += "Integer value for Reorder level\n";
+                        }
+                        if (!bexpir)
+                        {
+                            warning += "Integer value for Expiration time\n";
+                        }
+
+                        if (!bsprice || !bbprice || !breorder || !bexpir)
+                        {
+                            MessageBox.Show(warning, "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        } 
+                        else
+                        {
+                            stockTableAdapter.UpdateStockDetails(name, desc, sPrice, bPrice, Reorder, Expir, 
+                                Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()), 
+                                Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()));
+                            stockTableAdapter.Fill(wstGrp11DataSet.Stock);
+                            MessageBox.Show("Item details udpated successfully", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
+                    else if (result==DialogResult.No)
+                    {
+                        MessageBox.Show("Item details not updated", "Not Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Updated cancelled", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    
+                } //selected
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot update stock item details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+        }
     }
 }
