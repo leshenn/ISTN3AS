@@ -93,6 +93,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(200, 20);
             this.txtPass.TabIndex = 5;
+            this.txtPass.Text = "karen_98Nai";
             // 
             // txtUser
             // 
@@ -101,6 +102,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(200, 20);
             this.txtUser.TabIndex = 4;
+            this.txtUser.Text = "karNaik_90";
             // 
             // btnLogin
             // 
@@ -164,7 +166,7 @@
             this.label4.Location = new System.Drawing.Point(266, 18);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(301, 44);
+            this.label4.Size = new System.Drawing.Size(300, 44);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tia\'s Fishheries";
             // 
