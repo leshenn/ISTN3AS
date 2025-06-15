@@ -95,7 +95,7 @@ namespace Istn3ASproject
 
         private void btnUserMangement_Click(object sender, EventArgs e)
         {
-            loadForm(new frmUserManagement(loadForm, posForm));
+            loadForm(new frmUserManagement(ROLE));
         }
         
 
