@@ -25,7 +25,7 @@ namespace Istn3ASproject
             {
                 txtPass.UseSystemPasswordChar = true;
             }
-            else if (txtPass.UseSystemPasswordChar = true)
+            else if (txtPass.UseSystemPasswordChar == true)
             {
                 txtPass.UseSystemPasswordChar = false;
             }
