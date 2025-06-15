@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panHead = new System.Windows.Forms.Panel();
+            this.lblR = new System.Windows.Forms.Label();
+            this.lblU = new System.Windows.Forms.Label();
+            this.lblUserRole = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.btnPOS = new System.Windows.Forms.Button();
             this.btnUserMangement = new System.Windows.Forms.Button();
             this.btnStockManagement = new System.Windows.Forms.Button();
@@ -36,10 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panMain = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblUserRole = new System.Windows.Forms.Label();
-            this.lblU = new System.Windows.Forms.Label();
-            this.lblR = new System.Windows.Forms.Label();
             this.panHead.SuspendLayout();
             this.panMain.SuspendLayout();
             this.SuspendLayout();
@@ -58,8 +58,44 @@
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
             this.panHead.Name = "panHead";
-            this.panHead.Size = new System.Drawing.Size(1370, 61);
+            this.panHead.Size = new System.Drawing.Size(1501, 61);
             this.panHead.TabIndex = 0;
+            // 
+            // lblR
+            // 
+            this.lblR.AutoSize = true;
+            this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblR.Location = new System.Drawing.Point(534, 30);
+            this.lblR.Name = "lblR";
+            this.lblR.Size = new System.Drawing.Size(35, 13);
+            this.lblR.TabIndex = 8;
+            this.lblR.Text = "label3";
+            // 
+            // lblU
+            // 
+            this.lblU.AutoSize = true;
+            this.lblU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblU.Location = new System.Drawing.Point(276, 30);
+            this.lblU.Name = "lblU";
+            this.lblU.Size = new System.Drawing.Size(35, 13);
+            this.lblU.TabIndex = 7;
+            this.lblU.Text = "label2";
+            // 
+            // lblUserRole
+            // 
+            this.lblUserRole.AutoSize = true;
+            this.lblUserRole.Location = new System.Drawing.Point(575, 30);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(0, 13);
+            this.lblUserRole.TabIndex = 6;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(269, 30);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 13);
+            this.lblUser.TabIndex = 5;
             // 
             // btnPOS
             // 
@@ -118,7 +154,7 @@
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 61);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1370, 603);
+            this.panMain.Size = new System.Drawing.Size(1501, 603);
             this.panMain.TabIndex = 1;
             // 
             // lblWelcome
@@ -127,54 +163,18 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Nirmala UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblWelcome.Location = new System.Drawing.Point(427, 186);
+            this.lblWelcome.Location = new System.Drawing.Point(492, 186);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(522, 128);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(269, 30);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(0, 13);
-            this.lblUser.TabIndex = 5;
-            // 
-            // lblUserRole
-            // 
-            this.lblUserRole.AutoSize = true;
-            this.lblUserRole.Location = new System.Drawing.Point(575, 30);
-            this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(0, 13);
-            this.lblUserRole.TabIndex = 6;
-            // 
-            // lblU
-            // 
-            this.lblU.AutoSize = true;
-            this.lblU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblU.Location = new System.Drawing.Point(276, 30);
-            this.lblU.Name = "lblU";
-            this.lblU.Size = new System.Drawing.Size(35, 13);
-            this.lblU.TabIndex = 7;
-            this.lblU.Text = "label2";
-            // 
-            // lblR
-            // 
-            this.lblR.AutoSize = true;
-            this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblR.Location = new System.Drawing.Point(534, 30);
-            this.lblR.Name = "lblR";
-            this.lblR.Size = new System.Drawing.Size(35, 13);
-            this.lblR.TabIndex = 8;
-            this.lblR.Text = "label3";
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 664);
+            this.ClientSize = new System.Drawing.Size(1501, 664);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panHead);
             this.IsMdiContainer = true;

@@ -530,7 +530,121 @@ namespace Istn3ASproject
             {
                 dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value = "PENDING";
             }
-            //MessageBox.Show(ordStatus);
+        }
+
+        private void dgvItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvItems.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirm", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    dgvItems.Rows.RemoveAt(e.RowIndex);
+                    tbTotal.Text = getTotal().ToString("C2");
+                }
+            }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            string helpMessage = @"🛠 HELP GUIDE – STOCK & CART MANAGEMENT
+=======================================
+
+1. SEARCH FOR STOCK ITEMS
+    - Supplier Dropdown: Select a supplier from the dropdown list.
+    - Search Item:
+        • Enter the name of the item in the Search Item textbox.
+        • The system will filter and display matching stock items in the Stock table.
+
+2. STOCK TABLE
+    - This table displays all available stock items with the following details:
+        • StockID – Unique identifier for each item
+        • Name – Item name
+        • Description – Brief description of the item
+        • Selling Price – Price at which the item is sold
+        • Buying Price – Purchase price of the item
+        • StockOnHand – Current quantity available
+        • ReorderLevel – Quantity threshold for restocking
+        • ExpirationTime – Expiry date of perishable items
+
+    📌 Tip: Click from this table to add it to the Cart.
+
+3. CART TABLE
+    - Displays items selected for purchase with the following columns:
+        • StockID, Name, Description, Buying Price
+        • Quantity – Editable field to specify how many units to add
+        • Delete – Click the Delete button in this column to remove the row from the cart
+
+4. TOTAL AMOUNT
+    - Displays the calculated total cost of all items in the cart (based on buying price × quantity).
+    - Automatically updates as items are added or removed.
+
+5. BUTTONS
+    - Help: Opens this help guide.
+    - Clear Cart: Empties all items from the cart. A confirmation may be required.
+    - Record: Finalizes the transaction (e.g., saves the cart, updates the database, etc.).
+
+    ⚠️ Warning: Ensure the cart is reviewed before clicking ""Record"" as this may commit the order permanently.
+
+📝 DATA VALIDATION NOTES
+    - Cart Quantity should be a positive number.
+    - If a stock item is out of stock or below reorder level, the system may restrict adding it to the cart.
+    - Only items listed in the Stock Table can be added to the Cart.";
+
+            MessageBox.Show(helpMessage, "Supplier Order Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnHelpOrderDetails_Click(object sender, EventArgs e)
+        {
+            string helpMessage = @"🛠 HELP GUIDE – SUPPLIER ORDERS DETAILS
+====================================
+
+1. SUPPLIER ORDER TABLE
+    - Displays existing supplier orders with the following details:
+        • OrderID – Unique ID for each order
+        • SupplierID – ID of the supplier linked to the order
+        • TotalCost – Total value of the order
+        • OrderStatus – Current status (e.g., Pending, Arrived)
+        • PaymentStatus – Payment progress (e.g., Paid, Unpaid)
+        • OrderDate – Date the order was placed
+        • ArrivalDate – Expected or actual delivery date
+
+    📌 Tip: Click a row to view its details in the Supplier Order Line section.
+
+2. SUPPLIER ORDER LINE TABLE
+    - Shows detailed line items (products) associated with the selected order:
+        • StockID – ID of the stock item ordered
+        • OrderID – Related order ID
+        • Quantity – Number of units ordered
+        • Price – Cost per unit or line total
+
+3. UPDATE ORDER STATUS
+    - Use the 'Update Order Status' button to modify the status of a selected order.
+    - Typical transitions: 
+        • 'Pending' → 'Arrived'
+        • PaymentStatus may also update depending on the workflow.
+
+    ✅ How to Update:
+        • Select a row in the Supplier Order table.
+        • Click 'Update Order Status'.
+        • The system may prompt for confirmation or additional input.
+        • On successful update, the table refreshes and stock quantities may be adjusted.
+
+4. HELP BUTTON
+    - Click this button to view instructions for using this tab.
+    - Useful for understanding how orders and items are displayed and updated.
+
+📝 VALIDATION & BUSINESS RULES
+    - Only one order should be selected when updating status.
+    - Cannot update orders that are already marked as 'Arrived'.
+    - ArrivalDate may be set automatically upon arrival.
+    - Ensure data is saved before closing the application.
+
+📌 TIP: Always confirm you're updating the correct order to avoid accidental stock changes.";
+
+            MessageBox.Show(helpMessage, "Supplier Order Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
 
@@ -901,5 +1015,6 @@ namespace Istn3ASproject
 
             
         }
+
     }
 }

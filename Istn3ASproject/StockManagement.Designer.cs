@@ -73,8 +73,6 @@
             this.StockUpdateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
             this.grpAddNewItem = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtExpiration = new System.Windows.Forms.TextBox();
@@ -89,6 +87,7 @@
             this.lblBuy = new System.Windows.Forms.Label();
             this.lblReorderAdd = new System.Windows.Forms.Label();
             this.tbpSupplierOrder = new System.Windows.Forms.TabPage();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.lblTotalItemsCost = new System.Windows.Forms.Label();
             this.btnRecord = new System.Windows.Forms.Button();
@@ -107,6 +106,7 @@
             this.poductDescriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buyingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.itemsToAddBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panSupplierStockItems = new System.Windows.Forms.Panel();
             this.dgvSupplierStock = new System.Windows.Forms.DataGridView();
@@ -120,15 +120,13 @@
             this.expirationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabOrderDetails = new System.Windows.Forms.TabPage();
+            this.btnHelpOrderDetails = new System.Windows.Forms.Button();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panSupplierOtderLine = new System.Windows.Forms.Panel();
             this.dgvOrderLines = new System.Windows.Forms.DataGridView();
-            this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierOrderIDLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantityLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierLineOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panSupplierOrders = new System.Windows.Forms.Panel();
             this.dgvOrderTable = new System.Windows.Forms.DataGridView();
             this.SupplierOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,13 +136,18 @@
             this.paymentStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.stockTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.itemsToAddTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.ItemsToAddTableAdapter();
             this.supplierLineOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierLineOrderTableAdapter();
-            this.supplierOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierLineOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
             this.supplierOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
+            this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierOrderIDLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityLine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcStockManagement.SuspendLayout();
             this.tbpInventoryManagement.SuspendLayout();
             this.grpUpdateItemDetails.SuspendLayout();
@@ -164,10 +167,10 @@
             this.tabOrderDetails.SuspendLayout();
             this.panSupplierOtderLine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderLines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierLineOrderBindingSource)).BeginInit();
             this.panSupplierOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierOrderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierLineOrderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcStockManagement
@@ -190,11 +193,11 @@
             this.tbpInventoryManagement.Controls.Add(this.grpUpdateItemDetails);
             this.tbpInventoryManagement.Controls.Add(this.dgvUpdateStock);
             this.tbpInventoryManagement.Controls.Add(this.grpAddNewItem);
-            this.tbpInventoryManagement.Location = new System.Drawing.Point(4, 22);
+            this.tbpInventoryManagement.Location = new System.Drawing.Point(4, 26);
             this.tbpInventoryManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventoryManagement.Name = "tbpInventoryManagement";
             this.tbpInventoryManagement.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpInventoryManagement.Size = new System.Drawing.Size(1378, 695);
+            this.tbpInventoryManagement.Size = new System.Drawing.Size(1457, 579);
             this.tbpInventoryManagement.TabIndex = 0;
             this.tbpInventoryManagement.Text = "Manage Inventory";
             // 
@@ -213,7 +216,7 @@
             this.grpUpdateItemDetails.Controls.Add(this.lblSPriceUpdate);
             this.grpUpdateItemDetails.Controls.Add(this.lblDescUpdate);
             this.grpUpdateItemDetails.Controls.Add(this.lblNameUpdate);
-            this.grpUpdateItemDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpUpdateItemDetails.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUpdateItemDetails.Location = new System.Drawing.Point(275, 432);
             this.grpUpdateItemDetails.Name = "grpUpdateItemDetails";
             this.grpUpdateItemDetails.Size = new System.Drawing.Size(797, 150);
@@ -224,7 +227,7 @@
             // btnUpdateItemDetails
             // 
             this.btnUpdateItemDetails.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnUpdateItemDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateItemDetails.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateItemDetails.Location = new System.Drawing.Point(559, 89);
             this.btnUpdateItemDetails.Name = "btnUpdateItemDetails";
             this.btnUpdateItemDetails.Size = new System.Drawing.Size(211, 36);
@@ -290,60 +293,60 @@
             // lblExpirUpdate
             // 
             this.lblExpirUpdate.AutoSize = true;
-            this.lblExpirUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirUpdate.Location = new System.Drawing.Point(215, 88);
+            this.lblExpirUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpirUpdate.Location = new System.Drawing.Point(37, 325);
             this.lblExpirUpdate.Name = "lblExpirUpdate";
-            this.lblExpirUpdate.Size = new System.Drawing.Size(115, 13);
+            this.lblExpirUpdate.Size = new System.Drawing.Size(183, 21);
             this.lblExpirUpdate.TabIndex = 5;
-            this.lblExpirUpdate.Text = "Expiration Time (Days):";
+            this.lblExpirUpdate.Text = "Expiration time (days):";
             // 
             // lblReorderUpdate
             // 
             this.lblReorderUpdate.AutoSize = true;
-            this.lblReorderUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReorderUpdate.Location = new System.Drawing.Point(28, 88);
+            this.lblReorderUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReorderUpdate.Location = new System.Drawing.Point(38, 268);
             this.lblReorderUpdate.Name = "lblReorderUpdate";
-            this.lblReorderUpdate.Size = new System.Drawing.Size(77, 13);
+            this.lblReorderUpdate.Size = new System.Drawing.Size(115, 21);
             this.lblReorderUpdate.TabIndex = 4;
-            this.lblReorderUpdate.Text = "Reorder Level:";
+            this.lblReorderUpdate.Text = "Reorder level:";
             // 
             // lblBPriceUpdate
             // 
             this.lblBPriceUpdate.AutoSize = true;
-            this.lblBPriceUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBPriceUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBPriceUpdate.Location = new System.Drawing.Point(627, 32);
             this.lblBPriceUpdate.Name = "lblBPriceUpdate";
-            this.lblBPriceUpdate.Size = new System.Drawing.Size(69, 13);
+            this.lblBPriceUpdate.Size = new System.Drawing.Size(76, 15);
             this.lblBPriceUpdate.TabIndex = 3;
             this.lblBPriceUpdate.Text = "Buying Price:";
             // 
             // lblSPriceUpdate
             // 
             this.lblSPriceUpdate.AutoSize = true;
-            this.lblSPriceUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPriceUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSPriceUpdate.Location = new System.Drawing.Point(430, 31);
             this.lblSPriceUpdate.Name = "lblSPriceUpdate";
-            this.lblSPriceUpdate.Size = new System.Drawing.Size(68, 13);
+            this.lblSPriceUpdate.Size = new System.Drawing.Size(74, 15);
             this.lblSPriceUpdate.TabIndex = 2;
             this.lblSPriceUpdate.Text = "Selling Price:";
             // 
             // lblDescUpdate
             // 
             this.lblDescUpdate.AutoSize = true;
-            this.lblDescUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescUpdate.Location = new System.Drawing.Point(215, 32);
             this.lblDescUpdate.Name = "lblDescUpdate";
-            this.lblDescUpdate.Size = new System.Drawing.Size(103, 13);
+            this.lblDescUpdate.Size = new System.Drawing.Size(115, 15);
             this.lblDescUpdate.TabIndex = 1;
             this.lblDescUpdate.Text = "Product Description:";
             // 
             // lblNameUpdate
             // 
             this.lblNameUpdate.AutoSize = true;
-            this.lblNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameUpdate.Location = new System.Drawing.Point(28, 32);
             this.lblNameUpdate.Name = "lblNameUpdate";
-            this.lblNameUpdate.Size = new System.Drawing.Size(78, 13);
+            this.lblNameUpdate.Size = new System.Drawing.Size(87, 15);
             this.lblNameUpdate.TabIndex = 0;
             this.lblNameUpdate.Text = "Product Name:";
             // 
@@ -455,7 +458,7 @@
             this.grpAddNewItem.Controls.Add(this.lblExpirAdd);
             this.grpAddNewItem.Controls.Add(this.lblBuy);
             this.grpAddNewItem.Controls.Add(this.lblReorderAdd);
-            this.grpAddNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAddNewItem.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAddNewItem.Location = new System.Drawing.Point(275, 266);
             this.grpAddNewItem.Name = "grpAddNewItem";
             this.grpAddNewItem.Size = new System.Drawing.Size(797, 146);
@@ -466,7 +469,7 @@
             // btnAddItem
             // 
             this.btnAddItem.BackColor = System.Drawing.Color.SpringGreen;
-            this.btnAddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItem.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.Location = new System.Drawing.Point(559, 92);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(211, 36);
@@ -480,51 +483,7 @@
             this.txtName.BackColor = System.Drawing.Color.LightBlue;
             this.txtName.Location = new System.Drawing.Point(28, 50);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(139, 26);
-            // txtExpiration
-            // 
-            this.txtExpiration.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtExpiration.Location = new System.Drawing.Point(248, 325);
-            this.txtExpiration.Name = "txtExpiration";
-            this.txtExpiration.Size = new System.Drawing.Size(210, 25);
-            this.txtExpiration.TabIndex = 11;
-            this.txtExpiration.TextChanged += new System.EventHandler(this.txtExpiration_TextChanged);
-            // 
-            // txtReorder
-            // 
-            this.txtReorder.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtReorder.Location = new System.Drawing.Point(249, 268);
-            this.txtReorder.Name = "txtReorder";
-            this.txtReorder.Size = new System.Drawing.Size(210, 25);
-            this.txtReorder.TabIndex = 10;
-            this.txtReorder.TextChanged += new System.EventHandler(this.txtReorder_TextChanged);
-            // 
-            // txtBuy
-            // 
-            this.txtBuy.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtBuy.Location = new System.Drawing.Point(249, 215);
-            this.txtBuy.Name = "txtBuy";
-            this.txtBuy.Size = new System.Drawing.Size(210, 25);
-            this.txtBuy.TabIndex = 9;
-            this.txtBuy.TextChanged += new System.EventHandler(this.txtBuy_TextChanged);
-            // 
-            // txtSell
-            // 
-            this.txtSell.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtSell.Location = new System.Drawing.Point(248, 162);
-            this.txtSell.Name = "txtSell";
-            this.txtSell.Size = new System.Drawing.Size(210, 25);
-            this.txtSell.TabIndex = 8;
-            this.txtSell.TextChanged += new System.EventHandler(this.txtSell_TextChanged);
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtDesc.Location = new System.Drawing.Point(248, 105);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(210, 25);
-            this.txtDesc.TabIndex = 7;
-            this.txtDesc.TextChanged += new System.EventHandler(this.txtDesc_TextChanged);
+            this.txtName.Size = new System.Drawing.Size(139, 29);
             this.txtName.TabIndex = 6;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -533,64 +492,17 @@
             this.txtExpiration.BackColor = System.Drawing.Color.LightBlue;
             this.txtExpiration.Location = new System.Drawing.Point(215, 108);
             this.txtExpiration.Name = "txtExpiration";
-            this.txtExpiration.Size = new System.Drawing.Size(156, 26);
+            this.txtExpiration.Size = new System.Drawing.Size(156, 29);
             this.txtExpiration.TabIndex = 11;
             this.txtExpiration.TextChanged += new System.EventHandler(this.txtExpiration_TextChanged);
-            this.lblExpirUpdate.AutoSize = true;
-            this.lblExpirUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirUpdate.Location = new System.Drawing.Point(37, 325);
-            this.lblExpirUpdate.Name = "label10";
-            this.lblExpirUpdate.Size = new System.Drawing.Size(183, 21);
-            this.lblExpirUpdate.TabIndex = 5;
-            this.lblExpirUpdate.Text = "Expiration time (days):";
-            // 
-            // label9
-            // 
-            this.lblReorderUpdate.AutoSize = true;
-            this.lblReorderUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReorderUpdate.Location = new System.Drawing.Point(38, 268);
-            this.lblReorderUpdate.Name = "label9";
-            this.lblReorderUpdate.Size = new System.Drawing.Size(115, 21);
-            this.lblReorderUpdate.TabIndex = 4;
-            this.lblReorderUpdate.Text = "Reorder level:";
-            // 
-            // lblBuy
-            // 
-            this.lblBuy.AutoSize = true;
-            this.lblBuy.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuy.Location = new System.Drawing.Point(38, 215);
-            this.lblBuy.Name = "lblBuy";
-            this.lblBuy.Size = new System.Drawing.Size(110, 21);
-            this.lblBuy.TabIndex = 3;
-            this.lblBuy.Text = "Buying price:";
-            // 
-            // lblSell
-            // 
-            this.lblSell.AutoSize = true;
-            this.lblSell.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSell.Location = new System.Drawing.Point(37, 162);
-            this.lblSell.Name = "lblSell";
-            this.lblSell.Size = new System.Drawing.Size(109, 21);
-            this.lblSell.TabIndex = 2;
-            this.lblSell.Text = "Selling Price:";
-            // 
-            // lblProductDesc
-            // 
-            this.lblProductDesc.AutoSize = true;
-            this.lblProductDesc.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDesc.Location = new System.Drawing.Point(37, 105);
-            this.lblProductDesc.Name = "lblProductDesc";
-            this.lblProductDesc.Size = new System.Drawing.Size(164, 21);
-            this.lblProductDesc.TabIndex = 1;
-            this.lblProductDesc.Text = "Product description:";
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.Location = new System.Drawing.Point(25, 34);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(78, 13);
+            this.lblProductName.Size = new System.Drawing.Size(87, 15);
             this.lblProductName.TabIndex = 0;
             this.lblProductName.Text = "Product Name:";
             // 
@@ -599,17 +511,17 @@
             this.txtReorder.BackColor = System.Drawing.Color.LightBlue;
             this.txtReorder.Location = new System.Drawing.Point(28, 108);
             this.txtReorder.Name = "txtReorder";
-            this.txtReorder.Size = new System.Drawing.Size(139, 26);
+            this.txtReorder.Size = new System.Drawing.Size(139, 29);
             this.txtReorder.TabIndex = 10;
             this.txtReorder.TextChanged += new System.EventHandler(this.txtReorder_TextChanged);
             // 
             // lblProductDesc
             // 
             this.lblProductDesc.AutoSize = true;
-            this.lblProductDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDesc.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductDesc.Location = new System.Drawing.Point(212, 34);
             this.lblProductDesc.Name = "lblProductDesc";
-            this.lblProductDesc.Size = new System.Drawing.Size(103, 13);
+            this.lblProductDesc.Size = new System.Drawing.Size(115, 15);
             this.lblProductDesc.TabIndex = 1;
             this.lblProductDesc.Text = "Product Description:";
             // 
@@ -618,7 +530,7 @@
             this.txtBuy.BackColor = System.Drawing.Color.LightBlue;
             this.txtBuy.Location = new System.Drawing.Point(627, 50);
             this.txtBuy.Name = "txtBuy";
-            this.txtBuy.Size = new System.Drawing.Size(143, 26);
+            this.txtBuy.Size = new System.Drawing.Size(143, 29);
             this.txtBuy.TabIndex = 9;
             this.txtBuy.TextChanged += new System.EventHandler(this.txtBuy_TextChanged);
             // 
@@ -627,7 +539,7 @@
             this.txtDesc.BackColor = System.Drawing.Color.LightBlue;
             this.txtDesc.Location = new System.Drawing.Point(215, 50);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(156, 26);
+            this.txtDesc.Size = new System.Drawing.Size(156, 29);
             this.txtDesc.TabIndex = 7;
             this.txtDesc.TextChanged += new System.EventHandler(this.txtDesc_TextChanged);
             // 
@@ -636,47 +548,47 @@
             this.txtSell.BackColor = System.Drawing.Color.LightBlue;
             this.txtSell.Location = new System.Drawing.Point(430, 50);
             this.txtSell.Name = "txtSell";
-            this.txtSell.Size = new System.Drawing.Size(147, 26);
+            this.txtSell.Size = new System.Drawing.Size(147, 29);
             this.txtSell.TabIndex = 8;
             this.txtSell.TextChanged += new System.EventHandler(this.txtSell_TextChanged);
             // 
             // lblSell
             // 
             this.lblSell.AutoSize = true;
-            this.lblSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSell.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSell.Location = new System.Drawing.Point(427, 34);
             this.lblSell.Name = "lblSell";
-            this.lblSell.Size = new System.Drawing.Size(68, 13);
+            this.lblSell.Size = new System.Drawing.Size(74, 15);
             this.lblSell.TabIndex = 2;
             this.lblSell.Text = "Selling Price:";
             // 
             // lblExpirAdd
             // 
             this.lblExpirAdd.AutoSize = true;
-            this.lblExpirAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpirAdd.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpirAdd.Location = new System.Drawing.Point(212, 92);
             this.lblExpirAdd.Name = "lblExpirAdd";
-            this.lblExpirAdd.Size = new System.Drawing.Size(115, 13);
+            this.lblExpirAdd.Size = new System.Drawing.Size(128, 15);
             this.lblExpirAdd.TabIndex = 5;
             this.lblExpirAdd.Text = "Expiration Time (Days):";
             // 
             // lblBuy
             // 
             this.lblBuy.AutoSize = true;
-            this.lblBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuy.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuy.Location = new System.Drawing.Point(624, 34);
             this.lblBuy.Name = "lblBuy";
-            this.lblBuy.Size = new System.Drawing.Size(69, 13);
+            this.lblBuy.Size = new System.Drawing.Size(76, 15);
             this.lblBuy.TabIndex = 3;
             this.lblBuy.Text = "Buying Price:";
             // 
             // lblReorderAdd
             // 
             this.lblReorderAdd.AutoSize = true;
-            this.lblReorderAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReorderAdd.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReorderAdd.Location = new System.Drawing.Point(25, 92);
             this.lblReorderAdd.Name = "lblReorderAdd";
-            this.lblReorderAdd.Size = new System.Drawing.Size(77, 13);
+            this.lblReorderAdd.Size = new System.Drawing.Size(81, 15);
             this.lblReorderAdd.TabIndex = 4;
             this.lblReorderAdd.Text = "Reorder Level:";
             // 
@@ -684,6 +596,7 @@
             // 
             this.tbpSupplierOrder.AutoScroll = true;
             this.tbpSupplierOrder.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpSupplierOrder.Controls.Add(this.btnHelp);
             this.tbpSupplierOrder.Controls.Add(this.tbTotal);
             this.tbpSupplierOrder.Controls.Add(this.lblTotalItemsCost);
             this.tbpSupplierOrder.Controls.Add(this.btnRecord);
@@ -704,16 +617,29 @@
             this.tbpSupplierOrder.TabIndex = 1;
             this.tbpSupplierOrder.Text = "Supplier Orders";
             // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHelp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.Black;
+            this.btnHelp.Location = new System.Drawing.Point(155, 60);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(113, 51);
+            this.btnHelp.TabIndex = 12;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // tbTotal
             // 
             this.tbTotal.BackColor = System.Drawing.Color.LightBlue;
             this.tbTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTotal.Location = new System.Drawing.Point(1039, 420);
+            this.tbTotal.Location = new System.Drawing.Point(1122, 420);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
-            this.tbTotal.Size = new System.Drawing.Size(202, 26);
+            this.tbTotal.Size = new System.Drawing.Size(180, 26);
             this.tbTotal.TabIndex = 11;
             this.tbTotal.Text = "0";
             // 
@@ -721,7 +647,7 @@
             // 
             this.lblTotalItemsCost.AutoSize = true;
             this.lblTotalItemsCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItemsCost.Location = new System.Drawing.Point(976, 423);
+            this.lblTotalItemsCost.Location = new System.Drawing.Point(1067, 422);
             this.lblTotalItemsCost.Name = "lblTotalItemsCost";
             this.lblTotalItemsCost.Size = new System.Drawing.Size(49, 20);
             this.lblTotalItemsCost.TabIndex = 10;
@@ -731,9 +657,9 @@
             // 
             this.btnRecord.BackColor = System.Drawing.Color.LightGreen;
             this.btnRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecord.Location = new System.Drawing.Point(1113, 469);
+            this.btnRecord.Location = new System.Drawing.Point(1189, 469);
             this.btnRecord.Name = "btnRecord";
-            this.btnRecord.Size = new System.Drawing.Size(121, 51);
+            this.btnRecord.Size = new System.Drawing.Size(113, 51);
             this.btnRecord.TabIndex = 9;
             this.btnRecord.Text = "Record";
             this.btnRecord.UseVisualStyleBackColor = false;
@@ -743,9 +669,9 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.Salmon;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(980, 469);
+            this.btnClear.Location = new System.Drawing.Point(1071, 469);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(127, 51);
+            this.btnClear.Size = new System.Drawing.Size(113, 51);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear Cart";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -775,7 +701,7 @@
             // 
             this.lblChooseSupplier.AutoSize = true;
             this.lblChooseSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChooseSupplier.Location = new System.Drawing.Point(342, 75);
+            this.lblChooseSupplier.Location = new System.Drawing.Point(335, 75);
             this.lblChooseSupplier.Name = "lblChooseSupplier";
             this.lblChooseSupplier.Size = new System.Drawing.Size(75, 20);
             this.lblChooseSupplier.TabIndex = 5;
@@ -786,12 +712,12 @@
             this.cbSupplier.BackColor = System.Drawing.Color.LightBlue;
             this.cbSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSupplier.DataSource = this.supplierBindingSource;
-            this.cbSupplier.DisplayMember = "SupplierID";
+            this.cbSupplier.DisplayMember = "Name";
             this.cbSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSupplier.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbSupplier.FormattingEnabled = true;
-            this.cbSupplier.Location = new System.Drawing.Point(423, 72);
+            this.cbSupplier.Location = new System.Drawing.Point(416, 72);
             this.cbSupplier.Name = "cbSupplier";
             this.cbSupplier.Size = new System.Drawing.Size(254, 28);
             this.cbSupplier.TabIndex = 4;
@@ -808,7 +734,7 @@
             this.tbItemSearch.BackColor = System.Drawing.Color.LightBlue;
             this.tbItemSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbItemSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbItemSearch.Location = new System.Drawing.Point(847, 70);
+            this.tbItemSearch.Location = new System.Drawing.Point(840, 70);
             this.tbItemSearch.Name = "tbItemSearch";
             this.tbItemSearch.Size = new System.Drawing.Size(370, 29);
             this.tbItemSearch.TabIndex = 3;
@@ -818,7 +744,7 @@
             // 
             this.lblSearchItems.AutoSize = true;
             this.lblSearchItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchItems.Location = new System.Drawing.Point(734, 75);
+            this.lblSearchItems.Location = new System.Drawing.Point(727, 75);
             this.lblSearchItems.Name = "lblSearchItems";
             this.lblSearchItems.Size = new System.Drawing.Size(107, 20);
             this.lblSearchItems.TabIndex = 2;
@@ -830,7 +756,7 @@
             this.panSupplierCartItems.Controls.Add(this.dgvItems);
             this.panSupplierCartItems.Location = new System.Drawing.Point(155, 386);
             this.panSupplierCartItems.Name = "panSupplierCartItems";
-            this.panSupplierCartItems.Size = new System.Drawing.Size(766, 185);
+            this.panSupplierCartItems.Size = new System.Drawing.Size(895, 185);
             this.panSupplierCartItems.TabIndex = 1;
             // 
             // dgvItems
@@ -841,7 +767,7 @@
             this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -853,11 +779,12 @@
             this.nameDataGridViewTextBoxColumn1,
             this.poductDescriptionDataGridViewTextBoxColumn1,
             this.buyingPriceDataGridViewTextBoxColumn1,
-            this.Quantity});
+            this.Quantity,
+            this.Delete});
             this.dgvItems.DataSource = this.itemsToAddBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -870,16 +797,17 @@
             this.dgvItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItems.RowHeadersWidth = 51;
-            this.dgvItems.Size = new System.Drawing.Size(720, 150);
+            this.dgvItems.Size = new System.Drawing.Size(859, 150);
             this.dgvItems.TabIndex = 0;
             this.dgvItems.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvItems_CellBeginEdit);
+            this.dgvItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellContentClick);
             this.dgvItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellEndEdit);
             this.dgvItems.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
             this.dgvItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvItems_DataError);
@@ -927,6 +855,16 @@
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
             this.Quantity.Width = 125;
+            // 
+            // Delete
+            // 
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "DELETE";
+            this.Delete.ToolTipText = "Delete the current row";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // itemsToAddBindingSource
             // 
@@ -1078,6 +1016,7 @@
             // 
             this.tabOrderDetails.AutoScroll = true;
             this.tabOrderDetails.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabOrderDetails.Controls.Add(this.btnHelpOrderDetails);
             this.tabOrderDetails.Controls.Add(this.btnUpdateStatus);
             this.tabOrderDetails.Controls.Add(this.label4);
             this.tabOrderDetails.Controls.Add(this.label3);
@@ -1088,6 +1027,18 @@
             this.tabOrderDetails.Size = new System.Drawing.Size(1457, 579);
             this.tabOrderDetails.TabIndex = 2;
             this.tabOrderDetails.Text = "Order Details";
+            // 
+            // btnHelpOrderDetails
+            // 
+            this.btnHelpOrderDetails.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHelpOrderDetails.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelpOrderDetails.Location = new System.Drawing.Point(261, 24);
+            this.btnHelpOrderDetails.Name = "btnHelpOrderDetails";
+            this.btnHelpOrderDetails.Size = new System.Drawing.Size(110, 43);
+            this.btnHelpOrderDetails.TabIndex = 4;
+            this.btnHelpOrderDetails.Text = "Help";
+            this.btnHelpOrderDetails.UseVisualStyleBackColor = false;
+            this.btnHelpOrderDetails.Click += new System.EventHandler(this.btnHelpOrderDetails_Click);
             // 
             // btnUpdateStatus
             // 
@@ -1128,11 +1079,12 @@
             this.panSupplierOtderLine.Controls.Add(this.dgvOrderLines);
             this.panSupplierOtderLine.Location = new System.Drawing.Point(261, 367);
             this.panSupplierOtderLine.Name = "panSupplierOtderLine";
-            this.panSupplierOtderLine.Size = new System.Drawing.Size(619, 192);
+            this.panSupplierOtderLine.Size = new System.Drawing.Size(709, 192);
             this.panSupplierOtderLine.TabIndex = 1;
             // 
             // dgvOrderLines
             // 
+            this.dgvOrderLines.AutoGenerateColumns = false;
             this.dgvOrderLines.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvOrderLines.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1174,40 +1126,13 @@
             this.dgvOrderLines.RowHeadersWidth = 51;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvOrderLines.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvOrderLines.Size = new System.Drawing.Size(573, 150);
+            this.dgvOrderLines.Size = new System.Drawing.Size(669, 150);
             this.dgvOrderLines.TabIndex = 0;
             // 
-            // StockID
+            // supplierLineOrderBindingSource
             // 
-            this.StockID.DataPropertyName = "StockID";
-            this.StockID.HeaderText = "StockID";
-            this.StockID.MinimumWidth = 6;
-            this.StockID.Name = "StockID";
-            this.StockID.Width = 125;
-            // 
-            // SupplierOrderIDLine
-            // 
-            this.SupplierOrderIDLine.DataPropertyName = "SupplierOrderID";
-            this.SupplierOrderIDLine.HeaderText = "OrderID";
-            this.SupplierOrderIDLine.MinimumWidth = 6;
-            this.SupplierOrderIDLine.Name = "SupplierOrderIDLine";
-            this.SupplierOrderIDLine.Width = 125;
-            // 
-            // QuantityLine
-            // 
-            this.QuantityLine.DataPropertyName = "Quantity";
-            this.QuantityLine.HeaderText = "Quantity";
-            this.QuantityLine.MinimumWidth = 6;
-            this.QuantityLine.Name = "QuantityLine";
-            this.QuantityLine.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
+            this.supplierLineOrderBindingSource.DataMember = "SupplierLineOrder";
+            this.supplierLineOrderBindingSource.DataSource = this.wstGrp11DataSet;
             // 
             // panSupplierOrders
             // 
@@ -1221,6 +1146,7 @@
             // 
             // dgvOrderTable
             // 
+            this.dgvOrderTable.AutoGenerateColumns = false;
             this.dgvOrderTable.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvOrderTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1330,6 +1256,25 @@
             this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
             this.arrivalDateDataGridViewTextBoxColumn.Width = 125;
             // 
+            // supplierOrderBindingSource
+            // 
+            this.supplierOrderBindingSource.DataMember = "SupplierOrder";
+            this.supplierOrderBindingSource.DataSource = this.wstGrp11DataSet;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 100);
+            this.panel5.TabIndex = 0;
+            // 
             // stockTableAdapter
             // 
             this.stockTableAdapter.ClearBeforeFill = true;
@@ -1342,16 +1287,6 @@
             // 
             this.supplierLineOrderTableAdapter.ClearBeforeFill = true;
             // 
-            // supplierOrderBindingSource
-            // 
-            this.supplierOrderBindingSource.DataMember = "SupplierOrder";
-            this.supplierOrderBindingSource.DataSource = this.wstGrp11DataSet;
-            // 
-            // supplierLineOrderBindingSource
-            // 
-            this.supplierLineOrderBindingSource.DataMember = "SupplierLineOrder";
-            this.supplierLineOrderBindingSource.DataSource = this.wstGrp11DataSet;
-            // 
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
@@ -1359,6 +1294,38 @@
             // supplierOrderTableAdapter
             // 
             this.supplierOrderTableAdapter.ClearBeforeFill = true;
+            // 
+            // StockID
+            // 
+            this.StockID.DataPropertyName = "StockID";
+            this.StockID.HeaderText = "StockID";
+            this.StockID.MinimumWidth = 6;
+            this.StockID.Name = "StockID";
+            this.StockID.Width = 125;
+            // 
+            // SupplierOrderIDLine
+            // 
+            this.SupplierOrderIDLine.DataPropertyName = "SupplierOrderID";
+            this.SupplierOrderIDLine.HeaderText = "OrderID";
+            this.SupplierOrderIDLine.MinimumWidth = 6;
+            this.SupplierOrderIDLine.Name = "SupplierOrderIDLine";
+            this.SupplierOrderIDLine.Width = 125;
+            // 
+            // QuantityLine
+            // 
+            this.QuantityLine.DataPropertyName = "Quantity";
+            this.QuantityLine.HeaderText = "Quantity";
+            this.QuantityLine.MinimumWidth = 6;
+            this.QuantityLine.Name = "QuantityLine";
+            this.QuantityLine.Width = 125;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmStockManagement
             // 
@@ -1394,10 +1361,10 @@
             this.tabOrderDetails.PerformLayout();
             this.panSupplierOtderLine.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderLines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierLineOrderBindingSource)).EndInit();
             this.panSupplierOrders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierOrderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierLineOrderBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1434,11 +1401,6 @@
         private System.Windows.Forms.Button btnRecord;
         private System.Windows.Forms.TextBox tbTotal;
         private System.Windows.Forms.Label lblTotalItemsCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn buyingPriceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblBuy;
         private System.Windows.Forms.Label lblSell;
@@ -1464,10 +1426,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource supplierBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderIDLine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityLine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource supplierOrderBindingSource;
         private System.Windows.Forms.BindingSource supplierLineOrderBindingSource;
         private WstGrp11DataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
@@ -1521,5 +1479,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockOnHandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reorderLevelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expirationTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poductDescriptionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn buyingPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Button btnHelpOrderDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderIDLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
