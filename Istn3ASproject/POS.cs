@@ -39,8 +39,7 @@ namespace Istn3ASproject
 
         private void frmPOS_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'WstGrp11DataSet.Customer' table. You can move, or remove it, as needed.
-            // this.TaCustomer.Fill(this.WstGrp11DataSet.Customer);
+
             // TODO: This line of code loads data into the 'wstGrp11DS.Order' table. You can move, or remove it, as needed.
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Order' table. You can move, or remove it, as needed.
@@ -176,7 +175,11 @@ namespace Istn3ASproject
             WstGrp11DataSet.SalesInvoice.Clear();
             txtSearchProduct.Clear();
             cmbPaymentMethod.Text = "";
+
+            WstGrp11DataSet.RefundInnerJoin.Clear();
+            taOrder.Fill(WstGrp11DataSet.Order);
             taStock.Fill(WstGrp11DataSet.Stock);
+
             lblTotal.Text = "R0.00";
             lblCustID.Text = "N/A";
             lblCustomerLN.Text = "N/A";
@@ -346,6 +349,84 @@ namespace Istn3ASproject
             }
         }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            taOrder.FillByOrderID(WstGrp11DataSet.Order, Convert.ToInt32(npSearchOrderID.Value));
+        }
 
+        private void dgvOrder_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TaRefundInnerJoin.FillByOrderID(WstGrp11DataSet.RefundInnerJoin, Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
+        }
+
+        private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TaRefundInnerJoin.FillByOrderID(WstGrp11DataSet.RefundInnerJoin, Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value));
+        }
+
+        private void btnRefundOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int OrderID = Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value);
+                taOrder.RefundFullOrder(OrderID);
+                taOrderLine.RefundFullOrder(OrderID);
+
+                WstGrp11DataSet.RefundInnerJoin.Clear();
+                taOrder.Fill(WstGrp11DataSet.Order);
+
+                MessageBox.Show("Order Number :" + OrderID.ToString() + " has been refunded");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvRefundInnerJoin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvRefundInnerJoin.Rows.Count > 0)
+            {
+                if (e.ColumnIndex == 6)
+                {
+                    int OrderID = Convert.ToInt32(dgvRefundInnerJoin.Rows[e.RowIndex].Cells[0].Value);
+                    int StockID = Convert.ToInt32(dgvRefundInnerJoin.Rows[e.RowIndex].Cells[1].Value);
+
+                    taOrderLine.RefundItem(OrderID, StockID);
+                    TaRefundInnerJoin.FillByOrderID(WstGrp11DataSet.RefundInnerJoin, OrderID);
+
+                    UpdateOrderTable(OrderID);
+                    taOrder.Fill(WstGrp11DataSet.Order);
+                }
+            }
+        }
+
+        public void UpdateOrderTable(int OrderID)
+        {
+            decimal Total = 0;
+            bool Refund = true;
+
+            for (int i = 0; i< dgvRefundInnerJoin.Rows.Count; i++)
+            {
+                decimal Price = Convert.ToDecimal(dgvRefundInnerJoin.Rows[i].Cells[5].Value);
+                
+                //Totals value of items in orderline and checks if its a full refund
+                if (Price != 0)
+                {
+                    Refund = false;
+                }
+
+                Total += Price;
+            }
+
+            string TransactionType = "Refund";
+            if (!Refund)
+            {
+                TransactionType = "Partial Refund";
+            }
+
+            taOrder.RefundItem(TransactionType, Total, OrderID);
+        }
     }
 }
