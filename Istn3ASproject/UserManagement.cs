@@ -31,6 +31,14 @@ namespace Istn3ASproject
         private Action<Form> navigate;
         private frmPOS posForm;
 
+        public frmUserManagement(Action<Form> navigateTo, string role)
+        {
+            InitializeComponent();
+            navigate = navigateTo;
+            _userRole = role;
+        }
+
+
         public frmUserManagement(Action<Form> navigateTo, frmPOS posFormRef,string role)
         {
             InitializeComponent();
@@ -621,7 +629,8 @@ namespace Istn3ASproject
         private void btnNewOrder_Click(object sender, EventArgs e)
 
         {
-            
+            var posForm = new frmPOS(navigate,this._userRole);
+           
             posForm.UpdateLabel(gvCustomer.CurrentRow.Cells[1].Value.ToString(), gvCustomer.CurrentRow.Cells[2].Value.ToString(), gvCustomer.CurrentRow.Cells[0].Value.ToString());
             navigate(posForm);
 

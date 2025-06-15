@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcPOS = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,43 +55,40 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
+            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PoductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.grpbStock = new System.Windows.Forms.GroupBox();
-            this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.lblSearchItem = new System.Windows.Forms.Label();
-            this.txtSearchProduct = new System.Windows.Forms.TextBox();
-            this.tbpRefund = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgvRefundInnerJoin = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.npSearchOrderID = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnRefundOrder = new System.Windows.Forms.Button();
-            this.RefundItem = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.WstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
+            this.grpbStock = new System.Windows.Forms.GroupBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockOnHandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblSearchItem = new System.Windows.Forms.Label();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
+            this.tbpRefund = new System.Windows.Forms.TabPage();
+            this.btnRefundOrder = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvRefundInnerJoin = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefundItem = new System.Windows.Forms.DataGridViewButtonColumn();
             this.refundInnerJoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +98,9 @@
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.npSearchOrderID = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.taOrder = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
@@ -109,6 +109,7 @@
             this.TaSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.TaCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.TaRefundInnerJoin = new Istn3ASproject.WstGrp11DataSetTableAdapters.RefundInnerJoinTableAdapter();
+            this.btnGoToCustomer = new System.Windows.Forms.Button();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -116,20 +117,20 @@
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).BeginInit();
             this.grpbStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.tbpRefund.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefundInnerJoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refundInnerJoinBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npSearchOrderID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refundInnerJoinBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -168,6 +169,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnGoToCustomer);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblCustomerLN);
             this.panel1.Controls.Add(this.label2);
@@ -357,14 +359,14 @@
             this.dgvSalesInvoice.AutoGenerateColumns = false;
             this.dgvSalesInvoice.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvSalesInvoice.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSalesInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalesInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSalesInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn1,
@@ -376,14 +378,14 @@
             this.SubTotal,
             this.Delete});
             this.dgvSalesInvoice.DataSource = this.salesInvoiceBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSalesInvoice.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalesInvoice.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSalesInvoice.EnableHeadersVisualStyles = false;
             this.dgvSalesInvoice.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvSalesInvoice.Location = new System.Drawing.Point(36, 28);
@@ -396,6 +398,24 @@
             this.dgvSalesInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellContentClick);
             this.dgvSalesInvoice.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellEndEdit);
             // 
+            // stockIDDataGridViewTextBoxColumn1
+            // 
+            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
+            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
+            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockIDDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn1.Width = 135;
+            // 
             // PoductDescription
             // 
             this.PoductDescription.DataPropertyName = "PoductDescription";
@@ -404,6 +424,24 @@
             this.PoductDescription.Name = "PoductDescription";
             this.PoductDescription.ReadOnly = true;
             this.PoductDescription.Width = 190;
+            // 
+            // sellingPriceDataGridViewTextBoxColumn1
+            // 
+            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
+            this.sellingPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sellingPriceDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // stockOnHandDataGridViewTextBoxColumn1
+            // 
+            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
+            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "Stock";
+            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
+            this.stockOnHandDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockOnHandDataGridViewTextBoxColumn1.Width = 70;
             // 
             // Quantity
             // 
@@ -431,6 +469,16 @@
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 125;
             // 
+            // salesInvoiceBindingSource
+            // 
+            this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
+            this.salesInvoiceBindingSource.DataSource = this.WstGrp11DataSet;
+            // 
+            // WstGrp11DataSet
+            // 
+            this.WstGrp11DataSet.DataSetName = "WstGrp11DataSet";
+            this.WstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // grpbStock
             // 
             this.grpbStock.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -452,14 +500,14 @@
             this.dgvStock.AutoGenerateColumns = false;
             this.dgvStock.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn,
@@ -468,230 +516,34 @@
             this.sellingPriceDataGridViewTextBoxColumn,
             this.stockOnHandDataGridViewTextBoxColumn});
             this.dgvStock.DataSource = this.stockBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStock.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStock.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvStock.EnableHeadersVisualStyles = false;
             this.dgvStock.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvStock.Location = new System.Drawing.Point(29, 43);
             this.dgvStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvStock.Name = "dgvStock";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvStock.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvStock.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvStock.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvStock.RowTemplate.Height = 24;
             this.dgvStock.Size = new System.Drawing.Size(825, 305);
             this.dgvStock.TabIndex = 0;
             this.dgvStock.DoubleClick += new System.EventHandler(this.dgvStock_DoubleClick);
-            // 
-            // lblSearchItem
-            // 
-            this.lblSearchItem.AutoSize = true;
-            this.lblSearchItem.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchItem.Location = new System.Drawing.Point(11, 90);
-            this.lblSearchItem.Name = "lblSearchItem";
-            this.lblSearchItem.Size = new System.Drawing.Size(202, 32);
-            this.lblSearchItem.TabIndex = 2;
-            this.lblSearchItem.Text = "Search for item :";
-            // 
-            // txtSearchProduct
-            // 
-            this.txtSearchProduct.BackColor = System.Drawing.Color.LightBlue;
-            this.txtSearchProduct.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchProduct.Location = new System.Drawing.Point(226, 83);
-            this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(519, 39);
-            this.txtSearchProduct.TabIndex = 1;
-            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
-            // 
-            // tbpRefund
-            // 
-            this.tbpRefund.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpRefund.Controls.Add(this.btnRefundOrder);
-            this.tbpRefund.Controls.Add(this.groupBox4);
-            this.tbpRefund.Controls.Add(this.groupBox2);
-            this.tbpRefund.Controls.Add(this.npSearchOrderID);
-            this.tbpRefund.Controls.Add(this.label4);
-            this.tbpRefund.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpRefund.Location = new System.Drawing.Point(4, 30);
-            this.tbpRefund.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbpRefund.Name = "tbpRefund";
-            this.tbpRefund.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbpRefund.Size = new System.Drawing.Size(1934, 789);
-            this.tbpRefund.TabIndex = 1;
-            this.tbpRefund.Text = "Refund";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dgvRefundInnerJoin);
-            this.groupBox4.Location = new System.Drawing.Point(8, 450);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1477, 269);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Ordered Items";
-            // 
-            // dgvRefundInnerJoin
-            // 
-            this.dgvRefundInnerJoin.AutoGenerateColumns = false;
-            this.dgvRefundInnerJoin.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.dgvRefundInnerJoin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRefundInnerJoin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn1,
-            this.stockIDDataGridViewTextBoxColumn2,
-            this.nameDataGridViewTextBoxColumn2,
-            this.poductDescriptionDataGridViewTextBoxColumn2,
-            this.quantityDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.RefundItem});
-            this.dgvRefundInnerJoin.DataSource = this.refundInnerJoinBindingSource;
-            this.dgvRefundInnerJoin.Location = new System.Drawing.Point(6, 28);
-            this.dgvRefundInnerJoin.Name = "dgvRefundInnerJoin";
-            this.dgvRefundInnerJoin.RowHeadersWidth = 51;
-            this.dgvRefundInnerJoin.RowTemplate.Height = 24;
-            this.dgvRefundInnerJoin.Size = new System.Drawing.Size(1451, 219);
-            this.dgvRefundInnerJoin.TabIndex = 1;
-            this.dgvRefundInnerJoin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRefundInnerJoin_CellContentClick);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgvOrder);
-            this.groupBox2.Location = new System.Drawing.Point(8, 85);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1477, 322);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Order List";
-            // 
-            // dgvOrder
-            // 
-            this.dgvOrder.AutoGenerateColumns = false;
-            this.dgvOrder.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.customerIDDataGridViewTextBoxColumn,
-            this.staffIDDataGridViewTextBoxColumn,
-            this.methodOfPaymentDataGridViewTextBoxColumn,
-            this.transactionTypeDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.timeDataGridViewTextBoxColumn,
-            this.totalCostDataGridViewTextBoxColumn});
-            this.dgvOrder.DataSource = this.orderBindingSource;
-            this.dgvOrder.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvOrder.Location = new System.Drawing.Point(6, 28);
-            this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.RowHeadersWidth = 51;
-            this.dgvOrder.RowTemplate.Height = 24;
-            this.dgvOrder.Size = new System.Drawing.Size(1451, 276);
-            this.dgvOrder.TabIndex = 0;
-            this.dgvOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentDoubleClick);
-            this.dgvOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellDoubleClick);
-            // 
-            // npSearchOrderID
-            // 
-            this.npSearchOrderID.BackColor = System.Drawing.Color.LightBlue;
-            this.npSearchOrderID.Location = new System.Drawing.Point(433, 45);
-            this.npSearchOrderID.Name = "npSearchOrderID";
-            this.npSearchOrderID.Size = new System.Drawing.Size(145, 29);
-            this.npSearchOrderID.TabIndex = 4;
-            this.npSearchOrderID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(189, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Search for OrderID:";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.wstGrp11DataSetBindingSource;
-            // 
-            // btnRefundOrder
-            // 
-            this.btnRefundOrder.Location = new System.Drawing.Point(684, 39);
-            this.btnRefundOrder.Name = "btnRefundOrder";
-            this.btnRefundOrder.Size = new System.Drawing.Size(206, 44);
-            this.btnRefundOrder.TabIndex = 8;
-            this.btnRefundOrder.Text = "Refund Order";
-            this.btnRefundOrder.UseVisualStyleBackColor = true;
-            this.btnRefundOrder.Click += new System.EventHandler(this.btnRefundOrder_Click);
-            // 
-            // RefundItem
-            // 
-            this.RefundItem.HeaderText = "RefundItem";
-            this.RefundItem.MinimumWidth = 6;
-            this.RefundItem.Name = "RefundItem";
-            this.RefundItem.Text = "RefundItem";
-            this.RefundItem.UseColumnTextForButtonValue = true;
-            this.RefundItem.Width = 125;
-            // 
-            // stockIDDataGridViewTextBoxColumn1
-            // 
-            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
-            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
-            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.stockIDDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn1.Width = 135;
-            // 
-            // sellingPriceDataGridViewTextBoxColumn1
-            // 
-            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "Price";
-            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
-            this.sellingPriceDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.sellingPriceDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // stockOnHandDataGridViewTextBoxColumn1
-            // 
-            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
-            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "Stock";
-            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
-            this.stockOnHandDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.stockOnHandDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // salesInvoiceBindingSource
-            // 
-            this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
-            this.salesInvoiceBindingSource.DataSource = this.WstGrp11DataSet;
-            // 
-            // WstGrp11DataSet
-            // 
-            this.WstGrp11DataSet.DataSetName = "WstGrp11DataSet";
-            this.WstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // stockIDDataGridViewTextBoxColumn
             // 
@@ -738,6 +590,86 @@
             // 
             this.stockBindingSource.DataMember = "Stock";
             this.stockBindingSource.DataSource = this.WstGrp11DataSet;
+            // 
+            // lblSearchItem
+            // 
+            this.lblSearchItem.AutoSize = true;
+            this.lblSearchItem.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchItem.Location = new System.Drawing.Point(11, 90);
+            this.lblSearchItem.Name = "lblSearchItem";
+            this.lblSearchItem.Size = new System.Drawing.Size(202, 32);
+            this.lblSearchItem.TabIndex = 2;
+            this.lblSearchItem.Text = "Search for item :";
+            // 
+            // txtSearchProduct
+            // 
+            this.txtSearchProduct.BackColor = System.Drawing.Color.LightBlue;
+            this.txtSearchProduct.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProduct.Location = new System.Drawing.Point(226, 83);
+            this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(519, 39);
+            this.txtSearchProduct.TabIndex = 1;
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+            // 
+            // tbpRefund
+            // 
+            this.tbpRefund.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpRefund.Controls.Add(this.btnRefundOrder);
+            this.tbpRefund.Controls.Add(this.groupBox4);
+            this.tbpRefund.Controls.Add(this.groupBox2);
+            this.tbpRefund.Controls.Add(this.npSearchOrderID);
+            this.tbpRefund.Controls.Add(this.label4);
+            this.tbpRefund.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpRefund.Location = new System.Drawing.Point(4, 30);
+            this.tbpRefund.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpRefund.Name = "tbpRefund";
+            this.tbpRefund.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpRefund.Size = new System.Drawing.Size(1934, 789);
+            this.tbpRefund.TabIndex = 1;
+            this.tbpRefund.Text = "Refund";
+            // 
+            // btnRefundOrder
+            // 
+            this.btnRefundOrder.Location = new System.Drawing.Point(684, 39);
+            this.btnRefundOrder.Name = "btnRefundOrder";
+            this.btnRefundOrder.Size = new System.Drawing.Size(206, 44);
+            this.btnRefundOrder.TabIndex = 8;
+            this.btnRefundOrder.Text = "Refund Order";
+            this.btnRefundOrder.UseVisualStyleBackColor = true;
+            this.btnRefundOrder.Click += new System.EventHandler(this.btnRefundOrder_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgvRefundInnerJoin);
+            this.groupBox4.Location = new System.Drawing.Point(8, 450);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1477, 269);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Ordered Items";
+            // 
+            // dgvRefundInnerJoin
+            // 
+            this.dgvRefundInnerJoin.AutoGenerateColumns = false;
+            this.dgvRefundInnerJoin.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dgvRefundInnerJoin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRefundInnerJoin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn1,
+            this.stockIDDataGridViewTextBoxColumn2,
+            this.nameDataGridViewTextBoxColumn2,
+            this.poductDescriptionDataGridViewTextBoxColumn2,
+            this.quantityDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.RefundItem});
+            this.dgvRefundInnerJoin.DataSource = this.refundInnerJoinBindingSource;
+            this.dgvRefundInnerJoin.Location = new System.Drawing.Point(6, 28);
+            this.dgvRefundInnerJoin.Name = "dgvRefundInnerJoin";
+            this.dgvRefundInnerJoin.RowHeadersWidth = 51;
+            this.dgvRefundInnerJoin.RowTemplate.Height = 24;
+            this.dgvRefundInnerJoin.Size = new System.Drawing.Size(1451, 219);
+            this.dgvRefundInnerJoin.TabIndex = 1;
+            this.dgvRefundInnerJoin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRefundInnerJoin_CellContentClick);
             // 
             // orderIDDataGridViewTextBoxColumn1
             // 
@@ -787,10 +719,54 @@
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
+            // RefundItem
+            // 
+            this.RefundItem.HeaderText = "RefundItem";
+            this.RefundItem.MinimumWidth = 6;
+            this.RefundItem.Name = "RefundItem";
+            this.RefundItem.Text = "RefundItem";
+            this.RefundItem.UseColumnTextForButtonValue = true;
+            this.RefundItem.Width = 125;
+            // 
             // refundInnerJoinBindingSource
             // 
             this.refundInnerJoinBindingSource.DataMember = "RefundInnerJoin";
             this.refundInnerJoinBindingSource.DataSource = this.WstGrp11DataSet;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvOrder);
+            this.groupBox2.Location = new System.Drawing.Point(8, 85);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1477, 322);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Order List";
+            // 
+            // dgvOrder
+            // 
+            this.dgvOrder.AutoGenerateColumns = false;
+            this.dgvOrder.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn,
+            this.customerIDDataGridViewTextBoxColumn,
+            this.staffIDDataGridViewTextBoxColumn,
+            this.methodOfPaymentDataGridViewTextBoxColumn,
+            this.transactionTypeDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.timeDataGridViewTextBoxColumn,
+            this.totalCostDataGridViewTextBoxColumn});
+            this.dgvOrder.DataSource = this.orderBindingSource;
+            this.dgvOrder.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvOrder.Location = new System.Drawing.Point(6, 28);
+            this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.RowHeadersWidth = 51;
+            this.dgvOrder.RowTemplate.Height = 24;
+            this.dgvOrder.Size = new System.Drawing.Size(1451, 276);
+            this.dgvOrder.TabIndex = 0;
+            this.dgvOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentDoubleClick);
+            this.dgvOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellDoubleClick);
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -862,6 +838,32 @@
             this.orderBindingSource.DataMember = "Order";
             this.orderBindingSource.DataSource = this.WstGrp11DataSet;
             // 
+            // npSearchOrderID
+            // 
+            this.npSearchOrderID.BackColor = System.Drawing.Color.LightBlue;
+            this.npSearchOrderID.Location = new System.Drawing.Point(433, 45);
+            this.npSearchOrderID.Name = "npSearchOrderID";
+            this.npSearchOrderID.Size = new System.Drawing.Size(145, 29);
+            this.npSearchOrderID.TabIndex = 4;
+            this.npSearchOrderID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(189, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(220, 31);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Search for OrderID:";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.wstGrp11DataSetBindingSource;
+            // 
             // wstGrp11DataSetBindingSource
             // 
             this.wstGrp11DataSetBindingSource.DataSource = this.WstGrp11DataSet;
@@ -896,6 +898,16 @@
             // 
             this.TaRefundInnerJoin.ClearBeforeFill = true;
             // 
+            // btnGoToCustomer
+            // 
+            this.btnGoToCustomer.Location = new System.Drawing.Point(512, 156);
+            this.btnGoToCustomer.Name = "btnGoToCustomer";
+            this.btnGoToCustomer.Size = new System.Drawing.Size(198, 45);
+            this.btnGoToCustomer.TabIndex = 11;
+            this.btnGoToCustomer.Text = "Search Customer";
+            this.btnGoToCustomer.UseVisualStyleBackColor = true;
+            this.btnGoToCustomer.Click += new System.EventHandler(this.btnGoToCustomer_Click);
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -918,21 +930,21 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).EndInit();
             this.grpbStock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.tbpRefund.ResumeLayout(false);
             this.tbpRefund.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefundInnerJoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refundInnerJoinBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npSearchOrderID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refundInnerJoinBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1016,5 +1028,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn RefundItem;
+        private System.Windows.Forms.Button btnGoToCustomer;
     }
 }

@@ -16,5 +16,12 @@ namespace Istn3ASproject
         {
             InitializeComponent();
         }
+
+        private void frmReports_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
+            this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
+
+        }
     }
 }
