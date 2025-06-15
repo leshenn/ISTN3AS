@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -159,6 +162,18 @@ namespace Istn3ASproject
                 if (result == DialogResult.OK)
                 {
                     ProcessOrder(CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total);
+
+                    // Save PDF in Customer Folder
+                    string solutionPath = Application.StartupPath; // Path to /bin/Debug or /bin/Release
+                    string invoiceFolder = Path.Combine(solutionPath, "Invoices");
+                    Directory.CreateDirectory(invoiceFolder); // Ensures it exists
+                    string fileName = $"Invoice_{CustomerID}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+                    string fullPath = Path.Combine(invoiceFolder, fileName);
+
+                    GenerateInvoicePDF(fullPath, CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total);
+
+                    MessageBox.Show($"Invoice saved to:\n{fullPath}", "PDF Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     resetInterface();
                 }
                 else
@@ -168,6 +183,28 @@ namespace Istn3ASproject
                 }
             }
 
+        }
+
+        private void GenerateInvoicePDF(string filePath, int customerID, int staffID, string paymentMethod, string transactionType, string date, string time, decimal total)
+        {
+            Document doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+            doc.Open();
+
+            doc.Add(new Paragraph("INVOICE"));
+            doc.Add(new Paragraph($"Customer ID: {customerID}"));
+            doc.Add(new Paragraph($"Staff ID: {staffID}"));
+            doc.Add(new Paragraph($"Payment Method: {paymentMethod}"));
+            doc.Add(new Paragraph($"Transaction Type: {transactionType}"));
+            doc.Add(new Paragraph($"Date: {date}"));
+            doc.Add(new Paragraph($"Time: {time}"));
+            doc.Add(new Paragraph($"Total: R{total:F2}"));
+            doc.Add(new Paragraph(" "));
+
+            doc.Add(new Paragraph("Order Items:"));
+            doc.Add(new Paragraph(listItems())); // make sure listItems returns a string of the order
+
+            doc.Close();
         }
 
         public void resetInterface()
