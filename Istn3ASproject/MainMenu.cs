@@ -50,6 +50,7 @@ namespace Istn3ASproject
                     break;
             }
         }
+
         private frmPOS posForm = new frmPOS();
 
         public void loadForm(Form formToLoad)
