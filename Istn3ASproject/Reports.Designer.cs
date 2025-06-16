@@ -293,23 +293,6 @@
             // 
             // chrtFinancialLine
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chrtFinancialLine.ChartAreas.Add(chartArea6);
-            this.chrtFinancialLine.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chrtFinancialLine.Legends.Add(legend6);
-            this.chrtFinancialLine.Location = new System.Drawing.Point(3, 30);
-            this.chrtFinancialLine.Name = "chrtFinancialLine";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Legend = "Legend1";
-            series8.Name = "income";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Legend = "Legend1";
-            series9.Name = "expenses";
-            this.chrtFinancialLine.Series.Add(series8);
-            this.chrtFinancialLine.Series.Add(series9);
             this.chrtFinancialLine.Size = new System.Drawing.Size(1167, 392);
             this.chrtFinancialLine.TabIndex = 4;
             this.chrtFinancialLine.Text = "chart1";
@@ -444,10 +427,6 @@
             this.chrtFinancial.Location = new System.Drawing.Point(29, 92);
             this.chrtFinancial.Name = "chrtFinancial";
             this.chrtFinancial.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Money Flow";
-            this.chrtFinancial.Series.Add(series7);
             this.chrtFinancial.Size = new System.Drawing.Size(615, 331);
             this.chrtFinancial.TabIndex = 1;
             this.chrtFinancial.Text = "Financial Chart";
