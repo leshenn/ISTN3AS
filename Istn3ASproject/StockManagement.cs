@@ -537,6 +537,7 @@ namespace Istn3ASproject
         //THIS IS TO ADD A NEW ITEM TO THE STOCK TABLE
         private void btnAddItem_Click(object sender, EventArgs e)
         {
+            //ADDING NEW ITEM TO STOCK TABLE
             try
             {
                 bool bname = true, bdesc = true, bsell = true, bbuy = true; //for manditory values
@@ -732,6 +733,7 @@ namespace Istn3ASproject
 
         private void dgvUpdateStock_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //POPULATE TEXTBOXES WITH VALUES SO USER CAN EDIT VALUES
             txtProdNameUpdate.Text = dgvUpdateStock.CurrentRow.Cells[1].Value.ToString();
             txtProdDescUpdate.Text = dgvUpdateStock.CurrentRow.Cells[2].Value.ToString();
             txtProdSPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[3].Value.ToString();
@@ -740,45 +742,10 @@ namespace Istn3ASproject
             txtProdExpirUpdate.Text = dgvUpdateStock.CurrentRow.Cells[7].Value.ToString(); ;
         }
 
-        private bool validateUpdateValues(string name, string desc, string sprice, string bprice, string reorder, string expir)
-        {
-            bool isLettersName = false;
-            bool isLettersDesc = false;
-            bool isFloatS = false;
-            bool isFloatB = false;
-            bool isIntReorder = false;
-            bool isIntExpir = false;
-
-            if (name is string)
-            {
-                isLettersName = true;
-            }
-            if (desc is string)
-            {
-                isLettersDesc = true;
-            }
-            if (sprice is float)
-            {
-                isFloatS = true;
-            }
-            if (bprice is float)
-            {
-                isFloatB = true;
-            }
-            if (reorder is int)
-            {
-                isIntReorder = true;
-            }
-            if (expir is int)
-            {
-                isIntExpir = true;
-            }
-
-            return isLettersName && isLettersDesc && isFloatS && isFloatB && isIntReorder && isIntExpir;
-        }
 
         private void btnUpdateItemDetails_Click(object sender, EventArgs e)
         {
+            //UPATING ITEM DETAILS
             try
             {
                 bool selected = true;
@@ -900,6 +867,50 @@ namespace Istn3ASproject
             }
 
             
+        }
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            //SEARCH ITEMS BY PRODUCT NAME
+            stockTableAdapter.FillByName(wstGrp11DataSet.Stock, txtSearchByName.Text);
+        }
+
+        private void btnViewLowStock_Click(object sender, EventArgs e)
+        {
+            //VIEW ALL ITEMS TO BE REORDERED
+            stockTableAdapter.FillByStockToReorder(wstGrp11DataSet.Stock);
+        }
+
+        private void btnManageInventoryHelp_Click(object sender, EventArgs e)
+        {
+            //THIS HELPS THE USER UNDERSTAND HOW TO USE THE MANAGE INVENTORY TAB
+            string help = "";
+            help += "MANAGE INVENTORY GUIDE\n" +
+                "======================================\n" +
+                "======================================\n" +
+                "\n" +
+                "1. SEARCH FOR A STOCK ITEM\n" +
+                " - Type the item name in the search textbox\n" +
+                "\n" +
+                "2. VIEW ALL STOCK ITEMS TO BE REORDERED\n" +
+                " - Press the 'View Low Stock' button to view all low stock\n" +
+                "\n" +
+                "3. ADD A NEW ITEM TO THE DATABASE\n" +
+                " - Required Fields:\n" +
+                "  * Product Name\n" +
+                "  * Product Description\n" +
+                "  * Selling Price\n" +
+                "  * Buying Price\n" +
+                " - Click on 'Add Item to Inventory' when complete\n" +
+                "\n" +
+                "4. UPDATE ITEM DETAILS\n" +
+                " - First Select an item from the table\n" +
+                " - Item details will auto-populate in the textboxes\n" +
+                " - Change any values that need to be updated by typing\n" +
+                "   in the textboxes\n" +
+                " - Click on 'Update Item Details' to save changes";
+
+            MessageBox.Show(help, "Manage Inventory Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
