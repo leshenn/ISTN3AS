@@ -940,7 +940,7 @@ namespace Istn3ASproject
             this.btnHelpStaffTab.BackColor = System.Drawing.Color.LightBlue;
             this.btnHelpStaffTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHelpStaffTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelpStaffTab.Location = new System.Drawing.Point(270, 318);
+            this.btnHelpStaffTab.Location = new System.Drawing.Point(908, 37);
             this.btnHelpStaffTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHelpStaffTab.Name = "btnHelpStaffTab";
             this.btnHelpStaffTab.Size = new System.Drawing.Size(89, 27);
