@@ -119,7 +119,7 @@
       <RoutePoints>
         <Point>
           <X>1434</X>
-          <Y>690</Y>
+          <Y>634</Y>
         </Point>
         <Point>
           <X>1434</X>
@@ -135,7 +135,7 @@
       <RoutePoints>
         <Point>
           <X>1442</X>
-          <Y>690</Y>
+          <Y>634</Y>
         </Point>
         <Point>
           <X>1442</X>
@@ -232,86 +232,6 @@
         <Point>
           <X>1124</X>
           <Y>247</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_OrderLine_Stock6" ZOrder="9" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1534</X>
-          <Y>285</Y>
-        </Point>
-        <Point>
-          <X>1534</X>
-          <Y>821</Y>
-        </Point>
-        <Point>
-          <X>647</X>
-          <Y>821</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_SupplierLineOrder_Stock3" ZOrder="8" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1564</X>
-          <Y>285</Y>
-        </Point>
-        <Point>
-          <X>1564</X>
-          <Y>829</Y>
-        </Point>
-        <Point>
-          <X>1198</X>
-          <Y>829</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_SupplierLineOrder_Stock4" ZOrder="6" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1700</X>
-          <Y>692</Y>
-        </Point>
-        <Point>
-          <X>1700</X>
-          <Y>1037</Y>
-        </Point>
-        <Point>
-          <X>1258</X>
-          <Y>1037</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_SupplierLineOrder_Stock5" ZOrder="5" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1450</X>
-          <Y>690</Y>
-        </Point>
-        <Point>
-          <X>1450</X>
-          <Y>1045</Y>
-        </Point>
-        <Point>
-          <X>1258</X>
-          <Y>1045</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_SupplierLineOrder_Stock6" ZOrder="4" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>950</X>
-          <Y>560</Y>
-        </Point>
-        <Point>
-          <X>950</X>
-          <Y>1053</Y>
-        </Point>
-        <Point>
-          <X>958</X>
-          <Y>1053</Y>
         </Point>
       </RoutePoints>
     </Connector>

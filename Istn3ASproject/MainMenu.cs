@@ -13,23 +13,17 @@ namespace Istn3ASproject
     public partial class MainMenu : Form
     {
         public string ROLE;
-        public int staffID;
-       // private frmPOS posForm = new frmPOS();
-       
 
-        public MainMenu(string firstName, string lastName, string role,int staffID)
+        public MainMenu(string firstName, string lastName, string role)
         {
             InitializeComponent();
 
             lblU.Text = $"User Logged in: {firstName} {lastName}";
             lblR.Text = $"Role: {role}";
             ROLE = role ;
-            this.staffID = staffID;
-
-
             ConfigureAccess(role);
         }
-        
+
         private void ConfigureAccess(string role)
         {
             //  role-based  access
@@ -56,8 +50,8 @@ namespace Istn3ASproject
                     break;
             }
         }
-        
 
+        private frmPOS posForm = new frmPOS();
 
         public void loadForm(Form formToLoad)
         {
@@ -102,14 +96,13 @@ namespace Istn3ASproject
 
         private void btnUserMangement_Click(object sender, EventArgs e)
         {
-            var userForm = new frmUserManagement(loadForm, new frmPOS(loadForm, ROLE, staffID), ROLE);
+            var userForm = new frmUserManagement(loadForm, posForm, ROLE);
             loadForm(userForm);
         }
         
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
-            var posForm = new frmPOS(loadForm, ROLE,staffID);
             loadForm(posForm);
         }
 

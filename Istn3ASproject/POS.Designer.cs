@@ -47,7 +47,6 @@
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.btnPOSHelp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGoToCustomer = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCustomerLN = new System.Windows.Forms.Label();
@@ -120,8 +119,6 @@
             this.TaSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.TaCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.TaRefundInnerJoin = new Istn3ASproject.WstGrp11DataSetTableAdapters.RefundInnerJoinTableAdapter();
-            this.labelStaffID = new System.Windows.Forms.Label();
-            this.lblStaffID = new System.Windows.Forms.Label();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -165,8 +162,6 @@
             this.tbpSales.AutoScroll = true;
             this.tbpSales.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tbpSales.Controls.Add(this.btnPOSHelp);
-            this.tbpSales.Controls.Add(this.lblStaffID);
-            this.tbpSales.Controls.Add(this.labelStaffID);
             this.tbpSales.Controls.Add(this.panel1);
             this.tbpSales.Controls.Add(this.groupBox1);
             this.tbpSales.Controls.Add(this.grpbStock);
@@ -197,7 +192,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnGoToCustomer);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblCustomerLN);
             this.panel1.Controls.Add(this.label2);
@@ -216,16 +210,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(534, 346);
             this.panel1.TabIndex = 10;
-            // 
-            // btnGoToCustomer
-            // 
-            this.btnGoToCustomer.Location = new System.Drawing.Point(512, 156);
-            this.btnGoToCustomer.Name = "btnGoToCustomer";
-            this.btnGoToCustomer.Size = new System.Drawing.Size(198, 45);
-            this.btnGoToCustomer.TabIndex = 11;
-            this.btnGoToCustomer.Text = "Search Customer";
-            this.btnGoToCustomer.UseVisualStyleBackColor = true;
-            this.btnGoToCustomer.Click += new System.EventHandler(this.btnGoToCustomer_Click);
             // 
             // panel3
             // 
@@ -1041,23 +1025,6 @@
             // 
             this.TaRefundInnerJoin.ClearBeforeFill = true;
             // 
-            // labelStaffID
-            // 
-            this.labelStaffID.AutoSize = true;
-            this.labelStaffID.Location = new System.Drawing.Point(46, 15);
-            this.labelStaffID.Name = "labelStaffID";
-            this.labelStaffID.Size = new System.Drawing.Size(77, 23);
-            this.labelStaffID.TabIndex = 11;
-            this.labelStaffID.Text = "StaffID: ";
-            // 
-            // lblStaffID
-            // 
-            this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(129, 15);
-            this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(0, 23);
-            this.lblStaffID.TabIndex = 12;
-            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1180,8 +1147,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn RefundItem;
         private System.Windows.Forms.Button btnPOSHelp;
         private System.Windows.Forms.Button btnRefundHelp;
-        private System.Windows.Forms.Button btnGoToCustomer;
-        private System.Windows.Forms.Label lblStaffID;
-        private System.Windows.Forms.Label labelStaffID;
     }
 }
