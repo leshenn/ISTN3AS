@@ -40,12 +40,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panMain = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panHead.SuspendLayout();
             this.panMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHead
             // 
+            this.panHead.Controls.Add(this.btnLogout);
             this.panHead.Controls.Add(this.lblR);
             this.panHead.Controls.Add(this.lblU);
             this.panHead.Controls.Add(this.lblUserRole);
@@ -58,7 +60,7 @@
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
             this.panHead.Name = "panHead";
-            this.panHead.Size = new System.Drawing.Size(1501, 61);
+            this.panHead.Size = new System.Drawing.Size(1370, 61);
             this.panHead.TabIndex = 0;
             // 
             // lblR
@@ -154,7 +156,7 @@
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 61);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1501, 603);
+            this.panMain.Size = new System.Drawing.Size(1370, 603);
             this.panMain.TabIndex = 1;
             // 
             // lblWelcome
@@ -163,18 +165,30 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Nirmala UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblWelcome.Location = new System.Drawing.Point(492, 186);
+            this.lblWelcome.Location = new System.Drawing.Point(427, 186);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(522, 128);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(677, 10);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(118, 41);
+            this.btnLogout.TabIndex = 9;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
+            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1501, 664);
+            this.ClientSize = new System.Drawing.Size(1370, 664);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panHead);
             this.IsMdiContainer = true;
@@ -203,5 +217,6 @@
         public System.Windows.Forms.Panel panHead;
         public System.Windows.Forms.Label lblU;
         public System.Windows.Forms.Label lblR;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

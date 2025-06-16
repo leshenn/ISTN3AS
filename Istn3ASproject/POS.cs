@@ -142,7 +142,12 @@ namespace Istn3ASproject
         decimal changeToGive = 0;
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
+            int transactionTypeIndex = cmbPaymentMethod.SelectedIndex;
 
+            if(transactionTypeIndex == 1)
+            {
+                //
+            }
 
             if (ReadyToProcess())
             {

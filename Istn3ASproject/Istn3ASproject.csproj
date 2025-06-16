@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardPortal.Designer.cs">
+      <DependentUpon>CardPortal.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +130,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WstGrp11DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CardPortal.resx">
+      <DependentUpon>CardPortal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +221,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\absa.png" />
+    <Content Include="Resources\capitec.png" />
+    <Content Include="Resources\fnb.png" />
+    <Content Include="Resources\masterCard.png" />
+    <Content Include="Resources\nedbank.png" />
+    <Content Include="Resources\standardBank.png" />
+    <Content Include="Resources\visa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

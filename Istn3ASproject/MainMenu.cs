@@ -111,5 +111,32 @@ namespace Istn3ASproject
             frmLogin loginform = new frmLogin();
         
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            
+         DialogResult result = MessageBox.Show(
+        "Are you sure you want to LOGOUT?",
+        "LOGOUT Application",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.LightBlue;
+            btnLogout.ForeColor = Color.Black;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = SystemColors.Control; // Default color
+            btnLogout.ForeColor = SystemColors.ControlText;
+        }
     }
 }
