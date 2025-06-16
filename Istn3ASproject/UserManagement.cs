@@ -31,11 +31,12 @@ namespace Istn3ASproject
         private Action<Form> navigate;
         private frmPOS posForm;
 
-        public frmUserManagement(Action<Form> navigateTo, frmPOS posFormRef)
+        public frmUserManagement(Action<Form> navigateTo, frmPOS posFormRef,string role)
         {
             InitializeComponent();
             navigate = navigateTo;
             posForm = posFormRef;
+            _userRole =role;
         }
 
         private void ConfigureAccess()

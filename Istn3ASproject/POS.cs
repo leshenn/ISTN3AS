@@ -10,11 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
+
     public partial class frmPOS : Form
     {
         public frmPOS()
@@ -46,6 +50,7 @@ namespace Istn3ASproject
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
             this.taStock.Fill(this.WstGrp11DataSet.Stock);
+            
 
 
         }
@@ -132,6 +137,9 @@ namespace Istn3ASproject
             return quantity;
         }
 
+
+        decimal cashReceived = 0;
+        decimal changeToGive = 0;
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
 
@@ -139,6 +147,7 @@ namespace Istn3ASproject
             if (ReadyToProcess())
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
+                String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;
                 int StaffID = 1;
                 string TransactionType = "sale";
                 string Today = DateTime.Today.ToString("yyyy-MM-dd");
@@ -159,6 +168,18 @@ namespace Istn3ASproject
                 if (result == DialogResult.OK)
                 {
                     ProcessOrder(CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total);
+
+                    // Save PDF in Customer Folder
+                    string solutionPath = Application.StartupPath; // Path to /bin/Debug or /bin/Release
+                    string invoiceFolder = Path.Combine(solutionPath, "Invoices");
+                    Directory.CreateDirectory(invoiceFolder); // Ensures it exists
+                    string fileName = $"Invoice_{CustomerID}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+                    string fullPath = Path.Combine(invoiceFolder, fileName);
+
+                    GenerateInvoicePDF(fullPath, CustomerName, CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total, cashReceived, changeToGive);
+
+                    MessageBox.Show($"Invoice saved to:\n{fullPath}", "PDF Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     resetInterface();
                 }
                 else
@@ -168,6 +189,141 @@ namespace Istn3ASproject
                 }
             }
 
+        }
+
+        private void GenerateInvoicePDF(
+            string filePath,
+            string customerName,
+            int customerID,
+            int staffID,
+            string paymentMethod,
+            string transactionType,
+            string date,
+            string time,
+            decimal total,
+            decimal cashReceived,
+            decimal changeToGive)
+        {
+            Document doc = new Document(PageSize.A4, 50, 50, 25, 25);
+            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+            doc.Open();
+
+            // Fonts
+            var bold = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+            var regular = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+            var boldSmall = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+
+            // Header table: 2 columns (text left, logo right)
+            PdfPTable headerTable = new PdfPTable(2);
+            headerTable.WidthPercentage = 100;
+            headerTable.SetWidths(new float[] { 3, 1 });
+
+            PdfPCell businessNameCell = new PdfPCell(new Phrase("TIAS FISHERIES", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 20)));
+            businessNameCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            businessNameCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            businessNameCell.HorizontalAlignment = Element.ALIGN_LEFT;
+
+            string logoPath = "Logo/logo.png";
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logoPath);
+            logo.ScaleAbsolute(100f, 100f);
+
+            PdfPCell logoCell = new PdfPCell(logo);
+            logoCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            logoCell.HorizontalAlignment = Element.ALIGN_RIGHT;
+            logoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+
+            headerTable.AddCell(businessNameCell);
+            headerTable.AddCell(logoCell);
+            doc.Add(headerTable);
+
+            // Header
+            doc.Add(new Paragraph("INVOICE", bold));
+            doc.Add(new Paragraph($"Date: {DateTime.Now:dd MMMM yyyy}", regular));
+            doc.Add(new Paragraph(" "));
+
+            // Customer & staff info
+            PdfPTable partiesTable = new PdfPTable(2);
+            partiesTable.WidthPercentage = 100;
+            partiesTable.SetWidths(new float[] { 1, 1 });
+
+            PdfPCell billedTo = new PdfPCell();
+            billedTo.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            billedTo.AddElement(new Paragraph("Billed to:", boldSmall));
+            billedTo.AddElement(new Paragraph($"Customer ID: {customerID}", regular));
+            billedTo.AddElement(new Paragraph($"Customer Name: {customerName}", regular));
+
+            PdfPCell from = new PdfPCell();
+            from.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            from.AddElement(new Paragraph("From:", boldSmall));
+            from.AddElement(new Paragraph($"Staff ID: {staffID}", regular));
+
+            partiesTable.AddCell(billedTo);
+            partiesTable.AddCell(from);
+
+            doc.Add(partiesTable);
+            doc.Add(new Paragraph(" "));
+
+            // Items
+            PdfPTable itemTable = new PdfPTable(4);
+            itemTable.WidthPercentage = 100;
+            itemTable.SetWidths(new float[] { 3, 1, 1, 1 });
+
+            itemTable.AddCell(new PdfPCell(new Phrase("Item", boldSmall)));
+            itemTable.AddCell(new PdfPCell(new Phrase("Quantity", boldSmall)));
+            itemTable.AddCell(new PdfPCell(new Phrase("Price", boldSmall)));
+            itemTable.AddCell(new PdfPCell(new Phrase("Amount", boldSmall)));
+
+            string[] lines = listItemInformation().Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
+            {
+                var parts = line.Split('\t');
+                if (parts.Length == 4)
+                {
+                    string name = parts[0].Trim();
+                    string qtyText = parts[1].Trim();
+                    string priceText = parts[2].Trim();
+                    string amountText = parts[3].Trim();
+
+                    itemTable.AddCell(new PdfPCell(new Phrase(name, regular)));
+                    itemTable.AddCell(new PdfPCell(new Phrase(qtyText, regular)));
+                    itemTable.AddCell(new PdfPCell(new Phrase($"R{priceText}", regular)));
+                    itemTable.AddCell(new PdfPCell(new Phrase($"R{amountText}", regular)));
+                }
+            }
+
+            PdfPCell totalLabelCell = new PdfPCell(new Phrase("Total", boldSmall));
+            totalLabelCell.Colspan = 3;
+            totalLabelCell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
+            PdfPCell totalValueCell = new PdfPCell(new Phrase($"R{total:F2}", boldSmall));
+            totalValueCell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
+            itemTable.AddCell(totalLabelCell);
+            itemTable.AddCell(totalValueCell);
+
+            doc.Add(itemTable);
+            doc.Add(new Paragraph(" "));
+
+            // Payment method
+            doc.Add(new Paragraph($"Payment method: {paymentMethod}", regular));
+
+            if (paymentMethod.ToLower() == "cash")
+            {
+                doc.Add(new Paragraph($"Amount received: R{cashReceived:F2}", regular));
+                doc.Add(new Paragraph($"Change to give: R{changeToGive:F2}", regular));
+            }
+
+            doc.Add(new Paragraph("Note: Thank you for choosing us!", regular));
+            doc.Close();
+
+            // Open the PDF
+            var process = new System.Diagnostics.Process();
+            process.StartInfo = new System.Diagnostics.ProcessStartInfo()
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            };
+            process.Start();
         }
 
         public void resetInterface()
@@ -226,6 +382,8 @@ namespace Istn3ASproject
                             if (dChange > Convert.ToDecimal(lblTotal.Text))
                             {
                                 ChangeValid = true;
+                                cashReceived = dChange;
+                                changeToGive = dChange - Convert.ToDecimal(lblTotal.Text.Replace("R", ""));
                             }
                             else
                             {
@@ -262,6 +420,25 @@ namespace Istn3ASproject
 
                 //ADD TO STRING OF ITEMS
                 listOfItems +=" " + name + "\t" + SubTotal.ToString("C2") + "\n";
+            }
+            return listOfItems;
+        }
+
+        private string listItemInformation()
+        {
+            string listOfItems = "";
+
+            for (int i = 0; i < dgvSalesInvoice.Rows.Count; i++)
+            {
+                //GET ITEM INFORMATION
+                string StockID = dgvSalesInvoice.Rows[i].Cells[0].Value.ToString();
+                string name = dgvSalesInvoice.Rows[i].Cells[1].Value.ToString();
+                decimal price = Convert.ToDecimal(dgvSalesInvoice.Rows[i].Cells[3].Value);
+                int quantity = Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[5].Value.ToString());
+                decimal SubTotal = price * quantity;
+
+                //ADD TO STRING OF ITEMS
+                listOfItems += $"{name}\t{quantity}\t{price:F2}\t{SubTotal:F2}\n";
             }
             return listOfItems;
         }
@@ -427,6 +604,30 @@ namespace Istn3ASproject
             }
 
             taOrder.RefundItem(TransactionType, Total, OrderID);
+        }
+
+        private void btnPOSHelp_Click(object sender, EventArgs e)
+        {
+            string message = " POS PAGE HELP INFORMATION\n" +
+                "==============================================" +
+                "\n Before an order can proceed 3 requirements need to be met :\n\n" +
+                             "1) Choose a customer - Go to the user management page and select a customer on the customer grid then select create a new order\n" +
+                             "2) The order has to have items - double click the stock grid to add specific items to the order, you can use the search bar to search items by name\n" +
+                             "3) Choose a payment type - click the dropdown box and select a payment type for the transaction";
+
+            MessageBox.Show(message, "POS Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnRefundHelp_Click(object sender, EventArgs e)
+        {
+            string message = " Refund PAGE HELP INFORMATION\n" +
+    "=================================" +
+    "\n when you double click an order in the order data grid view :\n\n" +
+                 "-it shows all the items accociated with that order\n" +
+                 "-Gives the option to refund that order setting the value of income of that order to zero and setting tranaction typr to refund\n" +
+                 "-Allows you you refund sepcific items in the order adjusting the value and type of the order";
+
+            MessageBox.Show(message, "Refund Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

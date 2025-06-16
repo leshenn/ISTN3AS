@@ -50,6 +50,7 @@ namespace Istn3ASproject
                     break;
             }
         }
+
         private frmPOS posForm = new frmPOS();
 
         public void loadForm(Form formToLoad)
@@ -95,7 +96,8 @@ namespace Istn3ASproject
 
         private void btnUserMangement_Click(object sender, EventArgs e)
         {
-            loadForm(new frmUserManagement(ROLE));
+            var userForm = new frmUserManagement(loadForm, posForm, ROLE);
+            loadForm(userForm);
         }
         
 
