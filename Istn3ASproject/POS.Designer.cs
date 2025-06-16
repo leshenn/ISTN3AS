@@ -47,6 +47,7 @@
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.btnPOSHelp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGoToCustomer = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCustomerLN = new System.Windows.Forms.Label();
@@ -85,7 +86,9 @@
             this.lblSearchItem = new System.Windows.Forms.Label();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.tbpRefund = new System.Windows.Forms.TabPage();
+
             this.btnRefundHelp = new System.Windows.Forms.Button();
+
             this.btnRefundOrder = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvRefundInnerJoin = new System.Windows.Forms.DataGridView();
@@ -119,6 +122,8 @@
             this.TaSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.TaCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.TaRefundInnerJoin = new Istn3ASproject.WstGrp11DataSetTableAdapters.RefundInnerJoinTableAdapter();
+            this.labelStaffID = new System.Windows.Forms.Label();
+            this.lblStaffID = new System.Windows.Forms.Label();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -161,7 +166,12 @@
             // 
             this.tbpSales.AutoScroll = true;
             this.tbpSales.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpSales.Controls.Add(this.btnPOSHelp);
+
+            this.tbpSales.Controls.Add(this.btnPOSHelp);//
+
+            this.tbpSales.Controls.Add(this.lblStaffID);
+            this.tbpSales.Controls.Add(this.labelStaffID);
+
             this.tbpSales.Controls.Add(this.panel1);
             this.tbpSales.Controls.Add(this.groupBox1);
             this.tbpSales.Controls.Add(this.grpbStock);
@@ -192,6 +202,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnGoToCustomer);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblCustomerLN);
             this.panel1.Controls.Add(this.label2);
@@ -210,6 +221,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(534, 346);
             this.panel1.TabIndex = 10;
+            // 
+            // btnGoToCustomer
+            // 
+            this.btnGoToCustomer.Location = new System.Drawing.Point(512, 156);
+            this.btnGoToCustomer.Name = "btnGoToCustomer";
+            this.btnGoToCustomer.Size = new System.Drawing.Size(198, 45);
+            this.btnGoToCustomer.TabIndex = 11;
+            this.btnGoToCustomer.Text = "Search Customer";
+            this.btnGoToCustomer.UseVisualStyleBackColor = true;
+            this.btnGoToCustomer.Click += new System.EventHandler(this.btnGoToCustomer_Click);
             // 
             // panel3
             // 
@@ -637,10 +658,12 @@
             // 
             this.lblSearchItem.AutoSize = true;
             this.lblSearchItem.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.lblSearchItem.Location = new System.Drawing.Point(8, 73);
             this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
             this.lblSearchItem.Size = new System.Drawing.Size(157, 25);
+
             this.lblSearchItem.TabIndex = 2;
             this.lblSearchItem.Text = "Search for item :";
             // 
@@ -648,23 +671,28 @@
             // 
             this.txtSearchProduct.BackColor = System.Drawing.Color.LightBlue;
             this.txtSearchProduct.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.txtSearchProduct.Location = new System.Drawing.Point(170, 67);
             this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.Size = new System.Drawing.Size(390, 33);
+
             this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // tbpRefund
             // 
             this.tbpRefund.BackColor = System.Drawing.SystemColors.ActiveCaption;
+
             this.tbpRefund.Controls.Add(this.btnRefundHelp);
+
             this.tbpRefund.Controls.Add(this.btnRefundOrder);
             this.tbpRefund.Controls.Add(this.groupBox4);
             this.tbpRefund.Controls.Add(this.groupBox2);
             this.tbpRefund.Controls.Add(this.npSearchOrderID);
             this.tbpRefund.Controls.Add(this.label4);
             this.tbpRefund.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+
             this.tbpRefund.Location = new System.Drawing.Point(4, 26);
             this.tbpRefund.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpRefund.Name = "tbpRefund";
@@ -694,6 +722,7 @@
             this.btnRefundOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefundOrder.Name = "btnRefundOrder";
             this.btnRefundOrder.Size = new System.Drawing.Size(154, 36);
+
             this.btnRefundOrder.TabIndex = 8;
             this.btnRefundOrder.Text = "Refund Order";
             this.btnRefundOrder.UseVisualStyleBackColor = true;
@@ -702,17 +731,20 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dgvRefundInnerJoin);
+
             this.groupBox4.Location = new System.Drawing.Point(6, 366);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Size = new System.Drawing.Size(1108, 219);
+
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ordered Items";
             // 
             // dgvRefundInnerJoin
             // 
+
             this.dgvRefundInnerJoin.AllowUserToAddRows = false;
             this.dgvRefundInnerJoin.AutoGenerateColumns = false;
             this.dgvRefundInnerJoin.BackgroundColor = System.Drawing.Color.LightBlue;
@@ -725,6 +757,8 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRefundInnerJoin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+
+     
             this.dgvRefundInnerJoin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRefundInnerJoin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderIDDataGridViewTextBoxColumn1,
@@ -735,6 +769,7 @@
             this.priceDataGridViewTextBoxColumn,
             this.RefundItem});
             this.dgvRefundInnerJoin.DataSource = this.refundInnerJoinBindingSource;
+
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -762,6 +797,7 @@
             this.dgvRefundInnerJoin.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvRefundInnerJoin.RowTemplate.Height = 24;
             this.dgvRefundInnerJoin.Size = new System.Drawing.Size(1088, 178);
+
             this.dgvRefundInnerJoin.TabIndex = 1;
             this.dgvRefundInnerJoin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRefundInnerJoin_CellContentClick);
             // 
@@ -830,17 +866,21 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvOrder);
+
             this.groupBox2.Location = new System.Drawing.Point(6, 69);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Size = new System.Drawing.Size(1108, 262);
+
+
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order List";
             // 
             // dgvOrder
             // 
+
             this.dgvOrder.AllowUserToAddRows = false;
             this.dgvOrder.AutoGenerateColumns = false;
             this.dgvOrder.BackgroundColor = System.Drawing.Color.LightBlue;
@@ -853,6 +893,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderIDDataGridViewTextBoxColumn,
@@ -864,6 +905,7 @@
             this.timeDataGridViewTextBoxColumn,
             this.totalCostDataGridViewTextBoxColumn});
             this.dgvOrder.DataSource = this.orderBindingSource;
+
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -889,6 +931,7 @@
             this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.RowTemplate.Height = 24;
             this.dgvOrder.Size = new System.Drawing.Size(1088, 224);
+
             this.dgvOrder.TabIndex = 0;
             this.dgvOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentDoubleClick);
             this.dgvOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellDoubleClick);
@@ -966,10 +1009,12 @@
             // npSearchOrderID
             // 
             this.npSearchOrderID.BackColor = System.Drawing.Color.LightBlue;
+
             this.npSearchOrderID.Location = new System.Drawing.Point(325, 37);
             this.npSearchOrderID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.npSearchOrderID.Name = "npSearchOrderID";
             this.npSearchOrderID.Size = new System.Drawing.Size(109, 25);
+
             this.npSearchOrderID.TabIndex = 4;
             this.npSearchOrderID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
@@ -979,10 +1024,12 @@
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+
             this.label4.Location = new System.Drawing.Point(142, 32);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 25);
+
             this.label4.TabIndex = 3;
             this.label4.Text = "Search for OrderID:";
             // 
@@ -1024,6 +1071,23 @@
             // TaRefundInnerJoin
             // 
             this.TaRefundInnerJoin.ClearBeforeFill = true;
+            // 
+            // labelStaffID
+            // 
+            this.labelStaffID.AutoSize = true;
+            this.labelStaffID.Location = new System.Drawing.Point(46, 15);
+            this.labelStaffID.Name = "labelStaffID";
+            this.labelStaffID.Size = new System.Drawing.Size(77, 23);
+            this.labelStaffID.TabIndex = 11;
+            this.labelStaffID.Text = "StaffID: ";
+            // 
+            // lblStaffID
+            // 
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.Location = new System.Drawing.Point(129, 15);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(0, 23);
+            this.lblStaffID.TabIndex = 12;
             // 
             // frmPOS
             // 
@@ -1145,7 +1209,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn RefundItem;
+
         private System.Windows.Forms.Button btnPOSHelp;
         private System.Windows.Forms.Button btnRefundHelp;
+
+        private System.Windows.Forms.Button btnGoToCustomer;
+        private System.Windows.Forms.Label lblStaffID;
+        private System.Windows.Forms.Label labelStaffID;
+
     }
 }
