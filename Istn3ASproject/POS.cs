@@ -575,5 +575,29 @@ namespace Istn3ASproject
 
             taOrder.RefundItem(TransactionType, Total, OrderID);
         }
+
+        private void btnPOSHelp_Click(object sender, EventArgs e)
+        {
+            string message = " POS PAGE HELP INFORMATION\n" +
+                "==============================================" +
+                "\n Before an order can proceed 3 requirements need to be met :\n\n" +
+                             "1) Choose a customer - Go to the user management page and select a customer on the customer grid then select create a new order\n" +
+                             "2) The order has to have items - double click the stock grid to add specific items to the order, you can use the search bar to search items by name\n" +
+                             "3) Choose a payment type - click the dropdown box and select a payment type for the transaction";
+
+            MessageBox.Show(message, "POS Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnRefundHelp_Click(object sender, EventArgs e)
+        {
+            string message = " Refund PAGE HELP INFORMATION\n" +
+    "=================================" +
+    "\n when you double click an order in the order data grid view :\n\n" +
+                 "-it shows all the items accociated with that order\n" +
+                 "-Gives the option to refund that order setting the value of income of that order to zero and setting tranaction typr to refund\n" +
+                 "-Allows you you refund sepcific items in the order adjusting the value and type of the order";
+
+            MessageBox.Show(message, "Refund Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
