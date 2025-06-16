@@ -992,7 +992,7 @@ namespace Istn3ASproject
         private void btnViewLowStock_Click(object sender, EventArgs e)
         {
             //VIEW ALL ITEMS TO BE REORDERED
-            stockTableAdapter.FillByStockToReorder(wstGrp11DataSet.Stock);
+          //  stockTableAdapter.FillByStockToReorder(wstGrp11DataSet.Stock);////////////////////////////////////////////////////////////////////////////////////////////////////////reminder redoooo
         }
 
         private void btnManageInventoryHelp_Click(object sender, EventArgs e)
