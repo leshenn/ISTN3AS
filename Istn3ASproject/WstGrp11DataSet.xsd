@@ -875,6 +875,16 @@ WHERE     (StockID = @stockid)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="WstGrp11ConnectionString (Settings)" DbObjectName="WstGrp11.dbo.Stock" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByStockToReorder" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy7" GeneratorSourceName="FillByStockToReorder" GetMethodModifier="Public" GetMethodName="GetDataBy7" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="FillByStockToReorder">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        StockID, Name, PoductDescription, SellingPrice, BuyingPrice, StockOnHand, ReorderLevel, ExpirationTime
+FROM            Stock
+WHERE        (StockOnHand &lt;= ReorderLevel)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="WstGrp11ConnectionString (Settings)" DbObjectName="WstGrp11.dbo.Stock" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="GetStockOnHandByID" GeneratorSourceName="GetStockOnHand" Modifier="Public" Name="GetStockOnHand" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetStockOnHand">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -1436,8 +1446,8 @@ WHERE  (OrderLine.OrderID = @orderID)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SellingPrice" msprop:Generator_ColumnPropNameInTable="SellingPriceColumn" msprop:Generator_ColumnPropNameInRow="SellingPrice" msprop:Generator_UserColumnName="SellingPrice" msprop:Generator_ColumnVarNameInTable="columnSellingPrice" type="xs:decimal" />
-              <xs:element name="StockOnHand" msprop:Generator_ColumnPropNameInTable="StockOnHandColumn" msprop:Generator_ColumnPropNameInRow="StockOnHand" msprop:Generator_UserColumnName="StockOnHand" msprop:Generator_ColumnVarNameInTable="columnStockOnHand" type="xs:int" />
+              <xs:element name="SellingPrice" msprop:Generator_ColumnVarNameInTable="columnSellingPrice" msprop:Generator_ColumnPropNameInRow="SellingPrice" msprop:Generator_ColumnPropNameInTable="SellingPriceColumn" msprop:Generator_UserColumnName="SellingPrice" type="xs:decimal" />
+              <xs:element name="StockOnHand" msprop:Generator_ColumnVarNameInTable="columnStockOnHand" msprop:Generator_ColumnPropNameInRow="StockOnHand" msprop:Generator_ColumnPropNameInTable="StockOnHandColumn" msprop:Generator_UserColumnName="StockOnHand" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
