@@ -20,6 +20,7 @@ namespace Istn3ASproject
 {
 
     public partial class frmPOS : Form
+
     {
         public frmPOS()
         {
@@ -29,6 +30,7 @@ namespace Istn3ASproject
         //move to user management form
         private Action<Form> navigate;
         private frmUserManagement userManagement;
+        private string userRole;
 
         public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
         {
@@ -37,6 +39,14 @@ namespace Istn3ASproject
             // Initialize references inside the constructor
             navigate = navigateTo;
             userManagement = userRef;
+        }
+        public frmPOS(Action<Form> navigateTo, string userRole, int staffID)
+        {
+            InitializeComponent();
+            navigate = navigateTo;
+            this.userRole = userRole;
+            lblStaffID.Text = staffID.ToString();
+
         }
 
 
@@ -148,7 +158,7 @@ namespace Istn3ASproject
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
                 String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;
-                int StaffID = 1;
+                int StaffID= Convert.ToInt32(lblStaffID.Text);
                 string TransactionType = "sale";
                 string Today = DateTime.Today.ToString("yyyy-MM-dd");
                 string CurrentTime = DateTime.Now.ToString("HH:mm:ss");
@@ -628,6 +638,13 @@ namespace Istn3ASproject
                  "-Allows you you refund sepcific items in the order adjusting the value and type of the order";
 
             MessageBox.Show(message, "Refund Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+       private void btnGoToCustomer_Click(object sender, EventArgs e)
+        {
+            var userForm = new frmUserManagement(navigate, this.userRole);
+
+            navigate(userForm);
         }
     }
 }

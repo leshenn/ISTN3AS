@@ -18,7 +18,9 @@ namespace Istn3ASproject
     public partial class frmReports: Form
     {
         //private Istn3ASproject.WstGrp11DataSet WSTGRP11DataSet;
-        //DataSet dataSet = new Istn3ASproject.WstGrp11DataSet();
+        //DataSet dataSet = new Istn3ASproject.WstGrp11DataSet()
+        private int stockID;
+        
         public frmReports()
         {
             InitializeComponent();
@@ -28,6 +30,8 @@ namespace Istn3ASproject
             chrtFinancialLine.ChartAreas[0].AxisX.Interval = 1;
             loadFinancialChart();
             loadLifeTimeGraphFinancial();
+            this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
+
 
         }
 
@@ -39,22 +43,22 @@ namespace Istn3ASproject
             chrtFinancial.Series["Money Flow"].Points.Clear();
 
 
-            taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
-            taOrderFinancial.Fill(wstGrp11DataSet1.Order);
+            taSupplierOrderFinancial.Fill(wstGrp11DataSet.SupplierOrder);
+            taOrderFinancial.Fill(wstGrp11DataSet.Order);
 
             decimal dept = 0;
             decimal income = 0;
 
             //CALCULATE EXPENSES
-            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.SupplierOrder.Rows.Count; i++)
             {
-                dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                dept += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
             }
 
             //CALCULATE iNCOME
-            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
             {
-                income += Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                income += Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
             }
 
 
@@ -71,8 +75,8 @@ namespace Istn3ASproject
             String Today = DateTime.Today.ToString("yyyy/MM/dd");
 
 
-            taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
-            taOrderFinancial.Fill(wstGrp11DataSet1.Order);
+            taSupplierOrderFinancial.Fill(wstGrp11DataSet.SupplierOrder);
+            taOrderFinancial.Fill(wstGrp11DataSet.Order);
 
             decimal dept = 0;
             decimal income = 0;
@@ -80,16 +84,16 @@ namespace Istn3ASproject
 
             string message = "";
             //CALCULATE EXPENSES
-            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split(' ')[0];
 
                 message += input + "\n";
                
                 if (Today == date)
                 {
-                    dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                    dept += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
                 }
 
                
@@ -97,15 +101,15 @@ namespace Istn3ASproject
             MessageBox.Show(message);
 
             //CALCULATE iNCOME
-            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.Order.Rows[i].ItemArray[5].ToString();
                 string date = input.Split(' ')[0];
 
 
                 if (Today == date)
                 {
-                    income += Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                    income += Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
                 }
             }
 
@@ -123,38 +127,38 @@ namespace Istn3ASproject
             String Today = DateTime.Today.ToString("yyyy/MM");
 
 
-            taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
-            taOrderFinancial.Fill(wstGrp11DataSet1.Order);
+            taSupplierOrderFinancial.Fill(wstGrp11DataSet.SupplierOrder);
+            taOrderFinancial.Fill(wstGrp11DataSet.Order);
 
             decimal dept = 0;
             decimal income = 0;
 
             //CALCULATE EXPENSES
-            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
                 date +="/"+ input.Split('/')[1];
 
                 if (Today == date)
                 {
-                    dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                    dept += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
                 }
 
 
             }
 
             //CALCULATE iNCOME
-            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.Order.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
                 date += "/" + input.Split('/')[1];
 
 
                 if (Today == date)
                 {
-                    income += Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                    income += Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
                 }
             }
 
@@ -170,37 +174,37 @@ namespace Istn3ASproject
             String Today = DateTime.Today.ToString("yyyy");
 
 
-            taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
-            taOrderFinancial.Fill(wstGrp11DataSet1.Order);
+            taSupplierOrderFinancial.Fill(wstGrp11DataSet.SupplierOrder);
+            taOrderFinancial.Fill(wstGrp11DataSet.Order);
 
             decimal dept = 0;
             decimal income = 0;
 
             //CALCULATE EXPENSES
-            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
 
                 if (Today == date)
                 {
-                    dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                    dept += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
                 }
 
 
             }
 
             //CALCULATE iNCOME
-            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.Order.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
 
 
 
                 if (Today == date)
                 {
-                    income += Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                    income += Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
                 }
             }
 
@@ -218,16 +222,16 @@ namespace Istn3ASproject
             DateTime dtToday = DateTime.Parse(Today);
 
 
-            taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
-            taOrderFinancial.Fill(wstGrp11DataSet1.Order);
+            taSupplierOrderFinancial.Fill(wstGrp11DataSet.SupplierOrder);
+            taOrderFinancial.Fill(wstGrp11DataSet.Order);
 
             decimal dept = 0;
             decimal income = 0;
 
             //CALCULATE EXPENSES
-            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split(' ')[0];
                 DateTime dtDate = DateTime.Parse(date);
 
@@ -236,15 +240,15 @@ namespace Istn3ASproject
 
                 if (diff.TotalDays<=7)
                 {
-                    dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                    dept += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
                 }
 
             }
 
             //CALCULATE iNCOME
-            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet.Order.Rows[i].ItemArray[5].ToString();
                 string date = input.Split(' ')[0];
                 DateTime dtDate = DateTime.Parse(date);
 
@@ -252,7 +256,7 @@ namespace Istn3ASproject
 
                 if (diff.TotalDays <= 7)
                  {
-                     income += Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                     income += Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
                  }
             }
 
@@ -325,14 +329,14 @@ namespace Istn3ASproject
             string Cdate = input.Split('/')[0];
             Cdate += '/' + input.Split('/')[1];
 
-           taOrderFinancial.Fill(wstGrp11DataSet1.Order);
-           taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
+           taOrderFinancial.Fill(wstGrp11DataSet.Order);
+           taSupplierOrderFinancial.Fill(wstGrp11DataSet.SupplierOrder);
 
 
             //CALCULATE iNCOME
-            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
             {
-                input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                input = wstGrp11DataSet.Order.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
                 date += '/' + input.Split('/')[1];
 
@@ -343,14 +347,14 @@ namespace Istn3ASproject
                     int day = Convert.ToInt32(dateInput.Split(' ')[0]);
                    // MessageBox.Show(day.ToString());
 
-                    dailyIncome[day]+= Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                    dailyIncome[day]+= Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
                 }
             }
 
             //CALCULATE EXPENSES
-            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            for (int i = 0; i < wstGrp11DataSet.SupplierOrder.Rows.Count; i++)
             {
-                input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
+                input = wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
                 date += '/' + input.Split('/')[1];
 
@@ -360,7 +364,7 @@ namespace Istn3ASproject
                     string dateInput = input.Split('/')[2];
                     int day = Convert.ToInt32(dateInput.Split(' ')[0]);
 
-                    dailyExpense[day] += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                    dailyExpense[day] += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
                 }
             }
 
@@ -561,6 +565,10 @@ namespace Istn3ASproject
 
         private void frmReports_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp11DataSet.ExpiredStock' table. You can move, or remove it, as needed.
+            
+            // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
+            this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
             // Enable vertical scrolling
             this.AutoScroll = true;
             this.VerticalScroll.Enabled = true;
@@ -853,5 +861,138 @@ namespace Istn3ASproject
             );
         }
 
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            LoadStockChart(stockID);
+            {
+
+            
+        }
+
+    }
+
+        private void btnExpiredStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                taExpiredStock.FillBy(wstGrp11DataSet.ExpiredStock);
+                Console.WriteLine("Loaded");
+            }
+            catch (ConstraintException ex)
+            {
+                // Log, show message, or inspect dataset
+                foreach (DataRow row in wstGrp11DataSet.ExpiredStock.Rows)
+                {
+                    if (row.HasErrors)
+                        Console.WriteLine(row.RowError);
+                }
+            }
+        }
+        private void LoadStockChart(int stockID)
+
+
+        {
+
+            chartStockTrends.Series.Clear();
+            SupplierLineOrderTableAdapter supplierLineOrderTableAdapter = new SupplierLineOrderTableAdapter();
+            SupplierOrderTableAdapter supplierOrderTableAdapter = new SupplierOrderTableAdapter();
+            supplierLineOrderTableAdapter.Fill(wstGrp11DataSet.SupplierLineOrder);
+            supplierOrderTableAdapter.Fill(wstGrp11DataSet.SupplierOrder);
+
+            OrderLineTableAdapter orderLineTableAdapter = new OrderLineTableAdapter();
+            OrderTableAdapter orderTable = new OrderTableAdapter();
+            orderLineTableAdapter.Fill(wstGrp11DataSet.OrderLine);
+            orderTable.Fill(wstGrp11DataSet.Order);
+
+            // Clear old points
+
+            List<(DateTime Date, int Quantity, string Type)> allTransactions = new List<(DateTime, int, string)>();
+
+
+            // Loop through SupplierLineOrder
+            for (int i = 0; i < wstGrp11DataSet.SupplierLineOrder.Rows.Count; i++)
+            {
+                int currentStockID = Convert.ToInt32(wstGrp11DataSet.SupplierLineOrder.Rows[i]["StockID"]);
+                if (currentStockID == stockID)
+                {
+                    int supplierOrderID = Convert.ToInt32(wstGrp11DataSet.SupplierLineOrder.Rows[i]["SupplierOrderID"]);
+                    int quantity = Convert.ToInt32(wstGrp11DataSet.SupplierLineOrder.Rows[i]["Quantity"]);
+
+                    // Now look for the matching arrival date in SupplierOrder
+                    for (int j = 0; j < wstGrp11DataSet.SupplierOrder.Rows.Count; j++)
+                    {
+                        int currentSupplierOrderID = Convert.ToInt32(wstGrp11DataSet.SupplierOrder.Rows[j]["SupplierOrderID"]);
+                        if (currentSupplierOrderID == supplierOrderID)
+                        {
+                            DateTime date = Convert.ToDateTime(wstGrp11DataSet.SupplierOrder.Rows[j]["ArrivalDate"]);
+
+                            allTransactions.Add((date, quantity, "Purchase"));
+                            break;
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < wstGrp11DataSet.OrderLine.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(wstGrp11DataSet.OrderLine.Rows[i]["StockID"]) == stockID)
+                {
+                    int orderID = Convert.ToInt32(wstGrp11DataSet.OrderLine.Rows[i]["OrderID"]);
+
+                    // Find the order date from the Order table
+                    for (int j = 0; j < wstGrp11DataSet.Order.Rows.Count; j++)
+                    {
+                        if (Convert.ToInt32(wstGrp11DataSet.Order.Rows[j]["OrderID"]) == orderID)
+                        {
+                            DateTime saleDate = Convert.ToDateTime(wstGrp11DataSet.Order.Rows[j]["Date"]);
+                            int saleQty = Convert.ToInt32(wstGrp11DataSet.OrderLine.Rows[i]["Quantity"]);
+
+                            allTransactions.Add((saleDate, saleQty, "Sale"));
+                            break;
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+            Series purchaseSeries = new Series("Purchases")
+            {
+                ChartType = SeriesChartType.Line,
+                BorderWidth = 2,
+                Color = Color.Green
+            };
+
+            Series saleSeries = new Series("Sales")
+            {
+                ChartType = SeriesChartType.Line,
+                BorderWidth = 2,
+                Color = Color.Red
+            };
+            foreach (var t in allTransactions.OrderBy(t => t.Date))
+            {
+                if (t.Type == "Purchase")
+                    purchaseSeries.Points.AddXY(t.Date.ToShortDateString(), t.Quantity);
+                else if (t.Type == "Sale")
+                    saleSeries.Points.AddXY(t.Date.ToShortDateString(), t.Quantity);
+            }
+            chartStockTrends.Series.Clear();
+            chartStockTrends.Series.Add(purchaseSeries);
+            chartStockTrends.Series.Add(saleSeries);
+            chartStockTrends.ChartAreas[0].AxisX.Interval = 5;
+
+            chartStockTrends.ChartAreas[0].AxisX.LabelStyle.Angle = -45; // Optional: better spacing
+
+
+
+
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            chartStockTrends.Series.Clear();
+            stockID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+        }
     }
 }
