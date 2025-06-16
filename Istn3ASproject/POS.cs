@@ -201,7 +201,7 @@ namespace Istn3ASproject
             string date,
             string time,
             decimal total,
-            decimal cashReceived, 
+            decimal cashReceived,
             decimal changeToGive)
         {
             Document doc = new Document(PageSize.A4, 50, 50, 25, 25);
@@ -273,19 +273,21 @@ namespace Istn3ASproject
             itemTable.AddCell(new PdfPCell(new Phrase("Price", boldSmall)));
             itemTable.AddCell(new PdfPCell(new Phrase("Amount", boldSmall)));
 
-            string[] lines = listItems().Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = listItemInformation().Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var line in lines)
             {
                 var parts = line.Split('\t');
-                if (parts.Length == 2)
+                if (parts.Length == 4)
                 {
                     string name = parts[0].Trim();
-                    string price = parts[1].Trim().Replace("R", "").Replace(",", ".");
+                    string qtyText = parts[1].Trim();
+                    string priceText = parts[2].Trim();
+                    string amountText = parts[3].Trim();
 
                     itemTable.AddCell(new PdfPCell(new Phrase(name, regular)));
-                    itemTable.AddCell(new PdfPCell(new Phrase("1", regular)));
-                    itemTable.AddCell(new PdfPCell(new Phrase("R" + price, regular)));
-                    itemTable.AddCell(new PdfPCell(new Phrase("R" + price, regular)));
+                    itemTable.AddCell(new PdfPCell(new Phrase(qtyText, regular)));
+                    itemTable.AddCell(new PdfPCell(new Phrase($"R{priceText}", regular)));
+                    itemTable.AddCell(new PdfPCell(new Phrase($"R{amountText}", regular)));
                 }
             }
 
@@ -313,6 +315,15 @@ namespace Istn3ASproject
 
             doc.Add(new Paragraph("Note: Thank you for choosing us!", regular));
             doc.Close();
+
+            // Open the PDF
+            var process = new System.Diagnostics.Process();
+            process.StartInfo = new System.Diagnostics.ProcessStartInfo()
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            };
+            process.Start();
         }
 
         public void resetInterface()
@@ -409,6 +420,25 @@ namespace Istn3ASproject
 
                 //ADD TO STRING OF ITEMS
                 listOfItems +=" " + name + "\t" + SubTotal.ToString("C2") + "\n";
+            }
+            return listOfItems;
+        }
+
+        private string listItemInformation()
+        {
+            string listOfItems = "";
+
+            for (int i = 0; i < dgvSalesInvoice.Rows.Count; i++)
+            {
+                //GET ITEM INFORMATION
+                string StockID = dgvSalesInvoice.Rows[i].Cells[0].Value.ToString();
+                string name = dgvSalesInvoice.Rows[i].Cells[1].Value.ToString();
+                decimal price = Convert.ToDecimal(dgvSalesInvoice.Rows[i].Cells[3].Value);
+                int quantity = Convert.ToInt32(dgvSalesInvoice.Rows[i].Cells[5].Value.ToString());
+                decimal SubTotal = price * quantity;
+
+                //ADD TO STRING OF ITEMS
+                listOfItems += $"{name}\t{quantity}\t{price:F2}\t{SubTotal:F2}\n";
             }
             return listOfItems;
         }
