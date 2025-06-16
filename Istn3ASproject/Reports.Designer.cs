@@ -28,22 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tcReports = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.grpbxTransactionReport = new System.Windows.Forms.GroupBox();
@@ -63,6 +69,7 @@
             this.chrtFinancialLine = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dtpFinancialChart = new System.Windows.Forms.DateTimePicker();
             this.groupBox1Financial = new System.Windows.Forms.GroupBox();
+            this.chrtFinancial = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblProfitFinancial = new System.Windows.Forms.Label();
             this.lblExpensesFinancial = new System.Windows.Forms.Label();
             this.lblIncomeFinancial = new System.Windows.Forms.Label();
@@ -72,10 +79,15 @@
             this.btnRefreshFinancialGraph = new System.Windows.Forms.Button();
             this.label1Financial = new System.Windows.Forms.Label();
             this.cmbPeriodFinancial = new System.Windows.Forms.ComboBox();
+            this.grpbxRefundSale = new System.Windows.Forms.GroupBox();
+            this.chtSaleRefund = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnSalesRefunds = new System.Windows.Forms.Button();
             this.taSupplierOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
             this.wstGrp11DataSet1 = new Istn3ASproject.WstGrp11DataSet();
             this.taOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
-            this.chrtFinancial = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grpbxLeastMostBought = new System.Windows.Forms.GroupBox();
+            this.chtLeastMostBoughtReports = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnLeastMostBought = new System.Windows.Forms.Button();
             this.tcReports.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.grpbxTransactionReport.SuspendLayout();
@@ -88,8 +100,12 @@
             this.grpbFinancialLine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancialLine)).BeginInit();
             this.groupBox1Financial.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).BeginInit();
+            this.grpbxRefundSale.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtSaleRefund)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).BeginInit();
+            this.grpbxLeastMostBought.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtLeastMostBoughtReports)).BeginInit();
             this.SuspendLayout();
             // 
             // tcReports
@@ -97,23 +113,25 @@
             this.tcReports.Controls.Add(this.tbpSales);
             this.tcReports.Controls.Add(this.tbpInventory);
             this.tcReports.Controls.Add(this.tbpFinancial);
-            this.tcReports.Location = new System.Drawing.Point(0, 11);
+            this.tcReports.Location = new System.Drawing.Point(0, 9);
             this.tcReports.Margin = new System.Windows.Forms.Padding(2);
             this.tcReports.Name = "tcReports";
             this.tcReports.SelectedIndex = 0;
-            this.tcReports.Size = new System.Drawing.Size(2028, 761);
+            this.tcReports.Size = new System.Drawing.Size(1521, 666);
             this.tcReports.TabIndex = 0;
             // 
             // tbpSales
             // 
+            this.tbpSales.Controls.Add(this.grpbxLeastMostBought);
+            this.tbpSales.Controls.Add(this.grpbxRefundSale);
             this.tbpSales.Controls.Add(this.grpbxTransactionReport);
             this.tbpSales.Controls.Add(this.grpbxSalesReports);
             this.tbpSales.Controls.Add(this.grpbxCustSales);
-            this.tbpSales.Location = new System.Drawing.Point(4, 25);
+            this.tbpSales.Location = new System.Drawing.Point(4, 22);
             this.tbpSales.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSales.Name = "tbpSales";
             this.tbpSales.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpSales.Size = new System.Drawing.Size(1381, 732);
+            this.tbpSales.Size = new System.Drawing.Size(1513, 640);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             this.tbpSales.UseVisualStyleBackColor = true;
@@ -122,18 +140,21 @@
             // 
             this.grpbxTransactionReport.Controls.Add(this.btnTransactionReports);
             this.grpbxTransactionReport.Controls.Add(this.chtTransactionTypes);
-            this.grpbxTransactionReport.Location = new System.Drawing.Point(5, 460);
+            this.grpbxTransactionReport.Location = new System.Drawing.Point(4, 422);
+            this.grpbxTransactionReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpbxTransactionReport.Name = "grpbxTransactionReport";
-            this.grpbxTransactionReport.Size = new System.Drawing.Size(748, 186);
+            this.grpbxTransactionReport.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxTransactionReport.Size = new System.Drawing.Size(561, 186);
             this.grpbxTransactionReport.TabIndex = 5;
             this.grpbxTransactionReport.TabStop = false;
             this.grpbxTransactionReport.Text = "Transaction Types";
             // 
             // btnTransactionReports
             // 
-            this.btnTransactionReports.Location = new System.Drawing.Point(618, 57);
+            this.btnTransactionReports.Location = new System.Drawing.Point(464, 46);
+            this.btnTransactionReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTransactionReports.Name = "btnTransactionReports";
-            this.btnTransactionReports.Size = new System.Drawing.Size(75, 41);
+            this.btnTransactionReports.Size = new System.Drawing.Size(56, 55);
             this.btnTransactionReports.TabIndex = 3;
             this.btnTransactionReports.Text = "Load Donut Chart";
             this.btnTransactionReports.UseVisualStyleBackColor = true;
@@ -141,17 +162,18 @@
             // 
             // chtTransactionTypes
             // 
-            chartArea16.Name = "ChartArea1";
-            this.chtTransactionTypes.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.chtTransactionTypes.Legends.Add(legend16);
-            this.chtTransactionTypes.Location = new System.Drawing.Point(17, 19);
+            chartArea9.Name = "ChartArea1";
+            this.chtTransactionTypes.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chtTransactionTypes.Legends.Add(legend9);
+            this.chtTransactionTypes.Location = new System.Drawing.Point(13, 18);
+            this.chtTransactionTypes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chtTransactionTypes.Name = "chtTransactionTypes";
-            series19.ChartArea = "ChartArea1";
-            series19.Legend = "Legend1";
-            series19.Name = "Series1";
-            this.chtTransactionTypes.Series.Add(series19);
-            this.chtTransactionTypes.Size = new System.Drawing.Size(540, 151);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chtTransactionTypes.Series.Add(series10);
+            this.chtTransactionTypes.Size = new System.Drawing.Size(428, 144);
             this.chtTransactionTypes.TabIndex = 0;
             this.chtTransactionTypes.Text = "Transaction Types";
             // 
@@ -160,18 +182,21 @@
             this.grpbxSalesReports.Controls.Add(this.btnSalesReport);
             this.grpbxSalesReports.Controls.Add(this.cmbTotalSales);
             this.grpbxSalesReports.Controls.Add(this.chtTotalSalesDate);
-            this.grpbxSalesReports.Location = new System.Drawing.Point(8, 253);
+            this.grpbxSalesReports.Location = new System.Drawing.Point(6, 205);
+            this.grpbxSalesReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpbxSalesReports.Name = "grpbxSalesReports";
-            this.grpbxSalesReports.Size = new System.Drawing.Size(748, 186);
+            this.grpbxSalesReports.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxSalesReports.Size = new System.Drawing.Size(561, 194);
             this.grpbxSalesReports.TabIndex = 2;
             this.grpbxSalesReports.TabStop = false;
             this.grpbxSalesReports.Text = "Total Sales";
             // 
             // btnSalesReport
             // 
-            this.btnSalesReport.Location = new System.Drawing.Point(618, 57);
+            this.btnSalesReport.Location = new System.Drawing.Point(462, 46);
+            this.btnSalesReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalesReport.Name = "btnSalesReport";
-            this.btnSalesReport.Size = new System.Drawing.Size(75, 41);
+            this.btnSalesReport.Size = new System.Drawing.Size(58, 57);
             this.btnSalesReport.TabIndex = 3;
             this.btnSalesReport.Text = "Load Pie Chart";
             this.btnSalesReport.UseVisualStyleBackColor = true;
@@ -184,25 +209,27 @@
             "Day",
             "Month",
             "Year"});
-            this.cmbTotalSales.Location = new System.Drawing.Point(563, 19);
+            this.cmbTotalSales.Location = new System.Drawing.Point(422, 15);
+            this.cmbTotalSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbTotalSales.Name = "cmbTotalSales";
-            this.cmbTotalSales.Size = new System.Drawing.Size(179, 24);
+            this.cmbTotalSales.Size = new System.Drawing.Size(135, 21);
             this.cmbTotalSales.TabIndex = 4;
             this.cmbTotalSales.Text = "Choose Per Day, Month or Year";
             // 
             // chtTotalSalesDate
             // 
-            chartArea17.Name = "ChartArea1";
-            this.chtTotalSalesDate.ChartAreas.Add(chartArea17);
-            legend17.Name = "Legend1";
-            this.chtTotalSalesDate.Legends.Add(legend17);
-            this.chtTotalSalesDate.Location = new System.Drawing.Point(17, 19);
+            chartArea8.Name = "ChartArea1";
+            this.chtTotalSalesDate.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chtTotalSalesDate.Legends.Add(legend8);
+            this.chtTotalSalesDate.Location = new System.Drawing.Point(13, 15);
+            this.chtTotalSalesDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chtTotalSalesDate.Name = "chtTotalSalesDate";
-            series20.ChartArea = "ChartArea1";
-            series20.Legend = "Legend1";
-            series20.Name = "Series1";
-            this.chtTotalSalesDate.Series.Add(series20);
-            this.chtTotalSalesDate.Size = new System.Drawing.Size(540, 151);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chtTotalSalesDate.Series.Add(series9);
+            this.chtTotalSalesDate.Size = new System.Drawing.Size(405, 164);
             this.chtTotalSalesDate.TabIndex = 0;
             this.chtTotalSalesDate.Text = "chart1";
             // 
@@ -210,33 +237,37 @@
             // 
             this.grpbxCustSales.Controls.Add(this.chtCustomerPerProvince);
             this.grpbxCustSales.Controls.Add(this.btnCustPerProvince);
-            this.grpbxCustSales.Location = new System.Drawing.Point(8, 18);
+            this.grpbxCustSales.Location = new System.Drawing.Point(6, 15);
+            this.grpbxCustSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpbxCustSales.Name = "grpbxCustSales";
-            this.grpbxCustSales.Size = new System.Drawing.Size(748, 215);
+            this.grpbxCustSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxCustSales.Size = new System.Drawing.Size(561, 175);
             this.grpbxCustSales.TabIndex = 0;
             this.grpbxCustSales.TabStop = false;
             this.grpbxCustSales.Text = "Customers Per Province";
             // 
             // chtCustomerPerProvince
             // 
-            chartArea18.Name = "ChartArea1";
-            this.chtCustomerPerProvince.ChartAreas.Add(chartArea18);
-            legend18.Name = "Legend1";
-            this.chtCustomerPerProvince.Legends.Add(legend18);
-            this.chtCustomerPerProvince.Location = new System.Drawing.Point(6, 19);
+            chartArea10.Name = "ChartArea1";
+            this.chtCustomerPerProvince.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chtCustomerPerProvince.Legends.Add(legend10);
+            this.chtCustomerPerProvince.Location = new System.Drawing.Point(4, 15);
+            this.chtCustomerPerProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chtCustomerPerProvince.Name = "chtCustomerPerProvince";
-            series21.ChartArea = "ChartArea1";
-            series21.Legend = "Legend1";
-            series21.Name = "Series1";
-            this.chtCustomerPerProvince.Series.Add(series21);
-            this.chtCustomerPerProvince.Size = new System.Drawing.Size(624, 185);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.chtCustomerPerProvince.Series.Add(series11);
+            this.chtCustomerPerProvince.Size = new System.Drawing.Size(468, 150);
             this.chtCustomerPerProvince.TabIndex = 0;
             // 
             // btnCustPerProvince
             // 
-            this.btnCustPerProvince.Location = new System.Drawing.Point(639, 84);
+            this.btnCustPerProvince.Location = new System.Drawing.Point(479, 68);
+            this.btnCustPerProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustPerProvince.Name = "btnCustPerProvince";
-            this.btnCustPerProvince.Size = new System.Drawing.Size(75, 41);
+            this.btnCustPerProvince.Size = new System.Drawing.Size(70, 44);
             this.btnCustPerProvince.TabIndex = 1;
             this.btnCustPerProvince.Text = "Load Bar Graph";
             this.btnCustPerProvince.UseVisualStyleBackColor = true;
@@ -244,11 +275,11 @@
             // 
             // tbpInventory
             // 
-            this.tbpInventory.Location = new System.Drawing.Point(4, 25);
+            this.tbpInventory.Location = new System.Drawing.Point(4, 22);
             this.tbpInventory.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventory.Name = "tbpInventory";
             this.tbpInventory.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpInventory.Size = new System.Drawing.Size(1381, 732);
+            this.tbpInventory.Size = new System.Drawing.Size(1513, 592);
             this.tbpInventory.TabIndex = 1;
             this.tbpInventory.Text = "Inventory";
             this.tbpInventory.UseVisualStyleBackColor = true;
@@ -260,10 +291,10 @@
             this.tbpFinancial.Controls.Add(this.grpbFinancialLine);
             this.tbpFinancial.Controls.Add(this.dtpFinancialChart);
             this.tbpFinancial.Controls.Add(this.groupBox1Financial);
-            this.tbpFinancial.Location = new System.Drawing.Point(4, 25);
-            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpFinancial.Location = new System.Drawing.Point(4, 22);
+            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpFinancial.Name = "tbpFinancial";
-            this.tbpFinancial.Size = new System.Drawing.Size(2020, 732);
+            this.tbpFinancial.Size = new System.Drawing.Size(1513, 592);
             this.tbpFinancial.TabIndex = 2;
             this.tbpFinancial.Text = "Financial";
             // 
@@ -271,9 +302,10 @@
             // 
             this.labelFinancial10.AutoSize = true;
             this.labelFinancial10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFinancial10.Location = new System.Drawing.Point(759, 48);
+            this.labelFinancial10.Location = new System.Drawing.Point(569, 39);
+            this.labelFinancial10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFinancial10.Name = "labelFinancial10";
-            this.labelFinancial10.Size = new System.Drawing.Size(200, 29);
+            this.labelFinancial10.Size = new System.Drawing.Size(161, 24);
             this.labelFinancial10.TabIndex = 6;
             this.labelFinancial10.Text = "Filter by month :";
             // 
@@ -281,42 +313,46 @@
             // 
             this.grpbFinancialLine.Controls.Add(this.chrtFinancialLine);
             this.grpbFinancialLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbFinancialLine.Location = new System.Drawing.Point(759, 120);
+            this.grpbFinancialLine.Location = new System.Drawing.Point(569, 98);
+            this.grpbFinancialLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpbFinancialLine.Name = "grpbFinancialLine";
-            this.grpbFinancialLine.Size = new System.Drawing.Size(1173, 425);
+            this.grpbFinancialLine.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbFinancialLine.Size = new System.Drawing.Size(880, 345);
             this.grpbFinancialLine.TabIndex = 5;
             this.grpbFinancialLine.TabStop = false;
             this.grpbFinancialLine.Text = "Monthly Financial Chart";
             // 
             // chrtFinancialLine
             // 
-            chartArea19.Name = "ChartArea1";
-            this.chrtFinancialLine.ChartAreas.Add(chartArea19);
+            chartArea11.Name = "ChartArea1";
+            this.chrtFinancialLine.ChartAreas.Add(chartArea11);
             this.chrtFinancialLine.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend19.Name = "Legend1";
-            this.chrtFinancialLine.Legends.Add(legend19);
-            this.chrtFinancialLine.Location = new System.Drawing.Point(3, 30);
+            legend11.Name = "Legend1";
+            this.chrtFinancialLine.Legends.Add(legend11);
+            this.chrtFinancialLine.Location = new System.Drawing.Point(2, 23);
+            this.chrtFinancialLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chrtFinancialLine.Name = "chrtFinancialLine";
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series22.Legend = "Legend1";
-            series22.Name = "income";
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series23.Legend = "Legend1";
-            series23.Name = "expenses";
-            this.chrtFinancialLine.Series.Add(series22);
-            this.chrtFinancialLine.Series.Add(series23);
-            this.chrtFinancialLine.Size = new System.Drawing.Size(1167, 392);
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Legend = "Legend1";
+            series12.Name = "income";
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Legend = "Legend1";
+            series13.Name = "expenses";
+            this.chrtFinancialLine.Series.Add(series12);
+            this.chrtFinancialLine.Series.Add(series13);
+            this.chrtFinancialLine.Size = new System.Drawing.Size(876, 320);
             this.chrtFinancialLine.TabIndex = 4;
             this.chrtFinancialLine.Text = "chart1";
             // 
             // dtpFinancialChart
             // 
             this.dtpFinancialChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFinancialChart.Location = new System.Drawing.Point(759, 80);
+            this.dtpFinancialChart.Location = new System.Drawing.Point(569, 65);
+            this.dtpFinancialChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFinancialChart.Name = "dtpFinancialChart";
-            this.dtpFinancialChart.Size = new System.Drawing.Size(200, 34);
+            this.dtpFinancialChart.Size = new System.Drawing.Size(151, 28);
             this.dtpFinancialChart.TabIndex = 3;
             this.dtpFinancialChart.ValueChanged += new System.EventHandler(this.dtpFinancialChart_ValueChanged);
             // 
@@ -334,72 +370,98 @@
             this.groupBox1Financial.Controls.Add(this.label1Financial);
             this.groupBox1Financial.Controls.Add(this.cmbPeriodFinancial);
             this.groupBox1Financial.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1Financial.Location = new System.Drawing.Point(28, 129);
+            this.groupBox1Financial.Location = new System.Drawing.Point(21, 105);
+            this.groupBox1Financial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1Financial.Name = "groupBox1Financial";
-            this.groupBox1Financial.Size = new System.Drawing.Size(690, 429);
+            this.groupBox1Financial.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1Financial.Size = new System.Drawing.Size(518, 349);
             this.groupBox1Financial.TabIndex = 2;
             this.groupBox1Financial.TabStop = false;
             this.groupBox1Financial.Text = "Profit to Loss Comparison";
             // 
+            // chrtFinancial
+            // 
+            chartArea12.Name = "ChartArea1";
+            this.chrtFinancial.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.chrtFinancial.Legends.Add(legend12);
+            this.chrtFinancial.Location = new System.Drawing.Point(17, 86);
+            this.chrtFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chrtFinancial.Name = "chrtFinancial";
+            series14.ChartArea = "ChartArea1";
+            series14.Legend = "Legend1";
+            series14.Name = "Money Flow";
+            this.chrtFinancial.Series.Add(series14);
+            this.chrtFinancial.Size = new System.Drawing.Size(274, 244);
+            this.chrtFinancial.TabIndex = 11;
+            this.chrtFinancial.Text = "Financial chart";
+            // 
             // lblProfitFinancial
             // 
             this.lblProfitFinancial.AutoSize = true;
-            this.lblProfitFinancial.Location = new System.Drawing.Point(492, 384);
+            this.lblProfitFinancial.Location = new System.Drawing.Point(369, 312);
+            this.lblProfitFinancial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfitFinancial.Name = "lblProfitFinancial";
-            this.lblProfitFinancial.Size = new System.Drawing.Size(95, 32);
+            this.lblProfitFinancial.Size = new System.Drawing.Size(75, 26);
             this.lblProfitFinancial.TabIndex = 10;
             this.lblProfitFinancial.Text = "R0.00";
             // 
             // lblExpensesFinancial
             // 
             this.lblExpensesFinancial.AutoSize = true;
-            this.lblExpensesFinancial.Location = new System.Drawing.Point(492, 294);
+            this.lblExpensesFinancial.Location = new System.Drawing.Point(369, 239);
+            this.lblExpensesFinancial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpensesFinancial.Name = "lblExpensesFinancial";
-            this.lblExpensesFinancial.Size = new System.Drawing.Size(95, 32);
+            this.lblExpensesFinancial.Size = new System.Drawing.Size(75, 26);
             this.lblExpensesFinancial.TabIndex = 9;
             this.lblExpensesFinancial.Text = "R0.00";
             // 
             // lblIncomeFinancial
             // 
             this.lblIncomeFinancial.AutoSize = true;
-            this.lblIncomeFinancial.Location = new System.Drawing.Point(492, 200);
+            this.lblIncomeFinancial.Location = new System.Drawing.Point(369, 162);
+            this.lblIncomeFinancial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIncomeFinancial.Name = "lblIncomeFinancial";
-            this.lblIncomeFinancial.Size = new System.Drawing.Size(95, 32);
+            this.lblIncomeFinancial.Size = new System.Drawing.Size(75, 26);
             this.lblIncomeFinancial.TabIndex = 8;
             this.lblIncomeFinancial.Text = "R0.00";
             // 
             // Financiallabel3
             // 
             this.Financiallabel3.AutoSize = true;
-            this.Financiallabel3.Location = new System.Drawing.Point(464, 340);
+            this.Financiallabel3.Location = new System.Drawing.Point(348, 276);
+            this.Financiallabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Financiallabel3.Name = "Financiallabel3";
-            this.Financiallabel3.Size = new System.Drawing.Size(220, 32);
+            this.Financiallabel3.Size = new System.Drawing.Size(174, 26);
             this.Financiallabel3.TabIndex = 7;
             this.Financiallabel3.Text = "Profit Margins :";
             // 
             // Financiallabel2
             // 
             this.Financiallabel2.AutoSize = true;
-            this.Financiallabel2.Location = new System.Drawing.Point(464, 248);
+            this.Financiallabel2.Location = new System.Drawing.Point(348, 202);
+            this.Financiallabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Financiallabel2.Name = "Financiallabel2";
-            this.Financiallabel2.Size = new System.Drawing.Size(198, 32);
+            this.Financiallabel2.Size = new System.Drawing.Size(156, 26);
             this.Financiallabel2.TabIndex = 6;
             this.Financiallabel2.Text = "Expenenses :";
             // 
             // Financiallabel1
             // 
             this.Financiallabel1.AutoSize = true;
-            this.Financiallabel1.Location = new System.Drawing.Point(492, 157);
+            this.Financiallabel1.Location = new System.Drawing.Point(369, 128);
+            this.Financiallabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Financiallabel1.Name = "Financiallabel1";
-            this.Financiallabel1.Size = new System.Drawing.Size(129, 32);
+            this.Financiallabel1.Size = new System.Drawing.Size(104, 26);
             this.Financiallabel1.TabIndex = 5;
             this.Financiallabel1.Text = "Income :";
             // 
             // btnRefreshFinancialGraph
             // 
-            this.btnRefreshFinancialGraph.Location = new System.Drawing.Point(536, 34);
+            this.btnRefreshFinancialGraph.Location = new System.Drawing.Point(402, 28);
+            this.btnRefreshFinancialGraph.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefreshFinancialGraph.Name = "btnRefreshFinancialGraph";
-            this.btnRefreshFinancialGraph.Size = new System.Drawing.Size(154, 42);
+            this.btnRefreshFinancialGraph.Size = new System.Drawing.Size(116, 34);
             this.btnRefreshFinancialGraph.TabIndex = 4;
             this.btnRefreshFinancialGraph.Text = "Refresh Financial Graph";
             this.btnRefreshFinancialGraph.UseVisualStyleBackColor = true;
@@ -408,9 +470,10 @@
             // label1Financial
             // 
             this.label1Financial.AutoSize = true;
-            this.label1Financial.Location = new System.Drawing.Point(6, 41);
+            this.label1Financial.Location = new System.Drawing.Point(4, 33);
+            this.label1Financial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1Financial.Name = "label1Financial";
-            this.label1Financial.Size = new System.Drawing.Size(304, 32);
+            this.label1Financial.Size = new System.Drawing.Size(241, 26);
             this.label1Financial.TabIndex = 3;
             this.label1Financial.Text = "Choose Time Frame :";
             this.label1Financial.Click += new System.EventHandler(this.label1Financial_Click);
@@ -424,11 +487,52 @@
             "Weekly",
             "Monthly",
             "Yearly"});
-            this.cmbPeriodFinancial.Location = new System.Drawing.Point(366, 34);
+            this.cmbPeriodFinancial.Location = new System.Drawing.Point(274, 28);
+            this.cmbPeriodFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPeriodFinancial.Name = "cmbPeriodFinancial";
-            this.cmbPeriodFinancial.Size = new System.Drawing.Size(164, 39);
+            this.cmbPeriodFinancial.Size = new System.Drawing.Size(124, 34);
             this.cmbPeriodFinancial.TabIndex = 2;
             this.cmbPeriodFinancial.Text = "Lifetime";
+            // 
+            // grpbxRefundSale
+            // 
+            this.grpbxRefundSale.Controls.Add(this.chtSaleRefund);
+            this.grpbxRefundSale.Controls.Add(this.btnSalesRefunds);
+            this.grpbxRefundSale.Location = new System.Drawing.Point(571, 18);
+            this.grpbxRefundSale.Margin = new System.Windows.Forms.Padding(2);
+            this.grpbxRefundSale.Name = "grpbxRefundSale";
+            this.grpbxRefundSale.Padding = new System.Windows.Forms.Padding(2);
+            this.grpbxRefundSale.Size = new System.Drawing.Size(644, 175);
+            this.grpbxRefundSale.TabIndex = 2;
+            this.grpbxRefundSale.TabStop = false;
+            this.grpbxRefundSale.Text = "Sales vs. Refunds";
+            // 
+            // chtSaleRefund
+            // 
+            chartArea13.Name = "ChartArea1";
+            this.chtSaleRefund.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.chtSaleRefund.Legends.Add(legend13);
+            this.chtSaleRefund.Location = new System.Drawing.Point(4, 15);
+            this.chtSaleRefund.Margin = new System.Windows.Forms.Padding(2);
+            this.chtSaleRefund.Name = "chtSaleRefund";
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Series1";
+            this.chtSaleRefund.Series.Add(series15);
+            this.chtSaleRefund.Size = new System.Drawing.Size(468, 150);
+            this.chtSaleRefund.TabIndex = 0;
+            // 
+            // btnSalesRefunds
+            // 
+            this.btnSalesRefunds.Location = new System.Drawing.Point(515, 53);
+            this.btnSalesRefunds.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalesRefunds.Name = "btnSalesRefunds";
+            this.btnSalesRefunds.Size = new System.Drawing.Size(82, 56);
+            this.btnSalesRefunds.TabIndex = 1;
+            this.btnSalesRefunds.Text = "Load Donut Chart";
+            this.btnSalesRefunds.UseVisualStyleBackColor = true;
+            this.btnSalesRefunds.Click += new System.EventHandler(this.btnSalesRefunds_Click);
             // 
             // taSupplierOrderFinancial
             // 
@@ -443,28 +547,52 @@
             // 
             this.taOrderFinancial.ClearBeforeFill = true;
             // 
-            // chrtFinancial
+            // grpbxLeastMostBought
             // 
-            chartArea20.Name = "ChartArea1";
-            this.chrtFinancial.ChartAreas.Add(chartArea20);
-            legend20.Name = "Legend1";
-            this.chrtFinancial.Legends.Add(legend20);
-            this.chrtFinancial.Location = new System.Drawing.Point(23, 106);
-            this.chrtFinancial.Name = "chrtFinancial";
-            series24.ChartArea = "ChartArea1";
-            series24.Legend = "Legend1";
-            series24.Name = "Money Flow";
-            this.chrtFinancial.Series.Add(series24);
-            this.chrtFinancial.Size = new System.Drawing.Size(366, 300);
-            this.chrtFinancial.TabIndex = 11;
-            this.chrtFinancial.Text = "Financial chart";
+            this.grpbxLeastMostBought.Controls.Add(this.chtLeastMostBoughtReports);
+            this.grpbxLeastMostBought.Controls.Add(this.btnLeastMostBought);
+            this.grpbxLeastMostBought.Location = new System.Drawing.Point(575, 205);
+            this.grpbxLeastMostBought.Margin = new System.Windows.Forms.Padding(2);
+            this.grpbxLeastMostBought.Name = "grpbxLeastMostBought";
+            this.grpbxLeastMostBought.Padding = new System.Windows.Forms.Padding(2);
+            this.grpbxLeastMostBought.Size = new System.Drawing.Size(644, 409);
+            this.grpbxLeastMostBought.TabIndex = 3;
+            this.grpbxLeastMostBought.TabStop = false;
+            this.grpbxLeastMostBought.Text = "Least vs. Most Bought";
+            // 
+            // chtLeastMostBoughtReports
+            // 
+            chartArea14.Name = "ChartArea1";
+            this.chtLeastMostBoughtReports.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.chtLeastMostBoughtReports.Legends.Add(legend14);
+            this.chtLeastMostBoughtReports.Location = new System.Drawing.Point(4, 15);
+            this.chtLeastMostBoughtReports.Margin = new System.Windows.Forms.Padding(2);
+            this.chtLeastMostBoughtReports.Name = "chtLeastMostBoughtReports";
+            series16.ChartArea = "ChartArea1";
+            series16.Legend = "Legend1";
+            series16.Name = "Series1";
+            this.chtLeastMostBoughtReports.Series.Add(series16);
+            this.chtLeastMostBoughtReports.Size = new System.Drawing.Size(564, 390);
+            this.chtLeastMostBoughtReports.TabIndex = 0;
+            // 
+            // btnLeastMostBought
+            // 
+            this.btnLeastMostBought.Location = new System.Drawing.Point(572, 184);
+            this.btnLeastMostBought.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLeastMostBought.Name = "btnLeastMostBought";
+            this.btnLeastMostBought.Size = new System.Drawing.Size(68, 56);
+            this.btnLeastMostBought.TabIndex = 1;
+            this.btnLeastMostBought.Text = "Load Funnel Chart";
+            this.btnLeastMostBought.UseVisualStyleBackColor = true;
+            this.btnLeastMostBought.Click += new System.EventHandler(this.btnLeastMostBought_Click);
             // 
             // frmReports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1942, 783);
+            this.ClientSize = new System.Drawing.Size(1195, 703);
             this.Controls.Add(this.tcReports);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -485,8 +613,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancialLine)).EndInit();
             this.groupBox1Financial.ResumeLayout(false);
             this.groupBox1Financial.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).EndInit();
+            this.grpbxRefundSale.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chtSaleRefund)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).EndInit();
+            this.grpbxLeastMostBought.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chtLeastMostBoughtReports)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,5 +664,11 @@
         private System.Windows.Forms.GroupBox grpbFinancialLine;
         private System.Windows.Forms.Label labelFinancial10;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtFinancial;
+        private System.Windows.Forms.GroupBox grpbxRefundSale;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtSaleRefund;
+        private System.Windows.Forms.Button btnSalesRefunds;
+        private System.Windows.Forms.GroupBox grpbxLeastMostBought;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtLeastMostBoughtReports;
+        private System.Windows.Forms.Button btnLeastMostBought;
     }
 }

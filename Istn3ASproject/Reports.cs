@@ -572,13 +572,13 @@ namespace Istn3ASproject
         private void btnSalesRefundsReports_Click(object sender, EventArgs e)
         {
             // Clear existing chart elements
-            chtSalesRefund.Series.Clear();
-            chtSalesRefund.Titles.Clear();
-            chtSalesRefund.Legends.Clear();
+            chtSaleRefund.Series.Clear();
+            chtSaleRefund.Titles.Clear();
+            chtSaleRefund.Legends.Clear();
 
             // Set chart title
-            chtSalesRefund.Titles.Add("Sales vs Refunds");
-            chtSalesRefund.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
+            chtSaleRefund.Titles.Add("Sales vs Refunds");
+            chtSaleRefund.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
 
             // Get data from database
            
@@ -623,30 +623,30 @@ namespace Istn3ASproject
             }
 
             // Add series to chart
-            chtSalesRefund.Series.Add(series);
+            chtSaleRefund.Series.Add(series);
 
             // Customize legend
             Legend legend = new Legend();
             legend.Title = "Transaction Types";
             legend.Docking = Docking.Right;
             legend.Font = new Font("Arial", 9,FontStyle.Bold);
-            chtSalesRefund.Legends.Add(legend);
+            chtSaleRefund.Legends.Add(legend);
 
             // 3D effects
-            chtSalesRefund.ChartAreas[0].Area3DStyle.Enable3D = true;
-            chtSalesRefund.ChartAreas[0].Area3DStyle.Inclination = 30;
+            chtSaleRefund.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chtSaleRefund.ChartAreas[0].Area3DStyle.Inclination = 30;
         }
 
         private void btnMostLeastBought_Click(object sender, EventArgs e)
         {
             // Clear existing elements
-            chtLeastMostBought.Series.Clear();
-            chtLeastMostBought.Titles.Clear();
-            chtLeastMostBought.Legends.Clear();
+            chtLeastMostBoughtReports.Series.Clear();
+            chtLeastMostBoughtReports.Titles.Clear();
+            chtLeastMostBoughtReports.Legends.Clear();
 
             // Set chart title
-            chtLeastMostBought.Titles.Add("Product Sales Funnel");
-            chtLeastMostBought.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
+            chtLeastMostBoughtReports.Titles.Add("Product Sales Funnel");
+            chtLeastMostBoughtReports.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
 
             // Get data from database
             WstGrp11DataSet dataset = new WstGrp11DataSet();
@@ -685,21 +685,164 @@ namespace Istn3ASproject
             }
 
             // Add series to chart
-            chtLeastMostBought.Series.Add(series);
+            chtLeastMostBoughtReports.Series.Add(series);
 
             // Customize chart area
-            chtLeastMostBought.ChartAreas[0].Area3DStyle.Enable3D = true;
-            chtLeastMostBought.ChartAreas[0].Area3DStyle.Inclination = 15;
-            chtLeastMostBought.ChartAreas[0].Area3DStyle.IsRightAngleAxes = false;
+            chtLeastMostBoughtReports.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chtLeastMostBoughtReports.ChartAreas[0].Area3DStyle.Inclination = 15;
+            chtLeastMostBoughtReports.ChartAreas[0].Area3DStyle.IsRightAngleAxes = false;
 
             // Add legend
             Legend legend = new Legend();
             legend.Title = "Top Products";
             legend.Docking = Docking.Right;
             legend.Font = new Font("Arial", 8);
-            chtLeastMostBought.Legends.Add(legend);
+            chtLeastMostBoughtReports.Legends.Add(legend);
         }
         private Color GetColorForPosition(int position)
+        {
+            // Gradient from green (most popular) to red (least popular)
+            float ratio = position / 9f; // For top 10 items
+            return Color.FromArgb(
+                (int)(255 * (1 - ratio)),  // Red component decreases
+                (int)(255 * ratio),        // Green component increases
+                100                        // Constant blue
+            );
+        }
+
+        private void btnSalesRefunds_Click(object sender, EventArgs e)
+        {
+            // Clear existing chart elements
+            chtSaleRefund.Series.Clear();
+            chtSaleRefund.Titles.Clear();
+            chtSaleRefund.Legends.Clear();
+
+            // Set chart title
+            chtSaleRefund.Titles.Add("Sales vs Refunds");
+            chtSaleRefund.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
+
+            // Get data from database
+
+            WstGrp11DataSet dataset = new WstGrp11DataSet();
+            dataset.EnforceConstraints = false;
+            OrderTableAdapter orderTA = new OrderTableAdapter();
+            DataTable dtTransactions = dataset.Order;
+            orderTA.FillBySaleOrRefundReports(dataset.Order);
+
+
+
+
+            // Create donut series
+            Series series = new Series("TransactionTypes");
+            series.ChartType = SeriesChartType.Doughnut;
+            series.IsValueShownAsLabel = true;
+            series.LabelFormat = "#PERCENT{P1}"; // Show percentages
+            series["DoughnutRadius"] = "60"; // 60% width (40% hole)
+            series.BorderWidth = 2;
+            series.BorderColor = Color.White;
+
+            // Custom colors for transaction types
+            Dictionary<string, Color> typeColors = new Dictionary<string, Color>()
+{
+    { "Sale", Color.Green },
+    { "Refund", Color.Red }
+};
+
+            // Add data points
+            foreach (DataRow row in dtTransactions.Rows)
+            {
+                string type = row["TransactionType"].ToString();
+                int count = Convert.ToInt32(row["TransactionCount"]);
+                decimal amount = Convert.ToDecimal(row["TotalAmount"]);
+
+                DataPoint point = new DataPoint();
+                point.SetValueXY(type, count);
+                point.Color = typeColors.ContainsKey(type) ? typeColors[type] : Color.Blue;
+                point.Label = $"{type}\n{count} transactions\n{amount:C}";
+                point.LegendText = $"{type} ({count})";
+                series.Points.Add(point);
+            }
+
+            // Add series to chart
+            chtSaleRefund.Series.Add(series);
+
+            // Customize legend
+            Legend legend = new Legend();
+            legend.Title = "Transaction Types";
+            legend.Docking = Docking.Right;
+            legend.Font = new Font("Arial", 9, FontStyle.Bold);
+            chtSaleRefund.Legends.Add(legend);
+
+            // 3D effects
+            chtSaleRefund.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chtSaleRefund.ChartAreas[0].Area3DStyle.Inclination = 30;
+        }
+
+        private void btnLeastMostBought_Click(object sender, EventArgs e)
+        {
+            // Clear existing elements
+            chtLeastMostBoughtReports.Series.Clear();
+            chtLeastMostBoughtReports.Titles.Clear();
+            chtLeastMostBoughtReports.Legends.Clear();
+            
+
+            // Set chart title
+            chtLeastMostBoughtReports.Titles.Add("Product Sales Funnel");
+            chtLeastMostBoughtReports.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
+
+            // Get data from database
+            WstGrp11DataSet dataset = new WstGrp11DataSet();
+            dataset.EnforceConstraints = false;
+            OrderLineTableAdapter orderLineTA = new OrderLineTableAdapter();
+            DataTable dtProducts = dataset.OrderLine; // Temporary storage
+            orderLineTA.FillByLeastAndMostBought(dataset.OrderLine);
+
+            // Create funnel series
+            Series series = new Series("Products");
+            series.ChartType = SeriesChartType.Funnel;
+            series.IsValueShownAsLabel = true;
+            series.LabelFormat = "#VALX\n#VALY items\n#PERCENT{P2} of total";
+            series["FunnelStyle"] = "YIsWidth"; // Width represents quantity
+            series["FunnelNeckHeight"] = "15"; // Narrow part at bottom
+            series["FunnelNeckWidth"] = "15";
+            series.Color = Color.SteelBlue;
+            series.BorderWidth = 2;
+            series.BorderColor = Color.White;
+
+            // Add data points (top 10 products)
+            int maxProductsToShow = 10;
+            for (int i = 0; i < Math.Min(maxProductsToShow, dtProducts.Rows.Count); i++)
+            {
+                DataRow row = dtProducts.Rows[i];
+                string productName = row["ProductName"].ToString();
+                int quantity = Convert.ToInt32(row["TotalQuantitySold"]);
+                decimal revenue = Convert.ToDecimal(row["TotalRevenue"]);
+
+                DataPoint point = new DataPoint();
+                point.SetValueXY(productName, quantity);
+                point.Label = $"{productName}\n{quantity} sold\n{revenue:C}";
+                point.LegendText = $"{productName} ({quantity})";
+                point.Color = GetColorForPos(i); // Color by position
+                series.Points.Add(point);
+            }
+
+            // Add series to chart
+            chtLeastMostBoughtReports.Series.Add(series);
+
+            // Customize chart area
+            chtLeastMostBoughtReports.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chtLeastMostBoughtReports.ChartAreas[0].Area3DStyle.Inclination = 15;
+            chtLeastMostBoughtReports.ChartAreas[0].Area3DStyle.IsRightAngleAxes = false;
+
+            // Add legend
+            Legend legend = new Legend();
+            legend.Title = "Top Products";
+            legend.Docking = Docking.Right;
+            legend.Font = new Font("Arial", 8);
+            chtLeastMostBoughtReports.Legends.Add(legend);
+        }
+
+        private Color GetColorForPos(int position)
         {
             // Gradient from green (most popular) to red (least popular)
             float ratio = position / 9f; // For top 10 items
