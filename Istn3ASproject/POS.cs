@@ -14,7 +14,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+  using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
@@ -30,6 +30,18 @@ namespace Istn3ASproject
         private Action<Form> navigate;
         private frmUserManagement userManagement;
 
+        private frmUserManagement cusForm;
+        private string userRole;
+        private int staffID;
+
+        public frmPOS(Action<Form> navigateTo, string userRole, int staffID)
+        {
+            InitializeComponent();
+            navigate = navigateTo;
+            this.userRole = userRole;
+            lblStaffID.Text = staffID.ToString();
+
+        }
         public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
         {
             InitializeComponent();
@@ -75,7 +87,7 @@ namespace Istn3ASproject
                 WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
 
                 //set quantity to 1
-                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count-1].Cells[5].Value = 1;
+                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 1].Cells[5].Value = 1;
 
 
 
@@ -101,7 +113,7 @@ namespace Istn3ASproject
             decimal price = 0;
 
             //loops through table to calculate total
-            for (int i = 0; i < dgvSalesInvoice.Rows.Count ; i++)
+            for (int i = 0; i < dgvSalesInvoice.Rows.Count; i++)
             {
                 price = Convert.ToDecimal(dgvSalesInvoice.Rows[i].Cells[3].Value);
                 quantity = HandleQuantityInput(dgvSalesInvoice.Rows[i].Cells[5].Value.ToString(), i);
@@ -148,7 +160,8 @@ namespace Istn3ASproject
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
                 String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;
-                int StaffID = 1;
+                
+                int StaffID = Convert.ToInt32(lblStaffID.Text);
                 string TransactionType = "sale";
                 string Today = DateTime.Today.ToString("yyyy-MM-dd");
                 string CurrentTime = DateTime.Now.ToString("HH:mm:ss");
@@ -409,7 +422,7 @@ namespace Istn3ASproject
         {
             string listOfItems = "";
 
-            for (int i = 0; i < dgvSalesInvoice.Rows.Count ; i++)
+            for (int i = 0; i < dgvSalesInvoice.Rows.Count; i++)
             {
                 //GET ITEM INFORMATION
                 string StockID = dgvSalesInvoice.Rows[i].Cells[0].Value.ToString();
@@ -419,7 +432,7 @@ namespace Istn3ASproject
                 decimal SubTotal = price * quantity;
 
                 //ADD TO STRING OF ITEMS
-                listOfItems +=" " + name + "\t" + SubTotal.ToString("C2") + "\n";
+                listOfItems += " " + name + "\t" + SubTotal.ToString("C2") + "\n";
             }
             return listOfItems;
         }
@@ -507,7 +520,7 @@ namespace Istn3ASproject
              lblCustomerID.Text = dgvCustomer.CurrentRow.Cells[0].Value.ToString();
          }*/
 
-        public void UpdateLabel(string name,string lastName,string ID)
+        public void UpdateLabel(string name, string lastName, string ID)
         {
             lblCustomerName.Text = name;
             lblCustomerLN.Text = lastName;
@@ -516,7 +529,7 @@ namespace Istn3ASproject
 
         private void dgvSalesInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvSalesInvoice.Rows.Count>0)
+            if (dgvSalesInvoice.Rows.Count > 0)
             {
                 if (e.ColumnIndex == 7)
                 {
@@ -584,10 +597,10 @@ namespace Istn3ASproject
             decimal Total = 0;
             bool Refund = true;
 
-            for (int i = 0; i< dgvRefundInnerJoin.Rows.Count; i++)
+            for (int i = 0; i < dgvRefundInnerJoin.Rows.Count; i++)
             {
                 decimal Price = Convert.ToDecimal(dgvRefundInnerJoin.Rows[i].Cells[5].Value);
-                
+
                 //Totals value of items in orderline and checks if its a full refund
                 if (Price != 0)
                 {
@@ -628,6 +641,12 @@ namespace Istn3ASproject
                  "-Allows you you refund sepcific items in the order adjusting the value and type of the order";
 
             MessageBox.Show(message, "Refund Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void btnGoToCustomer_Click(object sender, EventArgs e)
+        {
+
+            var userForm = new frmUserManagement(navigate, this.userRole);
+            
+            navigate(userForm);
         }
     }
 }

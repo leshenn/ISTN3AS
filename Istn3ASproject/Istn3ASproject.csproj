@@ -119,6 +119,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WstGrp11DataSet.cs">
+      <DependentUpon>WstGrp11DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WstGrp11DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
