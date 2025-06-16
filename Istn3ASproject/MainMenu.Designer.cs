@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panHead = new System.Windows.Forms.Panel();
+            this.lblR = new System.Windows.Forms.Label();
+            this.lblU = new System.Windows.Forms.Label();
+            this.lblUserRole = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.btnPOS = new System.Windows.Forms.Button();
             this.btnUserMangement = new System.Windows.Forms.Button();
             this.btnStockManagement = new System.Windows.Forms.Button();
@@ -36,10 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panMain = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblUserRole = new System.Windows.Forms.Label();
-            this.lblU = new System.Windows.Forms.Label();
-            this.lblR = new System.Windows.Forms.Label();
             this.panHead.SuspendLayout();
             this.panMain.SuspendLayout();
             this.SuspendLayout();
@@ -57,15 +57,57 @@
             this.panHead.Controls.Add(this.label1);
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
+            this.panHead.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panHead.Name = "panHead";
-            this.panHead.Size = new System.Drawing.Size(1370, 61);
+            this.panHead.Size = new System.Drawing.Size(1827, 75);
             this.panHead.TabIndex = 0;
+            // 
+            // lblR
+            // 
+            this.lblR.AutoSize = true;
+            this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblR.Location = new System.Drawing.Point(712, 37);
+            this.lblR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblR.Name = "lblR";
+            this.lblR.Size = new System.Drawing.Size(44, 16);
+            this.lblR.TabIndex = 8;
+            this.lblR.Text = "label3";
+            // 
+            // lblU
+            // 
+            this.lblU.AutoSize = true;
+            this.lblU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblU.Location = new System.Drawing.Point(368, 37);
+            this.lblU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblU.Name = "lblU";
+            this.lblU.Size = new System.Drawing.Size(44, 16);
+            this.lblU.TabIndex = 7;
+            this.lblU.Text = "label2";
+            // 
+            // lblUserRole
+            // 
+            this.lblUserRole.AutoSize = true;
+            this.lblUserRole.Location = new System.Drawing.Point(767, 37);
+            this.lblUserRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(0, 16);
+            this.lblUserRole.TabIndex = 6;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(359, 37);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 16);
+            this.lblUser.TabIndex = 5;
             // 
             // btnPOS
             // 
-            this.btnPOS.Location = new System.Drawing.Point(1327, 12);
+            this.btnPOS.Location = new System.Drawing.Point(1769, 15);
+            this.btnPOS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(118, 41);
+            this.btnPOS.Size = new System.Drawing.Size(157, 50);
             this.btnPOS.TabIndex = 1;
             this.btnPOS.Text = "Point of sales";
             this.btnPOS.UseVisualStyleBackColor = true;
@@ -73,9 +115,10 @@
             // 
             // btnUserMangement
             // 
-            this.btnUserMangement.Location = new System.Drawing.Point(1188, 12);
+            this.btnUserMangement.Location = new System.Drawing.Point(1584, 15);
+            this.btnUserMangement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserMangement.Name = "btnUserMangement";
-            this.btnUserMangement.Size = new System.Drawing.Size(118, 41);
+            this.btnUserMangement.Size = new System.Drawing.Size(157, 50);
             this.btnUserMangement.TabIndex = 2;
             this.btnUserMangement.Text = "User Management";
             this.btnUserMangement.UseVisualStyleBackColor = true;
@@ -83,9 +126,10 @@
             // 
             // btnStockManagement
             // 
-            this.btnStockManagement.Location = new System.Drawing.Point(1046, 12);
+            this.btnStockManagement.Location = new System.Drawing.Point(1395, 15);
+            this.btnStockManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStockManagement.Name = "btnStockManagement";
-            this.btnStockManagement.Size = new System.Drawing.Size(118, 41);
+            this.btnStockManagement.Size = new System.Drawing.Size(157, 50);
             this.btnStockManagement.TabIndex = 3;
             this.btnStockManagement.Text = "Stock Management";
             this.btnStockManagement.UseVisualStyleBackColor = true;
@@ -93,9 +137,10 @@
             // 
             // btnReports
             // 
-            this.btnReports.Location = new System.Drawing.Point(904, 12);
+            this.btnReports.Location = new System.Drawing.Point(1205, 15);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(118, 41);
+            this.btnReports.Size = new System.Drawing.Size(157, 50);
             this.btnReports.TabIndex = 4;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = true;
@@ -105,9 +150,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 24);
+            this.label1.Location = new System.Drawing.Point(29, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(201, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "TIA\'S FISHERIES";
             // 
@@ -116,9 +162,10 @@
             this.panMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panMain.Controls.Add(this.lblWelcome);
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panMain.Location = new System.Drawing.Point(0, 61);
+            this.panMain.Location = new System.Drawing.Point(0, 75);
+            this.panMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1370, 603);
+            this.panMain.Size = new System.Drawing.Size(1827, 742);
             this.panMain.TabIndex = 1;
             // 
             // lblWelcome
@@ -127,57 +174,23 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Nirmala UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblWelcome.Location = new System.Drawing.Point(427, 186);
+            this.lblWelcome.Location = new System.Drawing.Point(569, 229);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(522, 128);
+            this.lblWelcome.Size = new System.Drawing.Size(652, 159);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(269, 30);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(0, 13);
-            this.lblUser.TabIndex = 5;
-            // 
-            // lblUserRole
-            // 
-            this.lblUserRole.AutoSize = true;
-            this.lblUserRole.Location = new System.Drawing.Point(575, 30);
-            this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(0, 13);
-            this.lblUserRole.TabIndex = 6;
-            // 
-            // lblU
-            // 
-            this.lblU.AutoSize = true;
-            this.lblU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblU.Location = new System.Drawing.Point(276, 30);
-            this.lblU.Name = "lblU";
-            this.lblU.Size = new System.Drawing.Size(35, 13);
-            this.lblU.TabIndex = 7;
-            this.lblU.Text = "label2";
-            // 
-            // lblR
-            // 
-            this.lblR.AutoSize = true;
-            this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblR.Location = new System.Drawing.Point(534, 30);
-            this.lblR.Name = "lblR";
-            this.lblR.Size = new System.Drawing.Size(35, 13);
-            this.lblR.TabIndex = 8;
-            this.lblR.Text = "label3";
-            // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 664);
+            this.ClientSize = new System.Drawing.Size(1827, 817);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panHead);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

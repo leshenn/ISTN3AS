@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tcReports = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.tbpInventory = new System.Windows.Forms.TabPage();
             this.tbpFinancial = new System.Windows.Forms.TabPage();
+            this.dtpFinancialChart = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1Financial = new System.Windows.Forms.GroupBox();
+            this.lblProfitFinancial = new System.Windows.Forms.Label();
+            this.lblExpensesFinancial = new System.Windows.Forms.Label();
+            this.lblIncomeFinancial = new System.Windows.Forms.Label();
+            this.Financiallabel3 = new System.Windows.Forms.Label();
+            this.Financiallabel2 = new System.Windows.Forms.Label();
+            this.Financiallabel1 = new System.Windows.Forms.Label();
+            this.btnRefreshFinancialGraph = new System.Windows.Forms.Button();
+            this.label1Financial = new System.Windows.Forms.Label();
+            this.cmbPeriodFinancial = new System.Windows.Forms.ComboBox();
+            this.chrtFinancial = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.taSupplierOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
+            this.wstGrp11DataSet1 = new Istn3ASproject.WstGrp11DataSet();
+            this.taOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
             this.tcReports.SuspendLayout();
+            this.tbpFinancial.SuspendLayout();
+            this.groupBox1Financial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcReports
@@ -42,55 +64,211 @@
             this.tcReports.Controls.Add(this.tbpFinancial);
             this.tcReports.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcReports.Location = new System.Drawing.Point(0, 0);
-            this.tcReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcReports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tcReports.Name = "tcReports";
             this.tcReports.SelectedIndex = 0;
-            this.tcReports.Size = new System.Drawing.Size(600, 366);
+            this.tcReports.Size = new System.Drawing.Size(800, 450);
             this.tcReports.TabIndex = 0;
             // 
             // tbpSales
             // 
-            this.tbpSales.Location = new System.Drawing.Point(4, 22);
-            this.tbpSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Location = new System.Drawing.Point(4, 25);
+            this.tbpSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbpSales.Name = "tbpSales";
-            this.tbpSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbpSales.Size = new System.Drawing.Size(592, 340);
+            this.tbpSales.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpSales.Size = new System.Drawing.Size(792, 421);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
             this.tbpSales.UseVisualStyleBackColor = true;
             // 
             // tbpInventory
             // 
-            this.tbpInventory.Location = new System.Drawing.Point(4, 22);
-            this.tbpInventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInventory.Location = new System.Drawing.Point(4, 25);
+            this.tbpInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbpInventory.Name = "tbpInventory";
-            this.tbpInventory.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbpInventory.Size = new System.Drawing.Size(592, 340);
+            this.tbpInventory.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpInventory.Size = new System.Drawing.Size(792, 421);
             this.tbpInventory.TabIndex = 1;
             this.tbpInventory.Text = "Inventory";
             this.tbpInventory.UseVisualStyleBackColor = true;
             // 
             // tbpFinancial
             // 
-            this.tbpFinancial.Location = new System.Drawing.Point(4, 22);
-            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpFinancial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpFinancial.Controls.Add(this.dtpFinancialChart);
+            this.tbpFinancial.Controls.Add(this.groupBox1Financial);
+            this.tbpFinancial.Location = new System.Drawing.Point(4, 25);
+            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbpFinancial.Name = "tbpFinancial";
-            this.tbpFinancial.Size = new System.Drawing.Size(592, 340);
+            this.tbpFinancial.Size = new System.Drawing.Size(792, 421);
             this.tbpFinancial.TabIndex = 2;
             this.tbpFinancial.Text = "Financial";
-            this.tbpFinancial.UseVisualStyleBackColor = true;
+            // 
+            // dtpFinancialChart
+            // 
+            this.dtpFinancialChart.Location = new System.Drawing.Point(178, 64);
+            this.dtpFinancialChart.Name = "dtpFinancialChart";
+            this.dtpFinancialChart.Size = new System.Drawing.Size(200, 22);
+            this.dtpFinancialChart.TabIndex = 3;
+            // 
+            // groupBox1Financial
+            // 
+            this.groupBox1Financial.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox1Financial.Controls.Add(this.lblProfitFinancial);
+            this.groupBox1Financial.Controls.Add(this.lblExpensesFinancial);
+            this.groupBox1Financial.Controls.Add(this.lblIncomeFinancial);
+            this.groupBox1Financial.Controls.Add(this.Financiallabel3);
+            this.groupBox1Financial.Controls.Add(this.Financiallabel2);
+            this.groupBox1Financial.Controls.Add(this.Financiallabel1);
+            this.groupBox1Financial.Controls.Add(this.btnRefreshFinancialGraph);
+            this.groupBox1Financial.Controls.Add(this.label1Financial);
+            this.groupBox1Financial.Controls.Add(this.cmbPeriodFinancial);
+            this.groupBox1Financial.Controls.Add(this.chrtFinancial);
+            this.groupBox1Financial.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1Financial.Location = new System.Drawing.Point(220, 169);
+            this.groupBox1Financial.Name = "groupBox1Financial";
+            this.groupBox1Financial.Size = new System.Drawing.Size(690, 429);
+            this.groupBox1Financial.TabIndex = 2;
+            this.groupBox1Financial.TabStop = false;
+            this.groupBox1Financial.Text = "Profit to Loss Comparison";
+            // 
+            // lblProfitFinancial
+            // 
+            this.lblProfitFinancial.AutoSize = true;
+            this.lblProfitFinancial.Location = new System.Drawing.Point(492, 384);
+            this.lblProfitFinancial.Name = "lblProfitFinancial";
+            this.lblProfitFinancial.Size = new System.Drawing.Size(95, 32);
+            this.lblProfitFinancial.TabIndex = 10;
+            this.lblProfitFinancial.Text = "R0.00";
+            // 
+            // lblExpensesFinancial
+            // 
+            this.lblExpensesFinancial.AutoSize = true;
+            this.lblExpensesFinancial.Location = new System.Drawing.Point(492, 294);
+            this.lblExpensesFinancial.Name = "lblExpensesFinancial";
+            this.lblExpensesFinancial.Size = new System.Drawing.Size(95, 32);
+            this.lblExpensesFinancial.TabIndex = 9;
+            this.lblExpensesFinancial.Text = "R0.00";
+            // 
+            // lblIncomeFinancial
+            // 
+            this.lblIncomeFinancial.AutoSize = true;
+            this.lblIncomeFinancial.Location = new System.Drawing.Point(492, 200);
+            this.lblIncomeFinancial.Name = "lblIncomeFinancial";
+            this.lblIncomeFinancial.Size = new System.Drawing.Size(95, 32);
+            this.lblIncomeFinancial.TabIndex = 8;
+            this.lblIncomeFinancial.Text = "R0.00";
+            // 
+            // Financiallabel3
+            // 
+            this.Financiallabel3.AutoSize = true;
+            this.Financiallabel3.Location = new System.Drawing.Point(464, 340);
+            this.Financiallabel3.Name = "Financiallabel3";
+            this.Financiallabel3.Size = new System.Drawing.Size(220, 32);
+            this.Financiallabel3.TabIndex = 7;
+            this.Financiallabel3.Text = "Profit Margins :";
+            // 
+            // Financiallabel2
+            // 
+            this.Financiallabel2.AutoSize = true;
+            this.Financiallabel2.Location = new System.Drawing.Point(464, 248);
+            this.Financiallabel2.Name = "Financiallabel2";
+            this.Financiallabel2.Size = new System.Drawing.Size(198, 32);
+            this.Financiallabel2.TabIndex = 6;
+            this.Financiallabel2.Text = "Expenenses :";
+            // 
+            // Financiallabel1
+            // 
+            this.Financiallabel1.AutoSize = true;
+            this.Financiallabel1.Location = new System.Drawing.Point(492, 157);
+            this.Financiallabel1.Name = "Financiallabel1";
+            this.Financiallabel1.Size = new System.Drawing.Size(129, 32);
+            this.Financiallabel1.TabIndex = 5;
+            this.Financiallabel1.Text = "Income :";
+            // 
+            // btnRefreshFinancialGraph
+            // 
+            this.btnRefreshFinancialGraph.Location = new System.Drawing.Point(536, 28);
+            this.btnRefreshFinancialGraph.Name = "btnRefreshFinancialGraph";
+            this.btnRefreshFinancialGraph.Size = new System.Drawing.Size(154, 48);
+            this.btnRefreshFinancialGraph.TabIndex = 4;
+            this.btnRefreshFinancialGraph.Text = "Refresh Financial Graph";
+            this.btnRefreshFinancialGraph.UseVisualStyleBackColor = true;
+            this.btnRefreshFinancialGraph.Click += new System.EventHandler(this.btnRefreshFinancialGraph_Click);
+            // 
+            // label1Financial
+            // 
+            this.label1Financial.AutoSize = true;
+            this.label1Financial.Location = new System.Drawing.Point(6, 41);
+            this.label1Financial.Name = "label1Financial";
+            this.label1Financial.Size = new System.Drawing.Size(304, 32);
+            this.label1Financial.TabIndex = 3;
+            this.label1Financial.Text = "Choose Time Frame :";
+            this.label1Financial.Click += new System.EventHandler(this.label1Financial_Click);
+            // 
+            // cmbPeriodFinancial
+            // 
+            this.cmbPeriodFinancial.FormattingEnabled = true;
+            this.cmbPeriodFinancial.Items.AddRange(new object[] {
+            "Lifetime",
+            "Daily",
+            "Weekly",
+            "Monthly",
+            "Yearly"});
+            this.cmbPeriodFinancial.Location = new System.Drawing.Point(366, 34);
+            this.cmbPeriodFinancial.Name = "cmbPeriodFinancial";
+            this.cmbPeriodFinancial.Size = new System.Drawing.Size(164, 39);
+            this.cmbPeriodFinancial.TabIndex = 2;
+            this.cmbPeriodFinancial.Text = "Lifetime";
+            // 
+            // chrtFinancial
+            // 
+            this.chrtFinancial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.chrtFinancial.BorderlineColor = System.Drawing.Color.Black;
+            chartArea1.Name = "ChartArea1";
+            this.chrtFinancial.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrtFinancial.Legends.Add(legend1);
+            this.chrtFinancial.Location = new System.Drawing.Point(29, 92);
+            this.chrtFinancial.Name = "chrtFinancial";
+            this.chrtFinancial.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Money Flow";
+            this.chrtFinancial.Series.Add(series1);
+            this.chrtFinancial.Size = new System.Drawing.Size(615, 331);
+            this.chrtFinancial.TabIndex = 1;
+            this.chrtFinancial.Text = "Financial Chart";
+            // 
+            // taSupplierOrderFinancial
+            // 
+            this.taSupplierOrderFinancial.ClearBeforeFill = true;
+            // 
+            // wstGrp11DataSet1
+            // 
+            this.wstGrp11DataSet1.DataSetName = "WstGrp11DataSet";
+            this.wstGrp11DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // taOrderFinancial
+            // 
+            this.taOrderFinancial.ClearBeforeFill = true;
             // 
             // frmReports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcReports);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmReports";
             this.Text = "Reports";
             this.tcReports.ResumeLayout(false);
+            this.tbpFinancial.ResumeLayout(false);
+            this.groupBox1Financial.ResumeLayout(false);
+            this.groupBox1Financial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +279,20 @@
         private System.Windows.Forms.TabPage tbpSales;
         private System.Windows.Forms.TabPage tbpInventory;
         private System.Windows.Forms.TabPage tbpFinancial;
+        private WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter taSupplierOrderFinancial;
+        private WstGrp11DataSet wstGrp11DataSet1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtFinancial;
+        private WstGrp11DataSetTableAdapters.OrderTableAdapter taOrderFinancial;
+        private System.Windows.Forms.GroupBox groupBox1Financial;
+        private System.Windows.Forms.ComboBox cmbPeriodFinancial;
+        private System.Windows.Forms.Label label1Financial;
+        private System.Windows.Forms.Button btnRefreshFinancialGraph;
+        private System.Windows.Forms.Label lblProfitFinancial;
+        private System.Windows.Forms.Label lblExpensesFinancial;
+        private System.Windows.Forms.Label lblIncomeFinancial;
+        private System.Windows.Forms.Label Financiallabel3;
+        private System.Windows.Forms.Label Financiallabel2;
+        private System.Windows.Forms.Label Financiallabel1;
+        private System.Windows.Forms.DateTimePicker dtpFinancialChart;
     }
 }
