@@ -30,18 +30,19 @@ namespace Istn3ASproject
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label lblSupplierSearch;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcUserManagement = new System.Windows.Forms.TabControl();
             this.tbpCustomers = new System.Windows.Forms.TabPage();
             this.btnNewOrder = new System.Windows.Forms.Button();
+            this.btnHelpCustomerTab = new System.Windows.Forms.Button();
             this.gbCustomer = new System.Windows.Forms.GroupBox();
             this.gvCustomer = new System.Windows.Forms.DataGridView();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +97,7 @@ namespace Istn3ASproject
             this.btnSearchByNo = new System.Windows.Forms.Button();
             this.lblSearchByPhoneNumber = new System.Windows.Forms.Label();
             this.tbpStaff = new System.Windows.Forms.TabPage();
+            this.btnHelpStaffTab = new System.Windows.Forms.Button();
             this.gbStaff = new System.Windows.Forms.GroupBox();
             this.dgvStaffMgt = new System.Windows.Forms.DataGridView();
             this.staffIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,6 +143,7 @@ namespace Istn3ASproject
             this.txtUsernameStaff = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbpSuppliers = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gvSupplier = new System.Windows.Forms.DataGridView();
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,9 +201,6 @@ namespace Istn3ASproject
             this.customerTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.staffTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StaffTableAdapter();
             this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
-            this.btnHelpCustomerTab = new System.Windows.Forms.Button();
-            this.btnHelpStaffTab = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             lblSupplierSearch = new System.Windows.Forms.Label();
             this.tcUserManagement.SuspendLayout();
             this.tbpCustomers.SuspendLayout();
@@ -286,6 +286,19 @@ namespace Istn3ASproject
             this.btnNewOrder.UseVisualStyleBackColor = false;
             this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
+            // btnHelpCustomerTab
+            // 
+            this.btnHelpCustomerTab.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHelpCustomerTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelpCustomerTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelpCustomerTab.Location = new System.Drawing.Point(39, 28);
+            this.btnHelpCustomerTab.Name = "btnHelpCustomerTab";
+            this.btnHelpCustomerTab.Size = new System.Drawing.Size(119, 33);
+            this.btnHelpCustomerTab.TabIndex = 40;
+            this.btnHelpCustomerTab.Text = "Help ";
+            this.btnHelpCustomerTab.UseVisualStyleBackColor = false;
+            this.btnHelpCustomerTab.Click += new System.EventHandler(this.btnHelpCustomerTab_Click);
+            // 
             // gbCustomer
             // 
             this.gbCustomer.Controls.Add(this.gvCustomer);
@@ -305,14 +318,14 @@ namespace Istn3ASproject
             this.gvCustomer.AutoGenerateColumns = false;
             this.gvCustomer.BackgroundColor = System.Drawing.Color.LightBlue;
             this.gvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.customerIDDataGridViewTextBoxColumn,
@@ -325,27 +338,27 @@ namespace Istn3ASproject
             this.provinceDataGridViewTextBoxColumn,
             this.postalCodeDataGridViewTextBoxColumn});
             this.gvCustomer.DataSource = this.customerBindingSource;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvCustomer.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvCustomer.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvCustomer.EnableHeadersVisualStyles = false;
             this.gvCustomer.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.gvCustomer.Location = new System.Drawing.Point(24, 34);
             this.gvCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.gvCustomer.Name = "gvCustomer";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gvCustomer.RowHeadersWidth = 51;
             this.gvCustomer.RowTemplate.Height = 24;
             this.gvCustomer.Size = new System.Drawing.Size(1100, 215);
@@ -965,6 +978,19 @@ namespace Istn3ASproject
             this.tbpStaff.TabIndex = 1;
             this.tbpStaff.Text = "Staff";
             // 
+            // btnHelpStaffTab
+            // 
+            this.btnHelpStaffTab.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHelpStaffTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelpStaffTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelpStaffTab.Location = new System.Drawing.Point(36, 27);
+            this.btnHelpStaffTab.Name = "btnHelpStaffTab";
+            this.btnHelpStaffTab.Size = new System.Drawing.Size(119, 33);
+            this.btnHelpStaffTab.TabIndex = 41;
+            this.btnHelpStaffTab.Text = "Help ";
+            this.btnHelpStaffTab.UseVisualStyleBackColor = false;
+            this.btnHelpStaffTab.Click += new System.EventHandler(this.btnHelpStaffTab_Click);
+            // 
             // gbStaff
             // 
             this.gbStaff.Controls.Add(this.dgvStaffMgt);
@@ -983,14 +1009,14 @@ namespace Istn3ASproject
             this.dgvStaffMgt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvStaffMgt.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvStaffMgt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStaffMgt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStaffMgt.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStaffMgt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaffMgt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.staffIDDataGridViewTextBoxColumn1,
@@ -1001,27 +1027,27 @@ namespace Istn3ASproject
             this.contactNoDataGridViewTextBoxColumn3,
             this.roleDataGridViewTextBoxColumn1});
             this.dgvStaffMgt.DataSource = this.staffBindingSource;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStaffMgt.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStaffMgt.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStaffMgt.EnableHeadersVisualStyles = false;
             this.dgvStaffMgt.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvStaffMgt.Location = new System.Drawing.Point(33, 34);
             this.dgvStaffMgt.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStaffMgt.Name = "dgvStaffMgt";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStaffMgt.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStaffMgt.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStaffMgt.RowHeadersWidth = 51;
             this.dgvStaffMgt.Size = new System.Drawing.Size(1103, 185);
             this.dgvStaffMgt.TabIndex = 0;
@@ -1507,6 +1533,19 @@ namespace Istn3ASproject
             this.tbpSuppliers.TabIndex = 2;
             this.tbpSuppliers.Text = "Suppliers";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(33, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 33);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "Help ";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.gvSupplier);
@@ -1525,14 +1564,14 @@ namespace Istn3ASproject
             this.gvSupplier.AutoGenerateColumns = false;
             this.gvSupplier.BackgroundColor = System.Drawing.Color.LightBlue;
             this.gvSupplier.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.supplierIDDataGridViewTextBoxColumn,
@@ -1544,27 +1583,27 @@ namespace Istn3ASproject
             this.provinceDataGridViewTextBoxColumn1,
             this.postalCodeDataGridViewTextBoxColumn1});
             this.gvSupplier.DataSource = this.supplierBindingSource;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvSupplier.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvSupplier.DefaultCellStyle = dataGridViewCellStyle8;
             this.gvSupplier.EnableHeadersVisualStyles = false;
             this.gvSupplier.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.gvSupplier.Location = new System.Drawing.Point(27, 37);
             this.gvSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.gvSupplier.Name = "gvSupplier";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvSupplier.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvSupplier.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.gvSupplier.RowHeadersWidth = 51;
             this.gvSupplier.RowTemplate.Height = 24;
             this.gvSupplier.Size = new System.Drawing.Size(1427, 218);
@@ -2159,45 +2198,6 @@ namespace Istn3ASproject
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnHelpCustomerTab
-            // 
-            this.btnHelpCustomerTab.BackColor = System.Drawing.Color.LightBlue;
-            this.btnHelpCustomerTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelpCustomerTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelpCustomerTab.Location = new System.Drawing.Point(1203, 34);
-            this.btnHelpCustomerTab.Name = "btnHelpCustomerTab";
-            this.btnHelpCustomerTab.Size = new System.Drawing.Size(119, 33);
-            this.btnHelpCustomerTab.TabIndex = 40;
-            this.btnHelpCustomerTab.Text = "Help ";
-            this.btnHelpCustomerTab.UseVisualStyleBackColor = false;
-            this.btnHelpCustomerTab.Click += new System.EventHandler(this.btnHelpCustomerTab_Click);
-            // 
-            // btnHelpStaffTab
-            // 
-            this.btnHelpStaffTab.BackColor = System.Drawing.Color.LightBlue;
-            this.btnHelpStaffTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelpStaffTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelpStaffTab.Location = new System.Drawing.Point(1210, 46);
-            this.btnHelpStaffTab.Name = "btnHelpStaffTab";
-            this.btnHelpStaffTab.Size = new System.Drawing.Size(119, 33);
-            this.btnHelpStaffTab.TabIndex = 41;
-            this.btnHelpStaffTab.Text = "Help ";
-            this.btnHelpStaffTab.UseVisualStyleBackColor = false;
-            this.btnHelpStaffTab.Click += new System.EventHandler(this.btnHelpStaffTab_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LightBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1184, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 33);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "Help ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // frmUserManagement
             // 

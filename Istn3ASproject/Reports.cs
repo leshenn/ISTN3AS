@@ -19,6 +19,10 @@ namespace Istn3ASproject
             dtpFinancialChart.Format = DateTimePickerFormat.Custom;
             dtpFinancialChart.CustomFormat = "yyyy/MM";
             dtpFinancialChart.ShowUpDown = true;
+            chrtFinancialLine.ChartAreas[0].AxisX.Interval = 1;
+            loadFinancialChart();
+            loadLifeTimeGraphFinancial();
+
         }
 
 
@@ -67,12 +71,16 @@ namespace Istn3ASproject
             decimal dept = 0;
             decimal income = 0;
 
+
+            string message = "";
             //CALCULATE EXPENSES
             for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split(' ')[0];
 
+                message += input + "\n";
+               
                 if (Today == date)
                 {
                     dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
@@ -80,6 +88,7 @@ namespace Istn3ASproject
 
                
             }
+            MessageBox.Show(message);
 
             //CALCULATE iNCOME
             for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
@@ -117,7 +126,7 @@ namespace Istn3ASproject
             //CALCULATE EXPENSES
             for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
                 date +="/"+ input.Split('/')[1];
 
@@ -164,7 +173,7 @@ namespace Istn3ASproject
             //CALCULATE EXPENSES
             for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split('/')[0];
 
                 if (Today == date)
@@ -212,7 +221,7 @@ namespace Istn3ASproject
             //CALCULATE EXPENSES
             for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
             {
-                string input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
                 string date = input.Split(' ')[0];
                 DateTime dtDate = DateTime.Parse(date);
 
@@ -223,7 +232,6 @@ namespace Istn3ASproject
                 {
                     dept += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
                 }
-
 
             }
 
@@ -286,6 +294,76 @@ namespace Istn3ASproject
             {
                 loadYearlyGraphFinancial();
             }
+        }
+
+        private void dtpFinancialChart_ValueChanged(object sender, EventArgs e)
+        {
+            loadFinancialChart();
+        }
+
+        private void loadFinancialChart()
+        {
+            chrtFinancialLine.Series["income"].Points.Clear();
+            chrtFinancialLine.Series["expenses"].Points.Clear();
+
+            Decimal[] dailyIncome = new decimal[31];
+            Decimal[] dailyExpense = new decimal[31];
+
+            for (int i =0; i<31; i++)
+            {
+                dailyIncome[i] = 0;
+                dailyIncome[i] = 0;
+            }
+
+            string input = dtpFinancialChart.Value.ToString();
+            string Cdate = input.Split('/')[0];
+            Cdate += '/' + input.Split('/')[1];
+
+           taOrderFinancial.Fill(wstGrp11DataSet1.Order);
+           taSupplierOrderFinancial.Fill(wstGrp11DataSet1.SupplierOrder);
+
+
+            //CALCULATE iNCOME
+            for (int i = 0; i < wstGrp11DataSet1.Order.Rows.Count; i++)
+            {
+                input = wstGrp11DataSet1.Order.Rows[i].ItemArray[5].ToString();
+                string date = input.Split('/')[0];
+                date += '/' + input.Split('/')[1];
+
+
+                if (date == Cdate)
+                {
+                    string dateInput = input.Split('/')[2];
+                    int day = Convert.ToInt32(dateInput.Split(' ')[0]);
+                   // MessageBox.Show(day.ToString());
+
+                    dailyIncome[day]+= Convert.ToDecimal(wstGrp11DataSet1.Order.Rows[i].ItemArray[7]);
+                }
+            }
+
+            //CALCULATE EXPENSES
+            for (int i = 0; i < wstGrp11DataSet1.SupplierOrder.Rows.Count; i++)
+            {
+                input = wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[5].ToString();
+                string date = input.Split('/')[0];
+                date += '/' + input.Split('/')[1];
+
+
+                if (date == Cdate)
+                {
+                    string dateInput = input.Split('/')[2];
+                    int day = Convert.ToInt32(dateInput.Split(' ')[0]);
+
+                    dailyExpense[day] += Convert.ToDecimal(wstGrp11DataSet1.SupplierOrder.Rows[i].ItemArray[2]);
+                }
+            }
+
+            for (int i =0; i <31; i++)
+            {
+                chrtFinancialLine.Series["income"].Points.AddXY((i + 1).ToString(), dailyIncome[i]);
+                chrtFinancialLine.Series["expenses"].Points.AddXY((i + 1).ToString(), dailyExpense[i]);
+            }
+
         }
     }
 }

@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tcReports = new System.Windows.Forms.TabControl();
             this.tbpSales = new System.Windows.Forms.TabPage();
             this.tbpInventory = new System.Windows.Forms.TabPage();
@@ -50,11 +54,15 @@
             this.taSupplierOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
             this.wstGrp11DataSet1 = new Istn3ASproject.WstGrp11DataSet();
             this.taOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
+            this.chrtFinancialLine = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grpbFinancialLine = new System.Windows.Forms.GroupBox();
             this.tcReports.SuspendLayout();
             this.tbpFinancial.SuspendLayout();
             this.groupBox1Financial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtFinancialLine)).BeginInit();
+            this.grpbFinancialLine.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcReports
@@ -95,6 +103,7 @@
             // tbpFinancial
             // 
             this.tbpFinancial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpFinancial.Controls.Add(this.grpbFinancialLine);
             this.tbpFinancial.Controls.Add(this.dtpFinancialChart);
             this.tbpFinancial.Controls.Add(this.groupBox1Financial);
             this.tbpFinancial.Location = new System.Drawing.Point(4, 25);
@@ -106,10 +115,11 @@
             // 
             // dtpFinancialChart
             // 
-            this.dtpFinancialChart.Location = new System.Drawing.Point(178, 64);
+            this.dtpFinancialChart.Location = new System.Drawing.Point(8, 14);
             this.dtpFinancialChart.Name = "dtpFinancialChart";
             this.dtpFinancialChart.Size = new System.Drawing.Size(200, 22);
             this.dtpFinancialChart.TabIndex = 3;
+            this.dtpFinancialChart.ValueChanged += new System.EventHandler(this.dtpFinancialChart_ValueChanged);
             // 
             // groupBox1Financial
             // 
@@ -125,7 +135,7 @@
             this.groupBox1Financial.Controls.Add(this.cmbPeriodFinancial);
             this.groupBox1Financial.Controls.Add(this.chrtFinancial);
             this.groupBox1Financial.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1Financial.Location = new System.Drawing.Point(220, 169);
+            this.groupBox1Financial.Location = new System.Drawing.Point(573, 388);
             this.groupBox1Financial.Name = "groupBox1Financial";
             this.groupBox1Financial.Size = new System.Drawing.Size(690, 429);
             this.groupBox1Financial.TabIndex = 2;
@@ -225,17 +235,17 @@
             // 
             this.chrtFinancial.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.chrtFinancial.BorderlineColor = System.Drawing.Color.Black;
-            chartArea1.Name = "ChartArea1";
-            this.chrtFinancial.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrtFinancial.Legends.Add(legend1);
+            chartArea6.Name = "ChartArea1";
+            this.chrtFinancial.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chrtFinancial.Legends.Add(legend6);
             this.chrtFinancial.Location = new System.Drawing.Point(29, 92);
             this.chrtFinancial.Name = "chrtFinancial";
             this.chrtFinancial.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Money Flow";
-            this.chrtFinancial.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Money Flow";
+            this.chrtFinancial.Series.Add(series9);
             this.chrtFinancial.Size = new System.Drawing.Size(615, 331);
             this.chrtFinancial.TabIndex = 1;
             this.chrtFinancial.Text = "Financial Chart";
@@ -253,6 +263,40 @@
             // 
             this.taOrderFinancial.ClearBeforeFill = true;
             // 
+            // chrtFinancialLine
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chrtFinancialLine.ChartAreas.Add(chartArea5);
+            this.chrtFinancialLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend5.Name = "Legend1";
+            this.chrtFinancialLine.Legends.Add(legend5);
+            this.chrtFinancialLine.Location = new System.Drawing.Point(3, 30);
+            this.chrtFinancialLine.Name = "chrtFinancialLine";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "income";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "expenses";
+            this.chrtFinancialLine.Series.Add(series7);
+            this.chrtFinancialLine.Series.Add(series8);
+            this.chrtFinancialLine.Size = new System.Drawing.Size(1347, 307);
+            this.chrtFinancialLine.TabIndex = 4;
+            this.chrtFinancialLine.Text = "chart1";
+            // 
+            // grpbFinancialLine
+            // 
+            this.grpbFinancialLine.Controls.Add(this.chrtFinancialLine);
+            this.grpbFinancialLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpbFinancialLine.Location = new System.Drawing.Point(8, 42);
+            this.grpbFinancialLine.Name = "grpbFinancialLine";
+            this.grpbFinancialLine.Size = new System.Drawing.Size(1353, 340);
+            this.grpbFinancialLine.TabIndex = 5;
+            this.grpbFinancialLine.TabStop = false;
+            this.grpbFinancialLine.Text = "Monthly Financial Chart";
+            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,6 +313,8 @@
             this.groupBox1Financial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtFinancialLine)).EndInit();
+            this.grpbFinancialLine.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -294,5 +340,7 @@
         private System.Windows.Forms.Label Financiallabel2;
         private System.Windows.Forms.Label Financiallabel1;
         private System.Windows.Forms.DateTimePicker dtpFinancialChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtFinancialLine;
+        private System.Windows.Forms.GroupBox grpbFinancialLine;
     }
 }
