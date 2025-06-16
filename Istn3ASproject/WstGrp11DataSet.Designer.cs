@@ -7577,7 +7577,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Time" +
@@ -7591,54 +7591,64 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@orderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT 
+            this._commandCollection[2].CommandText = "SELECT \r\n    TransactionType,\r\n    COUNT(*) AS TransactionCount,\r\n    SUM(TotalCo" +
+                "st) AS TotalAmount\r\nFROM [Order]\r\nGROUP BY TransactionType";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT 
     ISNULL(TRY_CONVERT(DATE, DATEFROMPARTS(YEAR([Date]), 1, 1)), CAST(GETDATE() AS DATE)) AS [Date],
     ISNULL(SUM(TotalCost), 0) AS TotalCost
 FROM [Order]
 GROUP BY ISNULL(TRY_CONVERT(DATE, DATEFROMPARTS(YEAR([Date]), 1, 1)), CAST(GETDATE() AS DATE))";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT \r\n    ISNULL(TRY_CONVERT(DATE, [Date]), CAST(GETDATE() AS DATE)) AS [Date]" +
-                ",\r\n    ISNULL(SUM(TotalCost), 0) AS TotalCost\r\nFROM [Order]\r\nWHERE [Date] >= DAT" +
-                "EADD(DAY, -1, GETDATE())\r\nGROUP BY ISNULL(TRY_CONVERT(DATE, [Date]), CAST(GETDAT" +
-                "E() AS DATE))";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT 
+            this._commandCollection[4].CommandText = "SELECT \r\n    ISNULL(TRY_CONVERT(DATE, [Date]), CAST(GETDATE() AS DATE)) AS [Date]" +
+                ",\r\n    ISNULL(SUM(TotalCost), 0) AS TotalCost\r\nFROM [Order]\r\nWHERE [Date] >= DAT" +
+                "EADD(DAY, -1, GETDATE())\r\nGROUP BY ISNULL(TRY_CONVERT(DATE, [Date]), CAST(GETDAT" +
+                "E() AS DATE))";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT 
     ISNULL(TRY_CONVERT(DATE, DATEFROMPARTS(YEAR([Date]), MONTH([Date]), 1)), CAST(GETDATE() AS DATE)) AS [Date],
     ISNULL(SUM(TotalCost), 0) AS TotalCost
 FROM [Order]
 WHERE [Date] >= DATEADD(MONTH, -1, GETDATE())
 GROUP BY ISNULL(TRY_CONVERT(DATE, DATEFROMPARTS(YEAR([Date]), MONTH([Date]), 1)), CAST(GETDATE() AS DATE))";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[Order] ([CustomerID], [StaffID], [MethodOfPayment], [TransactionType], [Date], [Time], [TotalCost]) VALUES (@CustomerID, @StaffID, @MethodOfPayment, @TransactionType, @Date, @Time, @TotalCost);
-SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Time, TotalCost FROM [Order] WHERE (OrderID = SCOPE_IDENTITY())";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StaffID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MethodOfPayment", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "MethodOfPayment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionType", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.Time, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE [Order]\r\nSET          TransactionType = \'Refund\', TotalCost = 0\r\nWHERE  (O" +
-                "rderID = @Original_OrderID)";
+            this._commandCollection[6].CommandText = "SELECT \r\n    MethodOfPayment,\r\n    COUNT(*) AS OrderCount,\r\n    SUM(TotalCost) AS" +
+                " TotalAmount\r\nFROM [Order]\r\nGROUP BY MethodOfPayment";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE [Order]\r\nSET          TransactionType = @TransactionType, TotalCost = @Tot" +
-                "al\r\nWHERE  (OrderID = @Original_OrderID)";
+            this._commandCollection[7].CommandText = @"INSERT INTO [dbo].[Order] ([CustomerID], [StaffID], [MethodOfPayment], [TransactionType], [Date], [Time], [TotalCost]) VALUES (@CustomerID, @StaffID, @MethodOfPayment, @TransactionType, @Date, @Time, @TotalCost);
+SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Time, TotalCost FROM [Order] WHERE (OrderID = SCOPE_IDENTITY())";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StaffID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MethodOfPayment", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "MethodOfPayment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionType", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.Time, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE [Order]\r\nSET          TransactionType = \'Refund\', TotalCost = 0\r\nWHERE  (O" +
+                "rderID = @Original_OrderID)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE [Order]\r\nSET          TransactionType = @TransactionType, TotalCost = @Tot" +
+                "al\r\nWHERE  (OrderID = @Original_OrderID)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionType", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7695,8 +7705,32 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBySalesByYear(WstGrp11DataSet.OrderDataTable dataTable) {
+        public virtual int FillBySaleOrRefundReports(WstGrp11DataSet.OrderDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp11DataSet.OrderDataTable GetDataBy8() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            WstGrp11DataSet.OrderDataTable dataTable = new WstGrp11DataSet.OrderDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySalesByYear(WstGrp11DataSet.OrderDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7709,7 +7743,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WstGrp11DataSet.OrderDataTable GetDataBy6() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             WstGrp11DataSet.OrderDataTable dataTable = new WstGrp11DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7720,7 +7754,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBySalesPerDay(WstGrp11DataSet.OrderDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7733,7 +7767,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WstGrp11DataSet.OrderDataTable GetDataBy4() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             WstGrp11DataSet.OrderDataTable dataTable = new WstGrp11DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7744,7 +7778,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBySalesPerMonth(WstGrp11DataSet.OrderDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -7757,7 +7791,31 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WstGrp11DataSet.OrderDataTable GetDataBy5() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            WstGrp11DataSet.OrderDataTable dataTable = new WstGrp11DataSet.OrderDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTransactionTypeReports(WstGrp11DataSet.OrderDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp11DataSet.OrderDataTable GetDataBy7() {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             WstGrp11DataSet.OrderDataTable dataTable = new WstGrp11DataSet.OrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7955,7 +8013,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual object InsertNewSalesOrder(int CustomerID, int StaffID, string MethodOfPayment, string TransactionType, string Date, string Time, decimal TotalCost) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             command.Parameters[0].Value = ((int)(CustomerID));
             command.Parameters[1].Value = ((int)(StaffID));
             if ((MethodOfPayment == null)) {
@@ -8011,7 +8069,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int RefundFullOrder(int Original_OrderID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((int)(Original_OrderID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8035,7 +8093,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int RefundItem(string TransactionType, decimal Total, int Original_OrderID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((TransactionType == null)) {
                 throw new global::System.ArgumentNullException("TransactionType");
             }
@@ -8209,32 +8267,44 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT OrderID, StockID, Quantity, Price FROM dbo.OrderLine";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[OrderLine] ([OrderID], [StockID], [Quantity], [Price]) VALUES " +
-                "(@OrderID, @StockID, @Quantity, @Price)";
+            this._commandCollection[1].CommandText = @"SELECT 
+    s.StockID,
+    s.Name AS ProductName,
+    SUM(ol.Quantity) AS TotalQuantitySold,
+    SUM(ol.Quantity * ol.Price) AS TotalRevenue
+FROM OrderLine ol
+INNER JOIN Stock s ON ol.StockID = s.StockID
+GROUP BY s.StockID, s.Name
+ORDER BY TotalQuantitySold DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StockID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StockID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE OrderLine\r\nSET          Price = 0\r\nWHERE  (OrderID = @Original_OrderID)";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[OrderLine] ([OrderID], [StockID], [Quantity], [Price]) VALUES " +
+                "(@OrderID, @StockID, @Quantity, @Price)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StockID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StockID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE OrderLine\r\nSET          Price = 0\r\nWHERE  (OrderID = @Original_OrderID) AN" +
-                "D (StockID = @Original_StockID)";
+            this._commandCollection[3].CommandText = "UPDATE OrderLine\r\nSET          Price = 0\r\nWHERE  (OrderID = @Original_OrderID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StockID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StockID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE OrderLine\r\nSET          Price = 0\r\nWHERE  (OrderID = @Original_OrderID) AN" +
+                "D (StockID = @Original_StockID)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StockID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StockID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8256,6 +8326,30 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WstGrp11DataSet.OrderLineDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WstGrp11DataSet.OrderLineDataTable dataTable = new WstGrp11DataSet.OrderLineDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByLeastAndMostBought(WstGrp11DataSet.OrderLineDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp11DataSet.OrderLineDataTable GetDataBy3() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             WstGrp11DataSet.OrderLineDataTable dataTable = new WstGrp11DataSet.OrderLineDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8320,7 +8414,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertNewOrdelineItem(int OrderID, int StockID, int Quantity, decimal Price) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(OrderID));
             command.Parameters[1].Value = ((int)(StockID));
             command.Parameters[2].Value = ((int)(Quantity));
@@ -8347,7 +8441,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int RefundFullOrder(int Original_OrderID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(Original_OrderID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8371,7 +8465,7 @@ SELECT OrderID, CustomerID, StaffID, MethodOfPayment, TransactionType, Date, Tim
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int RefundItem(int Original_OrderID, int Original_StockID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(Original_OrderID));
             command.Parameters[1].Value = ((int)(Original_StockID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
