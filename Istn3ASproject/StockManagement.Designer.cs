@@ -49,6 +49,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcStockManagement = new System.Windows.Forms.TabControl();
             this.tbpInventoryManagement = new System.Windows.Forms.TabPage();
+            this.btnManageInventoryHelp = new System.Windows.Forms.Button();
+            this.btnViewLowStock = new System.Windows.Forms.Button();
+            this.txtSearchByName = new System.Windows.Forms.TextBox();
+            this.lblSearchByStockName = new System.Windows.Forms.Label();
             this.grpUpdateItemDetails = new System.Windows.Forms.GroupBox();
             this.btnUpdateItemDetails = new System.Windows.Forms.Button();
             this.txtProdBPriceUpdate = new System.Windows.Forms.TextBox();
@@ -151,10 +155,6 @@
             this.supplierLineOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierLineOrderTableAdapter();
             this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
             this.supplierOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
-            this.lblSearchByStockName = new System.Windows.Forms.Label();
-            this.txtSearchByName = new System.Windows.Forms.TextBox();
-            this.btnViewLowStock = new System.Windows.Forms.Button();
-            this.btnManageInventoryHelp = new System.Windows.Forms.Button();
             this.tcStockManagement.SuspendLayout();
             this.tbpInventoryManagement.SuspendLayout();
             this.grpUpdateItemDetails.SuspendLayout();
@@ -208,9 +208,48 @@
             this.tbpInventoryManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventoryManagement.Name = "tbpInventoryManagement";
             this.tbpInventoryManagement.Padding = new System.Windows.Forms.Padding(2);
-            this.tbpInventoryManagement.Size = new System.Drawing.Size(1457, 579);
+            this.tbpInventoryManagement.Size = new System.Drawing.Size(1378, 579);
             this.tbpInventoryManagement.TabIndex = 0;
             this.tbpInventoryManagement.Text = "Manage Inventory";
+            // 
+            // btnManageInventoryHelp
+            // 
+            this.btnManageInventoryHelp.BackColor = System.Drawing.Color.LightBlue;
+            this.btnManageInventoryHelp.Location = new System.Drawing.Point(1093, 30);
+            this.btnManageInventoryHelp.Name = "btnManageInventoryHelp";
+            this.btnManageInventoryHelp.Size = new System.Drawing.Size(75, 31);
+            this.btnManageInventoryHelp.TabIndex = 8;
+            this.btnManageInventoryHelp.Text = "Help";
+            this.btnManageInventoryHelp.UseVisualStyleBackColor = false;
+            this.btnManageInventoryHelp.Click += new System.EventHandler(this.btnManageInventoryHelp_Click);
+            // 
+            // btnViewLowStock
+            // 
+            this.btnViewLowStock.BackColor = System.Drawing.Color.LightBlue;
+            this.btnViewLowStock.Location = new System.Drawing.Point(1008, 160);
+            this.btnViewLowStock.Name = "btnViewLowStock";
+            this.btnViewLowStock.Size = new System.Drawing.Size(160, 39);
+            this.btnViewLowStock.TabIndex = 7;
+            this.btnViewLowStock.Text = "View Low Stock";
+            this.btnViewLowStock.UseVisualStyleBackColor = false;
+            this.btnViewLowStock.Click += new System.EventHandler(this.btnViewLowStock_Click);
+            // 
+            // txtSearchByName
+            // 
+            this.txtSearchByName.Location = new System.Drawing.Point(1008, 112);
+            this.txtSearchByName.Name = "txtSearchByName";
+            this.txtSearchByName.Size = new System.Drawing.Size(160, 25);
+            this.txtSearchByName.TabIndex = 6;
+            this.txtSearchByName.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            // 
+            // lblSearchByStockName
+            // 
+            this.lblSearchByStockName.AutoSize = true;
+            this.lblSearchByStockName.Location = new System.Drawing.Point(1005, 78);
+            this.lblSearchByStockName.Name = "lblSearchByStockName";
+            this.lblSearchByStockName.Size = new System.Drawing.Size(148, 17);
+            this.lblSearchByStockName.TabIndex = 4;
+            this.lblSearchByStockName.Text = "Search by Stock Name:";
             // 
             // grpUpdateItemDetails
             // 
@@ -228,7 +267,7 @@
             this.grpUpdateItemDetails.Controls.Add(this.lblDescUpdate);
             this.grpUpdateItemDetails.Controls.Add(this.lblNameUpdate);
             this.grpUpdateItemDetails.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpUpdateItemDetails.Location = new System.Drawing.Point(275, 432);
+            this.grpUpdateItemDetails.Location = new System.Drawing.Point(184, 433);
             this.grpUpdateItemDetails.Name = "grpUpdateItemDetails";
             this.grpUpdateItemDetails.Size = new System.Drawing.Size(984, 150);
             this.grpUpdateItemDetails.TabIndex = 3;
@@ -323,9 +362,9 @@
             // 
             // lblBPriceUpdate
             // 
-            this.lblBPriceUpdate.AutoSize = true;\
+            this.lblBPriceUpdate.AutoSize = true;
             this.lblBPriceUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBPriceUpdate.Location = new System.Drawing.Point(788, 32);\
+            this.lblBPriceUpdate.Location = new System.Drawing.Point(788, 32);
             this.lblBPriceUpdate.Name = "lblBPriceUpdate";
             this.lblBPriceUpdate.Size = new System.Drawing.Size(76, 15);
             this.lblBPriceUpdate.TabIndex = 3;
@@ -334,8 +373,8 @@
             // lblSPriceUpdate
             // 
             this.lblSPriceUpdate.AutoSize = true;
-            this.lblSPriceUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));\
-            this.lblSPriceUpdate.Location = new System.Drawing.Point(534, 30);\
+            this.lblSPriceUpdate.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSPriceUpdate.Location = new System.Drawing.Point(534, 30);
             this.lblSPriceUpdate.Name = "lblSPriceUpdate";
             this.lblSPriceUpdate.Size = new System.Drawing.Size(74, 15);
             this.lblSPriceUpdate.TabIndex = 2;
@@ -368,7 +407,7 @@
             this.dgvUpdateStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -387,7 +426,7 @@
             this.dgvUpdateStock.DataSource = this.stockBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -400,7 +439,7 @@
             this.dgvUpdateStock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1371,45 +1410,6 @@
             // supplierOrderTableAdapter
             // 
             this.supplierOrderTableAdapter.ClearBeforeFill = true;
-            // 
-            // lblSearchByStockName
-            // 
-            this.lblSearchByStockName.AutoSize = true;
-            this.lblSearchByStockName.Location = new System.Drawing.Point(1005, 78);
-            this.lblSearchByStockName.Name = "lblSearchByStockName";
-            this.lblSearchByStockName.Size = new System.Drawing.Size(148, 17);
-            this.lblSearchByStockName.TabIndex = 4;
-            this.lblSearchByStockName.Text = "Search by Stock Name:";
-            // 
-            // txtSearchByName
-            // 
-            this.txtSearchByName.Location = new System.Drawing.Point(1008, 112);
-            this.txtSearchByName.Name = "txtSearchByName";
-            this.txtSearchByName.Size = new System.Drawing.Size(160, 25);
-            this.txtSearchByName.TabIndex = 6;
-            this.txtSearchByName.TextChanged += new System.EventHandler(this.txt_TextChanged);
-            // 
-            // btnViewLowStock
-            // 
-            this.btnViewLowStock.BackColor = System.Drawing.Color.LightBlue;
-            this.btnViewLowStock.Location = new System.Drawing.Point(1008, 160);
-            this.btnViewLowStock.Name = "btnViewLowStock";
-            this.btnViewLowStock.Size = new System.Drawing.Size(160, 39);
-            this.btnViewLowStock.TabIndex = 7;
-            this.btnViewLowStock.Text = "View Low Stock";
-            this.btnViewLowStock.UseVisualStyleBackColor = false;
-            this.btnViewLowStock.Click += new System.EventHandler(this.btnViewLowStock_Click);
-            // 
-            // btnManageInventoryHelp
-            // 
-            this.btnManageInventoryHelp.BackColor = System.Drawing.Color.LightBlue;
-            this.btnManageInventoryHelp.Location = new System.Drawing.Point(1093, 30);
-            this.btnManageInventoryHelp.Name = "btnManageInventoryHelp";
-            this.btnManageInventoryHelp.Size = new System.Drawing.Size(75, 31);
-            this.btnManageInventoryHelp.TabIndex = 8;
-            this.btnManageInventoryHelp.Text = "Help";
-            this.btnManageInventoryHelp.UseVisualStyleBackColor = false;
-            this.btnManageInventoryHelp.Click += new System.EventHandler(this.btnManageInventoryHelp_Click);
             // 
             // frmStockManagement
             // 
