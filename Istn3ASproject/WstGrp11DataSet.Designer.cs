@@ -78,10 +78,6 @@ namespace Istn3ASproject {
         
         private global::System.Data.DataRelation relationFK_OrderLine_Stock5;
         
-        private global::System.Data.DataRelation relationFK_OrderLine_Stock6;
-        
-        private global::System.Data.DataRelation relationFK_SupplierLineOrder_Stock3;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -507,8 +503,6 @@ namespace Istn3ASproject {
             this.relationFK_OrderLine_Stock3 = this.Relations["FK_OrderLine_Stock3"];
             this.relationFK_OrderLine_Stock4 = this.Relations["FK_OrderLine_Stock4"];
             this.relationFK_OrderLine_Stock5 = this.Relations["FK_OrderLine_Stock5"];
-            this.relationFK_OrderLine_Stock6 = this.Relations["FK_OrderLine_Stock6"];
-            this.relationFK_SupplierLineOrder_Stock3 = this.Relations["FK_SupplierLineOrder_Stock3"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -603,14 +597,6 @@ namespace Istn3ASproject {
                         this.tableSalesInvoice.StockIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableRefundInnerJoin.StockIDColumn}, false);
             this.Relations.Add(this.relationFK_OrderLine_Stock5);
-            this.relationFK_OrderLine_Stock6 = new global::System.Data.DataRelation("FK_OrderLine_Stock6", new global::System.Data.DataColumn[] {
-                        this.tableExpiredStock.StockIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableOrderLine.StockIDColumn}, false);
-            this.Relations.Add(this.relationFK_OrderLine_Stock6);
-            this.relationFK_SupplierLineOrder_Stock3 = new global::System.Data.DataRelation("FK_SupplierLineOrder_Stock3", new global::System.Data.DataColumn[] {
-                        this.tableExpiredStock.StockIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSupplierLineOrder.StockIDColumn}, false);
-            this.Relations.Add(this.relationFK_SupplierLineOrder_Stock3);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4749,13 +4735,6 @@ namespace Istn3ASproject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ExpiredStockRow FindByStockID(int StockID) {
-                return ((ExpiredStockRow)(this.Rows.Find(new object[] {
-                            StockID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 ExpiredStockDataTable cln = ((ExpiredStockDataTable)(base.Clone()));
                 cln.InitVars();
@@ -4791,14 +4770,11 @@ namespace Istn3ASproject {
                 base.Columns.Add(this.columnName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnStockID}, true));
                 this.columnStockID.AutoIncrement = true;
                 this.columnStockID.AutoIncrementSeed = -1;
                 this.columnStockID.AutoIncrementStep = -1;
                 this.columnStockID.AllowDBNull = false;
                 this.columnStockID.ReadOnly = true;
-                this.columnStockID.Unique = true;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 30;
                 this.columnQuantity.AllowDBNull = false;
@@ -5386,17 +5362,6 @@ namespace Istn3ASproject {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_OrderLine_Stock2"]);
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ExpiredStockRow ExpiredStockRow {
-                get {
-                    return ((ExpiredStockRow)(this.GetParentRow(this.Table.ParentRelations["FK_OrderLine_Stock6"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_OrderLine_Stock6"]);
-                }
-            }
         }
         
         /// <summary>
@@ -5800,17 +5765,6 @@ namespace Istn3ASproject {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_SupplierLineOrder_Stock2"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ExpiredStockRow ExpiredStockRow {
-                get {
-                    return ((ExpiredStockRow)(this.GetParentRow(this.Table.ParentRelations["FK_SupplierLineOrder_Stock3"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_SupplierLineOrder_Stock3"]);
                 }
             }
         }
@@ -6677,28 +6631,6 @@ namespace Istn3ASproject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetExpirationTimeNull() {
                 this[this.tableExpiredStock.ExpirationTimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public OrderLineRow[] GetOrderLineRows() {
-                if ((this.Table.ChildRelations["FK_OrderLine_Stock6"] == null)) {
-                    return new OrderLineRow[0];
-                }
-                else {
-                    return ((OrderLineRow[])(base.GetChildRows(this.Table.ChildRelations["FK_OrderLine_Stock6"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SupplierLineOrderRow[] GetSupplierLineOrderRows() {
-                if ((this.Table.ChildRelations["FK_SupplierLineOrder_Stock3"] == null)) {
-                    return new SupplierLineOrderRow[0];
-                }
-                else {
-                    return ((SupplierLineOrderRow[])(base.GetChildRows(this.Table.ChildRelations["FK_SupplierLineOrder_Stock3"])));
-                }
             }
         }
         

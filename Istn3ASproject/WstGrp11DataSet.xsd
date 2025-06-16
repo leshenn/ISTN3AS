@@ -1626,10 +1626,6 @@ ORDER BY s.StockID</CommandText>
       <xs:selector xpath=".//mstns:SalesInvoice" />
       <xs:field xpath="mstns:StockID" />
     </xs:unique>
-    <xs:unique name="ExpiredStock_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:ExpiredStock" />
-      <xs:field xpath="mstns:StockID" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -1648,8 +1644,6 @@ ORDER BY s.StockID</CommandText>
       <msdata:Relationship name="FK_OrderLine_Stock3" msdata:parent="Stock" msdata:child="RefundInnerJoin" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="Stock" msprop:Generator_UserChildTable="RefundInnerJoin" msprop:Generator_RelationVarName="relationFK_OrderLine_Stock3" msprop:Generator_ChildPropName="GetRefundInnerJoinRows" msprop:Generator_ParentPropName="StockRow" msprop:Generator_UserRelationName="FK_OrderLine_Stock3" />
       <msdata:Relationship name="FK_OrderLine_Stock4" msdata:parent="ItemsToAdd" msdata:child="RefundInnerJoin" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="ItemsToAdd" msprop:Generator_UserChildTable="RefundInnerJoin" msprop:Generator_RelationVarName="relationFK_OrderLine_Stock4" msprop:Generator_ChildPropName="GetRefundInnerJoinRows" msprop:Generator_ParentPropName="ItemsToAddRow" msprop:Generator_UserRelationName="FK_OrderLine_Stock4" />
       <msdata:Relationship name="FK_OrderLine_Stock5" msdata:parent="SalesInvoice" msdata:child="RefundInnerJoin" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="SalesInvoice" msprop:Generator_UserChildTable="RefundInnerJoin" msprop:Generator_RelationVarName="relationFK_OrderLine_Stock5" msprop:Generator_ChildPropName="GetRefundInnerJoinRows" msprop:Generator_ParentPropName="SalesInvoiceRow" msprop:Generator_UserRelationName="FK_OrderLine_Stock5" />
-      <msdata:Relationship name="FK_OrderLine_Stock6" msdata:parent="ExpiredStock" msdata:child="OrderLine" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="ExpiredStock" msprop:Generator_UserChildTable="OrderLine" msprop:Generator_RelationVarName="relationFK_OrderLine_Stock6" msprop:Generator_UserRelationName="FK_OrderLine_Stock6" msprop:Generator_ChildPropName="GetOrderLineRows" msprop:Generator_ParentPropName="ExpiredStockRow" />
-      <msdata:Relationship name="FK_SupplierLineOrder_Stock3" msdata:parent="ExpiredStock" msdata:child="SupplierLineOrder" msdata:parentkey="StockID" msdata:childkey="StockID" msprop:Generator_UserParentTable="ExpiredStock" msprop:Generator_UserChildTable="SupplierLineOrder" msprop:Generator_RelationVarName="relationFK_SupplierLineOrder_Stock3" msprop:Generator_UserRelationName="FK_SupplierLineOrder_Stock3" msprop:Generator_ChildPropName="GetSupplierLineOrderRows" msprop:Generator_ParentPropName="ExpiredStockRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
