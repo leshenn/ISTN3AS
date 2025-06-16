@@ -940,7 +940,7 @@ namespace Istn3ASproject
             this.btnHelpStaffTab.BackColor = System.Drawing.Color.LightBlue;
             this.btnHelpStaffTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHelpStaffTab.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelpStaffTab.Location = new System.Drawing.Point(270, 318);
+            this.btnHelpStaffTab.Location = new System.Drawing.Point(908, 37);
             this.btnHelpStaffTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHelpStaffTab.Name = "btnHelpStaffTab";
             this.btnHelpStaffTab.Size = new System.Drawing.Size(89, 27);
@@ -1106,7 +1106,7 @@ namespace Istn3ASproject
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(815, 52);
+            this.label14.Location = new System.Drawing.Point(821, 49);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(132, 25);
             this.label14.TabIndex = 17;
@@ -1122,7 +1122,7 @@ namespace Istn3ASproject
             "Manager",
             "Cashier",
             "Terminated"});
-            this.cmbFilterByRole.Location = new System.Drawing.Point(952, 49);
+            this.cmbFilterByRole.Location = new System.Drawing.Point(958, 46);
             this.cmbFilterByRole.Name = "cmbFilterByRole";
             this.cmbFilterByRole.Size = new System.Drawing.Size(206, 33);
             this.cmbFilterByRole.TabIndex = 16;
@@ -1973,7 +1973,7 @@ namespace Istn3ASproject
             this.button1.BackColor = System.Drawing.Color.LightBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1003, 37);
+            this.button1.Location = new System.Drawing.Point(1012, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 33);
             this.button1.TabIndex = 4;

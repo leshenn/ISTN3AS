@@ -93,7 +93,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(265, 22);
             this.txtPass.TabIndex = 5;
-            this.txtPass.Text = "Karen_98Nai";
+            this.txtPass.Text = "karen_98Nai";
             // 
             // txtUser
             // 
@@ -162,7 +162,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(355, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(366, 54);
+            this.label4.Size = new System.Drawing.Size(300, 44);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tia\'s Fishheries";
             // 
