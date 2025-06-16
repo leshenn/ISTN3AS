@@ -242,51 +242,52 @@ namespace Istn3ASproject
             txtUcode.Text = gvCustomer.CurrentRow.Cells[8].Value.ToString();
         }
 
-        private void btnUpdateCustomer_Click(object sender, EventArgs e)
-        {
-            mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to update this Customer's Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            //bool valid = validateInput(txtUfname.Text, txtUlname.Text, mtUpdateCustContact.Text, txtUemail.Text, txtUaddress.Text, txtUcity.Text, cbUprovince.Text, txtUcode.Text);
+         private void btnUpdateCustomer_Click(object sender, EventArgs e)
+ {
+     mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+     DialogResult result = MessageBox.Show("Are you sure you want to update" + txtUfname.Text+ " "+txtUlname.Text+ " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+     bool valid = validateInput(txtUfname, txtUlname, mtUpdateCustContact, txtUemail, txtUaddress, txtUcity, cbUprovince, txtUcode);
 
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                    customerTableAdapter.UpdateCustomerDetails(txtUfname.Text, txtUlname.Text, mtUpdateCustContact.Text, txtUemail.Text, txtUaddress.Text, txtUcity.Text, cbUprovince.Text, txtUcode.Text, Convert.ToInt32(gvCustomer.CurrentRow.Cells[0].Value.ToString()));
-                    customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
-                    txtUfname.Clear();
-                    txtUlname.Clear();
-                    txtUemail.Clear();
-                    txtUaddress.Clear();
-                    txtUcity.Clear();
-                    mtUpdateCustContact.Clear();
-                    txtUcode.Clear();
-                    cbUprovince.Text = null;
+     if (result == DialogResult.Yes && valid)
+     {
+         try
+         {
+             mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+             customerTableAdapter.UpdateCustomerDetails(txtUfname.Text, txtUlname.Text, mtUpdateCustContact.Text, txtUemail.Text, txtUcity.Text, cbUprovince.Text, txtUcode.Text, txtUaddress.Text, Convert.ToInt32(gvCustomer.CurrentRow.Cells[0].Value.ToString()));
+             customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
+             txtUfname.Clear();
+             txtUlname.Clear();
+             txtUemail.Clear();
+             txtUaddress.Clear();
+             txtUcity.Clear();
+             mtUpdateCustContact.Clear();
+             txtUcode.Clear();
+             cbUprovince.Text = null;
+             MessageBox.Show("Customer Details successfully updated", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Customer Details could not be Updated", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         catch (Exception)
+         {
+             MessageBox.Show("Customer Details could not be Updated", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+         }
+     }
+     else
+     {
+         DialogResult retry = MessageBox.Show("Customer Details could not be Updated: Invalid Data", "Process Termination", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
+         if (retry == DialogResult.Cancel)
+         {
+             txtUfname.Clear();
+             txtUlname.Clear();
+             txtUemail.Clear();
+             txtUaddress.Clear();
+             txtUcity.Clear();
+             mtUpdateCustContact.Clear();
+             txtUcode.Clear();
+             cbUprovince.Text = null;
+         }
+     }
+ }
 
-                }
-            }
-            else
-            {
-                  DialogResult retry = MessageBox.Show("Customer Details could not be Updated: Invalid Data", "Process Termination", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
-                if (retry == DialogResult.Cancel)
-                {
-                    txtUfname.Clear();
-                    txtUlname.Clear();
-                    txtUemail.Clear();
-                    txtUaddress.Clear();
-                    txtUcity.Clear();
-                    mtUpdateCustContact.Clear();
-                    txtUcode.Clear();
-                    cbUprovince.Text = null;
-                }
-            }
-        }
 
              
 
@@ -489,13 +490,13 @@ namespace Istn3ASproject
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
-         
+
 
             mtSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to add this Supplier's Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            //bool valid = validateInput(txtSname.Text,txtLName.Text, mtSupplierContact.Text, txtSemail.Text, txtSaddress.Text, txtScity.Text, cbSprovince.Text, txtScode.Text);
-          
-            if (result == DialogResult.Yes )
+            DialogResult result = MessageBox.Show("Are you sure you want to add" +txtSname.Text+ " ?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            bool valid = validateInputSupplier(txtSname, mtEditSupplierContact, txtSemail, txtSaddress, txtScity, cbSprovince, txtScode);
+
+            if (result == DialogResult.Yes && valid)
             {
                 try
                 {
@@ -503,13 +504,14 @@ namespace Istn3ASproject
                     supplierTableAdapter.InsertSupplier(txtSname.Text, mtSupplierContact.Text, txtSemail.Text, txtSaddress.Text, txtScity.Text, cbSprovince.Text, txtScode.Text);
                     supplierTableAdapter.Fill(this.wstGrp11DataSet.Supplier);
                     txtSname.Clear();
-                    
+
                     txtSemail.Clear();
                     txtSaddress.Clear();
                     txtScity.Clear();
                     mtSupplierContact.Clear();
                     txtScode.Clear();
                     cbSprovince.Text = null;
+                    MessageBox.Show("Supplier Details successfully added", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
@@ -533,19 +535,52 @@ namespace Istn3ASproject
                 }
             }
         }
-        
+
 
         private void btnUpdateSupplier_Click(object sender, EventArgs e)
         {
+
+
             mtEditSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            supplierTableAdapter.UpdateSupplierDetails(txtEditSname.Text, mtEditSupplierContact.Text, txtEditSemail.Text, txtEditSaddress.Text, txtEditScity.Text, cbEditSprovince.Text, txtEditScode.Text, Convert.ToInt32(gvSupplier.CurrentRow.Cells[0].Value.ToString()));
-            supplierTableAdapter.Fill(this.wstGrp11DataSet.Supplier);
-            txtEditSname.Clear();
-            mtEditSupplierContact.Clear();
-            txtEditSemail.Clear(); 
-            txtEditSaddress.Clear();
-            txtEditScode.Clear();
-            cbEditSprovince.Text = null;
+            DialogResult result = MessageBox.Show("Are you sure you want to edit" + txtEditSname.Text +" Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            bool valid = validateInputSupplier(txtEditSname, mtEditSupplierContact, txtEditSemail, txtEditSaddress, txtEditScity, cbEditSprovince, txtEditScode);
+
+            if (result == DialogResult.Yes && valid)
+            {
+                try
+                {
+                    mtSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                    supplierTableAdapter.UpdateSupplierDetails(txtEditSname.Text, mtEditSupplierContact.Text, txtEditSemail.Text, txtEditSaddress.Text, txtEditScity.Text, cbEditSprovince.Text, txtEditScode.Text, Convert.ToInt32(gvSupplier.CurrentRow.Cells[0].Value.ToString()));
+                    supplierTableAdapter.Fill(this.wstGrp11DataSet.Supplier);
+
+
+                    txtEditSname.Clear();
+                    mtEditSupplierContact.Clear();
+                    txtEditSemail.Clear();
+                    txtEditSaddress.Clear();
+                    txtEditScode.Clear();
+                    cbEditSprovince.Text = null;
+                    MessageBox.Show("Supplier Details successfully updated", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Supplier Details could not be Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                DialogResult retry = MessageBox.Show("Supplier Details could not be Added: Invalid Data", "Process Termination", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
+                if (retry == DialogResult.Cancel)
+                {
+                    txtEditSname.Clear();
+                    mtEditSupplierContact.Clear();
+                    txtEditSemail.Clear();
+                    txtEditSaddress.Clear();
+                    txtEditScode.Clear();
+                    cbEditSprovince.Text = null;
+                }
+            }
 
         }
 
@@ -570,55 +605,64 @@ namespace Istn3ASproject
         
 
         private void btnNewCustomer_Click_1(object sender, EventArgs e)
-        {
-            mtCustomerNo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to add this Customer?", "Confirm Details?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+ {
+     mtCustomerNo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+     DialogResult result = MessageBox.Show("Are you sure you want to add this" + txtFName.Text+ " " + txtLName.Text, "Confirm Details?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //bool valid = validateInput(txtFName.Text, txtLName.Text, mtCustomerNo.Text, txtEmail.Text, txtAddress.Text, txtCity.Text, cbProvince.Text, txtPostalCode.Text);
+     bool valid = validateInput(txtFName, txtLName, mtCustomerNo, txtEmail, txtAddress, txtCity, cbProvince, txtPostalCode);
 
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
+     if (result == DialogResult.Yes && valid)
+     {
+         try
+         {
 
-                    mtCustomerNo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                    customerTableAdapter.InsertCustomer(txtFName.Text, txtLName.Text, mtCustomerNo.Text, txtEmail.Text, txtCity.Text, cbProvince.Text, txtPostalCode.Text, txtAddress.Text);
-                    customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
-                    MessageBox.Show("Customer successfully added", "Confirmation", MessageBoxButtons.OK);
-                    txtFName.Clear();
-                    txtLName.Clear();
-                    txtEmail.Clear();
-                    txtCity.Clear();
-                    txtAddress.Clear();
-                    txtPostalCode.Clear();
-                    mtCustomerNo.Text = null;
-                    cbProvince.SelectedIndex = -1;
+             mtCustomerNo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+             customerTableAdapter.InsertCustomer(txtFName.Text, txtLName.Text, mtCustomerNo.Text, txtEmail.Text, txtCity.Text, cbProvince.Text, txtPostalCode.Text, txtAddress.Text);
+             customerTableAdapter.Fill(this.wstGrp11DataSet.Customer);
+             MessageBox.Show("Customer successfully added", "Confirmation", MessageBoxButtons.OK);
+             txtFName.Clear();
+             txtLName.Clear();
+             txtEmail.Clear();
+             txtCity.Clear();
+             txtAddress.Clear();
+             txtPostalCode.Clear();
+             mtCustomerNo.Text = null;
+             cbProvince.SelectedIndex = -1;
+                    MessageBox.Show("Customer Details successfully added", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("New Customer not Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+         catch (Exception)
+         {
+             MessageBox.Show("New Customer not Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
+     }
 
-            else
-            {
-                DialogResult retry =MessageBox.Show("Customer was not added: Invalid data", "Process Termination", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
-                if (retry == DialogResult.Cancel)
-                {
-                    txtFName.Clear();
-                    txtLName.Clear();
-                    txtEmail.Clear();
-                    txtCity.Clear();
-                    txtAddress.Clear();
-                    txtPostalCode.Clear();
-                    mtCustomerNo.Text = null;
-                    cbProvince.SelectedIndex = -1;
-                }
-            }
+     else
+     {
+         DialogResult retry = MessageBox.Show("Customer was not added: Invalid data", "Process Termination", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
+         if (retry == DialogResult.Cancel)
+         {
+             txtFName.Clear();
+             txtLName.Clear();
+             txtEmail.Clear();
+             txtCity.Clear();
+             txtAddress.Clear();
+             txtPostalCode.Clear();
+             mtCustomerNo.Text = null;
+             cbProvince.SelectedIndex = -1;
+
+             txtFName.BackColor = Color.White;
+             txtLName.BackColor = Color.White;
+             txtCity.BackColor = Color.White; 
+             mtCustomerNo.BackColor = Color.White;
+             cbProvince.BackColor = Color.White;
+             txtPostalCode.BackColor = Color.White;
+             txtAddress.BackColor = Color.White;
+
+         }
+     }
 
 
-
-        }
+ }
 
         private void gbUpdateSupplier_Enter(object sender, EventArgs e)
         {
@@ -629,12 +673,206 @@ namespace Istn3ASproject
         private void btnNewOrder_Click(object sender, EventArgs e)
 
         {
-            var posForm = new frmPOS(navigate,this._userRole);
+            var posForm = new frmPOS(navigate,this._userRole,orginalStaffID);
            
             posForm.UpdateLabel(gvCustomer.CurrentRow.Cells[1].Value.ToString(), gvCustomer.CurrentRow.Cells[2].Value.ToString(), gvCustomer.CurrentRow.Cells[0].Value.ToString());
             navigate(posForm);
 
         }
+        private bool validateInput(TextBox txtFName, TextBox txtLName, MaskedTextBox mtCustomerNo, TextBox txtEmail, TextBox txtAddress, TextBox txtCity, ComboBox cbProvince, TextBox txtPostalCode)
+        {
+            bool isValid = true;
+
+
+
+            // First Name
+            string fName = txtFName.Text.Trim();
+            if (string.IsNullOrWhiteSpace(fName) || !fName.All(char.IsLetter))
+            {
+                isValid = false;
+                txtFName.BackColor = Color.FromArgb(255, 192, 192); ;
+            }
+            else { txtFName.BackColor = Color.White; }
+
+
+            // Last Name
+            string lName = txtLName.Text.Trim();
+            if (string.IsNullOrWhiteSpace(lName) || !lName.All(char.IsLetter))
+            {
+
+                isValid = false;
+                txtLName.BackColor = Color.Red;
+            }
+            else { txtLName.BackColor = Color.White; }
+
+            // Contact Number
+            string contact = mtCustomerNo.Text.Trim();
+            if (string.IsNullOrWhiteSpace(contact) || !contact.All(char.IsDigit) || contact.Length < 10)
+            {
+
+                isValid = false;
+                mtCustomerNo.BackColor = Color.Red;
+            }
+            else { mtCustomerNo.BackColor = Color.White; }
+
+            // Email
+            string email = txtEmail.Text.Trim();
+            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.All(c => char.IsLetterOrDigit(c) || c == '@' || c == '.'))
+            {
+
+                isValid = false;
+                txtEmail.BackColor = Color.Red;
+            }
+            else { txtEmail.BackColor = Color.White; }
+
+            // Address
+            string address = txtAddress.Text.Trim();
+            if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
+            {
+
+                isValid = false;
+                txtAddress.BackColor = Color.Red;
+            }
+            else { txtAddress.BackColor = Color.White; }
+
+            // City
+            string city = txtCity.Text.Trim();
+            if (string.IsNullOrWhiteSpace(city) || !city.All(char.IsLetter))
+            {
+
+                isValid = false;
+                txtCity.BackColor = Color.Red;
+            }
+            else { txtCity.BackColor = Color.White; }
+
+            // Province 
+            string province = cbProvince.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(province) && province.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c == '-'))
+            {
+                cbProvince.BackColor = Color.White;
+
+            }
+            else
+            {
+                isValid = false;
+                cbProvince.BackColor = Color.Red;
+            }
+
+            // Postal Code
+            string postalCode = txtPostalCode.Text.Trim();
+            if (string.IsNullOrWhiteSpace(postalCode) || !postalCode.All(char.IsLetterOrDigit))
+            {
+
+                isValid = false;
+                txtPostalCode.BackColor = Color.Red;
+
+            }
+            else { txtPostalCode.BackColor = Color.White; }
+            // MessageBox.Show(Convert.ToString(isValid));
+
+            return isValid;
+        }
+
+
+
+       
+        private bool validateInputSupplier(TextBox txtName, MaskedTextBox txtContactNumber, TextBox txtEmail, TextBox txtAddress, TextBox txtCity, ComboBox cbProvince, TextBox txtPostalCode)
+        {
+            bool isValid = true;
+
+            // Name
+            string name = txtName.Text.Trim();
+            if (string.IsNullOrWhiteSpace(name) || !name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+            {
+                isValid = false;
+                txtName.BackColor = Color.Red;
+            }
+            else
+            {
+                txtName.BackColor = Color.White;
+            }
+
+            // Contact Number
+            string contact = txtContactNumber.Text.Trim();
+            if (string.IsNullOrWhiteSpace(contact) || !contact.All(char.IsDigit) || contact.Length != 10)
+            {
+                isValid = false;
+                txtContactNumber.BackColor = Color.Red;
+            }
+            else
+            {
+                txtContactNumber.BackColor = Color.White;
+            }
+
+            // Email
+            string email = txtEmail.Text.Trim();
+            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.All(c => char.IsLetterOrDigit(c) || c == '@' || c == '.'))
+            {
+                isValid = false;
+                txtEmail.BackColor = Color.Red;
+            }
+            else
+            {
+                txtEmail.BackColor = Color.White;
+            }
+
+            // Address
+            string address = txtAddress.Text.Trim();
+            if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
+            {
+                isValid = false;
+                txtAddress.BackColor = Color.Red;
+            }
+            else
+            {
+                txtAddress.BackColor = Color.White;
+            }
+
+            // City
+            string city = txtCity.Text.Trim();
+            if (string.IsNullOrWhiteSpace(city) || !city.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+            {
+                isValid = false;
+                txtCity.BackColor = Color.Red;
+            }
+            else
+            {
+                txtCity.BackColor = Color.White;
+            }
+
+            // Province
+            string province = cbProvince.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(province) && province.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c == '-'))
+            {
+                cbProvince.BackColor = Color.White;
+            }
+            else
+            {
+                isValid = false;
+                cbProvince.BackColor = Color.Red;
+            }
+
+            // Postal Code
+            string postalCode = txtPostalCode.Text.Trim();
+            if (string.IsNullOrWhiteSpace(postalCode) || !postalCode.All(char.IsDigit) || postalCode.Length != 4)
+            {
+                isValid = false;
+                txtPostalCode.BackColor = Color.Red;
+            }
+            else
+            {
+                txtPostalCode.BackColor = Color.White;
+            }
+
+            return isValid;
+        }
+
+
+
+
+
+
+
 
         private void btnHelpCustomerTab_Click(object sender, EventArgs e)
         {

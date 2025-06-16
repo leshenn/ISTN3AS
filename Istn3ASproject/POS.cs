@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Windows.Forms;
 
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+  using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
@@ -28,12 +28,15 @@ namespace Istn3ASproject
 
         private frmUserManagement cusForm;
         private string userRole;
+        private int staffID;
 
-        public frmPOS(Action<Form> navigateTo, string userRole)
+        public frmPOS(Action<Form> navigateTo, string userRole, int staffID)
         {
             InitializeComponent();
             navigate = navigateTo;
             this.userRole = userRole;
+            lblStaffID.Text = staffID.ToString();
+
         }
         public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
         {
@@ -148,7 +151,7 @@ namespace Istn3ASproject
             if (ReadyToProcess())
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
-                int StaffID = 1;
+                int StaffID = Convert.ToInt32(lblStaffID.Text);
                 string TransactionType = "sale";
                 string Today = DateTime.Today.ToString("yyyy-MM-dd");
                 string CurrentTime = DateTime.Now.ToString("HH:mm:ss");
