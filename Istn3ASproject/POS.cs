@@ -152,7 +152,11 @@ namespace Istn3ASproject
         decimal changeToGive = 0;
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms["Login"] is frmLogin login) {
 
+                int StaffID = login.staffID;
+                MessageBox.Show(StaffID.ToString());
+            }
 
             if (ReadyToProcess())
             {

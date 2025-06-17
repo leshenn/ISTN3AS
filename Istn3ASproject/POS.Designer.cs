@@ -48,6 +48,7 @@
             this.btnPOSHelp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnGoToCustomer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCustomerLN = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,9 +120,6 @@
             this.TaSalesInvoice = new Istn3ASproject.WstGrp11DataSetTableAdapters.SalesInvoiceTableAdapter();
             this.TaCustomer = new Istn3ASproject.WstGrp11DataSetTableAdapters.CustomerTableAdapter();
             this.TaRefundInnerJoin = new Istn3ASproject.WstGrp11DataSetTableAdapters.RefundInnerJoinTableAdapter();
-            this.labelStaffID = new System.Windows.Forms.Label();
-            this.lblStaffID = new System.Windows.Forms.Label();
-            this.btnGoToCustomer = new System.Windows.Forms.Button();
             this.tcPOS.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -164,8 +162,6 @@
             // 
             this.tbpSales.AutoScroll = true;
             this.tbpSales.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tbpSales.Controls.Add(this.lblStaffID);
-            this.tbpSales.Controls.Add(this.labelStaffID);
             this.tbpSales.Controls.Add(this.btnPOSHelp);
             this.tbpSales.Controls.Add(this.panel1);
             this.tbpSales.Controls.Add(this.groupBox1);
@@ -226,6 +222,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(703, 64);
             this.panel3.TabIndex = 17;
+            // 
+            // btnGoToCustomer
+            // 
+            this.btnGoToCustomer.BackColor = System.Drawing.Color.LightGreen;
+            this.btnGoToCustomer.Location = new System.Drawing.Point(562, -1);
+            this.btnGoToCustomer.Name = "btnGoToCustomer";
+            this.btnGoToCustomer.Size = new System.Drawing.Size(144, 63);
+            this.btnGoToCustomer.TabIndex = 1;
+            this.btnGoToCustomer.Text = "Search Customer";
+            this.btnGoToCustomer.UseVisualStyleBackColor = false;
+            this.btnGoToCustomer.Click += new System.EventHandler(this.btnGoToCustomer_Click);
             // 
             // label3
             // 
@@ -1018,34 +1025,6 @@
             // 
             this.TaRefundInnerJoin.ClearBeforeFill = true;
             // 
-            // labelStaffID
-            // 
-            this.labelStaffID.AutoSize = true;
-            this.labelStaffID.Location = new System.Drawing.Point(1168, 6);
-            this.labelStaffID.Name = "labelStaffID";
-            this.labelStaffID.Size = new System.Drawing.Size(77, 23);
-            this.labelStaffID.TabIndex = 12;
-            this.labelStaffID.Text = "StaffID: ";
-            // 
-            // lblStaffID
-            // 
-            this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(1251, 6);
-            this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(0, 23);
-            this.lblStaffID.TabIndex = 13;
-            // 
-            // btnGoToCustomer
-            // 
-            this.btnGoToCustomer.BackColor = System.Drawing.Color.LightGreen;
-            this.btnGoToCustomer.Location = new System.Drawing.Point(562, -1);
-            this.btnGoToCustomer.Name = "btnGoToCustomer";
-            this.btnGoToCustomer.Size = new System.Drawing.Size(144, 63);
-            this.btnGoToCustomer.TabIndex = 1;
-            this.btnGoToCustomer.Text = "Search Customer";
-            this.btnGoToCustomer.UseVisualStyleBackColor = false;
-            this.btnGoToCustomer.Click += new System.EventHandler(this.btnGoToCustomer_Click);
-            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1168,8 +1147,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn RefundItem;
         private System.Windows.Forms.Button btnPOSHelp;
         private System.Windows.Forms.Button btnRefundHelp;
-        private System.Windows.Forms.Label lblStaffID;
-        private System.Windows.Forms.Label labelStaffID;
         private System.Windows.Forms.Button btnGoToCustomer;
     }
 }
