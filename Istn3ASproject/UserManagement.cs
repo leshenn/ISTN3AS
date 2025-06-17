@@ -44,7 +44,8 @@ namespace Istn3ASproject
             InitializeComponent();
             navigate = navigateTo;
             this.posForm = posform;
-            _userRole =role;
+            _userRole =role; 
+            ConfigureAccess();
         }
 
         private void ConfigureAccess()
