@@ -87,8 +87,10 @@ namespace Istn3ASproject
 
             detailsEntered = true;
 
+            frmPOS pos = Application.OpenForms.OfType<frmPOS>().FirstOrDefault();
+            pos.isCardDetailsEntered(true);
+
            
-            frmPOS frmPOS = new frmPOS();
             this.Hide();
            
            

@@ -18,9 +18,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Istn3ASproject
 {
-
+    
     public partial class frmPOS : Form
     {
+        bool cardDetailsIsEntered;
         public frmPOS()
         {
             InitializeComponent();
@@ -152,10 +153,10 @@ namespace Istn3ASproject
                 
             }
 
-            if (CardPortal.detailsEntered==false) { CardPortal.detailsEntered = true; }
+            
 
 
-            if (ReadyToProcess() && CardPortal.detailsEntered==true)
+            if (ReadyToProcess() && cardDetailsIsEntered==true)
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
                 String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;
@@ -588,6 +589,20 @@ namespace Istn3ASproject
                     taOrder.Fill(WstGrp11DataSet.Order);
                 }
             }
+        }
+
+        public void isCardDetailsEntered(bool Answer)
+        { 
+            if(Answer == true) 
+            {
+                cardDetailsIsEntered = true;
+                cardDetailsIsEntered= true;
+            }
+            else 
+            {
+                cardDetailsIsEntered = false;
+            }
+            
         }
 
         public void UpdateOrderTable(int OrderID)
