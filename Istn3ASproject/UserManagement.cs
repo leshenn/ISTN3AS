@@ -245,8 +245,8 @@ namespace Istn3ASproject
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
             mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to update" + txtUfname.Text + " " + txtUlname.Text + " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            bool valid = validateInput(txtUfname, txtUlname, mtUpdateCustContact, txtUemail, txtUaddress, txtUcity, cbUprovince, txtUcode);
+            DialogResult result = MessageBox.Show("Are you sure you want to update " + txtUfname.Text + " " + txtUlname.Text + " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            bool valid = validateInput(txtUfname, txtUlname, mtUpdateCustContact, txtUemail, txtUaddress, txtUcity, cbUprovince, txtUcode,lblEditCusFname,lblEditCusLname,lblEditCusNumber,lblEditCusEmail,lblEditCusAddress,lblEditCusCity,lblEditCusProvince,lblEditCusPostal);
 
             if (result == DialogResult.Yes && valid)
             {
@@ -483,7 +483,7 @@ namespace Istn3ASproject
 
 
             mtSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to add" + txtSname.Text + " ?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to add " + txtSname.Text + " ?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             bool valid = validateInputSupplier(txtSname, mtEditSupplierContact, txtSemail, txtSaddress, txtScity, cbSprovince, txtScode);
 
             if (result == DialogResult.Yes && valid)
@@ -532,7 +532,7 @@ namespace Istn3ASproject
 
 
             mtEditSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to edit" + txtEditSname.Text + " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to edit " + txtEditSname.Text + " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             bool valid = validateInputSupplier(txtEditSname, mtEditSupplierContact, txtEditSemail, txtEditSaddress, txtEditScity, cbEditSprovince, txtEditScode);
 
             if (result == DialogResult.Yes && valid)
@@ -600,9 +600,9 @@ namespace Istn3ASproject
         private void btnNewCustomer_Click_1(object sender, EventArgs e)
         {
             mtCustomerNo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            DialogResult result = MessageBox.Show("Are you sure you want to add this" + txtFName.Text + " " + txtLName.Text, "Confirm Details?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to add this " + txtFName.Text + " " + txtLName.Text, "Confirm Details?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            bool valid = validateInput(txtFName, txtLName, mtCustomerNo, txtEmail, txtAddress, txtCity, cbProvince, txtPostalCode);
+            bool valid = validateInput(txtFName, txtLName, mtCustomerNo, txtEmail, txtAddress, txtCity, cbProvince, txtPostalCode,lblCusFname1,lblCusLname,lblCusNum,lblCustomerEmail,lblCustomerAddress,lblCustomerCity,lblCustomerProvince,lblCustomerPostal);
 
             if (result == DialogResult.Yes && valid)
             {
@@ -672,7 +672,7 @@ namespace Istn3ASproject
             navigate(posForm);
 
         }
-        private bool validateInput(TextBox txtFName, TextBox txtLName, MaskedTextBox mtCustomerNo, TextBox txtEmail, TextBox txtAddress, TextBox txtCity, ComboBox cbProvince, TextBox txtPostalCode)
+        private bool validateInput(TextBox txtFName, TextBox txtLName, MaskedTextBox mtCustomerNo, TextBox txtEmail, TextBox txtAddress, TextBox txtCity, ComboBox cbProvince, TextBox txtPostalCode,Label lblFname, Label lbllname,Label lblCustomerNo,Label lblEmail,Label lblAddress,Label lblCity,Label lblprovince, Label lblpostalCode)
         {
             bool isValid = true;
 
@@ -683,9 +683,9 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(fName) || !fName.All(char.IsLetter))
             {
                 isValid = false;
-                txtFName.BackColor = Color.FromArgb(255, 192, 192); ;
+                lblFname.ForeColor = Color.Red;
             }
-            else { txtFName.BackColor = Color.White; }
+            else { lblFname.ForeColor = Color.Black; }
 
 
             // Last Name
@@ -694,9 +694,9 @@ namespace Istn3ASproject
             {
 
                 isValid = false;
-                txtLName.BackColor = Color.Red;
+                lbllname.ForeColor = Color.Red;
             }
-            else { txtLName.BackColor = Color.White; }
+            else { lbllname.ForeColor = Color.Black; }
 
             // Contact Number
             string contact = mtCustomerNo.Text.Trim();
@@ -704,9 +704,9 @@ namespace Istn3ASproject
             {
 
                 isValid = false;
-                mtCustomerNo.BackColor = Color.Red;
+                lblCustomerNo.ForeColor = Color.Red;
             }
-            else { mtCustomerNo.BackColor = Color.White; }
+            else { lblCustomerNo.ForeColor = Color.Black; }
 
             // Email
             string email = txtEmail.Text.Trim();
@@ -714,9 +714,9 @@ namespace Istn3ASproject
             {
 
                 isValid = false;
-                txtEmail.BackColor = Color.Red;
+                lblEmail.ForeColor = Color.Red;
             }
-            else { txtEmail.BackColor = Color.White; }
+            else { lblEmail.ForeColor = Color.Black; }
 
             // Address
             string address = txtAddress.Text.Trim();
@@ -724,9 +724,9 @@ namespace Istn3ASproject
             {
 
                 isValid = false;
-                txtAddress.BackColor = Color.Red;
+                lblAddress.ForeColor = Color.Red;
             }
-            else { txtAddress.BackColor = Color.White; }
+            else { lblAddress.ForeColor = Color.Black; }
 
             // City
             string city = txtCity.Text.Trim();
@@ -734,33 +734,33 @@ namespace Istn3ASproject
             {
 
                 isValid = false;
-                txtCity.BackColor = Color.Red;
+                lblCity.ForeColor = Color.Red;
             }
-            else { txtCity.BackColor = Color.White; }
+            else { lblCity.ForeColor = Color.Black; }
 
             // Province 
             string province = cbProvince.Text.Trim();
             if (!string.IsNullOrWhiteSpace(province) && province.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c == '-'))
             {
-                cbProvince.BackColor = Color.White;
+                lblprovince.ForeColor = Color.Black;
 
             }
             else
             {
                 isValid = false;
-                cbProvince.BackColor = Color.Red;
+                lblprovince.ForeColor = Color.Red;
             }
 
             // Postal Code
             string postalCode = txtPostalCode.Text.Trim();
-            if (string.IsNullOrWhiteSpace(postalCode) || !postalCode.All(char.IsLetterOrDigit))
+            if (string.IsNullOrWhiteSpace(postalCode) || !postalCode.All(char.IsLetterOrDigit) || txtPostalCode.Text.Length<4)
             {
 
                 isValid = false;
-                txtPostalCode.BackColor = Color.Red;
+                lblpostalCode.ForeColor = Color.Red;
 
             }
-            else { txtPostalCode.BackColor = Color.White; }
+            else { lblpostalCode.ForeColor = Color.Black; }
             // MessageBox.Show(Convert.ToString(isValid));
 
             return isValid;

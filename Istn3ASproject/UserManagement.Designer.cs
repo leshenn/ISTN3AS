@@ -246,7 +246,7 @@ namespace Istn3ASproject
             this.tcUserManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tcUserManagement.Name = "tcUserManagement";
             this.tcUserManagement.SelectedIndex = 0;
-            this.tcUserManagement.Size = new System.Drawing.Size(1941, 757);
+            this.tcUserManagement.Size = new System.Drawing.Size(1941, 845);
             this.tcUserManagement.TabIndex = 0;
             // 
             // tbpCustomers
@@ -267,7 +267,7 @@ namespace Istn3ASproject
             this.tbpCustomers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbpCustomers.Name = "tbpCustomers";
             this.tbpCustomers.Padding = new System.Windows.Forms.Padding(4);
-            this.tbpCustomers.Size = new System.Drawing.Size(1933, 723);
+            this.tbpCustomers.Size = new System.Drawing.Size(1933, 811);
             this.tbpCustomers.TabIndex = 0;
             this.tbpCustomers.Text = "Customers";
             // 
@@ -2188,7 +2188,7 @@ namespace Istn3ASproject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1941, 757);
+            this.ClientSize = new System.Drawing.Size(1941, 845);
             this.Controls.Add(this.tcUserManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
