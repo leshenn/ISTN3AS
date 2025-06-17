@@ -45,7 +45,7 @@ namespace Istn3ASproject
             InitializeComponent();
             navigate = navigateTo;
             this.userRole = userRole;
-            lblStaffID.Text = staffID.ToString();
+           // lblStaffID.Text = staffID.ToString();
 
         }
 
