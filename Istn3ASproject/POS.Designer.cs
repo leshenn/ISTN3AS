@@ -65,47 +65,44 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSalesInvoice = new System.Windows.Forms.DataGridView();
+            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PoductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.grpbStock = new System.Windows.Forms.GroupBox();
-            this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.lblSearchItem = new System.Windows.Forms.Label();
-            this.txtSearchProduct = new System.Windows.Forms.TextBox();
-            this.tbpRefund = new System.Windows.Forms.TabPage();
-            this.btnRefundHelp = new System.Windows.Forms.Button();
-            this.btnRefundOrder = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgvRefundInnerJoin = new System.Windows.Forms.DataGridView();
-            this.RefundItem = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.npSearchOrderID = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.npCustomerID = new System.Windows.Forms.NumericUpDown();
-            this.stockIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockOnHandDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.WstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
+            this.grpbStock = new System.Windows.Forms.GroupBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockOnHandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblSearchItem = new System.Windows.Forms.Label();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
+            this.tbpRefund = new System.Windows.Forms.TabPage();
+            this.npCustomerID = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnRefundHelp = new System.Windows.Forms.Button();
+            this.btnRefundOrder = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvRefundInnerJoin = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poductDescriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefundItem = new System.Windows.Forms.DataGridViewButtonColumn();
             this.refundInnerJoinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,6 +112,9 @@
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.npSearchOrderID = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.taOrder = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
@@ -130,21 +130,21 @@
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).BeginInit();
-            this.grpbStock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
-            this.tbpRefund.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRefundInnerJoin)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npSearchOrderID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npCustomerID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).BeginInit();
+            this.grpbStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
+            this.tbpRefund.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.npCustomerID)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRefundInnerJoin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refundInnerJoinBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npSearchOrderID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -447,6 +447,24 @@
             this.dgvSalesInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellContentClick);
             this.dgvSalesInvoice.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalesInvoice_CellEndEdit);
             // 
+            // stockIDDataGridViewTextBoxColumn1
+            // 
+            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
+            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
+            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockIDDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn1.Width = 135;
+            // 
             // PoductDescription
             // 
             this.PoductDescription.DataPropertyName = "PoductDescription";
@@ -455,6 +473,24 @@
             this.PoductDescription.Name = "PoductDescription";
             this.PoductDescription.ReadOnly = true;
             this.PoductDescription.Width = 190;
+            // 
+            // sellingPriceDataGridViewTextBoxColumn1
+            // 
+            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
+            this.sellingPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sellingPriceDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // stockOnHandDataGridViewTextBoxColumn1
+            // 
+            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
+            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "Stock";
+            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
+            this.stockOnHandDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockOnHandDataGridViewTextBoxColumn1.Width = 70;
             // 
             // Quantity
             // 
@@ -481,6 +517,16 @@
             this.Delete.ToolTipText = "Removes current row";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 125;
+            // 
+            // salesInvoiceBindingSource
+            // 
+            this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
+            this.salesInvoiceBindingSource.DataSource = this.WstGrp11DataSet;
+            // 
+            // WstGrp11DataSet
+            // 
+            this.WstGrp11DataSet.DataSetName = "WstGrp11DataSet";
+            this.WstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grpbStock
             // 
@@ -548,6 +594,52 @@
             this.dgvStock.TabIndex = 0;
             this.dgvStock.DoubleClick += new System.EventHandler(this.dgvStock_DoubleClick);
             // 
+            // stockIDDataGridViewTextBoxColumn
+            // 
+            this.stockIDDataGridViewTextBoxColumn.DataPropertyName = "StockID";
+            this.stockIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.stockIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stockIDDataGridViewTextBoxColumn.Name = "stockIDDataGridViewTextBoxColumn";
+            this.stockIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockIDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // poductDescriptionDataGridViewTextBoxColumn
+            // 
+            this.poductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "PoductDescription";
+            this.poductDescriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.poductDescriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.poductDescriptionDataGridViewTextBoxColumn.Name = "poductDescriptionDataGridViewTextBoxColumn";
+            this.poductDescriptionDataGridViewTextBoxColumn.Width = 190;
+            // 
+            // sellingPriceDataGridViewTextBoxColumn
+            // 
+            this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.sellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
+            this.sellingPriceDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // stockOnHandDataGridViewTextBoxColumn
+            // 
+            this.stockOnHandDataGridViewTextBoxColumn.DataPropertyName = "StockOnHand";
+            this.stockOnHandDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockOnHandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stockOnHandDataGridViewTextBoxColumn.Name = "stockOnHandDataGridViewTextBoxColumn";
+            this.stockOnHandDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "Stock";
+            this.stockBindingSource.DataSource = this.WstGrp11DataSet;
+            // 
             // lblSearchItem
             // 
             this.lblSearchItem.AutoSize = true;
@@ -589,6 +681,35 @@
             this.tbpRefund.Size = new System.Drawing.Size(1933, 789);
             this.tbpRefund.TabIndex = 1;
             this.tbpRefund.Text = "Refund";
+            // 
+            // npCustomerID
+            // 
+            this.npCustomerID.BackColor = System.Drawing.Color.LightBlue;
+            this.npCustomerID.Location = new System.Drawing.Point(924, 45);
+            this.npCustomerID.Name = "npCustomerID";
+            this.npCustomerID.Size = new System.Drawing.Size(120, 29);
+            this.npCustomerID.TabIndex = 12;
+            this.npCustomerID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(634, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(265, 31);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Search for customerID :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(958, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 23);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "label5";
             // 
             // btnRefundHelp
             // 
@@ -655,7 +776,7 @@
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -682,6 +803,54 @@
             this.dgvRefundInnerJoin.TabIndex = 1;
             this.dgvRefundInnerJoin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRefundInnerJoin_CellContentClick);
             // 
+            // orderIDDataGridViewTextBoxColumn1
+            // 
+            this.orderIDDataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn1.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.orderIDDataGridViewTextBoxColumn1.Name = "orderIDDataGridViewTextBoxColumn1";
+            this.orderIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // stockIDDataGridViewTextBoxColumn2
+            // 
+            this.stockIDDataGridViewTextBoxColumn2.DataPropertyName = "StockID";
+            this.stockIDDataGridViewTextBoxColumn2.HeaderText = "StockID";
+            this.stockIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.stockIDDataGridViewTextBoxColumn2.Name = "stockIDDataGridViewTextBoxColumn2";
+            this.stockIDDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // poductDescriptionDataGridViewTextBoxColumn2
+            // 
+            this.poductDescriptionDataGridViewTextBoxColumn2.DataPropertyName = "PoductDescription";
+            this.poductDescriptionDataGridViewTextBoxColumn2.HeaderText = "PoductDescription";
+            this.poductDescriptionDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.poductDescriptionDataGridViewTextBoxColumn2.Name = "poductDescriptionDataGridViewTextBoxColumn2";
+            this.poductDescriptionDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 125;
+            // 
             // RefundItem
             // 
             this.RefundItem.HeaderText = "RefundItem";
@@ -690,6 +859,11 @@
             this.RefundItem.Text = "RefundItem";
             this.RefundItem.UseColumnTextForButtonValue = true;
             this.RefundItem.Width = 125;
+            // 
+            // refundInnerJoinBindingSource
+            // 
+            this.refundInnerJoinBindingSource.DataMember = "RefundInnerJoin";
+            this.refundInnerJoinBindingSource.DataSource = this.WstGrp11DataSet;
             // 
             // groupBox2
             // 
@@ -756,207 +930,6 @@
             this.dgvOrder.TabIndex = 0;
             this.dgvOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentDoubleClick);
             this.dgvOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellDoubleClick);
-            // 
-            // npSearchOrderID
-            // 
-            this.npSearchOrderID.BackColor = System.Drawing.Color.LightBlue;
-            this.npSearchOrderID.Location = new System.Drawing.Point(433, 46);
-            this.npSearchOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npSearchOrderID.Name = "npSearchOrderID";
-            this.npSearchOrderID.Size = new System.Drawing.Size(145, 29);
-            this.npSearchOrderID.TabIndex = 4;
-            this.npSearchOrderID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(189, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Search for OrderID:";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.wstGrp11DataSetBindingSource;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(958, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 23);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(634, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(265, 31);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Search for customerID :";
-            // 
-            // npCustomerID
-            // 
-            this.npCustomerID.BackColor = System.Drawing.Color.LightBlue;
-            this.npCustomerID.Location = new System.Drawing.Point(924, 45);
-            this.npCustomerID.Name = "npCustomerID";
-            this.npCustomerID.Size = new System.Drawing.Size(120, 29);
-            this.npCustomerID.TabIndex = 12;
-            this.npCustomerID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
-            // 
-            // stockIDDataGridViewTextBoxColumn1
-            // 
-            this.stockIDDataGridViewTextBoxColumn1.DataPropertyName = "StockID";
-            this.stockIDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.stockIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockIDDataGridViewTextBoxColumn1.Name = "stockIDDataGridViewTextBoxColumn1";
-            this.stockIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.stockIDDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn1.Width = 135;
-            // 
-            // sellingPriceDataGridViewTextBoxColumn1
-            // 
-            this.sellingPriceDataGridViewTextBoxColumn1.DataPropertyName = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn1.HeaderText = "Price";
-            this.sellingPriceDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.sellingPriceDataGridViewTextBoxColumn1.Name = "sellingPriceDataGridViewTextBoxColumn1";
-            this.sellingPriceDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.sellingPriceDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // stockOnHandDataGridViewTextBoxColumn1
-            // 
-            this.stockOnHandDataGridViewTextBoxColumn1.DataPropertyName = "StockOnHand";
-            this.stockOnHandDataGridViewTextBoxColumn1.HeaderText = "Stock";
-            this.stockOnHandDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.stockOnHandDataGridViewTextBoxColumn1.Name = "stockOnHandDataGridViewTextBoxColumn1";
-            this.stockOnHandDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.stockOnHandDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // salesInvoiceBindingSource
-            // 
-            this.salesInvoiceBindingSource.DataMember = "SalesInvoice";
-            this.salesInvoiceBindingSource.DataSource = this.WstGrp11DataSet;
-            // 
-            // WstGrp11DataSet
-            // 
-            this.WstGrp11DataSet.DataSetName = "WstGrp11DataSet";
-            this.WstGrp11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockIDDataGridViewTextBoxColumn
-            // 
-            this.stockIDDataGridViewTextBoxColumn.DataPropertyName = "StockID";
-            this.stockIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.stockIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.stockIDDataGridViewTextBoxColumn.Name = "stockIDDataGridViewTextBoxColumn";
-            this.stockIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stockIDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // poductDescriptionDataGridViewTextBoxColumn
-            // 
-            this.poductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "PoductDescription";
-            this.poductDescriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.poductDescriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.poductDescriptionDataGridViewTextBoxColumn.Name = "poductDescriptionDataGridViewTextBoxColumn";
-            this.poductDescriptionDataGridViewTextBoxColumn.Width = 190;
-            // 
-            // sellingPriceDataGridViewTextBoxColumn
-            // 
-            this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.sellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
-            this.sellingPriceDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // stockOnHandDataGridViewTextBoxColumn
-            // 
-            this.stockOnHandDataGridViewTextBoxColumn.DataPropertyName = "StockOnHand";
-            this.stockOnHandDataGridViewTextBoxColumn.HeaderText = "Stock";
-            this.stockOnHandDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.stockOnHandDataGridViewTextBoxColumn.Name = "stockOnHandDataGridViewTextBoxColumn";
-            this.stockOnHandDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // stockBindingSource
-            // 
-            this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.WstGrp11DataSet;
-            // 
-            // orderIDDataGridViewTextBoxColumn1
-            // 
-            this.orderIDDataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn1.HeaderText = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.orderIDDataGridViewTextBoxColumn1.Name = "orderIDDataGridViewTextBoxColumn1";
-            this.orderIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // stockIDDataGridViewTextBoxColumn2
-            // 
-            this.stockIDDataGridViewTextBoxColumn2.DataPropertyName = "StockID";
-            this.stockIDDataGridViewTextBoxColumn2.HeaderText = "StockID";
-            this.stockIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.stockIDDataGridViewTextBoxColumn2.Name = "stockIDDataGridViewTextBoxColumn2";
-            this.stockIDDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // poductDescriptionDataGridViewTextBoxColumn2
-            // 
-            this.poductDescriptionDataGridViewTextBoxColumn2.DataPropertyName = "PoductDescription";
-            this.poductDescriptionDataGridViewTextBoxColumn2.HeaderText = "PoductDescription";
-            this.poductDescriptionDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.poductDescriptionDataGridViewTextBoxColumn2.Name = "poductDescriptionDataGridViewTextBoxColumn2";
-            this.poductDescriptionDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // refundInnerJoinBindingSource
-            // 
-            this.refundInnerJoinBindingSource.DataMember = "RefundInnerJoin";
-            this.refundInnerJoinBindingSource.DataSource = this.WstGrp11DataSet;
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -1028,6 +1001,33 @@
             this.orderBindingSource.DataMember = "Order";
             this.orderBindingSource.DataSource = this.WstGrp11DataSet;
             // 
+            // npSearchOrderID
+            // 
+            this.npSearchOrderID.BackColor = System.Drawing.Color.LightBlue;
+            this.npSearchOrderID.Location = new System.Drawing.Point(433, 46);
+            this.npSearchOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npSearchOrderID.Name = "npSearchOrderID";
+            this.npSearchOrderID.Size = new System.Drawing.Size(145, 29);
+            this.npSearchOrderID.TabIndex = 4;
+            this.npSearchOrderID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(189, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(220, 31);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Search for OrderID:";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.wstGrp11DataSetBindingSource;
+            // 
             // wstGrp11DataSetBindingSource
             // 
             this.wstGrp11DataSetBindingSource.DataSource = this.WstGrp11DataSet;
@@ -1084,22 +1084,22 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesInvoice)).EndInit();
-            this.grpbStock.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
-            this.tbpRefund.ResumeLayout(false);
-            this.tbpRefund.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRefundInnerJoin)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npSearchOrderID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npCustomerID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesInvoiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WstGrp11DataSet)).EndInit();
+            this.grpbStock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
+            this.tbpRefund.ResumeLayout(false);
+            this.tbpRefund.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.npCustomerID)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRefundInnerJoin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refundInnerJoinBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npSearchOrderID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderLineBindingSource)).EndInit();
             this.ResumeLayout(false);
