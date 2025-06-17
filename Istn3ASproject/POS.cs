@@ -37,6 +37,7 @@ namespace Istn3ASproject
             // Initialize references inside the constructor
             navigate = navigateTo;
             userManagement = userRef;
+
         }
 
 
@@ -146,10 +147,15 @@ namespace Istn3ASproject
 
             if(transactionTypeIndex == 1)
             {
-                //
+                CardPortal cardportal = new CardPortal();
+                cardportal.Show();
+                
             }
 
-            if (ReadyToProcess())
+            if (CardPortal.detailsEntered==false) { CardPortal.detailsEntered = true; }
+
+
+            if (ReadyToProcess() && CardPortal.detailsEntered==true)
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
                 String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;

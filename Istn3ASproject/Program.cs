@@ -18,6 +18,7 @@ namespace Istn3ASproject
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new MainMenu());
             Application.Run(new frmLogin()); 
+           // Application.Run(new CardPortal());
         }
     }
 }
