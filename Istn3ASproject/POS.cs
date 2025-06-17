@@ -684,5 +684,11 @@ namespace Istn3ASproject
 
             navigate(userForm);
         }
+
+        private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
+        {
+            taOrder.FillByCustID(WstGrp11DataSet.Order, Convert.ToInt32(npCustomerID.Value));
+        }
+
     }
 }
