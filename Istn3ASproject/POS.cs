@@ -33,6 +33,8 @@ namespace Istn3ASproject
         private frmUserManagement userManagement;
         private string userRole;
         private int staffID;
+        private string staffName;
+        private int OrderID;
 
         /*public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
         {
@@ -42,15 +44,17 @@ namespace Istn3ASproject
             navigate = navigateTo;
             userManagement = userRef;
         }*/
-        public frmPOS(Action<Form> navigateTo, string userRole, int staffID)
+        public frmPOS(Action<Form> navigateTo, string userRole, int staffID, string staffName)
         {
             InitializeComponent();
             navigate = navigateTo;
             this.userRole = userRole;
             this.staffID = staffID;
+            this.staffName = staffName;
 
-            Console.WriteLine($"POS Form created with staffID: {staffID}");
-            Debug.WriteLine($"POS Form created with staffID: {staffID}");
+            //Console.WriteLine($"POS Form created with staffID: {staffID}");
+            //Console.WriteLine($"POS Form created with staffName: {staffName}");
+            //Debug.WriteLine($"POS Form created with staffID: {staffID}");
         }
 
 
@@ -65,7 +69,7 @@ namespace Istn3ASproject
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
             this.taStock.Fill(this.WstGrp11DataSet.Stock);
 
-            Console.WriteLine($"POS Form loading with staffID: {staffID}");
+            //Console.WriteLine($"POS Form loading with staffID: {staffID}");
 
 
 
@@ -199,7 +203,7 @@ namespace Istn3ASproject
                     string solutionPath = Application.StartupPath; // Path to /bin/Debug or /bin/Release
                     string invoiceFolder = Path.Combine(solutionPath, "Invoices");
                     Directory.CreateDirectory(invoiceFolder); // Ensures it exists
-                    string fileName = $"Invoice_{CustomerID}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+                    string fileName = $"Invoice_{CustomerID}_{OrderID}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
                     string fullPath = Path.Combine(invoiceFolder, fileName);
 
                     GenerateInvoicePDF(fullPath, CustomerName, CustomerID, StaffID, PaymentMethod, TransactionType, Today, CurrentTime, Total, cashReceived, changeToGive);
@@ -282,6 +286,7 @@ namespace Istn3ASproject
             from.Border = iTextSharp.text.Rectangle.NO_BORDER;
             from.AddElement(new Paragraph("From:", boldSmall));
             from.AddElement(new Paragraph($"Staff ID: {staffID}", regular));
+            from.AddElement(new Paragraph($"Staff Name: {staffName}", regular));
 
             partiesTable.AddCell(billedTo);
             partiesTable.AddCell(from);
@@ -473,7 +478,7 @@ namespace Istn3ASproject
         {
             try
             {
-                int OrderID = Convert.ToInt32(taOrder.InsertNewSalesOrder(CustomerID, StaffID, MethodOfPayment, TransactionType, Today, CurrentTime, Total));
+                OrderID = Convert.ToInt32(taOrder.InsertNewSalesOrder(CustomerID, StaffID, MethodOfPayment, TransactionType, Today, CurrentTime, Total));
                 ProcessOrderLine(OrderID);
                 MessageBox.Show("Order has been processed OrderId :" + OrderID);
             }
@@ -686,7 +691,8 @@ namespace Istn3ASproject
 
        private void btnGoToCustomer_Click(object sender, EventArgs e)
         {
-            var userForm = new frmUserManagement(navigate, this.userRole, this.staffID);
+            // Debug.WriteLine($"Current POS Staff - ID: {staffID}, Name: {staffName}");
+            var userForm = new frmUserManagement(navigate, this.userRole, this.staffID, this.staffName);
 
             navigate(userForm);
         }
