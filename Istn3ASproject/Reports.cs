@@ -985,5 +985,6 @@ namespace Istn3ASproject
             chartStockTrends.Series.Clear();
             stockID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
         }
+
     }
 }
