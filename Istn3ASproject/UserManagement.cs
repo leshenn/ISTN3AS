@@ -53,7 +53,6 @@ namespace Istn3ASproject
             tbpStaff.Enabled = false;
             tbpCustomers.Enabled = false;
             tbpSuppliers.Enabled = false;
-
             // Enable based on role
             switch (_userRole.ToLower())
             {
@@ -66,6 +65,8 @@ namespace Istn3ASproject
 
                 case "cashier":
                     tbpCustomers.Enabled = true; // Only customers tab
+                    tcUserManagement.TabPages.Remove(tbpStaff);
+                    tcUserManagement.TabPages.Remove(tbpSuppliers);
                     break;
             }
         }

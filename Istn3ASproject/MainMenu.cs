@@ -98,7 +98,7 @@ namespace Istn3ASproject
 
         private void btnUserMangement_Click(object sender, EventArgs e)
         {
-            var userForm = new frmUserManagement(loadForm, new frmPOS(loadForm, ROLE, staffID), ROLE);
+            var userForm = new frmUserManagement(ROLE);
             loadForm(userForm);
         }
 
