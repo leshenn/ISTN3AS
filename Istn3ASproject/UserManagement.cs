@@ -982,5 +982,10 @@ TIPS:
             customerTableAdapter.FillByContactNumber(this.wstGrp11DataSet.Customer, mtSearchNo.Text);
 
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            supplierTableAdapter.FillBySupplierName(this.wstGrp11DataSet.Supplier, txtSearch.Text);
+        }
     }
 }
