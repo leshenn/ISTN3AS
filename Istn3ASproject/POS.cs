@@ -410,7 +410,7 @@ namespace Istn3ASproject
                         if (decimal.TryParse(sChange, out dChange))
                         {
                             //check if amount recieved is greater than total
-                            if (dChange > Convert.ToDecimal(lblTotal.Text))
+                            if (dChange >= Convert.ToDecimal(lblTotal.Text))
                             {
                                 ChangeValid = true;
                                 cashReceived = dChange;
