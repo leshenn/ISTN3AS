@@ -522,10 +522,12 @@ namespace Istn3ASproject
         private void btnUpdateStatus_Click(object sender, EventArgs e)
         {
             String orderStatus = dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value.ToString();
+            //string Today = DateTime.Today.ToString("yyyy-MM-dd");  //
 
             if (orderStatus == "PENDING")
             {
                 dgvOrderTable.CurrentRow.Cells["OrderStatus"].Value = "ARRIVED";
+                //dgvOrderTable.CurrentRow.Cells[6].Value = Today;       ///// i added this code
             }
             else
             {
