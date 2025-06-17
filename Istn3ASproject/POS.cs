@@ -74,22 +74,28 @@ namespace Istn3ASproject
         {
             try
             {
-                DataRow dr;
-                dr = WstGrp11DataSet.SalesInvoice.NewRow();
-
-                for (int i = 0; i < 5; i++)
-                {
-                    dr[i] = dgvStock.CurrentRow.Cells[i].Value;
+                if (Convert.ToInt32(dgvStock.CurrentRow.Cells[4].Value)==0) {
+                    MessageBox.Show("No stock in inventory");
                 }
+                else
+                {
+                    DataRow dr;
+                    dr = WstGrp11DataSet.SalesInvoice.NewRow();
 
-                WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        dr[i] = dgvStock.CurrentRow.Cells[i].Value;
+                    }
 
-                //set quantity to 1
-                dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count-1].Cells[5].Value = 1;
+                    WstGrp11DataSet.SalesInvoice.Rows.Add(dr);
+
+                    //set quantity to 1
+                    dgvSalesInvoice.Rows[dgvSalesInvoice.Rows.Count - 1].Cells[5].Value = 1;
 
 
 
-                CalcTotal();
+                    CalcTotal();
+                }
             }
             catch (Exception ec)
             {
@@ -559,21 +565,38 @@ namespace Istn3ASproject
         {
             try
             {
+                if (dgvOrder.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select an order to refund.");
+                    return;
+                }
+
                 int OrderID = Convert.ToInt32(dgvOrder.CurrentRow.Cells[0].Value);
-                taOrder.RefundFullOrder(OrderID);
-                taOrderLine.RefundFullOrder(OrderID);
 
-                WstGrp11DataSet.RefundInnerJoin.Clear();
-                taOrder.Fill(WstGrp11DataSet.Order);
+                DialogResult confirmResult = MessageBox.Show(
+                    $"Are you sure you want to refund Order Number: {OrderID}?",
+                    "Confirm Refund",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
 
-                MessageBox.Show("Order Number :" + OrderID.ToString() + " has been refunded");
+                if (confirmResult == DialogResult.Yes)
+                {
+                    taOrder.RefundFullOrder(OrderID);
+                    taOrderLine.RefundFullOrder(OrderID);
 
+                    WstGrp11DataSet.RefundInnerJoin.Clear();
+                    taOrder.Fill(WstGrp11DataSet.Order);
+
+                    MessageBox.Show("Order Number: " + OrderID + " has been refunded.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         private void dgvRefundInnerJoin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -584,13 +607,24 @@ namespace Istn3ASproject
                     int OrderID = Convert.ToInt32(dgvRefundInnerJoin.Rows[e.RowIndex].Cells[0].Value);
                     int StockID = Convert.ToInt32(dgvRefundInnerJoin.Rows[e.RowIndex].Cells[1].Value);
 
-                    taOrderLine.RefundItem(OrderID, StockID);
-                    TaRefundInnerJoin.FillByOrderID(WstGrp11DataSet.RefundInnerJoin, OrderID);
+                    DialogResult confirmResult = MessageBox.Show(
+                        $"Are you sure you want to refund Stock ID {StockID} from Order {OrderID}?",
+                        "Confirm Item Refund",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
 
-                    UpdateOrderTable(OrderID);
-                    taOrder.Fill(WstGrp11DataSet.Order);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        taOrderLine.RefundItem(OrderID, StockID);
+                        TaRefundInnerJoin.FillByOrderID(WstGrp11DataSet.RefundInnerJoin, OrderID);
+
+                        UpdateOrderTable(OrderID);
+                        taOrder.Fill(WstGrp11DataSet.Order);
+                    }
                 }
             }
+
         }
 
         public void UpdateOrderTable(int OrderID)
