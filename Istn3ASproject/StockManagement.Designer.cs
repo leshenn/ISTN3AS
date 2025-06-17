@@ -145,13 +145,6 @@
             this.supplierLineOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panSupplierOrders = new System.Windows.Forms.Panel();
             this.dgvOrderTable = new System.Windows.Forms.DataGridView();
-            this.SupplierOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -160,6 +153,13 @@
             this.supplierLineOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierLineOrderTableAdapter();
             this.supplierTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierTableAdapter();
             this.supplierOrderTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.SupplierOrderTableAdapter();
+            this.SupplierOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcStockManagement.SuspendLayout();
             this.tbpInventoryManagement.SuspendLayout();
             this.grpUpdateItemDetails.SuspendLayout();
@@ -193,7 +193,7 @@
             this.tcStockManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcStockManagement.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcStockManagement.Location = new System.Drawing.Point(0, 0);
-            this.tcStockManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcStockManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tcStockManagement.Name = "tcStockManagement";
             this.tcStockManagement.SelectedIndex = 0;
             this.tcStockManagement.Size = new System.Drawing.Size(1386, 609);
@@ -212,9 +212,9 @@
             this.tbpInventoryManagement.Controls.Add(this.dgvUpdateStock);
             this.tbpInventoryManagement.Controls.Add(this.grpAddNewItem);
             this.tbpInventoryManagement.Location = new System.Drawing.Point(4, 26);
-            this.tbpInventoryManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInventoryManagement.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventoryManagement.Name = "tbpInventoryManagement";
-            this.tbpInventoryManagement.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInventoryManagement.Padding = new System.Windows.Forms.Padding(2);
             this.tbpInventoryManagement.Size = new System.Drawing.Size(1378, 579);
             this.tbpInventoryManagement.TabIndex = 0;
             this.tbpInventoryManagement.Text = "Manage Inventory";
@@ -223,7 +223,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightBlue;
             this.button1.Location = new System.Drawing.Point(1007, 164);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 39);
             this.button1.TabIndex = 10;
@@ -235,7 +235,7 @@
             // 
             this.btnInventoryRefresh.BackColor = System.Drawing.Color.LightBlue;
             this.btnInventoryRefresh.Location = new System.Drawing.Point(1008, 206);
-            this.btnInventoryRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInventoryRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventoryRefresh.Name = "btnInventoryRefresh";
             this.btnInventoryRefresh.Size = new System.Drawing.Size(160, 36);
             this.btnInventoryRefresh.TabIndex = 9;
@@ -769,9 +769,9 @@
             this.tbpSupplierOrder.Controls.Add(this.panSupplierCartItems);
             this.tbpSupplierOrder.Controls.Add(this.panSupplierStockItems);
             this.tbpSupplierOrder.Location = new System.Drawing.Point(4, 26);
-            this.tbpSupplierOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSupplierOrder.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSupplierOrder.Name = "tbpSupplierOrder";
-            this.tbpSupplierOrder.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSupplierOrder.Padding = new System.Windows.Forms.Padding(2);
             this.tbpSupplierOrder.Size = new System.Drawing.Size(1378, 579);
             this.tbpSupplierOrder.TabIndex = 1;
             this.tbpSupplierOrder.Text = "Supplier Orders";
@@ -1358,7 +1358,7 @@
             this.OrderStatus,
             this.paymentStatusDataGridViewTextBoxColumn,
             this.orderDateDataGridViewTextBoxColumn,
-            this.arrivalDateDataGridViewTextBoxColumn});
+            this.ArrivalDate});
             this.dgvOrderTable.DataSource = this.supplierOrderBindingSource;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -1388,6 +1388,45 @@
             this.dgvOrderTable.TabIndex = 0;
             this.dgvOrderTable.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderTable_CellValueChanged);
             this.dgvOrderTable.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrderTable_RowHeaderMouseClick);
+            // 
+            // supplierOrderBindingSource
+            // 
+            this.supplierOrderBindingSource.DataMember = "SupplierOrder";
+            this.supplierOrderBindingSource.DataSource = this.wstGrp11DataSet;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 100);
+            this.panel5.TabIndex = 0;
+            // 
+            // stockTableAdapter
+            // 
+            this.stockTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemsToAddTableAdapter
+            // 
+            this.itemsToAddTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplierLineOrderTableAdapter
+            // 
+            this.supplierLineOrderTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplierTableAdapter
+            // 
+            this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplierOrderTableAdapter
+            // 
+            this.supplierOrderTableAdapter.ClearBeforeFill = true;
             // 
             // SupplierOrderID
             // 
@@ -1441,52 +1480,13 @@
             this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
             this.orderDateDataGridViewTextBoxColumn.Width = 120;
             // 
-            // arrivalDateDataGridViewTextBoxColumn
+            // ArrivalDate
             // 
-            this.arrivalDateDataGridViewTextBoxColumn.DataPropertyName = "ArrivalDate";
-            this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
-            this.arrivalDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
-            this.arrivalDateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // supplierOrderBindingSource
-            // 
-            this.supplierOrderBindingSource.DataMember = "SupplierOrder";
-            this.supplierOrderBindingSource.DataSource = this.wstGrp11DataSet;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 100);
-            this.panel5.TabIndex = 0;
-            // 
-            // stockTableAdapter
-            // 
-            this.stockTableAdapter.ClearBeforeFill = true;
-            // 
-            // itemsToAddTableAdapter
-            // 
-            this.itemsToAddTableAdapter.ClearBeforeFill = true;
-            // 
-            // supplierLineOrderTableAdapter
-            // 
-            this.supplierLineOrderTableAdapter.ClearBeforeFill = true;
-            // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // supplierOrderTableAdapter
-            // 
-            this.supplierOrderTableAdapter.ClearBeforeFill = true;
+            this.ArrivalDate.DataPropertyName = "ArrivalDate";
+            this.ArrivalDate.HeaderText = "ArrivalDate";
+            this.ArrivalDate.MinimumWidth = 6;
+            this.ArrivalDate.Name = "ArrivalDate";
+            this.ArrivalDate.Width = 125;
             // 
             // frmStockManagement
             // 
@@ -1495,7 +1495,7 @@
             this.ClientSize = new System.Drawing.Size(1386, 609);
             this.Controls.Add(this.tcStockManagement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmStockManagement";
             this.Text = "Stock Management";
             this.Load += new System.EventHandler(this.frmStockManagement_Load);
@@ -1580,13 +1580,6 @@
         private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.GroupBox grpAddNewItem;
         private System.Windows.Forms.DataGridView dgvUpdateStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentStatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private System.Windows.Forms.BindingSource supplierOrderBindingSource;
         private System.Windows.Forms.BindingSource supplierLineOrderBindingSource;
@@ -1646,5 +1639,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierOrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalDate;
     }
 }

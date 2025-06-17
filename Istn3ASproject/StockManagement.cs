@@ -333,6 +333,11 @@ namespace Istn3ASproject
                     {
                         // Gets the supplier id from the selected row
                         int orderID = Convert.ToInt32(dgvOrderTable.Rows[e.RowIndex].Cells["SupplierOrderID"].Value);
+
+                        // Set the arrival date to current date
+                        DateTime currentDate = DateTime.Now;
+                        dgvOrderTable.Rows[e.RowIndex].Cells["ArrivalDate"].Value = currentDate;
+
                         UpdateStockOnHand(orderID);
 
                         // This is where the time of the update is recorded to prevent duplicate updates
@@ -407,7 +412,7 @@ namespace Istn3ASproject
                 }
 
                 // Update the order status in the database
-                supplierOrderTableAdapter.UpdateOrderStatus("ARRIVED", orderID);
+                supplierOrderTableAdapter.UpdateOrderStatus("ARRIVED", DateTime.Now, orderID);
 
                 // Refresh the data
                 supplierOrderTableAdapter.Fill(wstGrp11DataSet.SupplierOrder);
@@ -441,7 +446,7 @@ namespace Istn3ASproject
                 }
 
                 // Update order status
-                supplierOrderTableAdapter.UpdateOrderStatus("PENDING", orderID);
+                supplierOrderTableAdapter.UpdateOrderStatus("PENDING", DateTime.Now, orderID);
 
                 // Refresh views
                 supplierOrderTableAdapter.Fill(wstGrp11DataSet.SupplierOrder);
