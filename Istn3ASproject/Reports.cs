@@ -316,10 +316,10 @@ namespace Istn3ASproject
             chrtFinancialLine.Series["income"].Points.Clear();
             chrtFinancialLine.Series["expenses"].Points.Clear();
 
-            Decimal[] dailyIncome = new decimal[31];
-            Decimal[] dailyExpense = new decimal[31];
+            Decimal[] dailyIncome = new decimal[32];
+            Decimal[] dailyExpense = new decimal[32];
 
-            for (int i =0; i<31; i++)
+            for (int i =0; i<32; i++)
             {
                 dailyIncome[i] = 0;
                 dailyIncome[i] = 0;
@@ -344,7 +344,7 @@ namespace Istn3ASproject
                 if (date == Cdate)
                 {
                     string dateInput = input.Split('/')[2];
-                    int day = Convert.ToInt32(dateInput.Split(' ')[0]);
+                    int day = Convert.ToInt32(dateInput.Split(' ')[0])-1;
                    // MessageBox.Show(day.ToString());
 
                     dailyIncome[day]+= Convert.ToDecimal(wstGrp11DataSet.Order.Rows[i].ItemArray[7]);
@@ -362,13 +362,13 @@ namespace Istn3ASproject
                 if (date == Cdate)
                 {
                     string dateInput = input.Split('/')[2];
-                    int day = Convert.ToInt32(dateInput.Split(' ')[0]);
+                    int day = Convert.ToInt32(dateInput.Split(' ')[0])-1;
 
                     dailyExpense[day] += Convert.ToDecimal(wstGrp11DataSet.SupplierOrder.Rows[i].ItemArray[2]);
                 }
             }
 
-            for (int i =0; i <31; i++)
+            for (int i =0; i <32; i++)
             {
                 chrtFinancialLine.Series["income"].Points.AddXY((i + 1).ToString(), dailyIncome[i]);
                 chrtFinancialLine.Series["expenses"].Points.AddXY((i + 1).ToString(), dailyExpense[i]);
