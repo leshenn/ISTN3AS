@@ -20,10 +20,12 @@ namespace Istn3ASproject
         //private Istn3ASproject.WstGrp11DataSet WSTGRP11DataSet;
         //DataSet dataSet = new Istn3ASproject.WstGrp11DataSet()
         private int stockID;
-        
-        public frmReports()
+        private readonly string _userRole;
+
+        public frmReports(string role)
         {
             InitializeComponent();
+            _userRole = role;
             dtpFinancialChart.Format = DateTimePickerFormat.Custom;
             dtpFinancialChart.CustomFormat = "yyyy/MM";
             dtpFinancialChart.ShowUpDown = true;
@@ -31,11 +33,31 @@ namespace Istn3ASproject
             loadFinancialChart();
             loadLifeTimeGraphFinancial();
             this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
-
+            ConfigureAccess();
 
         }
 
-
+        private void ConfigureAccess()
+        {
+            // Disable all tabs first
+            tbpSales.Enabled = false;
+            tbpInventory.Enabled = false;
+            tbpFinancial.Enabled = false;
+            // Enable based on role
+            switch (_userRole.ToLower())
+            {
+                case "owner":
+                    tbpSales.Enabled = true;
+                    tbpInventory.Enabled = true;
+                    tbpFinancial.Enabled = true;
+                    break;
+                case "manager":
+                    tbpSales.Enabled = true;
+                    tbpInventory.Enabled = true;
+                    tcReports.TabPages.Remove(tbpFinancial);
+                    break;
+            }
+        }
 
 
         public void loadLifeTimeGraphFinancial()

@@ -91,7 +91,7 @@ namespace Istn3ASproject
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            loadForm(new frmReports());
+            loadForm(new frmReports(ROLE));
         }
 
         private void btnStockManagement_Click(object sender, EventArgs e)
