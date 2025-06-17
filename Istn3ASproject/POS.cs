@@ -686,7 +686,7 @@ namespace Istn3ASproject
 
        private void btnGoToCustomer_Click(object sender, EventArgs e)
         {
-            var userForm = new frmUserManagement(navigate, this.userRole);
+            var userForm = new frmUserManagement(navigate, this.userRole, this.staffID);
 
             navigate(userForm);
         }
