@@ -114,5 +114,15 @@ namespace Istn3ASproject
             frmLogin loginform = new frmLogin();
         
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Are you sure you want to LOGOUT?", "Logout Confirmation", MessageBoxButtons.YesNo);
+
+            if (answer == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
