@@ -62,7 +62,7 @@
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
             this.panHead.Name = "panHead";
-            this.panHead.Size = new System.Drawing.Size(1370, 61);
+            this.panHead.Size = new System.Drawing.Size(1499, 61);
             this.panHead.TabIndex = 0;
             // 
             // lblStaffID
@@ -181,7 +181,7 @@
             this.panMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMain.Location = new System.Drawing.Point(0, 61);
             this.panMain.Name = "panMain";
-            this.panMain.Size = new System.Drawing.Size(1370, 603);
+            this.panMain.Size = new System.Drawing.Size(1499, 603);
             this.panMain.TabIndex = 1;
             // 
             // lblWelcome
@@ -190,9 +190,9 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Nirmala UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblWelcome.Location = new System.Drawing.Point(427, 186);
+            this.lblWelcome.Location = new System.Drawing.Point(491, 186);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(523, 128);
+            this.lblWelcome.Size = new System.Drawing.Size(522, 128);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 664);
+            this.ClientSize = new System.Drawing.Size(1499, 664);
             this.Controls.Add(this.panMain);
             this.Controls.Add(this.panHead);
             this.IsMdiContainer = true;

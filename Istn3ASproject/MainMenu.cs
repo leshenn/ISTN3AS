@@ -13,7 +13,7 @@ namespace Istn3ASproject
     public partial class MainMenu : Form
     {
         public string ROLE;
-        private  int staffID;
+        public int staffID;
 
         public MainMenu(string firstName, string lastName, string role, int staffID)
         {
@@ -21,7 +21,8 @@ namespace Istn3ASproject
 
             lblU.Text = $"User Logged in: {firstName} {lastName}";
             lblR.Text = $"Role: {role}";
-            ROLE = role ;
+            ROLE = role;
+            this.staffID = staffID;
             lblStaffID.Text = $"StaffID: {staffID.ToString()}" ;
             ConfigureAccess(role);
         }
@@ -53,7 +54,7 @@ namespace Istn3ASproject
             }
         }
 
-        private frmPOS posForm = new frmPOS();
+        //private frmPOS posForm = new frmPOS();
 
         public void loadForm(Form formToLoad)
         {
@@ -98,13 +99,22 @@ namespace Istn3ASproject
 
         private void btnUserMangement_Click(object sender, EventArgs e)
         {
-            var userForm = new frmUserManagement(loadForm, new frmPOS(loadForm, ROLE, staffID), ROLE);
+            //var userForm = new frmUserManagement(loadForm, new frmPOS(loadForm, ROLE, staffID), ROLE);
+            var userForm = new frmUserManagement(loadForm, ROLE, staffID);
             loadForm(userForm);
         }
 
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
+            // Add protection against multiple clicks
+            if (this.panMain.Controls.OfType<frmPOS>().Any())
+            {
+                MessageBox.Show("POS form is already open");
+                return;
+            }
+
+            // MessageBox.Show($"Creating POS form with staffID: {staffID}"); // Debug
             var posForm = new frmPOS(loadForm, ROLE, staffID);
             loadForm(posForm);
         }

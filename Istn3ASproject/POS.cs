@@ -15,6 +15,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Diagnostics;
 
 namespace Istn3ASproject
 {
@@ -31,22 +32,25 @@ namespace Istn3ASproject
         private Action<Form> navigate;
         private frmUserManagement userManagement;
         private string userRole;
+        private int staffID;
 
-        public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
+        /*public frmPOS(Action<Form> navigateTo, frmUserManagement userRef)
         {
             InitializeComponent();
 
             // Initialize references inside the constructor
             navigate = navigateTo;
             userManagement = userRef;
-        }
+        }*/
         public frmPOS(Action<Form> navigateTo, string userRole, int staffID)
         {
             InitializeComponent();
             navigate = navigateTo;
             this.userRole = userRole;
-           // lblStaffID.Text = staffID.ToString();
+            this.staffID = staffID;
 
+            Console.WriteLine($"POS Form created with staffID: {staffID}");
+            Debug.WriteLine($"POS Form created with staffID: {staffID}");
         }
 
 
@@ -60,7 +64,9 @@ namespace Istn3ASproject
             this.taOrder.Fill(this.WstGrp11DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp11DataSet.Stock' table. You can move, or remove it, as needed.
             this.taStock.Fill(this.WstGrp11DataSet.Stock);
-            
+
+            Console.WriteLine($"POS Form loading with staffID: {staffID}");
+
 
 
         }
@@ -158,17 +164,17 @@ namespace Istn3ASproject
         decimal changeToGive = 0;
         private void btnProcessOrder_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["Login"] is frmLogin login) {
+            /*if (Application.OpenForms["Login"] is frmLogin login) {
 
                 int StaffID = login.staffID;
                 MessageBox.Show(StaffID.ToString());
-            }
+            }*/
 
             if (ReadyToProcess())
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
                 String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;
-                int StaffID = 1;// Convert.ToInt32(lblStaffID.Text);
+                int StaffID = this.staffID;// Convert.ToInt32(lblStaffID.Text);
                 string TransactionType = "sale";
                 string Today = DateTime.Today.ToString("yyyy-MM-dd");
                 string CurrentTime = DateTime.Now.ToString("HH:mm:ss");

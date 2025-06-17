@@ -35,8 +35,19 @@ namespace Istn3ASproject
         {
             InitializeComponent();
             navigate = navigateTo;
-           
+
             _userRole = role;
+        }
+
+        private int _currentStaffID;
+
+        public frmUserManagement(Action<Form> navigateTo, string userRole, int staffID)
+        {
+            InitializeComponent();
+            navigate = navigateTo;
+            this._userRole = userRole;
+            this._currentStaffID = staffID; // Store the current staff ID
+            ConfigureAccess();
         }
 
         public frmUserManagement(Action<Form> navigateTo,frmPOS posform,string role)
@@ -668,7 +679,8 @@ namespace Istn3ASproject
         private void btnNewOrder_Click(object sender, EventArgs e)
 
         {
-            var posForm = new frmPOS(navigate, this._userRole, orginalStaffID);
+            var posForm = new frmPOS(navigate, _userRole, _currentStaffID);
+            //var posForm = new frmPOS();
 
             posForm.UpdateLabel(gvCustomer.CurrentRow.Cells[1].Value.ToString(), gvCustomer.CurrentRow.Cells[2].Value.ToString(), gvCustomer.CurrentRow.Cells[0].Value.ToString());
             navigate(posForm);
