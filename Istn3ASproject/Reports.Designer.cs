@@ -47,6 +47,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -73,6 +79,10 @@
             this.chtCustomerPerProvince = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnCustPerProvince = new System.Windows.Forms.Button();
             this.tbpInventory = new System.Windows.Forms.TabPage();
+            this.gbStockTrendChart = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnChart = new System.Windows.Forms.Button();
+            this.chartStockTrends = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExpiredStock = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -84,9 +94,6 @@
             this.expiredStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp11DataSet = new Istn3ASproject.WstGrp11DataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chartStockTrends = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnChart = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,7 +124,6 @@
             this.taOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
             this.stockTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.taExpiredStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.taExpiredStock();
-            this.gbStockTrendChart = new System.Windows.Forms.GroupBox();
             this.tcReports.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.grpbxLeastMostBought.SuspendLayout();
@@ -131,12 +137,13 @@
             this.grpbxCustSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtCustomerPerProvince)).BeginInit();
             this.tbpInventory.SuspendLayout();
+            this.gbStockTrendChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStockTrends)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expiredStockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStockTrends)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.tbpFinancial.SuspendLayout();
@@ -144,7 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancialLine)).BeginInit();
             this.groupBox1Financial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).BeginInit();
-            this.gbStockTrendChart.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcReports
@@ -153,7 +159,7 @@
             this.tcReports.Controls.Add(this.tbpInventory);
             this.tcReports.Controls.Add(this.tbpFinancial);
             this.tcReports.Location = new System.Drawing.Point(0, 9);
-            this.tcReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcReports.Margin = new System.Windows.Forms.Padding(2);
             this.tcReports.Name = "tcReports";
             this.tcReports.SelectedIndex = 0;
             this.tcReports.Size = new System.Drawing.Size(1521, 730);
@@ -168,9 +174,9 @@
             this.tbpSales.Controls.Add(this.grpbxSalesReports);
             this.tbpSales.Controls.Add(this.grpbxCustSales);
             this.tbpSales.Location = new System.Drawing.Point(4, 22);
-            this.tbpSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Margin = new System.Windows.Forms.Padding(2);
             this.tbpSales.Name = "tbpSales";
-            this.tbpSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpSales.Padding = new System.Windows.Forms.Padding(2);
             this.tbpSales.Size = new System.Drawing.Size(1513, 704);
             this.tbpSales.TabIndex = 0;
             this.tbpSales.Text = "Sales";
@@ -181,9 +187,9 @@
             this.grpbxLeastMostBought.Controls.Add(this.chtLeastMostBoughtReports);
             this.grpbxLeastMostBought.Controls.Add(this.btnLeastMostBought);
             this.grpbxLeastMostBought.Location = new System.Drawing.Point(575, 205);
-            this.grpbxLeastMostBought.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxLeastMostBought.Margin = new System.Windows.Forms.Padding(2);
             this.grpbxLeastMostBought.Name = "grpbxLeastMostBought";
-            this.grpbxLeastMostBought.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxLeastMostBought.Padding = new System.Windows.Forms.Padding(2);
             this.grpbxLeastMostBought.Size = new System.Drawing.Size(644, 409);
             this.grpbxLeastMostBought.TabIndex = 3;
             this.grpbxLeastMostBought.TabStop = false;
@@ -196,7 +202,7 @@
             legend1.Name = "Legend1";
             this.chtLeastMostBoughtReports.Legends.Add(legend1);
             this.chtLeastMostBoughtReports.Location = new System.Drawing.Point(4, 15);
-            this.chtLeastMostBoughtReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chtLeastMostBoughtReports.Margin = new System.Windows.Forms.Padding(2);
             this.chtLeastMostBoughtReports.Name = "chtLeastMostBoughtReports";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -208,7 +214,7 @@
             // btnLeastMostBought
             // 
             this.btnLeastMostBought.Location = new System.Drawing.Point(572, 184);
-            this.btnLeastMostBought.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLeastMostBought.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeastMostBought.Name = "btnLeastMostBought";
             this.btnLeastMostBought.Size = new System.Drawing.Size(68, 56);
             this.btnLeastMostBought.TabIndex = 1;
@@ -222,9 +228,9 @@
             this.grpbxRefundSale.Controls.Add(this.chtSaleRefund);
             this.grpbxRefundSale.Controls.Add(this.btnSalesRefunds);
             this.grpbxRefundSale.Location = new System.Drawing.Point(571, 18);
-            this.grpbxRefundSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxRefundSale.Margin = new System.Windows.Forms.Padding(2);
             this.grpbxRefundSale.Name = "grpbxRefundSale";
-            this.grpbxRefundSale.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxRefundSale.Padding = new System.Windows.Forms.Padding(2);
             this.grpbxRefundSale.Size = new System.Drawing.Size(644, 175);
             this.grpbxRefundSale.TabIndex = 2;
             this.grpbxRefundSale.TabStop = false;
@@ -237,7 +243,7 @@
             legend2.Name = "Legend1";
             this.chtSaleRefund.Legends.Add(legend2);
             this.chtSaleRefund.Location = new System.Drawing.Point(4, 15);
-            this.chtSaleRefund.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chtSaleRefund.Margin = new System.Windows.Forms.Padding(2);
             this.chtSaleRefund.Name = "chtSaleRefund";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -249,7 +255,7 @@
             // btnSalesRefunds
             // 
             this.btnSalesRefunds.Location = new System.Drawing.Point(515, 53);
-            this.btnSalesRefunds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalesRefunds.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalesRefunds.Name = "btnSalesRefunds";
             this.btnSalesRefunds.Size = new System.Drawing.Size(82, 56);
             this.btnSalesRefunds.TabIndex = 1;
@@ -263,9 +269,9 @@
             this.grpbxTransactionReport.Controls.Add(this.btnTransactionReports);
             this.grpbxTransactionReport.Controls.Add(this.chtTransactionTypes);
             this.grpbxTransactionReport.Location = new System.Drawing.Point(4, 422);
-            this.grpbxTransactionReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxTransactionReport.Margin = new System.Windows.Forms.Padding(2);
             this.grpbxTransactionReport.Name = "grpbxTransactionReport";
-            this.grpbxTransactionReport.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxTransactionReport.Padding = new System.Windows.Forms.Padding(2);
             this.grpbxTransactionReport.Size = new System.Drawing.Size(561, 186);
             this.grpbxTransactionReport.TabIndex = 5;
             this.grpbxTransactionReport.TabStop = false;
@@ -274,7 +280,7 @@
             // btnTransactionReports
             // 
             this.btnTransactionReports.Location = new System.Drawing.Point(464, 46);
-            this.btnTransactionReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTransactionReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnTransactionReports.Name = "btnTransactionReports";
             this.btnTransactionReports.Size = new System.Drawing.Size(56, 55);
             this.btnTransactionReports.TabIndex = 3;
@@ -289,7 +295,7 @@
             legend3.Name = "Legend1";
             this.chtTransactionTypes.Legends.Add(legend3);
             this.chtTransactionTypes.Location = new System.Drawing.Point(13, 18);
-            this.chtTransactionTypes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chtTransactionTypes.Margin = new System.Windows.Forms.Padding(2);
             this.chtTransactionTypes.Name = "chtTransactionTypes";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
@@ -306,9 +312,9 @@
             this.grpbxSalesReports.Controls.Add(this.cmbTotalSales);
             this.grpbxSalesReports.Controls.Add(this.chtTotalSalesDate);
             this.grpbxSalesReports.Location = new System.Drawing.Point(6, 205);
-            this.grpbxSalesReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxSalesReports.Margin = new System.Windows.Forms.Padding(2);
             this.grpbxSalesReports.Name = "grpbxSalesReports";
-            this.grpbxSalesReports.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxSalesReports.Padding = new System.Windows.Forms.Padding(2);
             this.grpbxSalesReports.Size = new System.Drawing.Size(561, 194);
             this.grpbxSalesReports.TabIndex = 2;
             this.grpbxSalesReports.TabStop = false;
@@ -317,7 +323,7 @@
             // btnSalesReport
             // 
             this.btnSalesReport.Location = new System.Drawing.Point(462, 46);
-            this.btnSalesReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalesReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalesReport.Name = "btnSalesReport";
             this.btnSalesReport.Size = new System.Drawing.Size(58, 57);
             this.btnSalesReport.TabIndex = 3;
@@ -333,7 +339,7 @@
             "Month",
             "Year"});
             this.cmbTotalSales.Location = new System.Drawing.Point(422, 15);
-            this.cmbTotalSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTotalSales.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTotalSales.Name = "cmbTotalSales";
             this.cmbTotalSales.Size = new System.Drawing.Size(135, 21);
             this.cmbTotalSales.TabIndex = 4;
@@ -346,7 +352,7 @@
             legend4.Name = "Legend1";
             this.chtTotalSalesDate.Legends.Add(legend4);
             this.chtTotalSalesDate.Location = new System.Drawing.Point(13, 15);
-            this.chtTotalSalesDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chtTotalSalesDate.Margin = new System.Windows.Forms.Padding(2);
             this.chtTotalSalesDate.Name = "chtTotalSalesDate";
             series4.ChartArea = "ChartArea1";
             series4.Legend = "Legend1";
@@ -362,9 +368,9 @@
             this.grpbxCustSales.Controls.Add(this.chtCustomerPerProvince);
             this.grpbxCustSales.Controls.Add(this.btnCustPerProvince);
             this.grpbxCustSales.Location = new System.Drawing.Point(6, 15);
-            this.grpbxCustSales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxCustSales.Margin = new System.Windows.Forms.Padding(2);
             this.grpbxCustSales.Name = "grpbxCustSales";
-            this.grpbxCustSales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbxCustSales.Padding = new System.Windows.Forms.Padding(2);
             this.grpbxCustSales.Size = new System.Drawing.Size(561, 175);
             this.grpbxCustSales.TabIndex = 0;
             this.grpbxCustSales.TabStop = false;
@@ -377,7 +383,7 @@
             legend5.Name = "Legend1";
             this.chtCustomerPerProvince.Legends.Add(legend5);
             this.chtCustomerPerProvince.Location = new System.Drawing.Point(4, 15);
-            this.chtCustomerPerProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chtCustomerPerProvince.Margin = new System.Windows.Forms.Padding(2);
             this.chtCustomerPerProvince.Name = "chtCustomerPerProvince";
             series5.ChartArea = "ChartArea1";
             series5.Legend = "Legend1";
@@ -389,7 +395,7 @@
             // btnCustPerProvince
             // 
             this.btnCustPerProvince.Location = new System.Drawing.Point(479, 68);
-            this.btnCustPerProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCustPerProvince.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustPerProvince.Name = "btnCustPerProvince";
             this.btnCustPerProvince.Size = new System.Drawing.Size(70, 44);
             this.btnCustPerProvince.TabIndex = 1;
@@ -405,21 +411,73 @@
             this.tbpInventory.Controls.Add(this.groupBox1);
             this.tbpInventory.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbpInventory.Location = new System.Drawing.Point(4, 22);
-            this.tbpInventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInventory.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInventory.Name = "tbpInventory";
-            this.tbpInventory.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInventory.Padding = new System.Windows.Forms.Padding(2);
             this.tbpInventory.Size = new System.Drawing.Size(1513, 704);
             this.tbpInventory.TabIndex = 1;
             this.tbpInventory.Text = "Inventory";
+            // 
+            // gbStockTrendChart
+            // 
+            this.gbStockTrendChart.Controls.Add(this.label1);
+            this.gbStockTrendChart.Controls.Add(this.btnChart);
+            this.gbStockTrendChart.Controls.Add(this.chartStockTrends);
+            this.gbStockTrendChart.Location = new System.Drawing.Point(36, 295);
+            this.gbStockTrendChart.Name = "gbStockTrendChart";
+            this.gbStockTrendChart.Size = new System.Drawing.Size(627, 392);
+            this.gbStockTrendChart.TabIndex = 4;
+            this.gbStockTrendChart.TabStop = false;
+            this.gbStockTrendChart.Text = "Stock Trend Chart";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "select a stock item to generate a stock trend chart:";
+            // 
+            // btnChart
+            // 
+            this.btnChart.Location = new System.Drawing.Point(483, 29);
+            this.btnChart.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(119, 28);
+            this.btnChart.TabIndex = 1;
+            this.btnChart.Text = "Generate Chart";
+            this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
+            // 
+            // chartStockTrends
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chartStockTrends.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartStockTrends.Legends.Add(legend6);
+            this.chartStockTrends.Location = new System.Drawing.Point(19, 66);
+            this.chartStockTrends.Margin = new System.Windows.Forms.Padding(2);
+            this.chartStockTrends.Name = "chartStockTrends";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartStockTrends.Series.Add(series6);
+            this.chartStockTrends.Size = new System.Drawing.Size(585, 314);
+            this.chartStockTrends.TabIndex = 2;
+            this.chartStockTrends.Text = "chart1";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnExpiredStock);
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Location = new System.Drawing.Point(739, 295);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(738, 305);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -428,7 +486,7 @@
             // btnExpiredStock
             // 
             this.btnExpiredStock.Location = new System.Drawing.Point(20, 247);
-            this.btnExpiredStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExpiredStock.Margin = new System.Windows.Forms.Padding(2);
             this.btnExpiredStock.Name = "btnExpiredStock";
             this.btnExpiredStock.Size = new System.Drawing.Size(154, 39);
             this.btnExpiredStock.TabIndex = 1;
@@ -438,8 +496,18 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn1,
@@ -448,9 +516,28 @@
             this.nameDataGridViewTextBoxColumn1,
             this.quantityDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.expiredStockBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView2.Location = new System.Drawing.Point(20, 29);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(693, 205);
@@ -511,58 +598,28 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(185, 37);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1115, 241);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generate Chart";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(457, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "select a stock item to generate a stock trend chart:";
-            // 
-            // chartStockTrends
-            // 
-            chartArea6.Name = "ChartArea1";
-            this.chartStockTrends.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartStockTrends.Legends.Add(legend6);
-            this.chartStockTrends.Location = new System.Drawing.Point(19, 66);
-            this.chartStockTrends.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chartStockTrends.Name = "chartStockTrends";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartStockTrends.Series.Add(series6);
-            this.chartStockTrends.Size = new System.Drawing.Size(585, 314);
-            this.chartStockTrends.TabIndex = 2;
-            this.chartStockTrends.Text = "chart1";
-            // 
-            // btnChart
-            // 
-            this.btnChart.Location = new System.Drawing.Point(483, 29);
-            this.btnChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnChart.Name = "btnChart";
-            this.btnChart.Size = new System.Drawing.Size(119, 28);
-            this.btnChart.TabIndex = 1;
-            this.btnChart.Text = "Generate Chart";
-            this.btnChart.UseVisualStyleBackColor = true;
-            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stockIDDataGridViewTextBoxColumn,
@@ -574,9 +631,28 @@
             this.reorderLevelDataGridViewTextBoxColumn,
             this.expirationTimeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stockBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(18, 26);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1082, 195);
@@ -661,7 +737,7 @@
             this.tbpFinancial.Controls.Add(this.dtpFinancialChart);
             this.tbpFinancial.Controls.Add(this.groupBox1Financial);
             this.tbpFinancial.Location = new System.Drawing.Point(4, 22);
-            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpFinancial.Margin = new System.Windows.Forms.Padding(2);
             this.tbpFinancial.Name = "tbpFinancial";
             this.tbpFinancial.Size = new System.Drawing.Size(1513, 704);
             this.tbpFinancial.TabIndex = 2;
@@ -683,9 +759,9 @@
             this.grpbFinancialLine.Controls.Add(this.chrtFinancialLine);
             this.grpbFinancialLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpbFinancialLine.Location = new System.Drawing.Point(569, 98);
-            this.grpbFinancialLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbFinancialLine.Margin = new System.Windows.Forms.Padding(2);
             this.grpbFinancialLine.Name = "grpbFinancialLine";
-            this.grpbFinancialLine.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbFinancialLine.Padding = new System.Windows.Forms.Padding(2);
             this.grpbFinancialLine.Size = new System.Drawing.Size(880, 345);
             this.grpbFinancialLine.TabIndex = 5;
             this.grpbFinancialLine.TabStop = false;
@@ -699,7 +775,7 @@
             legend7.Name = "Legend1";
             this.chrtFinancialLine.Legends.Add(legend7);
             this.chrtFinancialLine.Location = new System.Drawing.Point(2, 23);
-            this.chrtFinancialLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chrtFinancialLine.Margin = new System.Windows.Forms.Padding(2);
             this.chrtFinancialLine.Name = "chrtFinancialLine";
             series7.ChartArea = "ChartArea1";
             series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -719,7 +795,7 @@
             // 
             this.dtpFinancialChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFinancialChart.Location = new System.Drawing.Point(569, 65);
-            this.dtpFinancialChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFinancialChart.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFinancialChart.Name = "dtpFinancialChart";
             this.dtpFinancialChart.Size = new System.Drawing.Size(151, 28);
             this.dtpFinancialChart.TabIndex = 3;
@@ -740,9 +816,9 @@
             this.groupBox1Financial.Controls.Add(this.cmbPeriodFinancial);
             this.groupBox1Financial.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1Financial.Location = new System.Drawing.Point(21, 105);
-            this.groupBox1Financial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1Financial.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1Financial.Name = "groupBox1Financial";
-            this.groupBox1Financial.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1Financial.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1Financial.Size = new System.Drawing.Size(518, 349);
             this.groupBox1Financial.TabIndex = 2;
             this.groupBox1Financial.TabStop = false;
@@ -755,7 +831,7 @@
             legend8.Name = "Legend1";
             this.chrtFinancial.Legends.Add(legend8);
             this.chrtFinancial.Location = new System.Drawing.Point(17, 86);
-            this.chrtFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chrtFinancial.Margin = new System.Windows.Forms.Padding(2);
             this.chrtFinancial.Name = "chrtFinancial";
             series9.ChartArea = "ChartArea1";
             series9.Legend = "Legend1";
@@ -768,7 +844,7 @@
             // lblProfitFinancial
             // 
             this.lblProfitFinancial.AutoSize = true;
-            this.lblProfitFinancial.Location = new System.Drawing.Point(369, 312);
+            this.lblProfitFinancial.Location = new System.Drawing.Point(356, 293);
             this.lblProfitFinancial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfitFinancial.Name = "lblProfitFinancial";
             this.lblProfitFinancial.Size = new System.Drawing.Size(75, 26);
@@ -778,7 +854,7 @@
             // lblExpensesFinancial
             // 
             this.lblExpensesFinancial.AutoSize = true;
-            this.lblExpensesFinancial.Location = new System.Drawing.Point(369, 239);
+            this.lblExpensesFinancial.Location = new System.Drawing.Point(356, 220);
             this.lblExpensesFinancial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpensesFinancial.Name = "lblExpensesFinancial";
             this.lblExpensesFinancial.Size = new System.Drawing.Size(75, 26);
@@ -788,7 +864,7 @@
             // lblIncomeFinancial
             // 
             this.lblIncomeFinancial.AutoSize = true;
-            this.lblIncomeFinancial.Location = new System.Drawing.Point(369, 162);
+            this.lblIncomeFinancial.Location = new System.Drawing.Point(356, 143);
             this.lblIncomeFinancial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIncomeFinancial.Name = "lblIncomeFinancial";
             this.lblIncomeFinancial.Size = new System.Drawing.Size(75, 26);
@@ -798,7 +874,7 @@
             // Financiallabel3
             // 
             this.Financiallabel3.AutoSize = true;
-            this.Financiallabel3.Location = new System.Drawing.Point(348, 276);
+            this.Financiallabel3.Location = new System.Drawing.Point(335, 255);
             this.Financiallabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Financiallabel3.Name = "Financiallabel3";
             this.Financiallabel3.Size = new System.Drawing.Size(174, 26);
@@ -808,7 +884,7 @@
             // Financiallabel2
             // 
             this.Financiallabel2.AutoSize = true;
-            this.Financiallabel2.Location = new System.Drawing.Point(348, 202);
+            this.Financiallabel2.Location = new System.Drawing.Point(335, 183);
             this.Financiallabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Financiallabel2.Name = "Financiallabel2";
             this.Financiallabel2.Size = new System.Drawing.Size(156, 26);
@@ -818,7 +894,7 @@
             // Financiallabel1
             // 
             this.Financiallabel1.AutoSize = true;
-            this.Financiallabel1.Location = new System.Drawing.Point(369, 128);
+            this.Financiallabel1.Location = new System.Drawing.Point(335, 104);
             this.Financiallabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Financiallabel1.Name = "Financiallabel1";
             this.Financiallabel1.Size = new System.Drawing.Size(104, 26);
@@ -828,7 +904,7 @@
             // btnRefreshFinancialGraph
             // 
             this.btnRefreshFinancialGraph.Location = new System.Drawing.Point(402, 28);
-            this.btnRefreshFinancialGraph.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefreshFinancialGraph.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefreshFinancialGraph.Name = "btnRefreshFinancialGraph";
             this.btnRefreshFinancialGraph.Size = new System.Drawing.Size(116, 34);
             this.btnRefreshFinancialGraph.TabIndex = 4;
@@ -857,7 +933,7 @@
             "Monthly",
             "Yearly"});
             this.cmbPeriodFinancial.Location = new System.Drawing.Point(274, 28);
-            this.cmbPeriodFinancial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPeriodFinancial.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPeriodFinancial.Name = "cmbPeriodFinancial";
             this.cmbPeriodFinancial.Size = new System.Drawing.Size(124, 34);
             this.cmbPeriodFinancial.TabIndex = 2;
@@ -879,18 +955,6 @@
             // 
             this.taExpiredStock.ClearBeforeFill = true;
             // 
-            // gbStockTrendChart
-            // 
-            this.gbStockTrendChart.Controls.Add(this.label1);
-            this.gbStockTrendChart.Controls.Add(this.btnChart);
-            this.gbStockTrendChart.Controls.Add(this.chartStockTrends);
-            this.gbStockTrendChart.Location = new System.Drawing.Point(36, 295);
-            this.gbStockTrendChart.Name = "gbStockTrendChart";
-            this.gbStockTrendChart.Size = new System.Drawing.Size(627, 392);
-            this.gbStockTrendChart.TabIndex = 4;
-            this.gbStockTrendChart.TabStop = false;
-            this.gbStockTrendChart.Text = "Stock Trend Chart";
-            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -899,7 +963,7 @@
             this.ClientSize = new System.Drawing.Size(1521, 703);
             this.Controls.Add(this.tcReports);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmReports";
             this.Text = "Reports";
             this.Load += new System.EventHandler(this.frmReports_Load);
@@ -916,12 +980,14 @@
             this.grpbxCustSales.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chtCustomerPerProvince)).EndInit();
             this.tbpInventory.ResumeLayout(false);
+            this.gbStockTrendChart.ResumeLayout(false);
+            this.gbStockTrendChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStockTrends)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expiredStockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartStockTrends)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.tbpFinancial.ResumeLayout(false);
@@ -931,8 +997,6 @@
             this.groupBox1Financial.ResumeLayout(false);
             this.groupBox1Financial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).EndInit();
-            this.gbStockTrendChart.ResumeLayout(false);
-            this.gbStockTrendChart.PerformLayout();
             this.ResumeLayout(false);
 
         }
