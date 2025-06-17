@@ -117,6 +117,7 @@
             this.taOrderFinancial = new Istn3ASproject.WstGrp11DataSetTableAdapters.OrderTableAdapter();
             this.stockTableAdapter = new Istn3ASproject.WstGrp11DataSetTableAdapters.StockTableAdapter();
             this.taExpiredStock = new Istn3ASproject.WstGrp11DataSetTableAdapters.taExpiredStock();
+            this.gbStockTrendChart = new System.Windows.Forms.GroupBox();
             this.tcReports.SuspendLayout();
             this.tbpSales.SuspendLayout();
             this.grpbxLeastMostBought.SuspendLayout();
@@ -143,6 +144,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancialLine)).BeginInit();
             this.groupBox1Financial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).BeginInit();
+            this.gbStockTrendChart.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcReports
@@ -398,6 +400,7 @@
             // tbpInventory
             // 
             this.tbpInventory.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbpInventory.Controls.Add(this.gbStockTrendChart);
             this.tbpInventory.Controls.Add(this.groupBox2);
             this.tbpInventory.Controls.Add(this.groupBox1);
             this.tbpInventory.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,18 +416,18 @@
             // 
             this.groupBox2.Controls.Add(this.btnExpiredStock);
             this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(702, 174);
+            this.groupBox2.Location = new System.Drawing.Point(739, 295);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(653, 305);
+            this.groupBox2.Size = new System.Drawing.Size(738, 305);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Expired Stock";
             // 
             // btnExpiredStock
             // 
-            this.btnExpiredStock.Location = new System.Drawing.Point(160, 251);
+            this.btnExpiredStock.Location = new System.Drawing.Point(20, 247);
             this.btnExpiredStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExpiredStock.Name = "btnExpiredStock";
             this.btnExpiredStock.Size = new System.Drawing.Size(154, 39);
@@ -445,12 +448,12 @@
             this.nameDataGridViewTextBoxColumn1,
             this.quantityDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.expiredStockBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 31);
+            this.dataGridView2.Location = new System.Drawing.Point(20, 29);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(455, 205);
+            this.dataGridView2.Size = new System.Drawing.Size(693, 205);
             this.dataGridView2.TabIndex = 0;
             // 
             // stockIDDataGridViewTextBoxColumn1
@@ -506,15 +509,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.chartStockTrends);
-            this.groupBox1.Controls.Add(this.btnChart);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(18, 28);
+            this.groupBox1.Location = new System.Drawing.Point(185, 37);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(665, 602);
+            this.groupBox1.Size = new System.Drawing.Size(1115, 241);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generate Chart";
@@ -523,7 +523,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 245);
+            this.label1.Location = new System.Drawing.Point(25, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(457, 25);
@@ -536,7 +536,7 @@
             this.chartStockTrends.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
             this.chartStockTrends.Legends.Add(legend6);
-            this.chartStockTrends.Location = new System.Drawing.Point(11, 288);
+            this.chartStockTrends.Location = new System.Drawing.Point(19, 66);
             this.chartStockTrends.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartStockTrends.Name = "chartStockTrends";
             series6.ChartArea = "ChartArea1";
@@ -550,7 +550,7 @@
             // 
             // btnChart
             // 
-            this.btnChart.Location = new System.Drawing.Point(472, 241);
+            this.btnChart.Location = new System.Drawing.Point(483, 29);
             this.btnChart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChart.Name = "btnChart";
             this.btnChart.Size = new System.Drawing.Size(119, 28);
@@ -574,12 +574,12 @@
             this.reorderLevelDataGridViewTextBoxColumn,
             this.expirationTimeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stockBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 21);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 26);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(650, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 195);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -879,6 +879,18 @@
             // 
             this.taExpiredStock.ClearBeforeFill = true;
             // 
+            // gbStockTrendChart
+            // 
+            this.gbStockTrendChart.Controls.Add(this.label1);
+            this.gbStockTrendChart.Controls.Add(this.btnChart);
+            this.gbStockTrendChart.Controls.Add(this.chartStockTrends);
+            this.gbStockTrendChart.Location = new System.Drawing.Point(36, 295);
+            this.gbStockTrendChart.Name = "gbStockTrendChart";
+            this.gbStockTrendChart.Size = new System.Drawing.Size(627, 392);
+            this.gbStockTrendChart.TabIndex = 4;
+            this.gbStockTrendChart.TabStop = false;
+            this.gbStockTrendChart.Text = "Stock Trend Chart";
+            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -909,7 +921,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.expiredStockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp11DataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStockTrends)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
@@ -920,6 +931,8 @@
             this.groupBox1Financial.ResumeLayout(false);
             this.groupBox1Financial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtFinancial)).EndInit();
+            this.gbStockTrendChart.ResumeLayout(false);
+            this.gbStockTrendChart.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -996,5 +1009,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn expirationTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource stockBindingSource;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gbStockTrendChart;
     }
 }
