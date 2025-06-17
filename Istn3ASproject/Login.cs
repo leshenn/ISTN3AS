@@ -17,6 +17,7 @@ namespace Istn3ASproject
         public string Fname { get; set; }
         public string Lname { get; set; }
         public string Role { get; set; }
+        public int staffID { get; set; }
         public frmLogin()
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace Istn3ASproject
                 Fname = loginDataSet.Staff.Rows[0].ItemArray[3].ToString();
                 Lname = loginDataSet.Staff.Rows[0].ItemArray[4].ToString();
                 Role = loginDataSet.Staff.Rows[0].ItemArray[6].ToString();
+                staffID = Convert.ToInt32(loginDataSet.Staff.Rows[0].ItemArray[0].ToString());
 
                 if (Role.ToLower() == "terminated") {
                     bGrantAccess = false; //deny access
@@ -60,7 +62,7 @@ namespace Istn3ASproject
                 if (loginDataSet.Staff.Rows.Count > 0 && bGrantAccess == true)
                 {
                     new SpeechSynthesizer().Speak("Access Granted" + "Welcome" + Fname + Lname);
-                    MainMenu mainForm = new MainMenu(Fname,Lname,Role);
+                    MainMenu mainForm = new MainMenu(Fname,Lname,Role,staffID);
                     //mainForm.lblU.Text = "User Logged in: " + Fname + " " + Lname;
                     //mainForm.lblR.Text = "Role: " + Role;
                     this.Hide();

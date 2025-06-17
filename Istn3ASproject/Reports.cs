@@ -873,20 +873,11 @@ namespace Istn3ASproject
 
         private void btnExpiredStock_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
+          
                 taExpiredStock.FillBy(wstGrp11DataSet.ExpiredStock);
-                Console.WriteLine("Loaded");
-            }
-            catch (ConstraintException ex)
-            {
-                // Log, show message, or inspect dataset
-                foreach (DataRow row in wstGrp11DataSet.ExpiredStock.Rows)
-                {
-                    if (row.HasErrors)
-                        Console.WriteLine(row.RowError);
-                }
-            }
+                
+          
         }
         private void LoadStockChart(int stockID)
 

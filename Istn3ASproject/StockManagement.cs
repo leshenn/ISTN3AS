@@ -16,6 +16,7 @@ namespace Istn3ASproject
     {
         private int previousSupplierIndex = -1;
         private DataTable currentFilteredStock = null;
+        private bool LowStockClicked=false;
 
         public frmStockManagement()
         {
@@ -992,7 +993,8 @@ namespace Istn3ASproject
         private void btnViewLowStock_Click(object sender, EventArgs e)
         {
             //VIEW ALL ITEMS TO BE REORDERED
-          //  stockTableAdapter.FillByStockToReorder(wstGrp11DataSet.Stock);////////////////////////////////////////////////////////////////////////////////////////////////////////reminder redoooo
+            stockTableAdapter.FillByStockToReorder(wstGrp11DataSet.Stock);
+            LowStockClicked = true;
         }
 
         private void btnManageInventoryHelp_Click(object sender, EventArgs e)
@@ -1025,6 +1027,27 @@ namespace Istn3ASproject
                 " - Click on 'Update Item Details' to save changes";
 
             MessageBox.Show(help, "Manage Inventory Tab Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnInventoryRefresh_Click(object sender, EventArgs e)
+        {
+            this.stockTableAdapter.Fill(wstGrp11DataSet.Stock);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (LowStockClicked == false)
+            {
+                stockTableAdapter.Fill(wstGrp11DataSet.Stock);
+                
+
+
+            }
+            else {
+                LowStockClicked = false;
+                tcStockManagement.SelectedIndex = 1;
+            }
+            
         }
     }
 }
