@@ -483,7 +483,7 @@ namespace Istn3ASproject
 
             mtSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             DialogResult result = MessageBox.Show("Are you sure you want to add " + txtSname.Text + " ?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            bool valid = validateInputSupplier(txtSname, mtEditSupplierContact, txtSemail, txtSaddress, txtScity, cbSprovince, txtScode,lblSupplierFname,lblSupplierNum,lblSupplierEmail,lblSupplierAddress,lblSupplierCity,lblSupplierProvince,lblSupplierPostal);
+            bool valid = validateInputSupplier(txtSname, mtSupplierContact, txtSemail, txtSaddress, txtScity, cbSprovince, txtScode,lblSupplierFname,lblSupplierNum,lblSupplierEmail,lblSupplierAddress,lblSupplierCity,lblSupplierProvince,lblSupplierPostal);
 
             if (result == DialogResult.Yes && valid)
             {
