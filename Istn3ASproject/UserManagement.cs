@@ -339,6 +339,7 @@ namespace Istn3ASproject
                 staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
                     txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.Text,orginalStaffID);
                 MessageBox.Show("Staff Member Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                staffTableAdapter.Fill(wstGrp11DataSet.Staff);
             }
             else { MessageBox.Show("Staff Member NOT Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
@@ -719,7 +720,7 @@ namespace Istn3ASproject
 
             // Address
             string address = txtAddress.Text.Trim();
-            if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
+            if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c) || c=='-' || c==','))
             {
 
                 isValid = false;
@@ -729,7 +730,7 @@ namespace Istn3ASproject
 
             // City
             string city = txtCity.Text.Trim();
-            if (string.IsNullOrWhiteSpace(city) || !city.All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(city) || !city.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c == '-' || c == ',')) 
             {
 
                 isValid = false;
@@ -810,7 +811,7 @@ namespace Istn3ASproject
 
             // Address
             string address = txtAddress.Text.Trim();
-            if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
+            if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c) || c == '-' || c == ','))
             {
                 isValid = false;
                 lblAddress.ForeColor = Color.Red;
@@ -822,7 +823,7 @@ namespace Istn3ASproject
 
             // City
             string city = txtCity.Text.Trim();
-            if (string.IsNullOrWhiteSpace(city) || !city.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+            if (string.IsNullOrWhiteSpace(city) || !city.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c == '-' || c == ','))
             {
                 isValid = false;
                 lblCity.ForeColor = Color.Red;
