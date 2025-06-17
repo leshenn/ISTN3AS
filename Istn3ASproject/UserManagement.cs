@@ -484,7 +484,7 @@ namespace Istn3ASproject
 
             mtSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             DialogResult result = MessageBox.Show("Are you sure you want to add " + txtSname.Text + " ?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            bool valid = validateInputSupplier(txtSname, mtEditSupplierContact, txtSemail, txtSaddress, txtScity, cbSprovince, txtScode);
+            bool valid = validateInputSupplier(txtSname, mtEditSupplierContact, txtSemail, txtSaddress, txtScity, cbSprovince, txtScode,lblSupplierFname,lblSupplierNum,lblSupplierEmail,lblSupplierAddress,lblSupplierCity,lblSupplierProvince,lblSupplierPostal);
 
             if (result == DialogResult.Yes && valid)
             {
@@ -533,7 +533,7 @@ namespace Istn3ASproject
 
             mtEditSupplierContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             DialogResult result = MessageBox.Show("Are you sure you want to edit " + txtEditSname.Text + " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            bool valid = validateInputSupplier(txtEditSname, mtEditSupplierContact, txtEditSemail, txtEditSaddress, txtEditScity, cbEditSprovince, txtEditScode);
+            bool valid = validateInputSupplier(txtEditSname, mtEditSupplierContact, txtEditSemail, txtEditSaddress, txtEditScity, cbEditSprovince, txtEditScode,lblSupplierEditName,lblSupplierEditNum,lblSupplierEditEmail,lblSupplierEditAddress,lblSupplierEditCity,lblSupplierEditProvince,lblSupplierEditPostal);
 
             if (result == DialogResult.Yes && valid)
             {
@@ -769,7 +769,7 @@ namespace Istn3ASproject
 
 
 
-        private bool validateInputSupplier(TextBox txtName, MaskedTextBox txtContactNumber, TextBox txtEmail, TextBox txtAddress, TextBox txtCity, ComboBox cbProvince, TextBox txtPostalCode)
+        private bool validateInputSupplier(TextBox txtName, MaskedTextBox txtContactNumber, TextBox txtEmail, TextBox txtAddress, TextBox txtCity, ComboBox cbProvince, TextBox txtPostalCode, Label lblName, Label lblNo, Label lblEmail, Label lblAddress, Label lblCity, Label lblprovince, Label lblpostalCode)
         {
             bool isValid = true;
 
@@ -778,11 +778,11 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(name) || !name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
                 isValid = false;
-                txtName.BackColor = Color.Red;
+                lblName.ForeColor = Color.Red;
             }
             else
             {
-                txtName.BackColor = Color.White;
+                lblName.ForeColor = Color.Black;
             }
 
             // Contact Number
@@ -790,11 +790,11 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(contact) || !contact.All(char.IsDigit) || contact.Length != 10)
             {
                 isValid = false;
-                txtContactNumber.BackColor = Color.Red;
+                lblNo.ForeColor = Color.Red;
             }
             else
             {
-                txtContactNumber.BackColor = Color.White;
+                lblNo.ForeColor = Color.Black;
             }
 
             // Email
@@ -802,11 +802,11 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.All(c => char.IsLetterOrDigit(c) || c == '@' || c == '.'))
             {
                 isValid = false;
-                txtEmail.BackColor = Color.Red;
+                lblEmail.ForeColor = Color.Red;
             }
             else
             {
-                txtEmail.BackColor = Color.White;
+                lblEmail.ForeColor = Color.Black;
             }
 
             // Address
@@ -814,11 +814,11 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(address) || !address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
             {
                 isValid = false;
-                txtAddress.BackColor = Color.Red;
+                lblAddress.ForeColor = Color.Red;
             }
             else
             {
-                txtAddress.BackColor = Color.White;
+                lblAddress.ForeColor = Color.Black;
             }
 
             // City
@@ -826,23 +826,24 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(city) || !city.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
                 isValid = false;
-                txtCity.BackColor = Color.Red;
+                lblCity.ForeColor = Color.Red;
             }
             else
             {
-                txtCity.BackColor = Color.White;
+                lblCity.ForeColor = Color.Black;
             }
 
             // Province
             string province = cbProvince.Text.Trim();
             if (!string.IsNullOrWhiteSpace(province) && province.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || c == '-'))
             {
-                cbProvince.BackColor = Color.White;
+                lblprovince.ForeColor = Color.Black;
+
             }
             else
             {
                 isValid = false;
-                cbProvince.BackColor = Color.Red;
+                lblprovince.ForeColor = Color.Red;
             }
 
             // Postal Code
@@ -850,11 +851,11 @@ namespace Istn3ASproject
             if (string.IsNullOrWhiteSpace(postalCode) || !postalCode.All(char.IsDigit) || postalCode.Length != 4)
             {
                 isValid = false;
-                txtPostalCode.BackColor = Color.Red;
+                lblpostalCode.ForeColor = Color.Red;
             }
             else
             {
-                txtPostalCode.BackColor = Color.White;
+                lblpostalCode.ForeColor = Color.Black;
             }
 
             return isValid;
