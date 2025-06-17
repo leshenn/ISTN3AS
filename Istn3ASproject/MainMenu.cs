@@ -22,7 +22,7 @@ namespace Istn3ASproject
             lblU.Text = $"User Logged in: {firstName} {lastName}";
             lblR.Text = $"Role: {role}";
             ROLE = role ;
-            this.staffID=staffID ;
+            lblStaffID.Text = $"StaffID: {staffID.ToString()}" ;
             ConfigureAccess(role);
         }
 

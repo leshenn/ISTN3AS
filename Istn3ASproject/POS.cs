@@ -158,7 +158,7 @@ namespace Istn3ASproject
             {
                 int CustomerID = Convert.ToInt32(lblCustID.Text);
                 String CustomerName = lblCustomerName.Text + " " + lblCustomerLN.Text;
-                int StaffID= Convert.ToInt32(lblStaffID.Text);
+                int StaffID = 1;// Convert.ToInt32(lblStaffID.Text);
                 string TransactionType = "sale";
                 string Today = DateTime.Today.ToString("yyyy-MM-dd");
                 string CurrentTime = DateTime.Now.ToString("HH:mm:ss");

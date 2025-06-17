@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panHead = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.lblR = new System.Windows.Forms.Label();
             this.lblU = new System.Windows.Forms.Label();
             this.lblUserRole = new System.Windows.Forms.Label();
@@ -40,13 +41,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panMain = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblStaffID = new System.Windows.Forms.Label();
             this.panHead.SuspendLayout();
             this.panMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHead
             // 
+            this.panHead.Controls.Add(this.lblStaffID);
             this.panHead.Controls.Add(this.btnLogout);
             this.panHead.Controls.Add(this.lblR);
             this.panHead.Controls.Add(this.lblU);
@@ -63,11 +65,21 @@
             this.panHead.Size = new System.Drawing.Size(1370, 61);
             this.panHead.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(692, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(118, 41);
+            this.btnLogout.TabIndex = 9;
+            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // lblR
             // 
             this.lblR.AutoSize = true;
             this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblR.Location = new System.Drawing.Point(534, 30);
+            this.lblR.Location = new System.Drawing.Point(465, 30);
             this.lblR.Name = "lblR";
             this.lblR.Size = new System.Drawing.Size(35, 13);
             this.lblR.TabIndex = 8;
@@ -172,15 +184,15 @@
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnLogout
+            // lblStaffID
             // 
-            this.btnLogout.Location = new System.Drawing.Point(692, 12);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(118, 41);
-            this.btnLogout.TabIndex = 9;
-            this.btnLogout.Text = "LOGOUT";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.BackColor = System.Drawing.Color.Aqua;
+            this.lblStaffID.Location = new System.Drawing.Point(591, 30);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(35, 13);
+            this.lblStaffID.TabIndex = 10;
+            this.lblStaffID.Text = "label2";
             // 
             // MainMenu
             // 
@@ -216,5 +228,6 @@
         public System.Windows.Forms.Label lblU;
         public System.Windows.Forms.Label lblR;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Label lblStaffID;
     }
 }

@@ -362,11 +362,10 @@ namespace Istn3ASproject
 
             if (ArchiveResult == DialogResult.Yes)
             {
-               /* staffTableAdapter.ArchiveStaffMember("Terminated", Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[1].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[2].Value),
-                    Convert.ToString(dgvStaffMgt.CurrentRow.Cells[3].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[4].Value), Convert.ToString(dgvStaffMgt.CurrentRow.Cells[5].Value),
-                    Convert.ToString(dgvStaffMgt.CurrentRow.Cells[6].Value), Convert.ToInt32(dgvStaffMgt.CurrentRow.Cells[0].Value));
-                staffTableAdapter.Fill(wstGrp11DataSet.Staff);*/
-                MessageBox.Show("Archive not Successful please check code", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                staffTableAdapter.FillTerminateStaff(wstGrp11DataSet.Staff, orginalStaffID);
+                staffTableAdapter.Fill(wstGrp11DataSet.Staff);
+
+                MessageBox.Show("Archive Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

@@ -50,10 +50,11 @@ namespace Istn3ASproject
             {
                 //LOGIN SUCCESSFUL 
                 //capture users details into global vars
+                staffID = Convert.ToInt32(loginDataSet.Staff.Rows[0].ItemArray[0].ToString());
                 Fname = loginDataSet.Staff.Rows[0].ItemArray[3].ToString();
                 Lname = loginDataSet.Staff.Rows[0].ItemArray[4].ToString();
                 Role = loginDataSet.Staff.Rows[0].ItemArray[6].ToString();
-                staffID = Convert.ToInt32(loginDataSet.Staff.Rows[0].ItemArray[0].ToString());
+               
 
                 if (Role.ToLower() == "terminated") {
                     bGrantAccess = false; //deny access
