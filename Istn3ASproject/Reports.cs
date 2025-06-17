@@ -98,7 +98,7 @@ namespace Istn3ASproject
 
                
             }
-            MessageBox.Show(message);
+           // MessageBox.Show(message);
 
             //CALCULATE iNCOME
             for (int i = 0; i < wstGrp11DataSet.Order.Rows.Count; i++)
