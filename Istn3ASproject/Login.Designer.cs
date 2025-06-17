@@ -69,7 +69,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(206, 162);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(377, 225);
             this.panel1.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             this.pbVisiblity.Image = global::Istn3ASproject.Properties.Resources.eye;
             this.pbVisiblity.Location = new System.Drawing.Point(346, 131);
-            this.pbVisiblity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbVisiblity.Margin = new System.Windows.Forms.Padding(2);
             this.pbVisiblity.Name = "pbVisiblity";
             this.pbVisiblity.Size = new System.Drawing.Size(20, 20);
             this.pbVisiblity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,26 +89,24 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(136, 132);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(200, 20);
             this.txtPass.TabIndex = 5;
-            this.txtPass.Text = "Karen_98Nai";
             // 
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(136, 81);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(200, 20);
             this.txtUser.TabIndex = 4;
-            this.txtUser.Text = "karNaik_90";
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(129, 177);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(116, 32);
             this.btnLogin.TabIndex = 3;
@@ -154,7 +152,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(788, 81);
             this.panel2.TabIndex = 2;
@@ -175,7 +173,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::Istn3ASproject.Properties.Resources.loginbg;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(788, 533);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,7 +249,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
