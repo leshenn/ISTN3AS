@@ -207,7 +207,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "TIA\'S FISHERIES";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.panHead.ResumeLayout(false);
             this.panHead.PerformLayout();
