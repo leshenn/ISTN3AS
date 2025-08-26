@@ -1,0 +1,15 @@
+cashier: (no access to reports and stock)
+user: obennett93
+pass: W!8pQm#47s
+
+Manager : (no access to financial reports)
+user :Dari_555
+pass :fat9ahsbs
+
+Owner : (full access)
+user: karNaik_90
+pass: karen_98Nai
+
+Terminated : (no access)
+user: avathompson_22
+pass: Grill90%bd

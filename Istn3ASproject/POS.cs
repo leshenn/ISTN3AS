@@ -600,6 +600,7 @@ namespace Istn3ASproject
                     taOrder.Fill(WstGrp11DataSet.Order);
 
                     MessageBox.Show("Order Number: " + OrderID + " has been refunded.");
+                    Clear();
                 }
             }
             catch (Exception ex)
@@ -701,6 +702,22 @@ namespace Istn3ASproject
         {
             taOrder.FillByCustID(WstGrp11DataSet.Order, Convert.ToInt32(npCustomerID.Value));
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        public void Clear()
+        {
+
+            npSearchOrderID.Value = 0;
+            npCustomerID.Value = 0;
+            taOrder.Fill(WstGrp11DataSet.Order);
+            WstGrp11DataSet.RefundInnerJoin.Clear();
+        }
+
+
 
     }
 }
