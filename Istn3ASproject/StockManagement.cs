@@ -1056,5 +1056,10 @@ namespace Istn3ASproject
             }
             
         }
+
+        private void grpUpdateItemDetails_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -121,13 +121,16 @@
   <data name="waterimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\waterimg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="betterwaterimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\betterwaterimg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginbg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Marine fish on a blue background seamless pattern for restaurant menus, cards, books, wrapping paper Stock Vector _ Adobe Stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Marine fish on a blue background seamless pattern for restaurant menus, cards, books, wrapping paper Stock Vector _ Adobe Stock.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
