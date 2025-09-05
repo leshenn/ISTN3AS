@@ -606,6 +606,7 @@ namespace Istn3ASproject
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                Clear();
             }
         }
 
@@ -633,6 +634,7 @@ namespace Istn3ASproject
 
                         UpdateOrderTable(OrderID);
                         taOrder.Fill(WstGrp11DataSet.Order);
+                        
                     }
                 }
             }
@@ -717,7 +719,9 @@ namespace Istn3ASproject
             WstGrp11DataSet.RefundInnerJoin.Clear();
         }
 
-
-
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

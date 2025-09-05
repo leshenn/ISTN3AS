@@ -88,6 +88,7 @@
             this.lblSearchItem = new System.Windows.Forms.Label();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.tbpRefund = new System.Windows.Forms.TabPage();
+            this.btnClear = new System.Windows.Forms.Button();
             this.npCustomerID = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -674,6 +675,7 @@
             // tbpRefund
             // 
             this.tbpRefund.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(240)))));
+            this.tbpRefund.Controls.Add(this.btnClear);
             this.tbpRefund.Controls.Add(this.npCustomerID);
             this.tbpRefund.Controls.Add(this.label6);
             this.tbpRefund.Controls.Add(this.label5);
@@ -691,6 +693,17 @@
             this.tbpRefund.Size = new System.Drawing.Size(1933, 789);
             this.tbpRefund.TabIndex = 1;
             this.tbpRefund.Text = "Refund";
+            // 
+            // btnClear
+            // 
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClear.Location = new System.Drawing.Point(1491, 30);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(205, 46);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // npCustomerID
             // 
@@ -1211,5 +1224,6 @@
         private System.Windows.Forms.NumericUpDown npCustomerID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnClear;
     }
 }
