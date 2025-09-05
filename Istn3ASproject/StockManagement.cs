@@ -723,6 +723,7 @@ namespace Istn3ASproject
                             Decimal sell = Convert.ToDecimal(txtSell.Text);
                             Decimal buy = Convert.ToDecimal(txtBuy.Text);
                             int? reorder, expiration; //set to nullable int's
+                            int soh;
 
                             if (txtReorder.Text == "") //because cant convert null to int
                             {
@@ -742,7 +743,16 @@ namespace Istn3ASproject
                                 expiration = Convert.ToInt32(txtExpiration.Text);
                             }
 
-                            stockTableAdapter.InsertStockItem(name, desc, sell, buy, 0, reorder, expiration); //insert query
+                            if (txtStockOnHandAdd.Text == "") //because cant convert null to int
+                            {
+                                soh = 0;
+                            }
+                            else
+                            {
+                                soh = Convert.ToInt32(txtStockOnHandAdd.Text);
+                            }
+
+                            stockTableAdapter.InsertStockItem(name, desc, sell, buy, soh, reorder, expiration); //insert query
                             MessageBox.Show("Item added to inventory", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information); //notify added item
 
                             //clear all textboxes
@@ -752,7 +762,7 @@ namespace Istn3ASproject
                             txtBuy.Clear();
                             txtReorder.Clear();
                             txtExpiration.Clear();
-
+                            txtStockOnHandAdd.Clear();
                         }
                     }
                    
@@ -872,6 +882,7 @@ namespace Istn3ASproject
             txtProdBPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[4].Value.ToString();
             txtProdReorderUpdate.Text = dgvUpdateStock.CurrentRow.Cells[6].Value.ToString();
             txtProdExpirUpdate.Text = dgvUpdateStock.CurrentRow.Cells[7].Value.ToString(); ;
+            txtStockOnHandUpdate.Text = dgvUpdateStock.CurrentRow.Cells[5].Value.ToString();
         }
 
 
@@ -886,7 +897,8 @@ namespace Istn3ASproject
                     txtProdSPriceUpdate.Text=="" ||
                     txtProdBPriceUpdate.Text=="" ||
                     txtProdReorderUpdate.Text=="" ||
-                    txtProdExpirUpdate.Text=="")
+                    txtProdExpirUpdate.Text=="" ||
+                    txtStockOnHandUpdate.Text=="")
                 {
                     selected = false;
                     MessageBox.Show("Please select a record before updating", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -912,9 +924,10 @@ namespace Istn3ASproject
                             string bprice = txtProdBPriceUpdate.Text;
                             string reorder = txtProdReorderUpdate.Text;
                             string expir = txtProdExpirUpdate.Text;
+                            string soh = txtStockOnHandUpdate.Text;
                             decimal sPrice, bPrice;
-                            int Reorder, Expir;
-                            bool bsprice = false, bbprice = false, breorder = false, bexpir = false;
+                            int Reorder, Expir, SOH;
+                            bool bsprice = false, bbprice = false, breorder = false, bexpir = false, bsoh = false;
                             string warning = "Please enter a:\n";
 
                             if (!decimal.TryParse(sprice, out sPrice))
@@ -957,6 +970,16 @@ namespace Istn3ASproject
                                 bexpir = true;
                             }
 
+                            if (!int.TryParse(expir, out SOH))
+                            {
+                                //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtStockOnHandUpdate.Text = dgvUpdateStock.CurrentRow.Cells[5].Value.ToString();
+                            }
+                            else
+                            {
+                                bsoh = true;
+                            }
+
                             if (!bsprice)
                             {
                                 warning += "Monetary value for Selling price\n";
@@ -973,14 +996,18 @@ namespace Istn3ASproject
                             {
                                 warning += "Integer value for Expiration time\n";
                             }
+                            if (!bsoh)
+                            {
+                                warning += "Integer value for Stock on Hand\n";
+                            }
 
-                            if (!bsprice || !bbprice || !breorder || !bexpir)
+                            if (!bsprice || !bbprice || !breorder || !bexpir || !bsoh)
                             {
                                 MessageBox.Show(warning, "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                             else
                             {
-                                stockTableAdapter.UpdateStockDetails(name, desc, sPrice, bPrice, Reorder, Expir,
+                                stockTableAdapter.UpdateStockDetails(name, desc, sPrice, bPrice, Reorder, Expir, SOH,
                                     Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()),
                                     Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()));
                                 stockTableAdapter.Fill(wstGrp11DataSet.Stock);
@@ -1078,6 +1105,35 @@ namespace Istn3ASproject
         private void grpUpdateItemDetails_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtStockOnHandAdd_TextChanged(object sender, EventArgs e)
+        {
+            if (txtStockOnHandAdd.Text == "")
+            {
+
+            }
+            else if (!int.TryParse(txtStockOnHandAdd.Text, out _)) //validate type decimal
+            {
+                MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int len = txtStockOnHandAdd.Text.Length;
+                txtStockOnHandAdd.Text = txtStockOnHandAdd.Text.Substring(0, len - 1); //remove last character typed
+                txtStockOnHandAdd.SelectionStart = txtStockOnHandAdd.Text.Length; //set focus to end of text typed
+            }
+        }
+
+        private void txtStockOnHandUpdate_TextChanged(object sender, EventArgs e)
+        {
+            if (txtStockOnHandUpdate.Text=="") {
+
+            }
+            else if (!int.TryParse(txtStockOnHandUpdate.Text, out _)) //validate type decimal
+            {
+                MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int len = txtStockOnHandUpdate.Text.Length;
+                txtStockOnHandUpdate.Text = txtStockOnHandUpdate.Text.Substring(0, len - 1); //remove last character typed
+                txtStockOnHandUpdate.SelectionStart = txtStockOnHandUpdate.Text.Length; //set focus to end of text typed
+            }
         }
     }
 }
