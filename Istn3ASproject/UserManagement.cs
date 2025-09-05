@@ -166,44 +166,96 @@ namespace Istn3ASproject
 
         private void btnAddStaffMember_Click(object sender, EventArgs e)
         {
-           
-            DialogResult dialoganswer = MessageBox.Show("Are you sure you want to add a new staff member?", "Confirmation", MessageBoxButtons.YesNo);
+
+            //DialogResult dialoganswer = MessageBox.Show("Are you sure you want to add a new staff member?", "Confirmation", MessageBoxButtons.YesNo);
+            //bool Validate = validateFields(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
+            //    txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
+
+            //bool bFlag = true; // goes to false if notSelected=true
+            //bool notSelected = cmbStaffRole.SelectedIndex == -1;
+            //if (notSelected) {
+            //    bFlag = false;
+            //    MessageBox.Show("You have not selected a Staff Role");
+            //}
+
+            //if (dialoganswer == DialogResult.Yes && Validate && bFlag) 
+            //{
+            //    try
+            //    {
+            //        staffTableAdapter.AddNewStaffMember(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
+            //    txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
+
+            //        SystemSounds.Beep.Play();
+            //        MessageBox.Show("Staff Member Added Successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        txtUsernameStaff.Clear();
+            //        txtPasswordStaff.Clear();
+            //        txtLastNameStaff.Clear();
+            //        txtFirstNameStaff.Clear();
+            //        txtContactStaff.Clear();
+            //        cmbStaffRole.SelectedIndex = -1;
+            //        staffTableAdapter.Fill(wstGrp11DataSet.Staff);
+            //    }
+            //    catch (Exception)
+            //    {
+
+            //        MessageBox.Show("Staff Member NOT Added","",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            //        SystemSounds.Exclamation.Play();
+            //    }
+            //}
+            //    else{ 
+            //         SystemSounds.Beep.Play();
+            //        MessageBox.Show("Staff Member NOT Added : Process Termination", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        txtUsernameStaff.Clear();
+            //        txtPasswordStaff.Clear();
+            //        txtLastNameStaff.Clear();
+            //        txtFirstNameStaff.Clear();
+            //        txtContactStaff.Clear();
+            //        cmbStaffRole.SelectedIndex = -1;
+            //        SystemSounds.Beep.Play();
+            //}
+
             bool Validate = validateFields(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
                 txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
 
             bool bFlag = true; // goes to false if notSelected=true
             bool notSelected = cmbStaffRole.SelectedIndex == -1;
-            if (notSelected) {
+            if (notSelected)
+            {
                 bFlag = false;
                 MessageBox.Show("You have not selected a Staff Role");
             }
 
-            if (dialoganswer == DialogResult.Yes && Validate && bFlag) 
+            //  Only ask for confirmation if validation & role check pass
+            if (Validate && bFlag)
             {
-                try
-                {
-                    staffTableAdapter.AddNewStaffMember(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
-                txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
-                 
-                    SystemSounds.Beep.Play();
-                    MessageBox.Show("Staff Member Added Successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtUsernameStaff.Clear();
-                    txtPasswordStaff.Clear();
-                    txtLastNameStaff.Clear();
-                    txtFirstNameStaff.Clear();
-                    txtContactStaff.Clear();
-                    cmbStaffRole.SelectedIndex = -1;
-                    staffTableAdapter.Fill(wstGrp11DataSet.Staff);
-                }
-                catch (Exception)
-                {
+                DialogResult dialoganswer = MessageBox.Show("Are you sure you want to add a new staff member?", "Confirmation", MessageBoxButtons.YesNo);
 
-                    MessageBox.Show("Staff Member NOT Added","",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                    SystemSounds.Exclamation.Play();
+                if (dialoganswer == DialogResult.Yes)
+                {
+                    try
+                    {
+                        staffTableAdapter.AddNewStaffMember(txtUsernameStaff.Text, txtPasswordStaff.Text, txtFirstNameStaff.Text,
+                            txtLastNameStaff.Text, txtContactStaff.Text, cmbStaffRole.Text);
+
+                        SystemSounds.Beep.Play();
+                        MessageBox.Show("Staff Member Added Successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtUsernameStaff.Clear();
+                        txtPasswordStaff.Clear();
+                        txtLastNameStaff.Clear();
+                        txtFirstNameStaff.Clear();
+                        txtContactStaff.Clear();
+                        cmbStaffRole.SelectedIndex = -1;
+                        staffTableAdapter.Fill(wstGrp11DataSet.Staff);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Staff Member NOT Added", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        SystemSounds.Exclamation.Play();
+                    }
                 }
-            }
-                else{ 
-                     SystemSounds.Beep.Play();
+                else
+                {
+                    SystemSounds.Beep.Play();
                     MessageBox.Show("Staff Member NOT Added : Process Termination", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUsernameStaff.Clear();
                     txtPasswordStaff.Clear();
@@ -212,6 +264,13 @@ namespace Istn3ASproject
                     txtContactStaff.Clear();
                     cmbStaffRole.SelectedIndex = -1;
                     SystemSounds.Beep.Play();
+                }
+            }
+            else
+            {
+                // Validation failed, so no confirmation is shown
+                SystemSounds.Beep.Play();
+                MessageBox.Show("Staff Member NOT Added : Validation Failed", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -320,7 +379,7 @@ namespace Istn3ASproject
 
         private void txtUsernameUpdate_TextChanged(object sender, EventArgs e)
         {
-            if (txtUsernameUpdate.Text.Length < 5)
+            if (txtUsernameUpdate.Text.Length < 6)
             {
                 txtUsernameUpdate.ForeColor = Color.Red;
             }
@@ -344,19 +403,63 @@ namespace Istn3ASproject
 
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
-            bool updateIsValid = validateFields(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
-                txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.SelectedItem.ToString());
-            DialogResult dialoganswerUpdate = MessageBox.Show("Are you sure you want to Update staff member: " + txtNameUpdate.Text + " " + txtLastNameUpdate.Text + " ?"
-                , "Confirmation", MessageBoxButtons.YesNo);
+            //bool updateIsValid = validateFields(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
+            //    txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.SelectedItem.ToString());
+            //DialogResult dialoganswerUpdate = MessageBox.Show("Are you sure you want to Update staff member: " + txtNameUpdate.Text + " " + txtLastNameUpdate.Text + " ?"
+            //    , "Confirmation", MessageBoxButtons.YesNo);
 
-            if (updateIsValid == true && dialoganswerUpdate == DialogResult.Yes)
+            //if (updateIsValid == true && dialoganswerUpdate == DialogResult.Yes)
+            //{
+            //    staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
+            //        txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.Text,orginalStaffID);
+            //    MessageBox.Show("Staff Member Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    staffTableAdapter.Fill(wstGrp11DataSet.Staff);
+            //}
+            //else { MessageBox.Show("Staff Member NOT Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            // Validate first
+            bool updateIsValid = validateFields(
+                txtUsernameUpdate.Text,
+                txtPasswordUpdate.Text,
+                txtNameUpdate.Text,
+                txtLastNameUpdate.Text,
+                txtContactUpdate.Text,
+                cmbStaffRoleUpdate.SelectedItem?.ToString() ?? ""
+            );
+
+            // Only proceed if validation passed
+            if (!updateIsValid)
             {
-                staffTableAdapter.UpdateStaffMember(txtUsernameUpdate.Text,txtPasswordUpdate.Text,txtNameUpdate.Text,
-                    txtLastNameUpdate.Text,txtContactUpdate.Text,cmbStaffRoleUpdate.Text,orginalStaffID);
+                MessageBox.Show("Please fix the validation errors before updating.", "Validation Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Stop execution here
+            }
+
+            //  Ask for confirmation only if valid
+            DialogResult dialoganswerUpdate = MessageBox.Show(
+                "Are you sure you want to update staff member: " + txtNameUpdate.Text + " " + txtLastNameUpdate.Text + " ?",
+                "Confirmation", MessageBoxButtons.YesNo
+            );
+
+            //  Update if user confirms
+            if (dialoganswerUpdate == DialogResult.Yes)
+            {
+                staffTableAdapter.UpdateStaffMember(
+                    txtUsernameUpdate.Text,
+                    txtPasswordUpdate.Text,
+                    txtNameUpdate.Text,
+                    txtLastNameUpdate.Text,
+                    txtContactUpdate.Text,
+                    cmbStaffRoleUpdate.Text,
+                    orginalStaffID
+                );
+
                 MessageBox.Show("Staff Member Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 staffTableAdapter.Fill(wstGrp11DataSet.Staff);
             }
-            else { MessageBox.Show("Staff Member NOT Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else
+            {
+                MessageBox.Show("Staff Member NOT Updated", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
@@ -394,7 +497,7 @@ namespace Istn3ASproject
 
         private void txtUsernameStaff_TextChanged(object sender, EventArgs e)
         {
-            if (txtUsernameStaff.Text.Length < 5)
+            if (txtUsernameStaff.Text.Length < 6)
             {
                 txtUsernameStaff.ForeColor = Color.Red;
             }
