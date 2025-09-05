@@ -93,6 +93,17 @@ namespace Istn3ASproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Marine_fish_on_a_blue_background_seamless_pattern_for_restaurant_menus__cards__books__wrapping_paper_Stock_Vector___Adobe_Stock {
+            get {
+                object obj = ResourceManager.GetObject("Marine fish on a blue background seamless pattern for restaurant menus, cards, bo" +
+                        "oks, wrapping paper Stock Vector _ Adobe Stock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap waterimg {
             get {
                 object obj = ResourceManager.GetObject("waterimg", resourceCulture);

@@ -663,6 +663,7 @@ namespace Istn3ASproject
             try
             {
                 bool bname = true, bdesc = true, bsell = true, bbuy = true; //for manditory values
+
                 if (txtBuy.Text == "")
                 {
                     //set label to red to show maditory value
@@ -697,55 +698,64 @@ namespace Istn3ASproject
                 
                 if (bname && bdesc && bbuy && bsell) //if all manditory values are entered
                 {
-                    DialogResult result = MessageBox.Show("Do you want to add this item to inventory?", "Confirmation", MessageBoxButtons.YesNoCancel); //confirmation message
-
-                    if (result == DialogResult.Cancel)
+                    if (Convert.ToDecimal(txtSell.Text)<= Convert.ToDecimal(txtBuy.Text))
                     {
-                        MessageBox.Show("Cancelled");
-                    }
-                    else if ((result == DialogResult.No))
-                    {
-                        MessageBox.Show("Item not added");
-                    }
-                    else //clicked Yes
-                    {
-                        //retrieve values
-                        string name = txtName.Text;
-                        string desc = txtDesc.Text;
-                        Decimal sell = Convert.ToDecimal(txtSell.Text);
-                        Decimal buy = Convert.ToDecimal(txtBuy.Text);
-                        int? reorder, expiration; //set to nullable int's
-
-                        if (txtReorder.Text == "") //because cant convert null to int
-                        {
-                            reorder = null;
-                        }
-                        else
-                        {
-                            reorder = Convert.ToInt32(txtReorder.Text);
-                        }
-
-                        if (txtExpiration.Text == "") //because cant convert null to int
-                        {
-                            expiration = null;
-                        }
-                        else
-                        {
-                            expiration = Convert.ToInt32(txtExpiration.Text);
-                        }
-
-                        stockTableAdapter.InsertStockItem(name, desc, sell, buy, 0, reorder, expiration); //insert query
-                        MessageBox.Show("Item added to inventory", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information); //notify added item
-
-                        //clear all textboxes
-                        txtName.Clear();
-                        txtDesc.Clear();
+                        MessageBox.Show("Selling price should be higher than buying price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtSell.Clear();
                         txtBuy.Clear();
-                        txtReorder.Clear();
-                        txtExpiration.Clear();
+                    } else
+                    {
+                        DialogResult result = MessageBox.Show("Do you want to add this item to inventory?", "Confirmation", MessageBoxButtons.YesNoCancel); //confirmation message
 
+                        if (result == DialogResult.Cancel)
+                        {
+                            MessageBox.Show("Cancelled");
+                        }
+                        else if ((result == DialogResult.No))
+                        {
+                            MessageBox.Show("Item not added");
+                        }
+                        else //clicked Yes
+                        {
+                            //retrieve values
+                            string name = txtName.Text;
+                            string desc = txtDesc.Text;
+                            Decimal sell = Convert.ToDecimal(txtSell.Text);
+                            Decimal buy = Convert.ToDecimal(txtBuy.Text);
+                            int? reorder, expiration; //set to nullable int's
+
+                            if (txtReorder.Text == "") //because cant convert null to int
+                            {
+                                reorder = null;
+                            }
+                            else
+                            {
+                                reorder = Convert.ToInt32(txtReorder.Text);
+                            }
+
+                            if (txtExpiration.Text == "") //because cant convert null to int
+                            {
+                                expiration = null;
+                            }
+                            else
+                            {
+                                expiration = Convert.ToInt32(txtExpiration.Text);
+                            }
+
+                            stockTableAdapter.InsertStockItem(name, desc, sell, buy, 0, reorder, expiration); //insert query
+                            MessageBox.Show("Item added to inventory", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information); //notify added item
+
+                            //clear all textboxes
+                            txtName.Clear();
+                            txtDesc.Clear();
+                            txtSell.Clear();
+                            txtBuy.Clear();
+                            txtReorder.Clear();
+                            txtExpiration.Clear();
+
+                        }
                     }
+                   
                 } 
                 else
                 {
@@ -884,101 +894,109 @@ namespace Istn3ASproject
 
                 if (selected)
                 {
-                    DialogResult result = MessageBox.Show("Do you want to update item: " + txtProdNameUpdate.Text + ", " + txtProdDescUpdate.Text, "Confirmation", MessageBoxButtons.YesNoCancel);
-
-                    if (result==DialogResult.Yes)
+                    if (Convert.ToDecimal(txtProdSPriceUpdate.Text) <= Convert.ToDecimal(txtProdBPriceUpdate.Text))
                     {
-                        string name = txtProdNameUpdate.Text;
-                        string desc = txtProdDescUpdate.Text;
-                        string sprice = txtProdSPriceUpdate.Text;
-                        string bprice = txtProdBPriceUpdate.Text;
-                        string reorder = txtProdReorderUpdate.Text;
-                        string expir = txtProdExpirUpdate.Text;
-                        decimal sPrice, bPrice;
-                        int Reorder, Expir;
-                        bool bsprice = false, bbprice = false, breorder = false, bexpir = false;
-                        string warning = "Please enter a:\n";
-
-                        if (!decimal.TryParse(sprice, out sPrice))
-                        {
-                            //MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txtProdSPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[3].Value.ToString();
-                        }
-                        else
-                        {
-                            bsprice = true;
-                        }
-
-                        if (!decimal.TryParse(bprice, out bPrice))
-                        {
-                            //MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txtProdBPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[4].Value.ToString();
-                        }
-                        else
-                        {
-                            bbprice = true;
-                        }
-
-                        if (!int.TryParse(reorder, out Reorder))
-                        {
-                            //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txtProdReorderUpdate.Text = dgvUpdateStock.CurrentRow.Cells[6].Value.ToString();
-                        }
-                        else
-                        {
-                            breorder = true;
-                        }
-
-                        if (!int.TryParse(expir, out Expir))
-                        {
-                            //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            txtProdExpirUpdate.Text = dgvUpdateStock.CurrentRow.Cells[7].Value.ToString();
-                        }
-                        else
-                        {
-                            bexpir = true;
-                        }
-
-                        if (!bsprice)
-                        {
-                            warning += "Monetary value for Selling price\n";
-                        }
-                        if (!bbprice)
-                        {
-                            warning += "Monetary value for Buying price\n";
-                        }
-                        if (!breorder)
-                        {
-                            warning += "Integer value for Reorder level\n";
-                        }
-                        if (!bexpir)
-                        {
-                            warning += "Integer value for Expiration time\n";
-                        }
-
-                        if (!bsprice || !bbprice || !breorder || !bexpir)
-                        {
-                            MessageBox.Show(warning, "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        } 
-                        else
-                        {
-                            stockTableAdapter.UpdateStockDetails(name, desc, sPrice, bPrice, Reorder, Expir, 
-                                Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()), 
-                                Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()));
-                            stockTableAdapter.Fill(wstGrp11DataSet.Stock);
-                            MessageBox.Show("Item details udpated successfully", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                    }
-                    else if (result==DialogResult.No)
-                    {
-                        MessageBox.Show("Item details not updated", "Not Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Selling price should be higher than buying price", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtProdSPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[3].Value.ToString();
+                        txtProdBPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[4].Value.ToString();
                     }
                     else
                     {
-                        MessageBox.Show("Updated cancelled", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        DialogResult result = MessageBox.Show("Do you want to update item: " + txtProdNameUpdate.Text + ", " + txtProdDescUpdate.Text, "Confirmation", MessageBoxButtons.YesNoCancel);
 
+                        if (result == DialogResult.Yes)
+                        {
+                            string name = txtProdNameUpdate.Text;
+                            string desc = txtProdDescUpdate.Text;
+                            string sprice = txtProdSPriceUpdate.Text;
+                            string bprice = txtProdBPriceUpdate.Text;
+                            string reorder = txtProdReorderUpdate.Text;
+                            string expir = txtProdExpirUpdate.Text;
+                            decimal sPrice, bPrice;
+                            int Reorder, Expir;
+                            bool bsprice = false, bbprice = false, breorder = false, bexpir = false;
+                            string warning = "Please enter a:\n";
+
+                            if (!decimal.TryParse(sprice, out sPrice))
+                            {
+                                //MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtProdSPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[3].Value.ToString();
+                            }
+                            else
+                            {
+                                bsprice = true;
+                            }
+
+                            if (!decimal.TryParse(bprice, out bPrice))
+                            {
+                                //MessageBox.Show("Enter a monetary value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtProdBPriceUpdate.Text = dgvUpdateStock.CurrentRow.Cells[4].Value.ToString();
+                            }
+                            else
+                            {
+                                bbprice = true;
+                            }
+
+                            if (!int.TryParse(reorder, out Reorder))
+                            {
+                                //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtProdReorderUpdate.Text = dgvUpdateStock.CurrentRow.Cells[6].Value.ToString();
+                            }
+                            else
+                            {
+                                breorder = true;
+                            }
+
+                            if (!int.TryParse(expir, out Expir))
+                            {
+                                //MessageBox.Show("Enter an integer value", "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                txtProdExpirUpdate.Text = dgvUpdateStock.CurrentRow.Cells[7].Value.ToString();
+                            }
+                            else
+                            {
+                                bexpir = true;
+                            }
+
+                            if (!bsprice)
+                            {
+                                warning += "Monetary value for Selling price\n";
+                            }
+                            if (!bbprice)
+                            {
+                                warning += "Monetary value for Buying price\n";
+                            }
+                            if (!breorder)
+                            {
+                                warning += "Integer value for Reorder level\n";
+                            }
+                            if (!bexpir)
+                            {
+                                warning += "Integer value for Expiration time\n";
+                            }
+
+                            if (!bsprice || !bbprice || !breorder || !bexpir)
+                            {
+                                MessageBox.Show(warning, "Warning ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                stockTableAdapter.UpdateStockDetails(name, desc, sPrice, bPrice, Reorder, Expir,
+                                    Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()),
+                                    Convert.ToInt32(dgvUpdateStock.CurrentRow.Cells[0].Value.ToString()));
+                                stockTableAdapter.Fill(wstGrp11DataSet.Stock);
+                                MessageBox.Show("Item details udpated successfully", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                        }
+                        else if (result == DialogResult.No)
+                        {
+                            MessageBox.Show("Item details not updated", "Not Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Updated cancelled", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                     
                 } //selected
 
@@ -1055,6 +1073,11 @@ namespace Istn3ASproject
                 tcStockManagement.SelectedIndex = 1;
             }
             
+        }
+
+        private void grpUpdateItemDetails_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

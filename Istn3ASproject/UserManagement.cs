@@ -1004,5 +1004,7 @@ TIPS:
         {
             supplierTableAdapter.FillBySupplierName(this.wstGrp11DataSet.Supplier, txtSearch.Text);
         }
+
+       
     }
 }
