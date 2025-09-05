@@ -213,5 +213,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marine fish on a blue background seamless pattern for restaurant menus, cards, books, wrapping paper Stock Vector _ Adobe Stock.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
