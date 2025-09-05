@@ -739,7 +739,7 @@ namespace Istn3ASproject
                     txtPostalCode.Clear();
                     mtCustomerNo.Text = null;
                     cbProvince.SelectedIndex = -1;
-                    MessageBox.Show("Customer Details successfully added", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Customer Details successfully added", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
