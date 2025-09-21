@@ -253,7 +253,9 @@ namespace Istn3ASproject
             businessNameCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             businessNameCell.HorizontalAlignment = Element.ALIGN_LEFT;
 
-            string logoPath = "Logo/logo.png";
+            string exePath = Application.StartupPath;
+            string solutionDir = Directory.GetParent(exePath).Parent.Parent.FullName;
+            string logoPath = Path.Combine(solutionDir, "Logo", "logo.png");
             iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logoPath);
             logo.ScaleAbsolute(100f, 100f);
 
