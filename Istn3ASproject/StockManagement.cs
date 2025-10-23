@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -1134,6 +1135,41 @@ namespace Istn3ASproject
                 txtStockOnHandUpdate.Text = txtStockOnHandUpdate.Text.Substring(0, len - 1); //remove last character typed
                 txtStockOnHandUpdate.SelectionStart = txtStockOnHandUpdate.Text.Length; //set focus to end of text typed
             }
+        }
+
+        private void dgvOrderLines_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if it's the "Item Name" column
+            if (dgvOrderLines.Columns[e.ColumnIndex].Name == "ItemName" && e.Value == null)
+            {
+                // Get the StockID from the same row
+                var stockIdObj = dgvOrderLines.Rows[e.RowIndex].Cells["StockID"].Value;
+                if (stockIdObj != null)
+                {
+                    int stockId = Convert.ToInt32(stockIdObj);
+
+                    // Retrieve the item name from the database
+                    string itemName = GetItemNameByStockID(stockId);
+                    e.Value = itemName;  // set the value to display
+                }
+            }
+        }
+
+        private string GetItemNameByStockID(int stockId)
+        {
+            string itemName = "";
+
+            // Fill the Stock table in the dataset
+            this.stockTableAdapter.Fill(this.wstGrp11DataSet.Stock);
+
+            // Use LINQ to find the item in the DataTable
+            var row = this.wstGrp11DataSet.Stock
+                        .FirstOrDefault(r => r.StockID == stockId);
+
+            if (row != null)
+                itemName = row.Name;
+
+            return itemName;
         }
     }
 }
