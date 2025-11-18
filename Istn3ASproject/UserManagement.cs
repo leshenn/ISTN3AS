@@ -316,11 +316,12 @@ namespace Istn3ASproject
             txtUcode.Text = gvCustomer.CurrentRow.Cells[8].Value.ToString();
         }
 
+
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
             mtUpdateCustContact.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             DialogResult result = MessageBox.Show("Are you sure you want to update " + txtUfname.Text + " " + txtUlname.Text + " Details?", "Confirm Details?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            bool valid = validateInput(txtUfname, txtUlname, mtUpdateCustContact, txtUemail, txtUaddress, txtUcity, cbUprovince, txtUcode,lblEditCusFname,lblEditCusLname,lblEditCusNumber,lblEditCusEmail,lblEditCusAddress,lblEditCusCity,lblEditCusProvince,lblEditCusPostal);
+            bool valid = validateInput(txtUfname, txtUlname, mtUpdateCustContact, txtUemail, txtUaddress, txtUcity, cbUprovince, txtUcode, lblEditCusFname, lblEditCusLname, lblEditCusNumber, lblEditCusEmail, lblEditCusAddress, lblEditCusCity, lblEditCusProvince, lblEditCusPostal);
 
             if (result == DialogResult.Yes && valid)
             {
@@ -720,7 +721,7 @@ namespace Istn3ASproject
             mtCustomerNo.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             DialogResult result = MessageBox.Show("Are you sure you want to add this " + txtFName.Text + " " + txtLName.Text, "Confirm Details?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            bool valid = validateInput(txtFName, txtLName, mtCustomerNo, txtEmail, txtAddress, txtCity, cbProvince, txtPostalCode,lblCusFname1,lblCusLname,lblCusNum,lblCustomerEmail,lblCustomerAddress,lblCustomerCity,lblCustomerProvince,lblCustomerPostal);
+            bool valid = validateInput(txtFName, txtLName, mtCustomerNo, txtEmail, txtAddress, txtCity, cbProvince, txtPostalCode, lblCusFname1, lblCusLname, lblCusNum, lblCustomerEmail, lblCustomerAddress, lblCustomerCity, lblCustomerProvince, lblCustomerPostal);
 
             if (result == DialogResult.Yes && valid)
             {
