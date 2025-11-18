@@ -56,7 +56,7 @@ namespace Istn3ASproject
                 Role = loginDataSet.Staff.Rows[0].ItemArray[6].ToString();
                
 
-                if (Role.ToLower() == "terminated") {
+                if( (Role.ToLower() == "terminated") || (Role.ToLower() == "not active") ){
                     bGrantAccess = false; //deny access
                 }
 
